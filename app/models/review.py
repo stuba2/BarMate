@@ -3,32 +3,34 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from datetime import datetime
 
-class Recipe(db.Model, UserMixin):
-    __tablename__ = 'recipes'
+
+class Review(db.Model, UserMixin):
+    __tablename__ = 'reviews'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64), nullable=False)
-    description = db.Column(db.String(1000))
-    instructions = db.Column(db.String(2000), nullable=False)
+    review_text = db.Column(db.String(1000), nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
+    recipe_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("recipes.id")), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    # needs fixing
-    recipes_users = db.relationship("User", secondary=usersboards, back_populates="users_recipes")
+    # fix these
+    comments_card = db.relationship("Card", back_populates="card_comments")
 
-    # boards_owner = db.relationship("User", back_populates="owner_boards")
+    comments_user = db.relationship("User", back_populates="user_comments")
+    #############
 
     def to_dict(self):
         return {
             'id': self.id,
-            'name': self.name,
-            'description': self.description,
-            'instructions': self.instructions,
-            "user_id": self.user_id,
+            'review_text': self.review_text,
+            'rating': self.rating,
+            'user_id': self.user_id,
+            "recipe_id": self.recipe_id,
             "created_at": self.created_at,
             "updated_at": self.updated_at,
         }
