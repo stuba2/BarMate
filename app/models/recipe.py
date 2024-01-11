@@ -21,7 +21,7 @@ class UnitTypes(enum.Enum):
 recipe_ingredients = db.Table(
     "recipeIngredients",
     db.Model.metadata,
-    db.Column('amount', db.Float(precision=4, scale=2), nullable=False),
+    db.Column('amount', db.Float(precision=4, decimal_return_scale=2), nullable=False),
     db.Column('unit', db.Enum(UnitTypes, values_callable=lambda x: [str(member.value) for member in UnitTypes]), nullable=False),
     db.Column('recipeId', db.Integer, db.ForeignKey(add_prefix_for_prod('recipes.id')), primary_key=True),
     db.Column('ingredientId', db.Integer, db.ForeignKey(add_prefix_for_prod('ingredients.id')), primary_key=True)
