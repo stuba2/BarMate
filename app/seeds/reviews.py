@@ -1,34 +1,35 @@
-from app.models import db, User, environment, SCHEMA
+from app.models import db, environment, SCHEMA
+from app.models.review import Review
 from sqlalchemy.sql import text
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(
-        username='demo',
-        email='demo@aa.io',
-        password='password',
-        dob='1985-01-01 10:00:00')
-    tobey = User(
-        username='tobey',
-        email='tobey@tobey.io',
-        password='password',
-        dob='1990-01-01 10:00:00')
-    andrew = User(
-        username='andrew',
-        email='andrew@andrew.io',
-        password='password',
-        dob='1995-01-01 10:00:00')
-    tom = User(
-        username='tom',
-        email='tom@tom.io',
-        password='password',
-        dob='2000-01-01 10:00:00')
+    review_1 = Review(
+        review_text='I can\'t believe people drink this',
+        rating=2,
+        user_id=1,
+        recipe_id=4)
+    review_2 = Review(
+        review_text='Love this for camping trips!',
+        rating=5,
+        user_id=2,
+        recipe_id=3)
+    review_3 = Review(
+        review_text='Never heard of this before, very refreshing!',
+        rating=4,
+        user_id=3,
+        recipe_id=2)
+    review_4 = Review(
+        review_text='Doesn\'t hit like it used to',
+        rating=3,
+        user_id=4,
+        recipe_id=1)
 
-    db.session.add(demo)
-    db.session.add(tobey)
-    db.session.add(andrew)
-    db.session.add(tom)
+    db.session.add(review_1)
+    db.session.add(review_2)
+    db.session.add(review_3)
+    db.session.add(review_4)
     db.session.commit()
 
 

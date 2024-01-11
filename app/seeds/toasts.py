@@ -1,34 +1,27 @@
-from app.models import db, User, environment, SCHEMA
+from app.models import db, environment, SCHEMA
+from app.models.toast import Toast
 from sqlalchemy.sql import text
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(
-        username='demo',
-        email='demo@aa.io',
-        password='password',
-        dob='1985-01-01 10:00:00')
-    tobey = User(
-        username='tobey',
-        email='tobey@tobey.io',
-        password='password',
-        dob='1990-01-01 10:00:00')
-    andrew = User(
-        username='andrew',
-        email='andrew@andrew.io',
-        password='password',
-        dob='1995-01-01 10:00:00')
-    tom = User(
-        username='tom',
-        email='tom@tom.io',
-        password='password',
-        dob='2000-01-01 10:00:00')
+    malort = Toast(
+        user_id=1,
+        recipe_id=2)
+    red_bull = Toast(
+        user_id=2,
+        recipe_id=3)
+    hamms = Toast(
+        user_id=3,
+        recipe_id=4)
+    mountain_dew = Toast(
+        user_id=4,
+        recipe_id=1)
 
-    db.session.add(demo)
-    db.session.add(tobey)
-    db.session.add(andrew)
-    db.session.add(tom)
+    db.session.add(malort)
+    db.session.add(red_bull)
+    db.session.add(hamms)
+    db.session.add(mountain_dew)
     db.session.commit()
 
 
