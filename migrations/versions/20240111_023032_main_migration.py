@@ -38,12 +38,12 @@ def upgrade():
     sa.UniqueConstraint('email'),
     sa.UniqueConstraint('username')
     )
-    op.create_table('barIngredients',
-    sa.Column('userId', sa.Integer(), nullable=False),
-    sa.Column('ingredientId', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['ingredientId'], ['ingredients.id'], ),
-    sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
-    sa.PrimaryKeyConstraint('userId', 'ingredientId')
+    op.create_table('bar_ingredients',
+    sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('ingredient_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['ingredient_id'], ['ingredients.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('user_id', 'ingredient_id')
     )
     op.create_table('recipes',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -57,14 +57,14 @@ def upgrade():
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('name')
     )
-    op.create_table('recipeIngredients',
+    op.create_table('recipe_ingredients',
     sa.Column('amount', sa.Float(precision=4, decimal_return_scale=2), nullable=False),
     sa.Column('unit', sa.Enum('bar spoon', 'cube', 'cup', 'dash', 'leaf', 'oz', 'peel', 'stick', 'tbsp', 'tsp', 'wedge', name='unittypes'), nullable=False),
-    sa.Column('recipeId', sa.Integer(), nullable=False),
-    sa.Column('ingredientId', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['ingredientId'], ['ingredients.id'], ),
-    sa.ForeignKeyConstraint(['recipeId'], ['recipes.id'], ),
-    sa.PrimaryKeyConstraint('recipeId', 'ingredientId')
+    sa.Column('recipe_id', sa.Integer(), nullable=False),
+    sa.Column('ingredient_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['ingredient_id'], ['ingredients.id'], ),
+    sa.ForeignKeyConstraint(['recipe_id'], ['recipes.id'], ),
+    sa.PrimaryKeyConstraint('recipe_id', 'ingredient_id')
     )
     op.create_table('reviews',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -88,7 +88,7 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.ForeignKeyConstraint(['recipe_id'], ['recipes.id'], ),
     )
-    op.create_table('recipeImages',
+    op.create_table('recipe_images',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('recipe_id', sa.Integer(), nullable=False),
     sa.Column('url', sa.String(length=255), nullable=False),
@@ -97,7 +97,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id'),
     sa.ForeignKeyConstraint(['recipe_id'], ['recipes.id'], ),
     )
-    op.create_table('ingredientImages',
+    op.create_table('ingredient_images',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('ingredient_id', sa.Integer(), nullable=False),
     sa.Column('url', sa.String(length=255), nullable=False),

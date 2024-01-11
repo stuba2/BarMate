@@ -4,15 +4,6 @@ from flask_login import UserMixin
 from datetime import datetime
 from .ingredient import bar_ingredients
 
-# bar_ingredients = db.Table(
-#     "barIngredients",
-#     db.Model.metadata,
-#     db.Column("userId", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), primary_key=True),
-#     db.Column("ingredientId", db.Integer, db.ForeignKey(add_prefix_for_prod("ingredients.id")), primary_key=True)
-# )
-
-# if environment == "production":
-#     bar_ingredients.schema = SCHEMA
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 

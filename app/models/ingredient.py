@@ -1,13 +1,12 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from flask_login import UserMixin
 from datetime import datetime
-from .recipe import recipe_ingredients
 
 bar_ingredients = db.Table(
-    "barIngredients",
+    "bar_ingredients",
     db.Model.metadata,
-    db.Column("userId", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), primary_key=True),
-    db.Column("ingredientId", db.Integer, db.ForeignKey(add_prefix_for_prod("ingredients.id")), primary_key=True)
+    db.Column("user_id", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), primary_key=True),
+    db.Column("ingredient_id", db.Integer, db.ForeignKey(add_prefix_for_prod("ingredients.id")), primary_key=True)
 )
 
 if environment == "production":
@@ -26,7 +25,7 @@ class Ingredient(db.Model, UserMixin):
 
     bar_ingredients_users = db.relationship("User", secondary=bar_ingredients, back_populates="users_bar_ingredients")
 
-    ingredients_recipes = db.relationship("Recipe", secondary=recipe_ingredients, back_populates="recipes_ingredients")
+    ingredients_recipe_ingredients = db.relationship("RecipeIngredient", back_populates="recipe_ingredients_ingredients")
 
     ingredient_ingredient_image = db.relationship("IngredientImage", back_populates="ingredient_image_ingredient")
 

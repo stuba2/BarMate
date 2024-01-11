@@ -3,7 +3,7 @@ from flask_login import UserMixin
 from datetime import datetime
 
 class IngredientImage(db.Model, UserMixin):
-    __tablename__ = 'ingredientImages'
+    __tablename__ = 'ingredient_images'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
