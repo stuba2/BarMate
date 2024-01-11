@@ -1,5 +1,6 @@
 from app.models import db, User, environment, SCHEMA
 from sqlalchemy.sql import text
+from datetime import datetime
 
 
 # Adds a demo user, you can add other users here if you want
@@ -8,22 +9,22 @@ def seed_users():
         username='demo',
         email='demo@aa.io',
         password='password',
-        dob='1985-01-01 10:00:00')
+        dob=datetime(1985,1,1))
     tobey = User(
         username='tobey',
         email='tobey@tobey.io',
         password='password',
-        dob='1990-01-01 10:00:00')
+        dob=datetime(1990,1,1))
     andrew = User(
         username='andrew',
         email='andrew@andrew.io',
         password='password',
-        dob='1995-01-01 10:00:00')
+        dob=datetime(1995,1,1))
     tom = User(
         username='tom',
         email='tom@tom.io',
         password='password',
-        dob='2000-01-01 10:00:00')
+        dob=datetime(2000,1,1))
 
     db.session.add(demo)
     db.session.add(tobey)

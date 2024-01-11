@@ -1,7 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from flask_login import UserMixin
 from datetime import datetime
-# from .user import bar_ingredients
 from .recipe import recipe_ingredients
 
 bar_ingredients = db.Table(

@@ -6,16 +6,16 @@ from sqlalchemy.sql import text
 # Adds a demo user, you can add other ingredient_images here if you want
 def seed_ingredient_images():
     malort_pic = IngredientImage(
-        recipe_id=1,
+        ingredient_id=1,
         url='https://live.staticflickr.com/96/260768879_7bb31839a0_c.jpg')
     red_bull_pic = IngredientImage(
-        recipe_id=2,
+        ingredient_id=2,
         url='https://live.staticflickr.com/4073/4935622208_03f0dbaf3b.jpg')
     hamms_pic = IngredientImage(
-        recipe_id=3,
+        ingredient_id=3,
         url='https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Can_of_Hamm%27s_beer.jpg/450px-Can_of_Hamm%27s_beer.jpg?20220620020535')
     mountain_dew_pic = IngredientImage(
-        recipe_id=4,
+        ingredient_id=4,
         url='https://live.staticflickr.com/3241/2684540855_a4b6734fab_z.jpg')
 
     db.session.add(malort_pic)
