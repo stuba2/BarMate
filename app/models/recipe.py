@@ -14,7 +14,6 @@ class Recipe(db.Model, UserMixin):
     description = db.Column(db.String(1000))
     instructions = db.Column(db.String(2000), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
-    recipe_ingredient_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("recipe_ingredients.id")), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

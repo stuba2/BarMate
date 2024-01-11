@@ -24,9 +24,9 @@ class RecipeIngredient(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    amount = db.Column(db.Float(precision=4, decimal_return_scale=2), nullable=False),
-    unit = db.Column(db.Enum(UnitTypes, values_callable=lambda x: [str(member.value) for member in UnitTypes]), nullable=False),
-    recipe_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('recipes.id')), primary_key=True),
+    amount = db.Column(db.Float(precision=4, decimal_return_scale=2), nullable=False)
+    unit = db.Column(db.Enum(UnitTypes, values_callable=lambda x: [str(member.value) for member in UnitTypes]), nullable=False)
+    recipe_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('recipes.id')), primary_key=True)
     ingredient_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('ingredients.id')), primary_key=True)
 
     recipe_ingredients_recipe = db.relationship("Recipe", back_populates="recipes_recipe_ingredients")
@@ -36,7 +36,8 @@ class RecipeIngredient(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
-            'name': self.name,
-            "created_at": self.created_at,
-            "updated_at": self.updated_at,
+            'amount': self.amount,
+            'unit': self.unit,
+            "recipe_id": self.recipe_id,
+            "ingredient_id": self.ingredient_id,
         }
