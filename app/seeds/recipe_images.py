@@ -3,8 +3,8 @@ from app.models.recipe_image import RecipeImage
 from sqlalchemy.sql import text
 
 
-# Adds a demo user, you can add other users here if you want
-def seed_users():
+# Adds a demo user, you can add other recipe_images here if you want
+def seed_recipe_images():
     vodka_red_bull_pic = RecipeImage(
         recipe_id=1,
         url='https://images.pexels.com/photos/16444383/pexels-photo-16444383/free-photo-of-glass-of-red-bull.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
@@ -25,16 +25,16 @@ def seed_users():
     db.session.commit()
 
 
-# Uses a raw SQL query to TRUNCATE or DELETE the users table. SQLAlchemy doesn't
+# Uses a raw SQL query to TRUNCATE or DELETE the recipe_images table. SQLAlchemy doesn't
 # have a built in function to do this. With postgres in production TRUNCATE
 # removes all the data from the table, and RESET IDENTITY resets the auto
 # incrementing primary key, CASCADE deletes any dependent entities.  With
 # sqlite3 in development you need to instead use DELETE to remove all data and
 # it will reset the primary keys for you as well.
-def undo_users():
+def undo_recipe_images():
     if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.recipe_images RESTART IDENTITY CASCADE;")
     else:
-        db.session.execute(text("DELETE FROM users"))
+        db.session.execute(text("DELETE FROM recipe_images"))
 
     db.session.commit()
