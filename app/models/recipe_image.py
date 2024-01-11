@@ -14,6 +14,8 @@ class RecipeImage(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+    recipe_image_recipe = db.relationship("Recipe", back_populates="recipe_recipe_image")
+
     def to_dict(self):
         return {
             'id': self.id,

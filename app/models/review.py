@@ -17,11 +17,9 @@ class Review(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    # fix these
-    comments_card = db.relationship("Card", back_populates="card_comments")
+    reviews_user = db.relationship("User", back_populates="user_reviews")
 
-    comments_user = db.relationship("User", back_populates="user_comments")
-    #############
+    reviews_recipe = db.relationship("Recipe", back_populates="recipe_reviews")
 
     def to_dict(self):
         return {

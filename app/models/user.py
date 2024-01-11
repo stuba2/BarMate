@@ -26,6 +26,14 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+    user_recipes = db.relationship("Recipe", back_populates='recipes_user')
+
+    user_toasts = db.relationship("Toast", back_populates='toasts_user')
+
+    user_reviews = db.relationship("Review", back_populates="reviews_user")
+
+    users_bar_ingredients = db.relationship("Ingredient", secondary=bar_ingredients, back_populates="bar_ingredients_users")
+
     @property
     def password(self):
         return self.hashed_password

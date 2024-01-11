@@ -2,6 +2,7 @@ from .db import db, environment, SCHEMA, add_prefix_for_prod
 from flask_login import UserMixin
 from datetime import datetime
 import enum
+# from .user import
 
 class UnitTypes(enum.Enum):
     BAR_SPOON = 'bar spoon'
@@ -43,10 +44,15 @@ class Recipe(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    # needs fixing
-    recipes_users = db.relationship("User", secondary=usersboards, back_populates="users_recipes")
+    recipes_user = db.relationship("User", back_populates="user_recipes")
 
-    # boards_owner = db.relationship("User", back_populates="owner_boards")
+    recipe_reviews = db.relationship("Review", back_populates="reviews_recipe")
+
+    recipe_toasts = db.relationship("Toast", back_populates="toasts_recipe")
+
+    recipes_ingredients = db.relationship("Ingredient", secondary=recipe_ingredients, back_populates="ingredients_recipes")
+
+    recipe_recipe_image = db.relationship("RecipeImage", back_populates="recipe_image_recipe")
 
     def to_dict(self):
         return {
