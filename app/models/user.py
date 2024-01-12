@@ -2,16 +2,17 @@ from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from datetime import datetime
+from .ingredient import bar_ingredients
 
-bar_ingredients = db.Table(
-    "barIngredients",
-    db.Model.metadata,
-    db.Column("userId", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), primary_key=True),
-    db.Column("ingredientId", db.Integer, db.ForeignKey(add_prefix_for_prod("ingredients.id")), primary_key=True)
-)
+# bar_ingredients = db.Table(
+#     "barIngredients",
+#     db.Model.metadata,
+#     db.Column("userId", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), primary_key=True),
+#     db.Column("ingredientId", db.Integer, db.ForeignKey(add_prefix_for_prod("ingredients.id")), primary_key=True)
+# )
 
-if environment == "production":
-    bar_ingredients.schema = SCHEMA
+# if environment == "production":
+#     bar_ingredients.schema = SCHEMA
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
@@ -25,6 +26,14 @@ class User(db.Model, UserMixin):
     dob = db.Column(db.DateTime, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    user_recipes = db.relationship("Recipe", back_populates='recipes_user')
+
+    user_toasts = db.relationship("Toast", back_populates='toasts_user')
+
+    user_reviews = db.relationship("Review", back_populates="reviews_user")
+
+    users_bar_ingredients = db.relationship("Ingredient", secondary=bar_ingredients, back_populates="bar_ingredients_users")
 
     @property
     def password(self):
