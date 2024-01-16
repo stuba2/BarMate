@@ -3,26 +3,32 @@ from flask_login import login_required, current_user
 from app.models import db, Ingredient, User, RecipeImage
 from ..forms.recipe_form import RecipeForm
 from ..forms.recipe_image_form import RecipeImageForm
+from ..models.ingredient import bar_ingredients
 
 bar_routes = Blueprint('bars', __name__)
 
 @bar_routes.route('/')
 def get_bar():
   ret = []
-  bar_ingredients = Ingredient.query.filter(Ingredient.bar_ingredients_users == current_user.id).all()
+  # bar_ingredients_wrong = Ingredient.query.filter(Ingredient.bar_ingredients_users == current_user.id).all() ######### wrong
 
-  for ingredient in bar_ingredients:
-    ret_ingredient = {
-      'id': ingredient.id,
-      'name': ingredient.name,
-      'created_at': ingredient.created_at,
-      'updated_at': ingredient.updated_at
-    }
+  bar_ingredients_correct = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == current_user.id)).all()
+  bar_ingredients_list = []
+  for ingredient in bar_ingredients_correct:
+    bar_ingredients_list.append(ingredient.to_dict())
 
-    ret.append(ret_ingredient)
+  # for ingredient in bar_ingredients_wrong:
+  #   ret_ingredient = {
+  #     'id': ingredient.id,
+  #     'name': ingredient.name,
+  #     'created_at': ingredient.created_at,
+  #     'updated_at': ingredient.updated_at
+  #   }
+
+  #   ret.append(ret_ingredient)
 
   return {
-    'Bar Ingredients': ret
+    'Bar Ingredients': bar_ingredients_list
   }
 
 ######### needs work

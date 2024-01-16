@@ -23,7 +23,7 @@ class RecipeIngredient(db.Model, UserMixin):
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-    id = db.Column(db.Integer, primary_key=True)
+    # id = db.Column(db.Integer, primary_key=True)
     amount = db.Column(db.Float(precision=4, decimal_return_scale=2), nullable=False)
     unit = db.Column(db.Enum(UnitTypes, values_callable=lambda x: [str(member.value) for member in UnitTypes]), nullable=False)
     recipe_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('recipes.id')), primary_key=True)
@@ -35,7 +35,7 @@ class RecipeIngredient(db.Model, UserMixin):
 
     def to_dict(self):
         return {
-            'id': self.id,
+            # 'id': self.id,
             'amount': self.amount,
             'unit': self.unit,
             "recipe_id": self.recipe_id,

@@ -1,10 +1,11 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import db, Recipe, User, RecipeImage, Review, Toast
+from app.models import db, Recipe, User, RecipeImage, Review, Toast, Ingredient, RecipeIngredient
 from ..forms.recipe_form import RecipeForm
 from ..forms.recipe_image_form import RecipeImageForm
 from ..forms.review_form import ReviewForm
 from ..forms.toast_form import ToastForm
+from ..models.ingredient import bar_ingredients
 
 recipe_routes = Blueprint('recipes', __name__)
 
@@ -15,6 +16,13 @@ def get_all_recipes():
 
   for recipe in all_recipes:
     owner_details = User.query.filter(User.id == recipe.user_id).first()
+
+    query = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == recipe.user_id)).all()
+    bar_ingredient = []
+    for ingredient in query:
+      bar_ingredient.append(ingredient.to_dict())
+      print('\n +++++++ : ', ingredient.to_dict())
+
     ret_recipe = {
       'id': recipe.id,
       'name': recipe.name,
@@ -24,7 +32,7 @@ def get_all_recipes():
       'owner_details': {
         'username': owner_details.username,
         'dob': owner_details.dob,
-        'bar_id': owner_details.bar_id
+        'bar_ingredients': bar_ingredient # do i need these in this route? leaning no
       },
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
@@ -200,34 +208,8 @@ def delete_a_recipe(recipe_id):
   }
 
 # reorder these
-@recipe_routes.route('/<int:recipe_id>/reviews', methods=['GET'])
-def get_recipe_reviews(recipe_id):
-  ret = []
-  all_reviews = Review.query.filter(Review.recipe_id == recipe_id).all()
-
-  for review in all_reviews:
-    reviewer_details = User.query.filter(User.id == review.user_id)
-    ret_review = {
-      'id': review.id,
-      'review_text': review.review_text,
-      'rating': review.rating,
-      'user_id': review.user_id,
-      'recipe_id': review.recipe_id,
-      'reviewer_details': {
-        'username': reviewer_details.username
-      },
-      'created_at': review.created_at,
-      'updated_at': review.updated_at
-    }
-
-    ret.append(ret_review)
-
-  return {
-    'Reviews': ret
-  }
-
 @recipe_routes.route('/<int:recipe_id>/reviews', methods=["POST"])
-@login_required
+# @login_required
 def post_review(recipe_id):
   recipe = Recipe.query.get(recipe_id)
   reviewer_details = User.query.filter(User.id == current_user.id).first()
@@ -269,7 +251,7 @@ def post_review(recipe_id):
   }
 
 @recipe_routes.route('/<int:review_id>', methods=["PUT"])
-@login_required
+# @login_required
 def edit_a_review(review_id):
   existing_review = Review.query.get(review_id)
   reviewer_details = User.query.filter(User.id == existing_review.user_id).first()
@@ -305,7 +287,7 @@ def edit_a_review(review_id):
   }
 
 @recipe_routes.route('/<int:review_id>', methods=['DELETE'])
-@login_required
+# @login_required
 def delete_a_review(review_id):
   review_to_delete = Review.query.filter(Review.id == review_id).first()
 
@@ -321,9 +303,8 @@ def delete_a_review(review_id):
     "message": "Successfully Deleted"
   }
 
-
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=['GET'])
-def get_recipe_reviews(recipe_id):
+def get_recipe_toasts(recipe_id):
   ret = []
   all_toasts = Toast.query.filter(Toast.recipe_id == recipe_id).all()
 
@@ -347,7 +328,7 @@ def get_recipe_reviews(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=["POST"])
-@login_required
+# @login_required
 def post_toast(recipe_id):
   recipe = Recipe.query.get(recipe_id)
   toaster_details = User.query.filter(User.id == current_user.id).first()
@@ -386,7 +367,7 @@ def post_toast(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=['DELETE'])
-@login_required
+# @login_required
 def delete_a_toast(recipe_id):
   toast_to_delete = Toast.query.filter(Toast.recipe_id == recipe_id).first()
 
