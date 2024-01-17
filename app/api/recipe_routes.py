@@ -17,11 +17,25 @@ def get_all_recipes():
   for recipe in all_recipes:
     owner_details = User.query.filter(User.id == recipe.user_id).first()
 
-    query = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == recipe.user_id)).all()
-    bar_ingredient = []
-    for ingredient in query:
-      bar_ingredient.append(ingredient.to_dict())
-      print('\n +++++++ : ', ingredient.to_dict())
+    # query = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == recipe.user_id)).all()
+    # bar_ingredient = []
+    # for ingredient in query:
+    #   bar_ingredient.append(ingredient.to_dict())
+    #   print('\n +++++++ : ', ingredient.to_dict())
+
+    recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
+    recipe_ingredient_list = []
+    for ingredient in recipe_ingredients:
+      ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
+      unit = ingredient.to_dict()['unit'].value
+      real_ingredient = {
+        'name': ingredient_name.name,
+        'amount': ingredient.amount,
+        'unit': unit,
+        'recipe_id': ingredient.recipe_id,
+        'ingredient_id': ingredient.ingredient_id
+      }
+      recipe_ingredient_list.append(real_ingredient)
 
     ret_recipe = {
       'id': recipe.id,
@@ -32,8 +46,9 @@ def get_all_recipes():
       'owner_details': {
         'username': owner_details.username,
         'dob': owner_details.dob,
-        'bar_ingredients': bar_ingredient # do i need these in this route? leaning no
+        # 'bar_ingredients': bar_ingredient # do i need these in this route? leaning no
       },
+      'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
     }

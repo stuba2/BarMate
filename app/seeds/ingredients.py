@@ -7,7 +7,7 @@ from app.models.ingredient import bar_ingredients
 # Adds a demo user, you can add other ingredients here if you want
 def seed_ingredients():
     malort = Ingredient( #1
-        name='Jeppson\s Malort')
+        name='Jeppson\'s Malort')
     red_bull = Ingredient( #2
         name='Red Bull')
     hamms = Ingredient( #3
