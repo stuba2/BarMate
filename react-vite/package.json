@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build --watch",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite"
   },
   "dependencies": {
     "js-cookie": "^3.0.5",
@@ -29,5 +30,6 @@
     "redux-logger": "^3.0.6",
     "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }

@@ -5,8 +5,11 @@ from datetime import datetime
 bar_ingredients = db.Table(
     "bar_ingredients",
     db.Model.metadata,
+    db.Column('id', db.Integer, primary_key=True),
     db.Column("user_id", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), primary_key=True),
-    db.Column("ingredient_id", db.Integer, db.ForeignKey(add_prefix_for_prod("ingredients.id")), primary_key=True)
+    db.Column("ingredient_id", db.Integer, db.ForeignKey(add_prefix_for_prod("ingredients.id")), primary_key=True),
+
+    # bar_ingredient_user = db.relationship('User', back_populates='user_bar_ingredient')
 )
 
 if environment == "production":

@@ -15,16 +15,31 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     dob = db.Column(db.DateTime, nullable=False)
+    # bar_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('bar_ingredients.id')), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    user_recipes = db.relationship("Recipe", back_populates='recipes_user')
+    user_recipes = db.relationship(
+        "Recipe",
+        back_populates='recipes_user')
 
-    user_toasts = db.relationship("Toast", back_populates='toasts_user')
+    user_toasts = db.relationship(
+        "Toast",
+        back_populates='toasts_user')
 
-    user_reviews = db.relationship("Review", back_populates="reviews_user")
+    user_reviews = db.relationship(
+        "Review",
+        back_populates="reviews_user")
 
-    users_bar_ingredients = db.relationship("Ingredient", secondary=bar_ingredients, back_populates="bar_ingredients_users")
+    users_bar_ingredients = db.relationship(
+        "Ingredient",
+        secondary=bar_ingredients,
+        back_populates="bar_ingredients_users")
+
+    # user_bar_ingredient = db.relationship(
+    #     "bar_ingredients",
+    #     back_populates='bar_ingredient_user',
+    #     foreign_keys=[])
 
     @property
     def password(self):
