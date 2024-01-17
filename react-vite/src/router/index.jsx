@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import AllRecipes from '../components/AllRecipes/AllRecipes';
+import OneRecipe from '../components/OneRecipe/OneRecipe';
 import Layout from './Layout';
 
 export const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: "/recipes",
         element: <AllRecipes />
+      },
+      {
+        path: "/recipes/:recipeId",
+        element: <OneRecipe />
       }
     ],
   },

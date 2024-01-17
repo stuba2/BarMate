@@ -7,16 +7,31 @@ const getRecipes = (data) => {
   }
 }
 
+const getOneRecipe = (data) => {
+  return {
+    type: GET_A_RECIPE,
+    payload: data
+  }
+}
+
 export const getRecipesThunk = () => async (dispatch) => {
-  console.log('in thunk')
   try {
-    console.log('in try')
     const response = await fetch(`/api/recipes`)
-    console.log('response: ', response)
 
     const data = await response.json()
-    console.log('data: ', data)
     dispatch(getRecipes(data))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
+export const getOneRecipeThunk = (recipeId) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/${+recipeId}`)
+
+    const data = await response.json()
+    dispatch(getOneRecipe(data))
   } catch (error) {
     console.log('error: ', error)
     return error

@@ -17,13 +17,8 @@ def get_all_recipes():
   for recipe in all_recipes:
     owner_details = User.query.filter(User.id == recipe.user_id).first()
 
-    # query = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == recipe.user_id)).all()
-    # bar_ingredient = []
-    # for ingredient in query:
-    #   bar_ingredient.append(ingredient.to_dict())
-    #   print('\n +++++++ : ', ingredient.to_dict())
-
     recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
+
     recipe_ingredient_list = []
     for ingredient in recipe_ingredients:
       ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
@@ -45,8 +40,7 @@ def get_all_recipes():
       'user_id': recipe.user_id,
       'owner_details': {
         'username': owner_details.username,
-        'dob': owner_details.dob,
-        # 'bar_ingredients': bar_ingredient # do i need these in this route? leaning no
+        'dob': owner_details.dob
       },
       'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
@@ -65,6 +59,22 @@ def get_one_recipe(recipe_id):
   recipe = Recipe.query.filter(Recipe.id == recipe_id).first()
 
   owner_details = User.query.filter(User.id == recipe.user_id).first()
+
+  recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
+
+  recipe_ingredient_list = []
+  for ingredient in recipe_ingredients:
+    ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
+    unit = ingredient.to_dict()['unit'].value
+    real_ingredient = {
+      'name': ingredient_name.name,
+      'amount': ingredient.amount,
+      'unit': unit,
+      'recipe_id': ingredient.recipe_id,
+      'ingredient_id': ingredient.ingredient_id
+    }
+    recipe_ingredient_list.append(real_ingredient)
+
   ret_recipe = {
     'id': recipe.id,
     'name': recipe.name,
@@ -73,9 +83,9 @@ def get_one_recipe(recipe_id):
     'user_id': recipe.user_id,
     'owner_details': {
       'username': owner_details.username,
-      'dob': owner_details.dob,
-      'bar_id': owner_details.bar_id
+      'dob': owner_details.dob
     },
+    'recipe_ingredients': recipe_ingredient_list,
     'created_at': recipe.created_at,
     'updated_at': recipe.updated_at
   }
