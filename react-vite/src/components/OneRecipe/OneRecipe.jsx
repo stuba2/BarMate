@@ -10,14 +10,10 @@ const OneRecipe = () => {
   const { recipeId } = useParams()
   const recipe = recipes[+recipeId]
 
-  console.log('recipe: ', recipe)
 
   useEffect(() => {
     dispatch(recipeActions.getRecipesThunk())
   }, [dispatch])
-
-  let recipeArr = Object.values(recipe)
-
 
   if (!recipe) {
     return (

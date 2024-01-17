@@ -12,7 +12,9 @@ def authenticate():
     """
     Authenticates a user.
     """
+    print('\n ~~~~~~~~~')
     if current_user.is_authenticated:
+        print('current_user: ', current_user.to_dict())
         return current_user.to_dict()
     return {'errors': {'message': 'Unauthorized'}}, 401
 
@@ -30,6 +32,11 @@ def login():
         # Add the user to the session, we are logged in!
         user = User.query.filter(User.email == form.data['email']).first()
         login_user(user)
+        print('\n ---------: ', dir(current_user))
+        print('\n ---------: ', current_user.is_authenticated)
+        print('\n ---------: ', current_user.get_id())
+        print('\n ---------: ', user)
+        print('\n ---------: ', user.to_dict())
         return user.to_dict()
     return form.errors, 401
 
