@@ -9,7 +9,7 @@ const getBar = (data) => {
 
 export const getBarThunk = () => async (dispatch) => {
   try {
-    const response = await fetch(`/api/bars`)
+    const response = await fetch(`/api/bars/`)
 
     const data = await response.json()
     dispatch(getBar(data))

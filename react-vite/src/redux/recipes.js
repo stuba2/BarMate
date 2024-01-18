@@ -16,7 +16,7 @@ const getOneRecipe = (data) => {
 
 export const getRecipesThunk = () => async (dispatch) => {
   try {
-    const response = await fetch(`/api/recipes`)
+    const response = await fetch(`/api/recipes/`)
 
     const data = await response.json()
     dispatch(getRecipes(data))

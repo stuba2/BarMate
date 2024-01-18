@@ -3,8 +3,9 @@ import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import AllRecipes from '../components/AllRecipes/AllRecipes';
 import OneRecipe from '../components/OneRecipe/OneRecipe';
-import MyBar from '../components/Bar/Bar';
+import MyBar from '../components/MyBar/MyBar';
 import Layout from './Layout';
+import AllIngredients from '../components/AllIngredients/AllIngredients';
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "/myBar",
         element: <MyBar />
+      },
+      {
+        path: "/ingredients",
+        element: <AllIngredients />
       },
     ],
   },
