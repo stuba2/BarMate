@@ -33059,9 +33059,6 @@ const condenser = () => {
 
   let comboArrofDrinkObj = formatter()
 
-  let aDrinksArr = Object.values(yCocktails)
-  let smallArr = aDrinksArr[0]
-
   comboArrofDrinkObj.map((drinkObj) => {
     // remove nulls
     let drinkObjArr = Object.entries(drinkObj)
@@ -33087,13 +33084,11 @@ const condenser = () => {
 }
 
 
-const turnApiToSeeds = () => {
-  let arrofIngredients = []
+const turnApiToRecipeSeeds = () => {
+  let arrOfRecipeObjs = []
   let arrOfDrinkObjs = condenser()
-  let result = arrOfDrinkObjs.filter((drinkObj) => Number(drinkObj.idDrink) < 11000)
 
   arrOfDrinkObjs.map((drinkObj) => {
-    // recipe columns
     drinkObj.id = Number(drinkObj['idDrink'])
     delete drinkObj['idDrink']
     drinkObj.name = drinkObj['strDrink']
@@ -33101,6 +33096,155 @@ const turnApiToSeeds = () => {
     drinkObj.instructions = drinkObj['strInstructions']
     delete drinkObj['strInstructions']
 
+    let randNum = Math.floor(Math.random()*4)+1
+
+    let newRecipeObj = {
+      id: drinkObj.id, // ask will about this, if it will actually take
+      name: drinkObj.name,
+      description: null,
+      instructions: drinkObj.instructions,
+      user_id: randNum
+    }
+    // let variableName = drinkObj.name.split(' ').join('').split('.').join('').split('#').join('').split("'").join('').split('(').join('').split(')').join('').split('-').join('').split("’").join('').split('é').join('').split('*').join('').split('ó').join('').split('&').join('')
+    // let seed = `${variableName} = Recipe(
+    //   name='${drinkObj.name}',
+    //   description=null,
+    //   instructions='${drinkObj.instructions}',
+    //   user_id=${randNum}
+    // )`
+    // console.log(seed)
+    // let dbSession = `db.session.add(${variableName})`
+    // console.log(dbSession)
+
+    arrOfRecipeObjs.push(newRecipeObj)
+  })
+  return arrOfRecipeObjs
+
+  // console.dir(arrOfRecipeObjs, {'maxArrayLength': null})
+
+}
+
+const turnApiToIngredientSeeds = () => {
+  let arrOfIngredientObjs = []
+  let arrOfDrinkObjs = condenser()
+
+  arrOfDrinkObjs.map((drinkObj) => {
+    // setting up ingredient obj
+    if (drinkObj['strIngredient1']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient1']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient2']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient2']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient3']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient3']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient4']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient4']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient5']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient5']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient6']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient6']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient7']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient7']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient8']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient8']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient9']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient9']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient10']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient10']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient11']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient11']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+    if (drinkObj['strIngredient12']) {
+      let newIngredientObj = {
+        name: drinkObj['strIngredient12']
+      }
+      arrOfIngredientObjs.push(newIngredientObj)
+    }
+  })
+
+  // removing duplicate values
+  let vals = []
+  for (let obj of arrOfIngredientObjs) {
+    vals.push(obj['name'].toLowerCase())
+  }
+  let valsSet = new Set(vals)
+
+  let prunedArrOfIngredientNames = [...valsSet]
+
+  let arrOfIngredientSeedObjs = []
+  for (let ingredientName of prunedArrOfIngredientNames) {
+    let ingredientObj = {
+      name: ingredientName
+    }
+    arrOfIngredientSeedObjs.push(ingredientObj)
+  }
+  // console.log(arrOfIngredientSeedObjs)
+  // console.dir(arrOfIngredientSeedObjs, {'maxArrayLength': null})
+
+  // for (let ingObj of arrOfIngredientSeedObjs) {
+  //   let variableName = ingObj.name.split(' ').join('').split('-').join('')
+  //   // console.log(variableName)
+
+  //   let seed = `${variableName} = Ingredient(
+  //     name='${ingObj.name}')`
+  //   // console.log(seed)
+
+  //   let dbSession = `db.session.add(${variableName})`
+  //   console.log(dbSession)
+  // }
+
+  return arrOfIngredientSeedObjs
+}
+
+
+const turnApiToRecipeIngredientSeeds = () => {
+  let arrOfRecipeIngredientSeeds = []
+  let variableNamesArr = []
+  let arrOfDrinkObjs = condenser()
+
+  arrOfDrinkObjs.map((drinkObj) => {
     // ingredient columns
     let ingredientObj1 = {}
     let ingredientObj2 = {}
@@ -33115,28 +33259,396 @@ const turnApiToSeeds = () => {
     let ingredientObj11 = {}
     let ingredientObj12 = {}
 
-    if (drinkObj['strIngredient1']) {
-      // ingredientObj1.name = drinkObj['strIngredient1']
-      // ingredientObj1.recipeName = drinkObj['name']
-      // ingredientObj1.recipeAmount =
+    let ingredientNames = []
+    let ingredientSeeds = []
+
+    // setting up recipe_ingredient obj
+    if (drinkObj['strIngredient1'] && drinkObj['strMeasure1']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient1'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure1'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient1']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient2'] && drinkObj['strMeasure2']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient2'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure2'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient2']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient3'] && drinkObj['strMeasure3']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient3'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure3'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient3']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient4'] && drinkObj['strMeasure4']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient4'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure4'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient4']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient5'] && drinkObj['strMeasure5']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient5'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure5'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient5']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient6'] && drinkObj['strMeasure6']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient6'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure6'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient6']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient7'] && drinkObj['strMeasure7']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient7'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure7'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient7']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient8'] && drinkObj['strMeasure8']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient8'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure8'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient8']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient9'] && drinkObj['strMeasure9']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient9'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure9'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient9']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient10'] && drinkObj['strMeasure10']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient10'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure10'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient10']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient11'] && drinkObj['strMeasure11']) {
+      //figure out variable name for ingredient seed
+        let variableName = drinkObj['strIngredient11'].split(' ').join('').split('-').join('').toLowerCase()
+        variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure11'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient11']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
+    }
+    if (drinkObj['strIngredient12'] && drinkObj['strMeasure12']) {
+      //figure out variable name for ingredient seed
+      let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      variableNamesArr.push(variableName)
+
+
+      // find amount and unit for seed info
+      let splitMeasure = drinkObj['strMeasure12'].split(' ')
+      let lastSplit = splitMeasure[splitMeasure.length - 1]
+      if (lastSplit === '') {
+        splitMeasure.pop()
+      }
+      let amount = +splitMeasure.shift()
+      let unit = splitMeasure.join(' ')
+
+      // set up seed declaration
+      let recipeName = drinkObj['strDrink']
+      let ingredientName = drinkObj['strIngredient12']
+
+      let seed = `${variableName} = RecipeIngredient(
+        amount=${amount},
+        unit='${unit.toLowerCase()}',
+        recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      )`
+
+      // push it to the arr
+      arrOfRecipeIngredientSeeds.push(seed)
     }
 
-    if (!drinkObj['strMeasure1']) {
-      // let amount1 = drinkObj['strMeasure1'].split(' ')[0]
-      // let unit1 = drinkObj['strMeasure1'].split(' ')[1]
 
-      // console.log(amount1, unit1)
-      console.log(drinkObj)
+    // if (!drinkObj['strMeasure1']) {
+    //   console.log(drinkObj['strDrink'])
 
-    }
+      //figure out variable name for ingredient seed
+      // let variableName = drinkObj['strIngredient1'].split(' ').join('').split('-').join('').toLowerCase()
+
+      // // find amount and unit for seed info
+      // let splitMeasure = drinkObj['strMeasure1'].split(' ')
+      // let lastSplit = splitMeasure[splitMeasure.length - 1]
+      // if (lastSplit === '') {
+      //   splitMeasure.pop()
+      // }
+      // let amount = +splitMeasure.shift()
+      // let unit = splitMeasure.join(' ')
+
+      // let seed = `${variableName} = RecipeIngredient(
+      //   amount=${amount},
+      //   unit=${unit},
+      //   recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+      //   ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
+      // // )`
+
+    // }
 
 
-
-    // console.log(drinkObj)
   })
 
-  // let res = arrOfDrinkObjs.filter((drinkObj) => drinkObj['strIngredient12'])
-  // console.log(res[0]['strMeasure1'].split(' '))
+  for (let seed of arrOfRecipeIngredientSeeds) {
+    console.log(seed)
+  }
+  // for (let add of variableNamesArr) {
+  //   console.log(`db.session.add(${add})`)
+  // }
+  // console.log(arrOfRecipeIngredientSeeds)
 }
 
-turnApiToSeeds()
+// turnApiToRecipeSeeds()
+// turnApiToIngredientSeeds()
+turnApiToRecipeIngredientSeeds()
