@@ -9401,12 +9401,12 @@ def seed_recipe_ingredients():
             recipe_id=Recipe.query.filter(Recipe.name == 'Mango Mojito').first().id,
             ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
-    ir1552 = RecipeIngredient(
-            amount=1,
-            unit='garnish',
-            recipe_id=Recipe.query.filter(Recipe.name == 'Mango Mojito').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Mango').first().id
-        )
+    # ir1552 = RecipeIngredient(
+    #         amount=1,
+    #         unit='garnish',
+    #         recipe_id=Recipe.query.filter(Recipe.name == 'Mango Mojito').first().id,
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Mango').first().id
+    #     )
     ir1553 = RecipeIngredient(
             amount=0.5,
             unit='handful',
@@ -10703,12 +10703,12 @@ def seed_recipe_ingredients():
             recipe_id=Recipe.query.filter(Recipe.name == 'Planter\'s Punch').first().id,
             ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
-    ir1769 = RecipeIngredient(
-            amount=3,
-            unit='cl',
-            recipe_id=Recipe.query.filter(Recipe.name == 'Planter\'s Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Juice').first().id
-        )
+    # ir1769 = RecipeIngredient(
+    #         amount=3,
+    #         unit='cl',
+    #         recipe_id=Recipe.query.filter(Recipe.name == 'Planter\'s Punch').first().id,
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Juice').first().id
+    #     )
     ir1770 = RecipeIngredient(
             amount=3.5,
             unit='cl',
@@ -12635,18 +12635,18 @@ def seed_recipe_ingredients():
             recipe_id=Recipe.query.filter(Recipe.name == 'Smashed Watermelon Margarita').first().id,
             ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tequila').first().id
         )
-    ir2091 = RecipeIngredient(
-            amount=1,
-            unit='top off',
-            recipe_id=Recipe.query.filter(Recipe.name == 'Smashed Watermelon Margarita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Watermelon').first().id
-        )
-    ir2092 = RecipeIngredient(
-            amount=1,
-            unit='top off',
-            recipe_id=Recipe.query.filter(Recipe.name == 'Smashed Watermelon Margarita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Mint').first().id
-        )
+    # ir2091 = RecipeIngredient(
+    #         amount=1,
+    #         unit='top off',
+    #         recipe_id=Recipe.query.filter(Recipe.name == 'Smashed Watermelon Margarita').first().id,
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Watermelon').first().id
+    #     )
+    # ir2092 = RecipeIngredient(
+    #         amount=1,
+    #         unit='top off',
+    #         recipe_id=Recipe.query.filter(Recipe.name == 'Smashed Watermelon Margarita').first().id,
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Mint').first().id
+    #     )
     ir2093 = RecipeIngredient(
             amount=1.5,
             unit='oz',
@@ -12935,12 +12935,12 @@ def seed_recipe_ingredients():
             recipe_id=Recipe.query.filter(Recipe.name == 'Tequila Sour').first().id,
             ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
         )
-    ir2141 = RecipeIngredient(
-            amount=0.5,
-            unit='slice',
-            recipe_id=Recipe.query.filter(Recipe.name == 'Tequila Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
-        )
+    # ir2141 = RecipeIngredient(
+    #         amount=0.5,
+    #         unit='slice',
+    #         recipe_id=Recipe.query.filter(Recipe.name == 'Tequila Sour').first().id,
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
+    #     )
     ir2142 = RecipeIngredient(
             amount=1,
             unit='garnish',
@@ -13739,12 +13739,12 @@ def seed_recipe_ingredients():
             recipe_id=Recipe.query.filter(Recipe.name == 'Whiskey Sour').first().id,
             ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry').first().id
         )
-    ir2275 = RecipeIngredient(
-            amount=0.5,
-            unit='slice',
-            recipe_id=Recipe.query.filter(Recipe.name == 'Whiskey Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
-        )
+    # ir2275 = RecipeIngredient(
+    #         amount=0.5,
+    #         unit='slice',
+    #         recipe_id=Recipe.query.filter(Recipe.name == 'Whiskey Sour').first().id,
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
+    #     )
     ir2276 = RecipeIngredient(
             amount=2,
             unit='oz',
@@ -15667,7 +15667,7 @@ def seed_recipe_ingredients():
     db.session.add(ir1549)
     db.session.add(ir1550)
     db.session.add(ir1551)
-    db.session.add(ir1552)
+    # db.session.add(ir1552)
     db.session.add(ir1553)
     db.session.add(ir1554)
     db.session.add(ir1555)
@@ -15884,7 +15884,7 @@ def seed_recipe_ingredients():
     db.session.add(ir1766)
     db.session.add(ir1767)
     db.session.add(ir1768)
-    db.session.add(ir1769)
+    # db.session.add(ir1769)
     db.session.add(ir1770)
     db.session.add(ir1771)
     db.session.add(ir1772)
@@ -16206,8 +16206,8 @@ def seed_recipe_ingredients():
     db.session.add(ir2088)
     db.session.add(ir2089)
     db.session.add(ir2090)
-    db.session.add(ir2091)
-    db.session.add(ir2092)
+    # db.session.add(ir2091)
+    # db.session.add(ir2092)
     db.session.add(ir2093)
     db.session.add(ir2094)
     db.session.add(ir2095)
@@ -16256,7 +16256,7 @@ def seed_recipe_ingredients():
     db.session.add(ir2138)
     db.session.add(ir2139)
     db.session.add(ir2140)
-    db.session.add(ir2141)
+    # db.session.add(ir2141)
     db.session.add(ir2142)
     db.session.add(ir2143)
     db.session.add(ir2144)
@@ -16390,7 +16390,7 @@ def seed_recipe_ingredients():
     db.session.add(ir2272)
     db.session.add(ir2273)
     db.session.add(ir2274)
-    db.session.add(ir2275)
+    # db.session.add(ir2275)
     db.session.add(ir2276)
     db.session.add(ir2277)
     db.session.add(ir2278)
