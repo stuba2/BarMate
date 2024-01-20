@@ -73,11 +73,11 @@ class RecipeIngredient(db.Model, UserMixin):
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-    # id = db.Column(db.Integer, primary_key=True)
-    amount = db.Column(db.Float(precision=4, decimal_return_scale=2), nullable=False)
-    unit = db.Column(db.Enum(UnitTypes, values_callable=lambda x: [str(member.value) for member in UnitTypes]), nullable=False)
-    recipe_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('recipes.id')), primary_key=True)
-    ingredient_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('ingredients.id')), primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    amount = db.Column(db.Float(precision=4, decimal_return_scale=2), nullable=False, unique=False)
+    unit = db.Column(db.Enum(UnitTypes, values_callable=lambda x: [str(member.value) for member in UnitTypes]), nullable=False, unique=False)
+    recipe_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('recipes.id')))
+    ingredient_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('ingredients.id')))
 
     recipe_ingredients_recipe = db.relationship("Recipe", back_populates="recipes_recipe_ingredients")
 

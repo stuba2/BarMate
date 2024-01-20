@@ -75,1033 +75,1145 @@ def seed_ingredients():
     db.session.add(tequilaa)
     db.session.add(orange_juicee)
 
-    gin = Ingredient(
-        name='gin')
-    grandmarnier = Ingredient(
-        name='grand marnier')
-    lemonjuice = Ingredient(
-        name='lemon juice')
-    grenadine = Ingredient(
-        name='grenadine')
-    amaretto = Ingredient(
-        name='amaretto')
-    baileysirishcream = Ingredient(
-        name='baileys irish cream')
-    cognac = Ingredient(
-        name='cognac')
-    heavycream = Ingredient(
-        name='heavy cream')
-    milk = Ingredient(
-        name='milk')
-    eggwhite = Ingredient(
-        name='egg white')
+
+    GrandMarnier = Ingredient(
+        name='Grand Marnier')
+    Grenadine = Ingredient(
+        name='Grenadine')
+    Amaretto = Ingredient(
+        name='Amaretto')
+    Baileysirishcream = Ingredient(
+        name='Baileys irish cream')
+    Cognac = Ingredient(
+        name='Cognac')
+    Heavycream = Ingredient(
+        name='Heavy cream')
+    Milk = Ingredient(
+        name='Milk')
+    EggWhite = Ingredient(
+        name='Egg White')
     proofrum = Ingredient(
         name='151 proof rum')
-    wildturkey = Ingredient(
-        name='wild turkey')
-    darkrum = Ingredient(
-        name='dark rum')
-    absolutvodka = Ingredient(
-        name='absolut vodka')
-    tonicwater = Ingredient(
-        name='tonic water')
-    applejack = Ingredient(
-        name='applejack')
-    grapefruitjuice = Ingredient(
-        name='grapefruit juice')
-    strawberryschnapps = Ingredient(
-        name='strawberry schnapps')
-    orangejuice = Ingredient(
-        name='orange juice')
-    cranberryjuice = Ingredient(
-        name='cranberry juice')
-    clubsoda = Ingredient(
-        name='club soda')
-    applejuice = Ingredient(
-        name='apple juice')
-    maraschinocherry = Ingredient(
-        name='maraschino cherry')
-    vodka = Ingredient(
-        name='vodka')
-    pisangambon = Ingredient(
-        name='pisang ambon')
-    lemonade = Ingredient(
-        name='lemonade')
-    peachnectar = Ingredient(
-        name='peach nectar')
-    vermouth = Ingredient(
-        name='vermouth')
-    kahlua = Ingredient(
-        name='kahlua')
-    lightrum = Ingredient(
-        name='light rum')
-    triplesec = Ingredient(
-        name='triple sec')
-    limejuice = Ingredient(
-        name='lime juice')
-    sugar = Ingredient(
-        name='sugar')
-    mint = Ingredient(
-        name='mint')
-    scotch = Ingredient(
-        name='scotch')
-    sweetvermouth = Ingredient(
-        name='sweet vermouth')
-    dryvermouth = Ingredient(
-        name='dry vermouth')
-    orangebitters = Ingredient(
-        name='orange bitters')
+    WildTurkey = Ingredient(
+        name='Wild Turkey')
+    Darkrum = Ingredient(
+        name='Dark rum')
+    Lemonjuice = Ingredient(
+        name='Lemon juice')
+    AbsolutVodka = Ingredient(
+        name='Absolut Vodka')
+    Tonicwater = Ingredient(
+        name='Tonic water')
+    Applejack = Ingredient(
+        name='Applejack')
+    Grapefruitjuice = Ingredient(
+        name='Grapefruit juice')
+    Strawberryschnapps = Ingredient(
+        name='Strawberry schnapps')
+    Cranberryjuice = Ingredient(
+        name='Cranberry juice')
+    Clubsoda = Ingredient(
+        name='Club soda')
+    Applejuice = Ingredient(
+        name='Apple juice')
+    Maraschinocherry = Ingredient(
+        name='Maraschino cherry')
+    PisangAmbon = Ingredient(
+        name='Pisang Ambon')
+    Lemonade = Ingredient(
+        name='Lemonade')
+    Peachnectar = Ingredient(
+        name='Peach nectar')
+    Vermouth = Ingredient(
+        name='Vermouth')
+    Kahlua = Ingredient(
+        name='Kahlua')
+    Eggwhite = Ingredient(
+        name='Egg white')
+    Lightrum = Ingredient(
+        name='Light rum')
+    Triplesec = Ingredient(
+        name='Triple sec')
+    Sugar = Ingredient(
+        name='Sugar')
+    Scotch = Ingredient(
+        name='Scotch')
+    SweetVermouth = Ingredient(
+        name='Sweet Vermouth')
+    DryVermouth = Ingredient(
+        name='Dry Vermouth')
+    Orangebitters = Ingredient(
+        name='Orange bitters')
+    lemonjuice = Ingredient(
+        name='lemon juice')
     maraschinoliqueur = Ingredient(
         name='maraschino liqueur')
-    rum = Ingredient(
-        name='rum')
-    tequila = Ingredient(
-        name='tequila')
-    fruit = Ingredient(
-        name='fruit')
-    ice = Ingredient(
-        name='ice')
-    salt = Ingredient(
-        name='salt')
-    fruitjuice = Ingredient(
-        name='fruit juice')
-    sodawater = Ingredient(
-        name='soda water')
-    cremedebanane = Ingredient(
-        name='creme de banane')
-    pineapplejuice = Ingredient(
-        name='pineapple juice')
-    frangelico = Ingredient(
-        name='frangelico')
-    coffee = Ingredient(
-        name='coffee')
-    cream = Ingredient(
-        name='cream')
-    cremedecacao = Ingredient(
-        name='creme de cacao')
-    lightcream = Ingredient(
-        name='light cream')
-    nutmeg = Ingredient(
-        name='nutmeg')
-    blendedwhiskey = Ingredient(
-        name='blended whiskey')
-    bourbon = Ingredient(
-        name='bourbon')
-    blackberrybrandy = Ingredient(
-        name='blackberry brandy')
-    lemonpeel = Ingredient(
-        name='lemon peel')
-    campari = Ingredient(
-        name='campari')
-    orangepeel = Ingredient(
-        name='orange peel')
-    jackdaniels = Ingredient(
-        name='jack daniels')
-    midorimelonliqueur = Ingredient(
-        name='midori melon liqueur')
-    sourmix = Ingredient(
-        name='sour mix')
-    bitters = Ingredient(
-        name='bitters')
-    crownroyal = Ingredient(
-        name='crown royal')
-    cremedecassis = Ingredient(
-        name='creme de cassis')
-    freshlemonjuice = Ingredient(
-        name='fresh lemon juice')
-    peppermintschnapps = Ingredient(
-        name='peppermint schnapps')
-    apricotbrandy = Ingredient(
-        name='apricot brandy')
-    applebrandy = Ingredient(
-        name='apple brandy')
-    hpnotiq = Ingredient(
-        name='hpnotiq')
-    bananaliqueur = Ingredient(
-        name='banana liqueur')
-    wine = Ingredient(
-        name='wine')
-    benedictine = Ingredient(
-        name='benedictine')
-    lime = Ingredient(
-        name='lime')
-    anise = Ingredient(
-        name='anise')
-    licoriceroot = Ingredient(
-        name='licorice root')
-    wormwood = Ingredient(
-        name='wormwood')
-    absolutkurant = Ingredient(
-        name='absolut kurant')
-    sprite = Ingredient(
-        name='sprite')
-    grapesoda = Ingredient(
-        name='grape soda')
-    candy = Ingredient(
-        name='candy')
-    gingerale = Ingredient(
-        name='ginger ale')
-    water = Ingredient(
-        name='water')
-    tea = Ingredient(
-        name='tea')
-    whippedcream = Ingredient(
-        name='whipped cream')
-    applecider = Ingredient(
-        name='apple cider')
-    carrot = Ingredient(
-        name='carrot')
-    orange = Ingredient(
-        name='orange')
-    limejuicecordial = Ingredient(
-        name='lime juice cordial')
-    southerncomfort = Ingredient(
-        name='southern comfort')
-    passionfruitsyrup = Ingredient(
-        name='passion fruit syrup')
-    sweetandsour = Ingredient(
-        name='sweet and sour')
-    angosturabitters = Ingredient(
-        name='angostura bitters')
-    whitewine = Ingredient(
-        name='white wine')
-    aperol = Ingredient(
-        name='aperol')
-    prosecco = Ingredient(
-        name='prosecco')
-    up = Ingredient(
-        name='7-up')
-    appleschnapps = Ingredient(
-        name='apple schnapps')
-    champagne = Ingredient(
-        name='champagne')
-    greencremedementhe = Ingredient(
-        name='green creme de menthe')
-    bluecuracao = Ingredient(
-        name='blue curacao')
-    cherry = Ingredient(
-        name='cherry')
-    lemonvodka = Ingredient(
-        name='lemon vodka')
-    chocolateicecream = Ingredient(
-        name='chocolate ice-cream')
-    brandy = Ingredient(
-        name='brandy')
-    ginger = Ingredient(
-        name='ginger')
-    sherry = Ingredient(
-        name='sherry')
-    sloegin = Ingredient(
-        name='sloe gin')
-    yellowchartreuse = Ingredient(
-        name='yellow chartreuse')
-    kummel = Ingredient(
-        name='kummel')
-    cider = Ingredient(
-        name='cider')
-    maliburum = Ingredient(
-        name='malibu rum')
-    goldtequila = Ingredient(
-        name='gold tequila')
-    creamofcoconut = Ingredient(
-        name='cream of coconut')
-    pineapple = Ingredient(
-        name='pineapple')
-    ryewhiskey = Ingredient(
-        name='rye whiskey')
-    redwine = Ingredient(
-        name='red wine')
-    apricot = Ingredient(
-        name='apricot')
-    almondflavoring = Ingredient(
-        name='almond flavoring')
-    grainalcohol = Ingredient(
-        name='grain alcohol')
-    foodcoloring = Ingredient(
-        name='food coloring')
-    glycerine = Ingredient(
-        name='glycerine')
-    whitecremedementhe = Ingredient(
-        name='white creme de menthe')
-    angelicaroot = Ingredient(
-        name='angelica root')
-    almond = Ingredient(
-        name='almond')
-    allspice = Ingredient(
-        name='allspice')
-    cinnamon = Ingredient(
-        name='cinnamon')
-    coriander = Ingredient(
-        name='coriander')
-    marjoramleaves = Ingredient(
-        name='marjoram leaves')
-    maui = Ingredient(
-        name='maui')
-    mountaindew = Ingredient(
-        name='mountain dew')
-    icedtea = Ingredient(
-        name='iced tea')
-    gingerbeer = Ingredient(
-        name='ginger beer')
-    absolutcitron = Ingredient(
-        name='absolut citron')
-    bitterlemon = Ingredient(
-        name='bitter lemon')
-    peachschnapps = Ingredient(
-        name='peach schnapps')
-    coconutliqueur = Ingredient(
-        name='coconut liqueur')
-    guavajuice = Ingredient(
-        name='guava juice')
-    brownsugar = Ingredient(
-        name='brown sugar')
-    cloves = Ingredient(
-        name='cloves')
-    jägermeister = Ingredient(
-        name='jägermeister')
-    goldschlager = Ingredient(
-        name='goldschlager')
-    coconutrum = Ingredient(
-        name='coconut rum')
-    lemon = Ingredient(
-        name='lemon')
-    berries = Ingredient(
-        name='berries')
-    apple = Ingredient(
-        name='apple')
-    freshlimejuice = Ingredient(
-        name='fresh lime juice')
-    sugarsyrup = Ingredient(
-        name='sugar syrup')
-    kirschwasser = Ingredient(
-        name='kirschwasser')
-    strawberryliqueur = Ingredient(
-        name='strawberry liqueur')
-    strawberries = Ingredient(
-        name='strawberries')
-    schweppesrusschian = Ingredient(
-        name='schweppes russchian')
-    añejorum = Ingredient(
-        name='añejo rum')
-    darkcremedecacao = Ingredient(
-        name='dark creme de cacao')
-    hotchocolate = Ingredient(
-        name='hot chocolate')
-    sambuca = Ingredient(
-        name='sambuca')
-    greenchartreuse = Ingredient(
-        name='green chartreuse')
-    irishcream = Ingredient(
-        name='irish cream')
-    cremedemure = Ingredient(
-        name='creme de mure')
-    passionfruitjuice = Ingredient(
-        name='passion fruit juice')
-    galliano = Ingredient(
-        name='galliano')
-    cherryheering = Ingredient(
-        name='cherry heering')
-    corona = Ingredient(
-        name='corona')
-    bacardilimon = Ingredient(
-        name='bacardi limon')
-    everclear = Ingredient(
-        name='everclear')
-    surge = Ingredient(
-        name='surge')
-    vanillaicecream = Ingredient(
-        name='vanilla ice-cream')
-    powderedsugar = Ingredient(
-        name='powdered sugar')
-    erincream = Ingredient(
-        name='erin cream')
-    advocaat = Ingredient(
-        name='advocaat')
-    tomatojuice = Ingredient(
-        name='tomato juice')
-    worcestershiresauce = Ingredient(
-        name='worcestershire sauce')
-    tabascosauce = Ingredient(
-        name='tabasco sauce')
-    ale = Ingredient(
-        name='ale')
-    guinnessstout = Ingredient(
-        name='guinness stout')
-    goldrum = Ingredient(
-        name='gold rum')
-    egg = Ingredient(
-        name='egg')
-    butterscotchschnapps = Ingredient(
-        name='butterscotch schnapps')
-    lemonlimesoda = Ingredient(
-        name='lemon-lime soda')
-    raisins = Ingredient(
-        name='raisins')
-    blueberries = Ingredient(
-        name='blueberries')
-    koolaid = Ingredient(
-        name='kool-aid')
-    celerysalt = Ingredient(
-        name='celery salt')
-    godivaliqueur = Ingredient(
-        name='godiva liqueur')
-    tiamaria = Ingredient(
-        name='tia maria')
-    chambordraspberryliqueur = Ingredient(
-        name='chambord raspberry liqueur')
-    peachtreeschnapps = Ingredient(
-        name='peachtree schnapps')
-    coffeeliqueur = Ingredient(
-        name='coffee liqueur')
-    passoa = Ingredient(
-        name='passoa')
-    banana = Ingredient(
-        name='banana')
-    rootbeer = Ingredient(
-        name='root beer')
-    carbonatedwater = Ingredient(
-        name='carbonated water')
-    raspberryvodka = Ingredient(
-        name='raspberry vodka')
-    chocolatesyrup = Ingredient(
-        name='chocolate syrup')
-    cherrybrandy = Ingredient(
-        name='cherry brandy')
-    yoghurt = Ingredient(
-        name='yoghurt')
-    honey = Ingredient(
-        name='honey')
+    Rum = Ingredient(
+        name='Rum')
+    Fruit = Ingredient(
+        name='Fruit')
+    Ice = Ingredient(
+        name='Ice')
+    Salt = Ingredient(
+        name='Salt')
+    Fruitjuice = Ingredient(
+        name='Fruit juice')
+    SodaWater = Ingredient(
+        name='Soda Water')
+    CremedeBanane = Ingredient(
+        name='Creme de Banane')
+    Pineapplejuice = Ingredient(
+        name='Pineapple juice')
+    Frangelico = Ingredient(
+        name='Frangelico')
+    Coffee = Ingredient(
+        name='Coffee')
+    Cream = Ingredient(
+        name='Cream')
+    CremedeCacao = Ingredient(
+        name='Creme de Cacao')
+    Lightcream = Ingredient(
+        name='Light cream')
+    Nutmeg = Ingredient(
+        name='Nutmeg')
+    Blendedwhiskey = Ingredient(
+        name='Blended whiskey')
+    Blackberrybrandy = Ingredient(
+        name='Blackberry brandy')
+    Lemonpeel = Ingredient(
+        name='Lemon peel')
+    Campari = Ingredient(
+        name='Campari')
+    Orangepeel = Ingredient(
+        name='Orange peel')
+    JackDaniels = Ingredient(
+        name='Jack Daniels')
+    Midorimelonliqueur = Ingredient(
+        name='Midori melon liqueur')
+    Sourmix = Ingredient(
+        name='Sour mix')
+    Bitters = Ingredient(
+        name='Bitters')
+    Sodawater = Ingredient(
+        name='Soda water')
+    CrownRoyal = Ingredient(
+        name='Crown Royal')
+    CremedeCassis = Ingredient(
+        name='Creme de Cassis')
+    FreshLemonJuice = Ingredient(
+        name='Fresh Lemon Juice')
+    Peppermintschnapps = Ingredient(
+        name='Peppermint schnapps')
+    Apricotbrandy = Ingredient(
+        name='Apricot brandy')
+    Applebrandy = Ingredient(
+        name='Apple brandy')
+    Hpnotiq = Ingredient(
+        name='Hpnotiq')
+    PineappleJuice = Ingredient(
+        name='Pineapple Juice')
+    BananaLiqueur = Ingredient(
+        name='Banana Liqueur')
+    Wine = Ingredient(
+        name='Wine')
+    Benedictine = Ingredient(
+        name='Benedictine')
+    Lime = Ingredient(
+        name='Lime')
+    Anise = Ingredient(
+        name='Anise')
+    Licoriceroot = Ingredient(
+        name='Licorice root')
+    Wormwood = Ingredient(
+        name='Wormwood')
+    AbsolutKurant = Ingredient(
+        name='Absolut Kurant')
+    Sprite = Ingredient(
+        name='Sprite')
+    Grapesoda = Ingredient(
+        name='Grape soda')
+    Candy = Ingredient(
+        name='Candy')
+    Gingerale = Ingredient(
+        name='Ginger ale')
+    Water = Ingredient(
+        name='Water')
+    Tea = Ingredient(
+        name='Tea')
+    Whippedcream = Ingredient(
+        name='Whipped cream')
+    Applecider = Ingredient(
+        name='Apple cider')
+    Carrot = Ingredient(
+        name='Carrot')
+    Orange = Ingredient(
+        name='Orange')
+    Limejuicecordial = Ingredient(
+        name='Lime juice cordial')
+    SouthernComfort = Ingredient(
+        name='Southern Comfort')
+    Passionfruitsyrup = Ingredient(
+        name='Passion fruit syrup')
+    Sweetandsour = Ingredient(
+        name='Sweet and sour')
+    AngosturaBitters = Ingredient(
+        name='Angostura Bitters')
+    WhiteWine = Ingredient(
+        name='White Wine')
+    OrangePeel = Ingredient(
+        name='Orange Peel')
+    Aperol = Ingredient(
+        name='Aperol')
+    Prosecco = Ingredient(
+        name='Prosecco')
+    Up = Ingredient(
+        name='7-Up')
+    Appleschnapps = Ingredient(
+        name='Apple schnapps')
+    Champagne = Ingredient(
+        name='Champagne')
+    GreenCremedeMenthe = Ingredient(
+        name='Green Creme de Menthe')
+    BlueCuracao = Ingredient(
+        name='Blue Curacao')
+    Cherry = Ingredient(
+        name='Cherry')
+    Lemonvodka = Ingredient(
+        name='Lemon vodka')
+    Chocolateicecream = Ingredient(
+        name='Chocolate ice-cream')
+    Brandy = Ingredient(
+        name='Brandy')
+    AppleSchnapps = Ingredient(
+        name='Apple Schnapps')
+    Ginger = Ingredient(
+        name='Ginger')
+    Sherry = Ingredient(
+        name='Sherry')
+    Sloegin = Ingredient(
+        name='Sloe gin')
+    YellowChartreuse = Ingredient(
+        name='Yellow Chartreuse')
+    Kummel = Ingredient(
+        name='Kummel')
+    Cider = Ingredient(
+        name='Cider')
+    Maliburum = Ingredient(
+        name='Malibu rum')
+    Goldtequila = Ingredient(
+        name='Gold tequila')
+    Creamofcoconut = Ingredient(
+        name='Cream of coconut')
+    Pineapple = Ingredient(
+        name='Pineapple')
+    Ryewhiskey = Ingredient(
+        name='Rye whiskey')
+    Redwine = Ingredient(
+        name='Red wine')
+    Apricot = Ingredient(
+        name='Apricot')
+    Almondflavoring = Ingredient(
+        name='Almond flavoring')
+    Grainalcohol = Ingredient(
+        name='Grain alcohol')
+    Foodcoloring = Ingredient(
+        name='Food coloring')
+    Glycerine = Ingredient(
+        name='Glycerine')
+    WhiteCremedeMenthe = Ingredient(
+        name='White Creme de Menthe')
+    Angelicaroot = Ingredient(
+        name='Angelica root')
+    Almond = Ingredient(
+        name='Almond')
+    Allspice = Ingredient(
+        name='Allspice')
+    Cinnamon = Ingredient(
+        name='Cinnamon')
+    Coriander = Ingredient(
+        name='Coriander')
+    Marjoramleaves = Ingredient(
+        name='Marjoram leaves')
+    Maui = Ingredient(
+        name='Maui')
+    Icedtea = Ingredient(
+        name='Iced tea')
+    AbsolutCitron = Ingredient(
+        name='Absolut Citron')
+    Bitterlemon = Ingredient(
+        name='Bitter lemon')
+    Peachschnapps = Ingredient(
+        name='Peach schnapps')
+    Coconutliqueur = Ingredient(
+        name='Coconut liqueur')
+    Guavajuice = Ingredient(
+        name='Guava juice')
+    Brownsugar = Ingredient(
+        name='Brown sugar')
+    Cloves = Ingredient(
+        name='Cloves')
+    Jägermeister = Ingredient(
+        name='Jägermeister')
+    Goldschlager = Ingredient(
+        name='Goldschlager')
+    Coconutrum = Ingredient(
+        name='Coconut rum')
+    Gingerbeer = Ingredient(
+        name='Ginger beer')
+    Lemon = Ingredient(
+        name='Lemon')
+    CranberryJuice = Ingredient(
+        name='Cranberry Juice')
+    Berries = Ingredient(
+        name='Berries')
+    Apple = Ingredient(
+        name='Apple')
+    FreshLimeJuice = Ingredient(
+        name='Fresh Lime Juice')
+    SugarSyrup = Ingredient(
+        name='Sugar Syrup')
+    Kirschwasser = Ingredient(
+        name='Kirschwasser')
+    Strawberryliqueur = Ingredient(
+        name='Strawberry liqueur')
+    Strawberries = Ingredient(
+        name='Strawberries')
+    SchweppesRusschian = Ingredient(
+        name='Schweppes Russchian')
+    Añejorum = Ingredient(
+        name='Añejo rum')
+    DarkCremedeCacao = Ingredient(
+        name='Dark Creme de Cacao')
+    Hotchocolate = Ingredient(
+        name='Hot chocolate')
+    Sambuca = Ingredient(
+        name='Sambuca')
+    OrangeBitters = Ingredient(
+        name='Orange Bitters')
+    GreenChartreuse = Ingredient(
+        name='Green Chartreuse')
+    Irishcream = Ingredient(
+        name='Irish cream')
+    Sugarsyrup = Ingredient(
+        name='Sugar syrup')
+    CremedeMure = Ingredient(
+        name='Creme de Mure')
+    RyeWhiskey = Ingredient(
+        name='Rye Whiskey')
+    MaraschinoLiqueur = Ingredient(
+        name='Maraschino Liqueur')
+    MaraschinoCherry = Ingredient(
+        name='Maraschino Cherry')
+    Passionfruitjuice = Ingredient(
+        name='Passion fruit juice')
+    Maraschinoliqueur = Ingredient(
+        name='Maraschino liqueur')
+    Galliano = Ingredient(
+        name='Galliano')
+    HotChocolate = Ingredient(
+        name='Hot Chocolate')
+    CherryHeering = Ingredient(
+        name='Cherry Heering')
+    Corona = Ingredient(
+        name='Corona')
+    BacardiLimon = Ingredient(
+        name='Bacardi Limon')
+    Everclear = Ingredient(
+        name='Everclear')
+    Surge = Ingredient(
+        name='Surge')
+    Bananaliqueur = Ingredient(
+        name='Banana liqueur')
+    Vanillaicecream = Ingredient(
+        name='Vanilla ice-cream')
+    Powderedsugar = Ingredient(
+        name='Powdered sugar')
+    DarkRum = Ingredient(
+        name='Dark Rum')
+    SweetandSour = Ingredient(
+        name='Sweet and Sour')
+    ErinCream = Ingredient(
+        name='Erin Cream')
+    Advocaat = Ingredient(
+        name='Advocaat')
+    Tomatojuice = Ingredient(
+        name='Tomato juice')
+    Worcestershiresauce = Ingredient(
+        name='Worcestershire sauce')
+    Tabascosauce = Ingredient(
+        name='Tabasco sauce')
+    Ale = Ingredient(
+        name='Ale')
+    Guinnessstout = Ingredient(
+        name='Guinness stout')
+    Goldrum = Ingredient(
+        name='Gold rum')
+    TripleSec = Ingredient(
+        name='Triple Sec')
+    Egg = Ingredient(
+        name='Egg')
+    VanillaIceCream = Ingredient(
+        name='Vanilla Ice-Cream')
+    Butterscotchschnapps = Ingredient(
+        name='Butterscotch schnapps')
+    Lemonlimesoda = Ingredient(
+        name='Lemon-lime soda')
+    Raisins = Ingredient(
+        name='Raisins')
+    Blueberries = Ingredient(
+        name='Blueberries')
+    KoolAid = Ingredient(
+        name='Kool-Aid')
+    Celerysalt = Ingredient(
+        name='Celery salt')
+    Godivaliqueur = Ingredient(
+        name='Godiva liqueur')
+    Tiamaria = Ingredient(
+        name='Tia maria')
+    CoconutLiqueur = Ingredient(
+        name='Coconut Liqueur')
+    Chambordraspberryliqueur = Ingredient(
+        name='Chambord raspberry liqueur')
+    Peachtreeschnapps = Ingredient(
+        name='Peachtree schnapps')
+    Coffeeliqueur = Ingredient(
+        name='Coffee liqueur')
+    Passoa = Ingredient(
+        name='Passoa')
+    MalibuRum = Ingredient(
+        name='Malibu Rum')
+    Banana = Ingredient(
+        name='Banana')
+    Rootbeer = Ingredient(
+        name='Root beer')
+    Carbonatedwater = Ingredient(
+        name='Carbonated water')
+    RaspberryVodka = Ingredient(
+        name='Raspberry Vodka')
+    Chocolatesyrup = Ingredient(
+        name='Chocolate syrup')
+    Cherrybrandy = Ingredient(
+        name='Cherry brandy')
+    Yoghurt = Ingredient(
+        name='Yoghurt')
+    Honey = Ingredient(
+        name='Honey')
+    WhippedCream = Ingredient(
+        name='Whipped Cream')
     caramelsauce = Ingredient(
         name='caramel sauce')
     chocolatesauce = Ingredient(
         name='chocolate sauce')
-    minisnickersbars = Ingredient(
-        name='mini-snickers bars')
-    cantaloupe = Ingredient(
-        name='cantaloupe')
-    cocacola = Ingredient(
-        name='coca-cola')
-    cachaca = Ingredient(
-        name='cachaca')
-    spicedrum = Ingredient(
-        name='spiced rum')
-    falernum = Ingredient(
-        name='falernum')
+    Minisnickersbars = Ingredient(
+        name='Mini-snickers bars')
+    Cantaloupe = Ingredient(
+        name='Cantaloupe')
+    CocaCola = Ingredient(
+        name='Coca-Cola')
+    Cachaca = Ingredient(
+        name='Cachaca')
+    Spicedrum = Ingredient(
+        name='Spiced rum')
+    Falernum = Ingredient(
+        name='Falernum')
     blackstraprum = Ingredient(
         name='blackstrap rum')
-    whiterum = Ingredient(
-        name='white rum')
-    lager = Ingredient(
-        name='lager')
-    port = Ingredient(
-        name='port')
-    cointreau = Ingredient(
-        name='cointreau')
-    vanilla = Ingredient(
-        name='vanilla')
-    caramelcoloring = Ingredient(
-        name='caramel coloring')
-    eggyolk = Ingredient(
-        name='egg yolk')
-    lilletblanc = Ingredient(
-        name='lillet blanc')
-    absinthe = Ingredient(
-        name='absinthe')
-    chocolateliqueur = Ingredient(
-        name='chocolate liqueur')
-    vanillaextract = Ingredient(
-        name='vanilla extract')
-    chocolate = Ingredient(
-        name='chocolate')
-    peppermintextract = Ingredient(
-        name='peppermint extract')
-    chocolatemilk = Ingredient(
-        name='chocolate milk')
-    cranberries = Ingredient(
-        name='cranberries')
-    cocoapowder = Ingredient(
-        name='cocoa powder')
-    cornstarch = Ingredient(
-        name='cornstarch')
-    cherrygrenadine = Ingredient(
-        name='cherry grenadine')
-    peachbitters = Ingredient(
-        name='peach bitters')
-    blackcurrantcordial = Ingredient(
-        name='blackcurrant cordial')
-    fruitpunch = Ingredient(
-        name='fruit punch')
-    olive = Ingredient(
-        name='olive')
-    olivebrine = Ingredient(
-        name='olive brine')
-    demerarasugar = Ingredient(
-        name='demerara sugar')
-    pisco = Ingredient(
-        name='pisco')
-    pineapplesyrup = Ingredient(
-        name='pineapple syrup')
-    stgermain = Ingredient(
-        name='st. germain')
-    pepper = Ingredient(
-        name='pepper')
-    lavender = Ingredient(
-        name='lavender')
-    whiskey = Ingredient(
-        name='whiskey')
-    hotdamn = Ingredient(
-        name='hot damn')
-    dubonnetrouge = Ingredient(
-        name='dubonnet rouge')
-    whippingcream = Ingredient(
-        name='whipping cream')
-    vanillasyrup = Ingredient(
-        name='vanilla syrup')
-    espresso = Ingredient(
-        name='espresso')
-    condensedmilk = Ingredient(
-        name='condensed milk')
-    elderflowercordial = Ingredient(
-        name='elderflower cordial')
-    mezcal = Ingredient(
-        name='mezcal')
-    rose = Ingredient(
-        name='rose')
-    figs = Ingredient(
-        name='figs')
-    thyme = Ingredient(
-        name='thyme')
-    apricotnectar = Ingredient(
-        name='apricot nectar')
-    pomegranatejuice = Ingredient(
-        name='pomegranate juice')
-    raspberryliqueur = Ingredient(
-        name='raspberry liqueur')
-    lillet = Ingredient(
-        name='lillet')
-    firewater = Ingredient(
-        name='firewater')
-    absolutpeppar = Ingredient(
-        name='absolut peppar')
-    drpepper = Ingredient(
-        name='dr. pepper')
-    beer = Ingredient(
-        name='beer')
-    sarsaparilla = Ingredient(
-        name='sarsaparilla')
-    peachvodka = Ingredient(
-        name='peach vodka')
-    sirupofroses = Ingredient(
-        name='sirup of roses')
-    orangespiral = Ingredient(
-        name='orange spiral')
-    basil = Ingredient(
-        name='basil')
-    agavesyrup = Ingredient(
-        name='agave syrup')
-    melonliqueur = Ingredient(
-        name='melon liqueur')
-    grapes = Ingredient(
-        name='grapes')
-    whisky = Ingredient(
-        name='whisky')
-    blackberries = Ingredient(
-        name='blackberries')
-    cherryjuice = Ingredient(
-        name='cherry juice')
-    redchiliflakes = Ingredient(
-        name='red chili flakes')
-    grapejuice = Ingredient(
-        name='grape juice')
-    carbonatedsoftdrink = Ingredient(
-        name='carbonated soft drink')
-    sherbet = Ingredient(
-        name='sherbet')
-    cornsyrup = Ingredient(
-        name='corn syrup')
-    irishwhiskey = Ingredient(
-        name='irish whiskey')
-    butter = Ingredient(
-        name='butter')
-    halfandhalf = Ingredient(
-        name='half-and-half')
-    marshmallows = Ingredient(
-        name='marshmallows')
-    coconutsyrup = Ingredient(
-        name='coconut syrup')
-    peachbrandy = Ingredient(
-        name='peach brandy')
-    anis = Ingredient(
-        name='anis')
-    jello = Ingredient(
-        name='jello')
-    mintsyrup = Ingredient(
-        name='mint syrup')
-    tennesseewhiskey = Ingredient(
-        name='tennessee whiskey')
-    kiwiliqueur = Ingredient(
-        name='kiwi liqueur')
-    kiwi = Ingredient(
-        name='kiwi')
-    cranberryvodka = Ingredient(
-        name='cranberry vodka')
-    apfelkorn = Ingredient(
-        name='apfelkorn')
-    papaya = Ingredient(
-        name='papaya')
-    limepeel = Ingredient(
-        name='lime peel')
-    asafoetida = Ingredient(
-        name='asafoetida')
-    cayennepepper = Ingredient(
-        name='cayenne pepper')
-    drambuie = Ingredient(
-        name='drambuie')
-    mango = Ingredient(
-        name='mango')
-    cuminseed = Ingredient(
-        name='cumin seed')
-    orgeatsyrup = Ingredient(
-        name='orgeat syrup')
-    hotsauce = Ingredient(
-        name='hot sauce')
-    soysauce = Ingredient(
-        name='soy sauce')
-    ricard = Ingredient(
-        name='ricard')
-    pepsicola = Ingredient(
-        name='pepsi cola')
-    pinacoladamix = Ingredient(
-        name='pina colada mix')
-    daiquirimix = Ingredient(
-        name='daiquiri mix')
-    cardamom = Ingredient(
-        name='cardamom')
-    blackpepper = Ingredient(
-        name='black pepper')
-    cucumber = Ingredient(
-        name='cucumber')
-    tropicana = Ingredient(
-        name='tropicana')
-    oreocookie = Ingredient(
-        name='oreo cookie')
-    jagermeister = Ingredient(
-        name='jagermeister')
-    rosemarysyrup = Ingredient(
-        name='rosemary syrup')
-    rosemary = Ingredient(
-        name='rosemary')
-    orangecuracao = Ingredient(
-        name='orange curacao')
-    blendedscotch = Ingredient(
-        name='blended scotch')
-    honeysyrup = Ingredient(
-        name='honey syrup')
-    gingersyrup = Ingredient(
-        name='ginger syrup')
-    islaysinglemaltscotch = Ingredient(
-        name='islay single malt scotch')
-    coconutmilk = Ingredient(
-        name='coconut milk')
-    cherryliqueur = Ingredient(
-        name='cherry liqueur')
-    pinklemonade = Ingredient(
-        name='pink lemonade')
-    coffeebrandy = Ingredient(
-        name='coffee brandy')
-    limevodka = Ingredient(
-        name='lime vodka')
-    blacksambuca = Ingredient(
-        name='black sambuca')
-    raspberrysyrup = Ingredient(
-        name='raspberry syrup')
-    peychaudbitters = Ingredient(
-        name='peychaud bitters')
-    amaromontenegro = Ingredient(
-        name='amaro montenegro')
-    rubyport = Ingredient(
-        name='ruby port')
-    bloodorange = Ingredient(
-        name='blood orange')
-    jimbeam = Ingredient(
-        name='jim beam')
-    anisette = Ingredient(
-        name='anisette')
-    cherries = Ingredient(
-        name='cherries')
-    fresca = Ingredient(
-        name='fresca')
-    curacao = Ingredient(
-        name='curacao')
-    aquavit = Ingredient(
-        name='aquavit')
-    blackcurrantsquash = Ingredient(
-        name='blackcurrant squash')
-    ouzo = Ingredient(
-        name='ouzo')
-    saltedchocolate = Ingredient(
-        name='salted chocolate')
-    johnniewalker = Ingredient(
-        name='johnnie walker')
-    fennelseeds = Ingredient(
-        name='fennel seeds')
-    watermelon = Ingredient(
-        name='watermelon')
-    rossovermouth = Ingredient(
-        name='rosso vermouth')
-    yukonjack = Ingredient(
-        name='yukon jack')
-    maplesyrup = Ingredient(
-        name='maple syrup')
-    limeade = Ingredient(
-        name='limeade')
-    pernod = Ingredient(
-        name='pernod')
-    zima = Ingredient(
-        name='zima')
+    Whiterum = Ingredient(
+        name='White rum')
+    Lager = Ingredient(
+        name='Lager')
+    Port = Ingredient(
+        name='Port')
+    Cointreau = Ingredient(
+        name='Cointreau')
+    Vanilla = Ingredient(
+        name='Vanilla')
+    Caramelcoloring = Ingredient(
+        name='Caramel coloring')
+    Eggyolk = Ingredient(
+        name='Egg yolk')
+    LilletBlanc = Ingredient(
+        name='Lillet Blanc')
+    Absinthe = Ingredient(
+        name='Absinthe')
+    Chocolateliqueur = Ingredient(
+        name='Chocolate liqueur')
+    Vanillaextract = Ingredient(
+        name='Vanilla extract')
+    Chocolate = Ingredient(
+        name='Chocolate')
+    Peppermintextract = Ingredient(
+        name='Peppermint extract')
+    Chocolatemilk = Ingredient(
+        name='Chocolate milk')
+    Cranberries = Ingredient(
+        name='Cranberries')
+    LemonPeel = Ingredient(
+        name='Lemon Peel')
+    Cocoapowder = Ingredient(
+        name='Cocoa powder')
+    Cornstarch = Ingredient(
+        name='Cornstarch')
+    CherryGrenadine = Ingredient(
+        name='Cherry Grenadine')
+    gin = Ingredient(
+        name='gin')
+    PeachBitters = Ingredient(
+        name='Peach Bitters')
+    Blackcurrantcordial = Ingredient(
+        name='Blackcurrant cordial')
+    Fruitpunch = Ingredient(
+        name='Fruit punch')
+    Olive = Ingredient(
+        name='Olive')
+    OliveBrine = Ingredient(
+        name='Olive Brine')
+    demeraraSugar = Ingredient(
+        name='demerara Sugar')
+    Pisco = Ingredient(
+        name='Pisco')
+    PineappleSyrup = Ingredient(
+        name='Pineapple Syrup')
+    StGermain = Ingredient(
+        name='St. Germain')
+    Pepper = Ingredient(
+        name='Pepper')
+    Lavender = Ingredient(
+        name='Lavender')
+    Whiskey = Ingredient(
+        name='Whiskey')
+    HotDamn = Ingredient(
+        name='Hot Damn')
+    DubonnetRouge = Ingredient(
+        name='Dubonnet Rouge')
+    Whippingcream = Ingredient(
+        name='Whipping cream')
+    Vanillasyrup = Ingredient(
+        name='Vanilla syrup')
+    Espresso = Ingredient(
+        name='Espresso')
+    Condensedmilk = Ingredient(
+        name='Condensed milk')
+    Elderflowercordial = Ingredient(
+        name='Elderflower cordial')
+    Mezcal = Ingredient(
+        name='Mezcal')
+    Rose = Ingredient(
+        name='Rose')
+    Figs = Ingredient(
+        name='Figs')
+    Thyme = Ingredient(
+        name='Thyme')
+    TonicWater = Ingredient(
+        name='Tonic Water')
+    ApricotNectar = Ingredient(
+        name='Apricot Nectar')
+    Pomegranatejuice = Ingredient(
+        name='Pomegranate juice')
+    lemon = Ingredient(
+        name='lemon')
+    RaspberryLiqueur = Ingredient(
+        name='Raspberry Liqueur')
+    pineapplejuice = Ingredient(
+        name='pineapple juice')
+    Lillet = Ingredient(
+        name='Lillet')
+    Firewater = Ingredient(
+        name='Firewater')
+    AbsolutPeppar = Ingredient(
+        name='Absolut Peppar')
+    DrPepper = Ingredient(
+        name='Dr. Pepper')
+    Beer = Ingredient(
+        name='Beer')
+    Sarsaparilla = Ingredient(
+        name='Sarsaparilla')
+    PeachVodka = Ingredient(
+        name='Peach Vodka')
+    Sirupofroses = Ingredient(
+        name='Sirup of roses')
+    GrapefruitJuice = Ingredient(
+        name='Grapefruit Juice')
+    Orangespiral = Ingredient(
+        name='Orange spiral')
+    Basil = Ingredient(
+        name='Basil')
+    AgaveSyrup = Ingredient(
+        name='Agave Syrup')
+    Melonliqueur = Ingredient(
+        name='Melon liqueur')
+    Grapes = Ingredient(
+        name='Grapes')
+    Whisky = Ingredient(
+        name='Whisky')
+    WhiteRum = Ingredient(
+        name='White Rum')
+    Blackberries = Ingredient(
+        name='Blackberries')
+    CherryJuice = Ingredient(
+        name='Cherry Juice')
+    RedChiliFlakes = Ingredient(
+        name='Red Chili Flakes')
+    Grapejuice = Ingredient(
+        name='Grape juice')
+    Carbonatedsoftdrink = Ingredient(
+        name='Carbonated soft drink')
+    Sherbet = Ingredient(
+        name='Sherbet')
+    Cornsyrup = Ingredient(
+        name='Corn syrup')
+    Irishwhiskey = Ingredient(
+        name='Irish whiskey')
+    Butter = Ingredient(
+        name='Butter')
+    Halfandhalf = Ingredient(
+        name='Half-and-half')
+    Marshmallows = Ingredient(
+        name='Marshmallows')
+    Coconutsyrup = Ingredient(
+        name='Coconut syrup')
+    Peachbrandy = Ingredient(
+        name='Peach brandy')
+    Anis = Ingredient(
+        name='Anis')
+    Jello = Ingredient(
+        name='Jello')
+    Mintsyrup = Ingredient(
+        name='Mint syrup')
+    Tennesseewhiskey = Ingredient(
+        name='Tennessee whiskey')
+    Kiwiliqueur = Ingredient(
+        name='Kiwi liqueur')
+    Kiwi = Ingredient(
+        name='Kiwi')
+    Cranberryvodka = Ingredient(
+        name='Cranberry vodka')
+    Apfelkorn = Ingredient(
+        name='Apfelkorn')
+    Papaya = Ingredient(
+        name='Papaya')
+    Limepeel = Ingredient(
+        name='Lime peel')
+    Angosturabitters = Ingredient(
+        name='Angostura bitters')
+    Asafoetida = Ingredient(
+        name='Asafoetida')
+    Cayennepepper = Ingredient(
+        name='Cayenne pepper')
+    Drambuie = Ingredient(
+        name='Drambuie')
+    Mango = Ingredient(
+        name='Mango')
+    Cuminseed = Ingredient(
+        name='Cumin seed')
+    Orgeatsyrup = Ingredient(
+        name='Orgeat syrup')
+    TomatoJuice = Ingredient(
+        name='Tomato Juice')
+    HotSauce = Ingredient(
+        name='Hot Sauce')
+    WorcestershireSauce = Ingredient(
+        name='Worcestershire Sauce')
+    SoySauce = Ingredient(
+        name='Soy Sauce')
+    Ricard = Ingredient(
+        name='Ricard')
+    OrgeatSyrup = Ingredient(
+        name='Orgeat Syrup')
+    PepsiCola = Ingredient(
+        name='Pepsi Cola')
+    Pinacoladamix = Ingredient(
+        name='Pina colada mix')
+    Daiquirimix = Ingredient(
+        name='Daiquiri mix')
+    Cardamom = Ingredient(
+        name='Cardamom')
+    Blackpepper = Ingredient(
+        name='Black pepper')
+    Cucumber = Ingredient(
+        name='Cucumber')
+    Tropicana = Ingredient(
+        name='Tropicana')
+    Oreocookie = Ingredient(
+        name='Oreo cookie')
+    Jagermeister = Ingredient(
+        name='Jagermeister')
+    RosemarySyrup = Ingredient(
+        name='Rosemary Syrup')
+    Rosemary = Ingredient(
+        name='Rosemary')
+    GrapeSoda = Ingredient(
+        name='Grape Soda')
+    ApricotBrandy = Ingredient(
+        name='Apricot Brandy')
+    OrangeCuracao = Ingredient(
+        name='Orange Curacao')
+    BlendedScotch = Ingredient(
+        name='Blended Scotch')
+    Honeysyrup = Ingredient(
+        name='Honey syrup')
+    GingerSyrup = Ingredient(
+        name='Ginger Syrup')
+    IslaysinglemaltScotch = Ingredient(
+        name='Islay single malt Scotch')
+    EggYolk = Ingredient(
+        name='Egg Yolk')
+    Coconutmilk = Ingredient(
+        name='Coconut milk')
+    Cherryliqueur = Ingredient(
+        name='Cherry liqueur')
+    Pinklemonade = Ingredient(
+        name='Pink lemonade')
+    Coffeebrandy = Ingredient(
+        name='Coffee brandy')
+    Limevodka = Ingredient(
+        name='Lime vodka')
+    BlackSambuca = Ingredient(
+        name='Black Sambuca')
+    Raspberrysyrup = Ingredient(
+        name='Raspberry syrup')
+    Raspberryvodka = Ingredient(
+        name='Raspberry vodka')
+    Peychaudbitters = Ingredient(
+        name='Peychaud bitters')
+    AmaroMontenegro = Ingredient(
+        name='Amaro Montenegro')
+    RubyPort = Ingredient(
+        name='Ruby Port')
+    BloodOrange = Ingredient(
+        name='Blood Orange')
+    JimBeam = Ingredient(
+        name='Jim Beam')
+    Anisette = Ingredient(
+        name='Anisette')
+    Cherries = Ingredient(
+        name='Cherries')
+    Fresca = Ingredient(
+        name='Fresca')
+    Curacao = Ingredient(
+        name='Curacao')
+    Aquavit = Ingredient(
+        name='Aquavit')
+    Blackcurrantsquash = Ingredient(
+        name='Blackcurrant squash')
+    Ouzo = Ingredient(
+        name='Ouzo')
+    ChocolateSauce = Ingredient(
+        name='Chocolate Sauce')
+    SaltedChocolate = Ingredient(
+        name='Salted Chocolate')
+    JohnnieWalker = Ingredient(
+        name='Johnnie Walker')
+    Fennelseeds = Ingredient(
+        name='Fennel seeds')
+    Watermelon = Ingredient(
+        name='Watermelon')
+    CremeDeBanane = Ingredient(
+        name='Creme De Banane')
+    IrishWhiskey = Ingredient(
+        name='Irish Whiskey')
+    RossoVermouth = Ingredient(
+        name='Rosso Vermouth')
+    up = Ingredient(
+        name='7-up')
+    MelonLiqueur = Ingredient(
+        name='Melon Liqueur')
+    YukonJack = Ingredient(
+        name='Yukon Jack')
+    Agavesyrup = Ingredient(
+        name='Agave syrup')
+    LightRum = Ingredient(
+        name='Light Rum')
+    Maplesyrup = Ingredient(
+        name='Maple syrup')
+    Limeade = Ingredient(
+        name='Limeade')
+    AppleBrandy = Ingredient(
+        name='Apple Brandy')
+    Pernod = Ingredient(
+        name='Pernod')
+    Zima = Ingredient(
+        name='Zima')
 
-    db.session.add(gin)
-    db.session.add(grandmarnier)
-    db.session.add(lemonjuice)
-    db.session.add(grenadine)
-    db.session.add(amaretto)
-    db.session.add(baileysirishcream)
-    db.session.add(cognac)
-    db.session.add(heavycream)
-    db.session.add(milk)
-    db.session.add(eggwhite)
+    db.session.add(GrandMarnier)
+    db.session.add(Grenadine)
+    db.session.add(Amaretto)
+    db.session.add(Baileysirishcream)
+    db.session.add(Cognac)
+    db.session.add(Heavycream)
+    db.session.add(Milk)
+    db.session.add(EggWhite)
     db.session.add(proofrum)
-    db.session.add(wildturkey)
-    db.session.add(darkrum)
-    db.session.add(absolutvodka)
-    db.session.add(tonicwater)
-    db.session.add(applejack)
-    db.session.add(grapefruitjuice)
-    db.session.add(strawberryschnapps)
-    db.session.add(orangejuice)
-    db.session.add(cranberryjuice)
-    db.session.add(clubsoda)
-    db.session.add(applejuice)
-    db.session.add(maraschinocherry)
-    db.session.add(vodka)
-    db.session.add(pisangambon)
-    db.session.add(lemonade)
-    db.session.add(peachnectar)
-    db.session.add(vermouth)
-    db.session.add(kahlua)
-    db.session.add(lightrum)
-    db.session.add(triplesec)
-    db.session.add(limejuice)
-    db.session.add(sugar)
-    db.session.add(mint)
-    db.session.add(scotch)
-    db.session.add(sweetvermouth)
-    db.session.add(dryvermouth)
-    db.session.add(orangebitters)
+    db.session.add(WildTurkey)
+    db.session.add(Darkrum)
+    db.session.add(Lemonjuice)
+    db.session.add(AbsolutVodka)
+    db.session.add(Tonicwater)
+    db.session.add(Applejack)
+    db.session.add(Grapefruitjuice)
+    db.session.add(Strawberryschnapps)
+    db.session.add(Cranberryjuice)
+    db.session.add(Clubsoda)
+    db.session.add(Applejuice)
+    db.session.add(Maraschinocherry)
+    db.session.add(PisangAmbon)
+    db.session.add(Lemonade)
+    db.session.add(Peachnectar)
+    db.session.add(Vermouth)
+    db.session.add(Kahlua)
+    db.session.add(Eggwhite)
+    db.session.add(Lightrum)
+    db.session.add(Triplesec)
+    db.session.add(Sugar)
+    db.session.add(Scotch)
+    db.session.add(SweetVermouth)
+    db.session.add(DryVermouth)
+    db.session.add(Orangebitters)
+    db.session.add(lemonjuice)
     db.session.add(maraschinoliqueur)
-    db.session.add(rum)
-    db.session.add(tequila)
-    db.session.add(fruit)
-    db.session.add(ice)
-    db.session.add(salt)
-    db.session.add(fruitjuice)
-    db.session.add(sodawater)
-    db.session.add(cremedebanane)
-    db.session.add(pineapplejuice)
-    db.session.add(frangelico)
-    db.session.add(coffee)
-    db.session.add(cream)
-    db.session.add(cremedecacao)
-    db.session.add(lightcream)
-    db.session.add(nutmeg)
-    db.session.add(blendedwhiskey)
-    db.session.add(bourbon)
-    db.session.add(blackberrybrandy)
-    db.session.add(lemonpeel)
-    db.session.add(campari)
-    db.session.add(orangepeel)
-    db.session.add(jackdaniels)
-    db.session.add(midorimelonliqueur)
-    db.session.add(sourmix)
-    db.session.add(bitters)
-    db.session.add(crownroyal)
-    db.session.add(cremedecassis)
-    db.session.add(freshlemonjuice)
-    db.session.add(peppermintschnapps)
-    db.session.add(apricotbrandy)
-    db.session.add(applebrandy)
-    db.session.add(hpnotiq)
-    db.session.add(bananaliqueur)
-    db.session.add(wine)
-    db.session.add(benedictine)
-    db.session.add(lime)
-    db.session.add(anise)
-    db.session.add(licoriceroot)
-    db.session.add(wormwood)
-    db.session.add(absolutkurant)
-    db.session.add(sprite)
-    db.session.add(grapesoda)
-    db.session.add(candy)
-    db.session.add(gingerale)
-    db.session.add(water)
-    db.session.add(tea)
-    db.session.add(whippedcream)
-    db.session.add(applecider)
-    db.session.add(carrot)
-    db.session.add(orange)
-    db.session.add(limejuicecordial)
-    db.session.add(southerncomfort)
-    db.session.add(passionfruitsyrup)
-    db.session.add(sweetandsour)
-    db.session.add(angosturabitters)
-    db.session.add(whitewine)
-    db.session.add(aperol)
-    db.session.add(prosecco)
-    db.session.add(up)
-    db.session.add(appleschnapps)
-    db.session.add(champagne)
-    db.session.add(greencremedementhe)
-    db.session.add(bluecuracao)
-    db.session.add(cherry)
-    db.session.add(lemonvodka)
-    db.session.add(chocolateicecream)
-    db.session.add(brandy)
-    db.session.add(ginger)
-    db.session.add(sherry)
-    db.session.add(sloegin)
-    db.session.add(yellowchartreuse)
-    db.session.add(kummel)
-    db.session.add(cider)
-    db.session.add(maliburum)
-    db.session.add(goldtequila)
-    db.session.add(creamofcoconut)
-    db.session.add(pineapple)
-    db.session.add(ryewhiskey)
-    db.session.add(redwine)
-    db.session.add(apricot)
-    db.session.add(almondflavoring)
-    db.session.add(grainalcohol)
-    db.session.add(foodcoloring)
-    db.session.add(glycerine)
-    db.session.add(whitecremedementhe)
-    db.session.add(angelicaroot)
-    db.session.add(almond)
-    db.session.add(allspice)
-    db.session.add(cinnamon)
-    db.session.add(coriander)
-    db.session.add(marjoramleaves)
-    db.session.add(maui)
-    db.session.add(mountaindew)
-    db.session.add(icedtea)
-    db.session.add(gingerbeer)
-    db.session.add(absolutcitron)
-    db.session.add(bitterlemon)
-    db.session.add(peachschnapps)
-    db.session.add(coconutliqueur)
-    db.session.add(guavajuice)
-    db.session.add(brownsugar)
-    db.session.add(cloves)
-    db.session.add(jägermeister)
-    db.session.add(goldschlager)
-    db.session.add(coconutrum)
-    db.session.add(lemon)
-    db.session.add(berries)
-    db.session.add(apple)
-    db.session.add(freshlimejuice)
-    db.session.add(sugarsyrup)
-    db.session.add(kirschwasser)
-    db.session.add(strawberryliqueur)
-    db.session.add(strawberries)
-    db.session.add(schweppesrusschian)
-    db.session.add(añejorum)
-    db.session.add(darkcremedecacao)
-    db.session.add(hotchocolate)
-    db.session.add(sambuca)
-    db.session.add(greenchartreuse)
-    db.session.add(irishcream)
-    db.session.add(cremedemure)
-    db.session.add(passionfruitjuice)
-    db.session.add(galliano)
-    db.session.add(cherryheering)
-    db.session.add(corona)
-    db.session.add(bacardilimon)
-    db.session.add(everclear)
-    db.session.add(surge)
-    db.session.add(vanillaicecream)
-    db.session.add(powderedsugar)
-    db.session.add(erincream)
-    db.session.add(advocaat)
-    db.session.add(tomatojuice)
-    db.session.add(worcestershiresauce)
-    db.session.add(tabascosauce)
-    db.session.add(ale)
-    db.session.add(guinnessstout)
-    db.session.add(goldrum)
-    db.session.add(egg)
-    db.session.add(butterscotchschnapps)
-    db.session.add(lemonlimesoda)
-    db.session.add(raisins)
-    db.session.add(blueberries)
-    db.session.add(koolaid)
-    db.session.add(celerysalt)
-    db.session.add(godivaliqueur)
-    db.session.add(tiamaria)
-    db.session.add(chambordraspberryliqueur)
-    db.session.add(peachtreeschnapps)
-    db.session.add(coffeeliqueur)
-    db.session.add(passoa)
-    db.session.add(banana)
-    db.session.add(rootbeer)
-    db.session.add(carbonatedwater)
-    db.session.add(raspberryvodka)
-    db.session.add(chocolatesyrup)
-    db.session.add(cherrybrandy)
-    db.session.add(yoghurt)
-    db.session.add(honey)
+    db.session.add(Rum)
+    db.session.add(Fruit)
+    db.session.add(Ice)
+    db.session.add(Salt)
+    db.session.add(Fruitjuice)
+    db.session.add(SodaWater)
+    db.session.add(CremedeBanane)
+    db.session.add(Pineapplejuice)
+    db.session.add(Frangelico)
+    db.session.add(Coffee)
+    db.session.add(Cream)
+    db.session.add(CremedeCacao)
+    db.session.add(Lightcream)
+    db.session.add(Nutmeg)
+    db.session.add(Blendedwhiskey)
+    db.session.add(Blackberrybrandy)
+    db.session.add(Lemonpeel)
+    db.session.add(Campari)
+    db.session.add(Orangepeel)
+    db.session.add(JackDaniels)
+    db.session.add(Midorimelonliqueur)
+    db.session.add(Sourmix)
+    db.session.add(Bitters)
+    db.session.add(Sodawater)
+    db.session.add(CrownRoyal)
+    db.session.add(CremedeCassis)
+    db.session.add(FreshLemonJuice)
+    db.session.add(Peppermintschnapps)
+    db.session.add(Apricotbrandy)
+    db.session.add(Applebrandy)
+    db.session.add(Hpnotiq)
+    db.session.add(PineappleJuice)
+    db.session.add(BananaLiqueur)
+    db.session.add(Wine)
+    db.session.add(Benedictine)
+    db.session.add(Lime)
+    db.session.add(Anise)
+    db.session.add(Licoriceroot)
+    db.session.add(Wormwood)
+    db.session.add(AbsolutKurant)
+    db.session.add(Sprite)
+    db.session.add(Grapesoda)
+    db.session.add(Candy)
+    db.session.add(Gingerale)
+    db.session.add(Water)
+    db.session.add(Tea)
+    db.session.add(Whippedcream)
+    db.session.add(Applecider)
+    db.session.add(Carrot)
+    db.session.add(Orange)
+    db.session.add(Limejuicecordial)
+    db.session.add(SouthernComfort)
+    db.session.add(Passionfruitsyrup)
+    db.session.add(Sweetandsour)
+    db.session.add(AngosturaBitters)
+    db.session.add(WhiteWine)
+    db.session.add(OrangePeel)
+    db.session.add(Aperol)
+    db.session.add(Prosecco)
+    db.session.add(Up)
+    db.session.add(Appleschnapps)
+    db.session.add(Champagne)
+    db.session.add(GreenCremedeMenthe)
+    db.session.add(BlueCuracao)
+    db.session.add(Cherry)
+    db.session.add(Lemonvodka)
+    db.session.add(Chocolateicecream)
+    db.session.add(Brandy)
+    db.session.add(AppleSchnapps)
+    db.session.add(Ginger)
+    db.session.add(Sherry)
+    db.session.add(Sloegin)
+    db.session.add(YellowChartreuse)
+    db.session.add(Kummel)
+    db.session.add(Cider)
+    db.session.add(Maliburum)
+    db.session.add(Goldtequila)
+    db.session.add(Creamofcoconut)
+    db.session.add(Pineapple)
+    db.session.add(Ryewhiskey)
+    db.session.add(Redwine)
+    db.session.add(Apricot)
+    db.session.add(Almondflavoring)
+    db.session.add(Grainalcohol)
+    db.session.add(Foodcoloring)
+    db.session.add(Glycerine)
+    db.session.add(WhiteCremedeMenthe)
+    db.session.add(Angelicaroot)
+    db.session.add(Almond)
+    db.session.add(Allspice)
+    db.session.add(Cinnamon)
+    db.session.add(Coriander)
+    db.session.add(Marjoramleaves)
+    db.session.add(Maui)
+    db.session.add(Icedtea)
+    db.session.add(AbsolutCitron)
+    db.session.add(Bitterlemon)
+    db.session.add(Peachschnapps)
+    db.session.add(Coconutliqueur)
+    db.session.add(Guavajuice)
+    db.session.add(Brownsugar)
+    db.session.add(Cloves)
+    db.session.add(Jägermeister)
+    db.session.add(Goldschlager)
+    db.session.add(Coconutrum)
+    db.session.add(Gingerbeer)
+    db.session.add(Lemon)
+    db.session.add(CranberryJuice)
+    db.session.add(Berries)
+    db.session.add(Apple)
+    db.session.add(FreshLimeJuice)
+    db.session.add(SugarSyrup)
+    db.session.add(Kirschwasser)
+    db.session.add(Strawberryliqueur)
+    db.session.add(Strawberries)
+    db.session.add(SchweppesRusschian)
+    db.session.add(Añejorum)
+    db.session.add(DarkCremedeCacao)
+    db.session.add(Hotchocolate)
+    db.session.add(Sambuca)
+    db.session.add(OrangeBitters)
+    db.session.add(GreenChartreuse)
+    db.session.add(Irishcream)
+    db.session.add(Sugarsyrup)
+    db.session.add(CremedeMure)
+    db.session.add(RyeWhiskey)
+    db.session.add(MaraschinoLiqueur)
+    db.session.add(MaraschinoCherry)
+    db.session.add(Passionfruitjuice)
+    db.session.add(Maraschinoliqueur)
+    db.session.add(Galliano)
+    db.session.add(HotChocolate)
+    db.session.add(CherryHeering)
+    db.session.add(Corona)
+    db.session.add(BacardiLimon)
+    db.session.add(Everclear)
+    db.session.add(Surge)
+    db.session.add(Bananaliqueur)
+    db.session.add(Vanillaicecream)
+    db.session.add(Powderedsugar)
+    db.session.add(DarkRum)
+    db.session.add(SweetandSour)
+    db.session.add(ErinCream)
+    db.session.add(Advocaat)
+    db.session.add(Tomatojuice)
+    db.session.add(Worcestershiresauce)
+    db.session.add(Tabascosauce)
+    db.session.add(Ale)
+    db.session.add(Guinnessstout)
+    db.session.add(Goldrum)
+    db.session.add(TripleSec)
+    db.session.add(Egg)
+    db.session.add(VanillaIceCream)
+    db.session.add(Butterscotchschnapps)
+    db.session.add(Lemonlimesoda)
+    db.session.add(Raisins)
+    db.session.add(Blueberries)
+    db.session.add(KoolAid)
+    db.session.add(Celerysalt)
+    db.session.add(Godivaliqueur)
+    db.session.add(Tiamaria)
+    db.session.add(CoconutLiqueur)
+    db.session.add(Chambordraspberryliqueur)
+    db.session.add(Peachtreeschnapps)
+    db.session.add(Coffeeliqueur)
+    db.session.add(Passoa)
+    db.session.add(MalibuRum)
+    db.session.add(Banana)
+    db.session.add(Rootbeer)
+    db.session.add(Carbonatedwater)
+    db.session.add(RaspberryVodka)
+    db.session.add(Chocolatesyrup)
+    db.session.add(Cherrybrandy)
+    db.session.add(Yoghurt)
+    db.session.add(Honey)
+    db.session.add(WhippedCream)
     db.session.add(caramelsauce)
     db.session.add(chocolatesauce)
-    db.session.add(minisnickersbars)
-    db.session.add(cantaloupe)
-    db.session.add(cocacola)
-    db.session.add(cachaca)
-    db.session.add(spicedrum)
-    db.session.add(falernum)
+    db.session.add(Minisnickersbars)
+    db.session.add(Cantaloupe)
+    db.session.add(CocaCola)
+    db.session.add(Cachaca)
+    db.session.add(Spicedrum)
+    db.session.add(Falernum)
     db.session.add(blackstraprum)
-    db.session.add(whiterum)
-    db.session.add(lager)
-    db.session.add(port)
-    db.session.add(cointreau)
-    db.session.add(vanilla)
-    db.session.add(caramelcoloring)
-    db.session.add(eggyolk)
-    db.session.add(lilletblanc)
-    db.session.add(absinthe)
-    db.session.add(chocolateliqueur)
-    db.session.add(vanillaextract)
-    db.session.add(chocolate)
-    db.session.add(peppermintextract)
-    db.session.add(chocolatemilk)
-    db.session.add(cranberries)
-    db.session.add(cocoapowder)
-    db.session.add(cornstarch)
-    db.session.add(cherrygrenadine)
-    db.session.add(peachbitters)
-    db.session.add(blackcurrantcordial)
-    db.session.add(fruitpunch)
-    db.session.add(olive)
-    db.session.add(olivebrine)
-    db.session.add(demerarasugar)
-    db.session.add(pisco)
-    db.session.add(pineapplesyrup)
-    db.session.add(stgermain)
-    db.session.add(pepper)
-    db.session.add(lavender)
-    db.session.add(whiskey)
-    db.session.add(hotdamn)
-    db.session.add(dubonnetrouge)
-    db.session.add(whippingcream)
-    db.session.add(vanillasyrup)
-    db.session.add(espresso)
-    db.session.add(condensedmilk)
-    db.session.add(elderflowercordial)
-    db.session.add(mezcal)
-    db.session.add(rose)
-    db.session.add(figs)
-    db.session.add(thyme)
-    db.session.add(apricotnectar)
-    db.session.add(pomegranatejuice)
-    db.session.add(raspberryliqueur)
-    db.session.add(lillet)
-    db.session.add(firewater)
-    db.session.add(absolutpeppar)
-    db.session.add(drpepper)
-    db.session.add(beer)
-    db.session.add(sarsaparilla)
-    db.session.add(peachvodka)
-    db.session.add(sirupofroses)
-    db.session.add(orangespiral)
-    db.session.add(basil)
-    db.session.add(agavesyrup)
-    db.session.add(melonliqueur)
-    db.session.add(grapes)
-    db.session.add(whisky)
-    db.session.add(blackberries)
-    db.session.add(cherryjuice)
-    db.session.add(redchiliflakes)
-    db.session.add(grapejuice)
-    db.session.add(carbonatedsoftdrink)
-    db.session.add(sherbet)
-    db.session.add(cornsyrup)
-    db.session.add(irishwhiskey)
-    db.session.add(butter)
-    db.session.add(halfandhalf)
-    db.session.add(marshmallows)
-    db.session.add(coconutsyrup)
-    db.session.add(peachbrandy)
-    db.session.add(anis)
-    db.session.add(jello)
-    db.session.add(mintsyrup)
-    db.session.add(tennesseewhiskey)
-    db.session.add(kiwiliqueur)
-    db.session.add(kiwi)
-    db.session.add(cranberryvodka)
-    db.session.add(apfelkorn)
-    db.session.add(papaya)
-    db.session.add(limepeel)
-    db.session.add(asafoetida)
-    db.session.add(cayennepepper)
-    db.session.add(drambuie)
-    db.session.add(mango)
-    db.session.add(cuminseed)
-    db.session.add(orgeatsyrup)
-    db.session.add(hotsauce)
-    db.session.add(soysauce)
-    db.session.add(ricard)
-    db.session.add(pepsicola)
-    db.session.add(pinacoladamix)
-    db.session.add(daiquirimix)
-    db.session.add(cardamom)
-    db.session.add(blackpepper)
-    db.session.add(cucumber)
-    db.session.add(tropicana)
-    db.session.add(oreocookie)
-    db.session.add(jagermeister)
-    db.session.add(rosemarysyrup)
-    db.session.add(rosemary)
-    db.session.add(orangecuracao)
-    db.session.add(blendedscotch)
-    db.session.add(honeysyrup)
-    db.session.add(gingersyrup)
-    db.session.add(islaysinglemaltscotch)
-    db.session.add(coconutmilk)
-    db.session.add(cherryliqueur)
-    db.session.add(pinklemonade)
-    db.session.add(coffeebrandy)
-    db.session.add(limevodka)
-    db.session.add(blacksambuca)
-    db.session.add(raspberrysyrup)
-    db.session.add(peychaudbitters)
-    db.session.add(amaromontenegro)
-    db.session.add(rubyport)
-    db.session.add(bloodorange)
-    db.session.add(jimbeam)
-    db.session.add(anisette)
-    db.session.add(cherries)
-    db.session.add(fresca)
-    db.session.add(curacao)
-    db.session.add(aquavit)
-    db.session.add(blackcurrantsquash)
-    db.session.add(ouzo)
-    db.session.add(saltedchocolate)
-    db.session.add(johnniewalker)
-    db.session.add(fennelseeds)
-    db.session.add(watermelon)
-    db.session.add(rossovermouth)
-    db.session.add(yukonjack)
-    db.session.add(maplesyrup)
-    db.session.add(limeade)
-    db.session.add(pernod)
-    db.session.add(zima)
+    db.session.add(Whiterum)
+    db.session.add(Lager)
+    db.session.add(Port)
+    db.session.add(Cointreau)
+    db.session.add(Vanilla)
+    db.session.add(Caramelcoloring)
+    db.session.add(Eggyolk)
+    db.session.add(LilletBlanc)
+    db.session.add(Absinthe)
+    db.session.add(Chocolateliqueur)
+    db.session.add(Vanillaextract)
+    db.session.add(Chocolate)
+    db.session.add(Peppermintextract)
+    db.session.add(Chocolatemilk)
+    db.session.add(Cranberries)
+    db.session.add(LemonPeel)
+    db.session.add(Cocoapowder)
+    db.session.add(Cornstarch)
+    db.session.add(CherryGrenadine)
+    db.session.add(gin)
+    db.session.add(PeachBitters)
+    db.session.add(Blackcurrantcordial)
+    db.session.add(Fruitpunch)
+    db.session.add(Olive)
+    db.session.add(OliveBrine)
+    db.session.add(demeraraSugar)
+    db.session.add(Pisco)
+    db.session.add(PineappleSyrup)
+    db.session.add(StGermain)
+    db.session.add(Pepper)
+    db.session.add(Lavender)
+    db.session.add(Whiskey)
+    db.session.add(HotDamn)
+    db.session.add(DubonnetRouge)
+    db.session.add(Whippingcream)
+    db.session.add(Vanillasyrup)
+    db.session.add(Espresso)
+    db.session.add(Condensedmilk)
+    db.session.add(Elderflowercordial)
+    db.session.add(Mezcal)
+    db.session.add(Rose)
+    db.session.add(Figs)
+    db.session.add(Thyme)
+    db.session.add(TonicWater)
+    db.session.add(ApricotNectar)
+    db.session.add(Pomegranatejuice)
+    db.session.add(lemon)
+    db.session.add(RaspberryLiqueur)
+    db.session.add(pineapplejuice)
+    db.session.add(Lillet)
+    db.session.add(Firewater)
+    db.session.add(AbsolutPeppar)
+    db.session.add(DrPepper)
+    db.session.add(Beer)
+    db.session.add(Sarsaparilla)
+    db.session.add(PeachVodka)
+    db.session.add(Sirupofroses)
+    db.session.add(GrapefruitJuice)
+    db.session.add(Orangespiral)
+    db.session.add(Basil)
+    db.session.add(AgaveSyrup)
+    db.session.add(Melonliqueur)
+    db.session.add(Grapes)
+    db.session.add(Whisky)
+    db.session.add(WhiteRum)
+    db.session.add(Blackberries)
+    db.session.add(CherryJuice)
+    db.session.add(RedChiliFlakes)
+    db.session.add(Grapejuice)
+    db.session.add(Carbonatedsoftdrink)
+    db.session.add(Sherbet)
+    db.session.add(Cornsyrup)
+    db.session.add(Irishwhiskey)
+    db.session.add(Butter)
+    db.session.add(Halfandhalf)
+    db.session.add(Marshmallows)
+    db.session.add(Coconutsyrup)
+    db.session.add(Peachbrandy)
+    db.session.add(Anis)
+    db.session.add(Jello)
+    db.session.add(Mintsyrup)
+    db.session.add(Tennesseewhiskey)
+    db.session.add(Kiwiliqueur)
+    db.session.add(Kiwi)
+    db.session.add(Cranberryvodka)
+    db.session.add(Apfelkorn)
+    db.session.add(Papaya)
+    db.session.add(Limepeel)
+    db.session.add(Angosturabitters)
+    db.session.add(Asafoetida)
+    db.session.add(Cayennepepper)
+    db.session.add(Drambuie)
+    db.session.add(Mango)
+    db.session.add(Cuminseed)
+    db.session.add(Orgeatsyrup)
+    db.session.add(TomatoJuice)
+    db.session.add(HotSauce)
+    db.session.add(WorcestershireSauce)
+    db.session.add(SoySauce)
+    db.session.add(Ricard)
+    db.session.add(OrgeatSyrup)
+    db.session.add(PepsiCola)
+    db.session.add(Pinacoladamix)
+    db.session.add(Daiquirimix)
+    db.session.add(Cardamom)
+    db.session.add(Blackpepper)
+    db.session.add(Cucumber)
+    db.session.add(Tropicana)
+    db.session.add(Oreocookie)
+    db.session.add(Jagermeister)
+    db.session.add(RosemarySyrup)
+    db.session.add(Rosemary)
+    db.session.add(GrapeSoda)
+    db.session.add(ApricotBrandy)
+    db.session.add(OrangeCuracao)
+    db.session.add(BlendedScotch)
+    db.session.add(Honeysyrup)
+    db.session.add(GingerSyrup)
+    db.session.add(IslaysinglemaltScotch)
+    db.session.add(EggYolk)
+    db.session.add(Coconutmilk)
+    db.session.add(Cherryliqueur)
+    db.session.add(Pinklemonade)
+    db.session.add(Coffeebrandy)
+    db.session.add(Limevodka)
+    db.session.add(BlackSambuca)
+    db.session.add(Raspberrysyrup)
+    db.session.add(Raspberryvodka)
+    db.session.add(Peychaudbitters)
+    db.session.add(AmaroMontenegro)
+    db.session.add(RubyPort)
+    db.session.add(BloodOrange)
+    db.session.add(JimBeam)
+    db.session.add(Anisette)
+    db.session.add(Cherries)
+    db.session.add(Fresca)
+    db.session.add(Curacao)
+    db.session.add(Aquavit)
+    db.session.add(Blackcurrantsquash)
+    db.session.add(Ouzo)
+    db.session.add(ChocolateSauce)
+    db.session.add(SaltedChocolate)
+    db.session.add(JohnnieWalker)
+    db.session.add(Fennelseeds)
+    db.session.add(Watermelon)
+    db.session.add(CremeDeBanane)
+    db.session.add(IrishWhiskey)
+    db.session.add(RossoVermouth)
+    db.session.add(up)
+    db.session.add(MelonLiqueur)
+    db.session.add(YukonJack)
+    db.session.add(Agavesyrup)
+    db.session.add(LightRum)
+    db.session.add(Maplesyrup)
+    db.session.add(Limeade)
+    db.session.add(AppleBrandy)
+    db.session.add(Pernod)
+    db.session.add(Zima)
 
     db.session.commit()
 

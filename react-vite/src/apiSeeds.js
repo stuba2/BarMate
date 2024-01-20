@@ -33099,7 +33099,6 @@ const turnApiToRecipeSeeds = () => {
     let randNum = Math.floor(Math.random()*4)+1
 
     let newRecipeObj = {
-      id: drinkObj.id, // ask will about this, if it will actually take
       name: drinkObj.name,
       description: null,
       instructions: drinkObj.instructions,
@@ -33207,7 +33206,7 @@ const turnApiToIngredientSeeds = () => {
   // removing duplicate values
   let vals = []
   for (let obj of arrOfIngredientObjs) {
-    vals.push(obj['name'].toLowerCase())
+    vals.push(obj['name'])
   }
   let valsSet = new Set(vals)
 
@@ -33223,17 +33222,17 @@ const turnApiToIngredientSeeds = () => {
   // console.log(arrOfIngredientSeedObjs)
   // console.dir(arrOfIngredientSeedObjs, {'maxArrayLength': null})
 
-  // for (let ingObj of arrOfIngredientSeedObjs) {
-  //   let variableName = ingObj.name.split(' ').join('').split('-').join('')
-  //   // console.log(variableName)
+  for (let ingObj of arrOfIngredientSeedObjs) {
+    let variableName = ingObj.name.split(' ').join('').split('-').join('')
+    // console.log(variableName)
 
-  //   let seed = `${variableName} = Ingredient(
-  //     name='${ingObj.name}')`
-  //   // console.log(seed)
+    // let seed = `${variableName} = Ingredient(
+    //   name='${ingObj.name}')`
+    // console.log(seed)
 
-  //   let dbSession = `db.session.add(${variableName})`
-  //   console.log(dbSession)
-  // }
+    let dbSession = `db.session.add(${variableName})`
+    console.log(dbSession)
+  }
 
   return arrOfIngredientSeedObjs
 }
@@ -33644,6 +33643,36 @@ const turnApiToRecipeIngredientSeeds = () => {
   // console.log(arrOfRecipeIngredientSeeds)
 }
 
+const turnApiToRecipeImages = () => {
+  const arrOfDrinkObjs = condenser()
+  const arrOfRecipeImageSeeds = []
+  const variableNamesArr = []
+
+  arrOfDrinkObjs.map((drinkObj) => {
+    let variableName = `ir${arrOfRecipeImageSeeds.length}`
+    variableNamesArr.push(variableName)
+    const recipeName = drinkObj['strDrink']
+    const url = drinkObj['strDrinkThumb']
+
+    let seed = `${variableName} = RecipeImage(
+      recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
+      url='${url}'
+    )`
+
+    arrOfRecipeImageSeeds.push(seed)
+  })
+  // for (let seed of arrOfRecipeImageSeeds) {
+  //   console.log(seed)
+  // }
+  for (let add of variableNamesArr) {
+    console.log(`db.session.add(${add})`)
+  }
+}
+const turnApiToIngredientImages = () => {
+
+}
+
 // turnApiToRecipeSeeds()
-// turnApiToIngredientSeeds()
-turnApiToRecipeIngredientSeeds()
+turnApiToIngredientSeeds()
+// turnApiToRecipeIngredientSeeds()
+// turnApiToRecipeImages()
