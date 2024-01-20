@@ -85,7 +85,7 @@ class RecipeIngredient(db.Model, UserMixin):
 
     def to_dict(self):
         return {
-            # 'id': self.id,
+            'id': self.id,
             'amount': self.amount,
             'unit': self.unit,
             "recipe_id": self.recipe_id,

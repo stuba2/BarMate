@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate, useParams, useHistory } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
 
 const EditRecipe = () => {
   const dispatch = useDispatch()
   const { recipeId } = useParams()
-  const history = useHistory()
+  // const history = useHistory()
   const { recipes } = useSelector((state) => state.recipes)
   const { user } = useSelector((state) => state.session)
   const [ name, setName ] = useState('')
@@ -21,7 +21,7 @@ const EditRecipe = () => {
     dispatch(recipeActions.getRecipesThunk())
   }, [dispatch])
 
-  
+
 
 
   const handleSubmit = async (e) => {
