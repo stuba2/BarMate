@@ -33245,28 +33245,12 @@ const turnApiToRecipeIngredientSeeds = () => {
   let arrOfDrinkObjs = condenser()
 
   arrOfDrinkObjs.map((drinkObj) => {
-    // ingredient columns
-    let ingredientObj1 = {}
-    let ingredientObj2 = {}
-    let ingredientObj3 = {}
-    let ingredientObj4 = {}
-    let ingredientObj5 = {}
-    let ingredientObj6 = {}
-    let ingredientObj7 = {}
-    let ingredientObj8 = {}
-    let ingredientObj9 = {}
-    let ingredientObj10 = {}
-    let ingredientObj11 = {}
-    let ingredientObj12 = {}
-
-    let ingredientNames = []
-    let ingredientSeeds = []
-
     // setting up recipe_ingredient obj
     if (drinkObj['strIngredient1'] && drinkObj['strMeasure1']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient1'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33294,8 +33278,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient2'] && drinkObj['strMeasure2']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient2'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33323,8 +33308,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient3'] && drinkObj['strMeasure3']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient3'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33352,8 +33338,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient4'] && drinkObj['strMeasure4']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient4'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33381,8 +33368,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient5'] && drinkObj['strMeasure5']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient5'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33410,8 +33398,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient6'] && drinkObj['strMeasure6']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient6'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33439,8 +33428,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient7'] && drinkObj['strMeasure7']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient7'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33468,8 +33458,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient8'] && drinkObj['strMeasure8']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient8'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33497,8 +33488,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient9'] && drinkObj['strMeasure9']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient9'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+        // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33526,8 +33518,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient10'] && drinkObj['strMeasure10']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient10'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+        // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33555,8 +33548,9 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient11'] && drinkObj['strMeasure11']) {
       //figure out variable name for ingredient seed
-        let variableName = drinkObj['strIngredient11'].split(' ').join('').split('-').join('').toLowerCase()
-        variableNamesArr.push(variableName)
+        // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
+      variableNamesArr.push(variableName)
 
 
       // find amount and unit for seed info
@@ -33584,7 +33578,8 @@ const turnApiToRecipeIngredientSeeds = () => {
     }
     if (drinkObj['strIngredient12'] && drinkObj['strMeasure12']) {
       //figure out variable name for ingredient seed
-      let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      // let variableName = drinkObj['strIngredient12'].split(' ').join('').split('-').join('').toLowerCase()
+      let variableName = `ir${arrOfRecipeIngredientSeeds.length}`
       variableNamesArr.push(variableName)
 
 
@@ -33640,12 +33635,12 @@ const turnApiToRecipeIngredientSeeds = () => {
 
   })
 
-  for (let seed of arrOfRecipeIngredientSeeds) {
-    console.log(seed)
-  }
-  // for (let add of variableNamesArr) {
-  //   console.log(`db.session.add(${add})`)
+  // for (let seed of arrOfRecipeIngredientSeeds) {
+  //   console.log(seed)
   // }
+  for (let add of variableNamesArr) {
+    console.log(`db.session.add(${add})`)
+  }
   // console.log(arrOfRecipeIngredientSeeds)
 }
 
