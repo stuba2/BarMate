@@ -6,6 +6,7 @@ import OneRecipe from '../components/OneRecipe/OneRecipe';
 import MyBar from '../components/MyBar/MyBar';
 import Layout from './Layout';
 import AllIngredients from '../components/AllIngredients/AllIngredients';
+import CreateRecipe from '../components/CreateRecipe/CreateRecipe';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/recipes",
         element: <AllRecipes />
+      },
+      {
+        path: "/recipes/new",
+        element: <CreateRecipe />
       },
       {
         path: "/recipes/:recipeId",
