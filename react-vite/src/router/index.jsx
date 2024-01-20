@@ -7,6 +7,7 @@ import MyBar from '../components/MyBar/MyBar';
 import Layout from './Layout';
 import AllIngredients from '../components/AllIngredients/AllIngredients';
 import CreateRecipe from '../components/CreateRecipe/CreateRecipe';
+import EditRecipe from '../components/EditRecipe/EditRecipe';
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: "/recipes/new",
         element: <CreateRecipe />
+      },
+      {
+        path: "/recipes/:recipeId/edit",
+        element: <EditRecipe />
       },
       {
         path: "/recipes/:recipeId",

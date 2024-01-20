@@ -1,18 +1,27 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams, useHistory } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
 
-const CreateRecipe = () => {
+const EditRecipe = () => {
   const dispatch = useDispatch()
-  const recipes = useSelector((state) => state.recipes)
+  const { recipeId } = useParams()
+  const history = useHistory()
+  const { recipes } = useSelector((state) => state.recipes)
   const { user } = useSelector((state) => state.session)
-  const userId = user.id
   const [ name, setName ] = useState('')
   const [ description, setDescription ] = useState('')
   const [ instructions, setInstructions ] = useState('')
   const [ validationErrors, setValidationErrors ] = useState({})
+
+  const recipe = recipes[+recipeId]
+
+  useEffect(() => {
+    dispatch(recipeActions.getRecipesThunk())
+  }, [dispatch])
+
+  
 
 
   const handleSubmit = async (e) => {
@@ -22,7 +31,7 @@ const CreateRecipe = () => {
       name: name,
       description: description,
       instructions: instructions,
-      user_id: userId
+      user_id: user.id
     }
     if (!Object.values(validationErrors)) {
       dispatch(recipeActions)
@@ -77,4 +86,4 @@ const CreateRecipe = () => {
   }
 }
 
-export default CreateRecipe;
+export default EditRecipe;

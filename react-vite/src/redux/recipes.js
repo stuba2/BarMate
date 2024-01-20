@@ -14,6 +14,13 @@ const getOneRecipe = (data) => {
   }
 }
 
+const createRecipe = (data) => {
+  return {
+    type: POST_RECIPE,
+    payload: data
+  }
+}
+
 export const getRecipesThunk = () => async (dispatch) => {
   try {
     const response = await fetch(`/api/recipes/`)
@@ -38,6 +45,24 @@ export const getOneRecipeThunk = (recipeId) => async (dispatch) => {
   }
 }
 
+export const createRecipeThunk = (recipeForm) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(recipeForm)
+    })
+
+    const data = await response.json()
+    dispatch(createRecipe(data))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
 const initialState = {}
 
 const recipeReducer = (state = initialState, action) => {
@@ -47,6 +72,11 @@ const recipeReducer = (state = initialState, action) => {
       newState = {...state}
       const recipeArr = action.payload.Recipes
       recipeArr.map((recipeObj) => newState[recipeObj.id] = recipeObj)
+      return newState
+    case POST_RECIPE:
+      newState = {...state}
+      const newRecipe = action.payload
+      newState[newRecipe.id] = newRecipe
       return newState
     default:
       return state

@@ -1,4 +1,4 @@
-from app.models import db, environment, SCHEMA
+from app.models import db, environment, SCHEMA, User
 from app.models.ingredient import Ingredient
 from sqlalchemy.sql import text
 from app.seeds.users import ex
@@ -1228,6 +1228,66 @@ def undo_ingredients():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.ingredients RESTART IDENTITY CASCADE;")
     else:
+
+        # mountain_deww = Ingredient.query.filter(Ingredient.name == 'Mountain Dew').first()
+        # red_bulll = Ingredient.query.filter(Ingredient.name == 'Red Bull').first()
+        # vodkaa = Ingredient.query.filter(Ingredient.name == 'Vodka').first()
+        # hammss = Ingredient.query.filter(Ingredient.name == 'Hamm\'s Beer').first()
+        # ginn = Ingredient.query.filter(Ingredient.name == 'Gin').first()
+        # apple_ciderr = Ingredient.query.filter(Ingredient.name == 'Apple Cider').first()
+        # lemon_juicee = Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first()
+        # maple_syrupp = Ingredient.query.filter(Ingredient.name == 'Maple Syrup').first()
+        # bourbonn = Ingredient.query.filter(Ingredient.name == 'Bourbon').first()
+        # lime_juicee = Ingredient.query.filter(Ingredient.name == 'Lime Juice').first()
+        # ginger_beerr = Ingredient.query.filter(Ingredient.name == 'Ginger Beer').first()
+        # mintt = Ingredient.query.filter(Ingredient.name == 'Mint').first()
+        # tequilaa = Ingredient.query.filter(Ingredient.name == 'Tequila').first()
+        # orange_juicee = Ingredient.query.filter(Ingredient.name == 'Orange Juice').first()
+        # malortt = Ingredient.query.filter(Ingredient.name == 'Malort').first()
+
+        # all_ingredients = Ingredient.query.all()
+        # print('\n ========', all_ingredients)
+        # print('\n ========', lemon_juicee)
+        # print('\n ========', lemon_juicee.bar_ingredients_users)
+
+        # print('\n row1::::hi::::',)
+        # row1 = db.session.query(bar_ingredients).filter(bar_ingredients.user_id=1, ingredient_id=1).one()
+        # table = db.session.query(bar_ingredients).all()
+        # print('\n ;;;;;;;;;;', table)
+        # print('\n row1::::::::', row1)
+
+        # db.session.delete(row1)
+
+        # print('\n hamms:::::::::::::', ginn)
+        # hammss.bar_ingredients_users.remove(ex[0])
+        # vodkaa.bar_ingredients_users.remove(ex[0])
+        # red_bulll.bar_ingredients_users.remove(ex[0])
+        # mountain_deww.bar_ingredients_users.remove(ex[0])
+        # user1 = User.query.get(1)
+        # user2 = User.query.get(2)
+        # user3 = User.query.get(3)
+        # user4 = User.query.get(4)
+        # print('\n +++++++++++', ex)
+        # print('\n +++++++++++', User.query.get(2))
+        # lemon_juicee.bar_ingredients_users.remove(user2)
+        # apple_ciderr.bar_ingredients_users.remove(ex[1])
+        # print('\n **********', lemon_juicee.bar_ingredients_users)
+        # maple_syrupp.bar_ingredients_users.remove(ex[1])
+        # ginn.bar_ingredients_users.remove(ex[1])
+
+
+        # mintt.bar_ingredients_users.remove(ex[2])
+        # ginger_beerr.bar_ingredients_users.remove(ex[2])
+        # lime_juicee.bar_ingredients_users.remove(ex[2])
+        # bourbonn.bar_ingredients_users.remove(ex[2])
+
+        # ginger_beerr.bar_ingredients_users.remove(ex[3])
+        # malortt.bar_ingredients_users.remove(ex[3])
+        # orange_juicee.bar_ingredients_users.remove(ex[3])
+        # lime_juicee.bar_ingredients_users.remove(ex[3])
+        # tequilaa.bar_ingredients_users.remove(ex[3])
+
+        db.session.execute(text("DELETE FROM bar_ingredients"))
         db.session.execute(text("DELETE FROM ingredients"))
 
     db.session.commit()
