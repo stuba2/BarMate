@@ -4,14 +4,18 @@ import "./Navigation.css";
 
 function Navigation() {
   return (
-    <ul>
-      <li><NavLink to="/">Home</NavLink></li>
-      <li><NavLink to="/myBar">My Bar</NavLink></li>
-      <li><NavLink to="/recipes">Cocktails</NavLink></li>
+    <ul className="navigation-container">
+      <div className="nav-left">
+        <img className="nav-logo" src="../../../dist/assets/wholeLogoCropped2.jpg"/>
+        <div><NavLink to="/" className="nav-link">Home</NavLink></div>
+        <div><NavLink to="/myBar" className="nav-link">My Bar</NavLink></div>
+        <div><NavLink to="/recipes" className="nav-link">Cocktails</NavLink></div>
+        <div><NavLink to="/ingredients" className="nav-link">Ingredients</NavLink></div>
+      </div>
 
-      <li>
+      <div className="nav-right">
         <ProfileButton />
-      </li>
+      </div>
     </ul>
   );
 }
