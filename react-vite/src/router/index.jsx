@@ -30,6 +30,10 @@ export const router = createBrowserRouter([
         element: <AllRecipes />
       },
       {
+        path: "/recipes/index/:page",
+        element: <AllRecipes />
+      },
+      {
         path: "/recipes/new",
         element: <CreateRecipe />
       },

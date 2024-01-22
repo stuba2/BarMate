@@ -9,16 +9,24 @@ from ..models.ingredient import bar_ingredients
 
 recipe_routes = Blueprint('recipes', __name__)
 
-@recipe_routes.route('/')
-def get_all_recipes():
+@recipe_routes.route('/index/<int:page>')
+def get_paginated_recipes(page):
   ret = []
+  print('\n page:::::', page)
+  per_page = 10
   all_recipes = Recipe.query.all()
+  # paginated = db.paginate(all_recipes, page=1, per_page=per_page, error_out=False)
+  paginated = Recipe.query.paginate(page=page, per_page=per_page)
+  print('\n ::::::::::', paginated)
+  print('\n ::::::::::', paginated.items)
+  # print('\n ::::::::::', paginated.ret.allrecipes)
 
-  for recipe in all_recipes:
+  for recipe in paginated.items:
     owner_details = User.query.filter(User.id == recipe.user_id).first()
 
     recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
 
+    recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
     recipe_ingredient_list = []
     for ingredient in recipe_ingredients:
       ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
@@ -42,6 +50,60 @@ def get_all_recipes():
         'username': owner_details.username,
         'dob': owner_details.dob
       },
+      'recipe_image_url': recipe_image.url,
+      'recipe_ingredients': recipe_ingredient_list,
+      'created_at': recipe.created_at,
+      'updated_at': recipe.updated_at
+    }
+
+    ret.append(ret_recipe)
+
+  return {
+    'Recipes': ret
+  }
+
+@recipe_routes.route('/')
+def get_all_recipes(page):
+  ret = []
+  # print('\n page:::::', page)
+  # per_page = 10
+  all_recipes = Recipe.query.all()
+  # paginated = db.paginate(all_recipes, page=1, per_page=per_page, error_out=False)
+  # paginated = Recipe.query.paginate(page=page, per_page=per_page)
+  # print('\n ::::::::::', paginated)
+  # print('\n ::::::::::', paginated.items)
+  # print('\n ::::::::::', paginated.ret.allrecipes)
+
+  for recipe in all_recipes:
+    owner_details = User.query.filter(User.id == recipe.user_id).first()
+
+    recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
+
+    recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
+    recipe_ingredient_list = []
+    for ingredient in recipe_ingredients:
+      ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
+      unit = ingredient.to_dict()['unit'].value
+      real_ingredient = {
+        'name': ingredient_name.name,
+        'amount': ingredient.amount,
+        'unit': unit,
+        'recipe_id': ingredient.recipe_id,
+        'ingredient_id': ingredient.ingredient_id
+      }
+      recipe_ingredient_list.append(real_ingredient)
+
+    ret_recipe = {
+      'id': recipe.id,
+      'name': recipe.name,
+      'description': recipe.description,
+      'instructions': recipe.instructions,
+      'user_id': recipe.user_id,
+      'owner_details': {
+        'username': owner_details.username,
+        'dob': owner_details.dob
+      },
+      'recipeImageUrl': recipe_image.url,
       'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
@@ -61,6 +123,7 @@ def get_one_recipe(recipe_id):
   owner_details = User.query.filter(User.id == recipe.user_id).first()
 
   recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
+  recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
 
   recipe_ingredient_list = []
   for ingredient in recipe_ingredients:
@@ -85,6 +148,7 @@ def get_one_recipe(recipe_id):
       'username': owner_details.username,
       'dob': owner_details.dob
     },
+    'recipe_image_url': recipe_image.url,
     'recipe_ingredients': recipe_ingredient_list,
     'created_at': recipe.created_at,
     'updated_at': recipe.updated_at

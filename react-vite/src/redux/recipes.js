@@ -21,9 +21,9 @@ const createRecipe = (data) => {
   }
 }
 
-export const getRecipesThunk = () => async (dispatch) => {
+export const getRecipesThunk = (page) => async (dispatch) => {
   try {
-    const response = await fetch(`/api/recipes/`)
+    const response = await fetch(`/api/recipes/index/${+page}`)
 
     const data = await response.json()
     dispatch(getRecipes(data))
@@ -70,7 +70,12 @@ const recipeReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_RECIPES:
       newState = {...state}
-      const recipeArr = action.payload.Recipes
+      const recipesArr = action.payload.Recipes
+      recipesArr.map((recipeObj) => newState[recipeObj.id] = recipeObj)
+      return newState
+    case GET_A_RECIPE:
+      newState = {...state}
+      const recipeArr = action.payload.Recipe
       recipeArr.map((recipeObj) => newState[recipeObj.id] = recipeObj)
       return newState
     case POST_RECIPE:
