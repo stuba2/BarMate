@@ -1,3 +1,39 @@
 .profile-dropdown {
   position: absolute;
 }
+
+.navigation-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  margin: 0;
+  height: 50px;
+  background-color: #090619;
+  color: #fcfcfa;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.nav-left {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-right {
+  display: end;
+  margin-right: 20px;
+}
+
+.nav-logo {
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.nav-link {
+  color: #fcfcfa;
+  text-decoration: none;
+}
