@@ -9,7 +9,6 @@ const MyBar = () => {
   const userBar = useSelector((state) => state.bar)
 
   let userBarArr = Object.values(userBar)
-  console.log(userBarArr)
 
 
   useEffect(() => {
