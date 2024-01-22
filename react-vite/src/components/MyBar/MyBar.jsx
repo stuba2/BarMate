@@ -6,7 +6,9 @@ import * as barActions from "../../redux/bars"
 
 const MyBar = () => {
   const dispatch = useDispatch()
-  const userBar = useSelector((state) => state.recipes)
+  const userBar = useSelector((state) => state.bar)
+
+  let userBarArr = Object.values(userBar)
 
 
   useEffect(() => {
@@ -22,7 +24,14 @@ const MyBar = () => {
     return (
       <>
       <div>
-        hi
+        <div>My ingredients:</div>
+        <ul>
+          {userBarArr.map((ingredient) => {
+            return (
+              <li key={ingredient.id}>{ingredient.name}</li>
+            )
+          })}
+        </ul>
       </div>
       </>
     );

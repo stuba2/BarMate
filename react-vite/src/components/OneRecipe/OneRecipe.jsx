@@ -12,7 +12,8 @@ const OneRecipe = () => {
 
 
   useEffect(() => {
-    dispatch(recipeActions.getRecipesThunk())
+    dispatch(recipeActions.getOneRecipeThunk(+recipeId))
+
   }, [dispatch])
 
   if (!recipe) {
@@ -30,13 +31,13 @@ const OneRecipe = () => {
           <ul>
             {recipe.recipe_ingredients.map((ingredient) => {
               return (
-                <li key={ingredient.name}>{ingredient.name}</li>
+                <li key={ingredient.name}>{ingredient.name}: {ingredient.amount} {ingredient.unit}</li>
               )
             })}
           </ul>
         </div>
         <div>{recipe.instructions}</div>
-        <div>update the route to include recipe image instead of making it's own request?</div>
+        <div><img src={recipe.recipe_image_url} width="335" /></div>
       </div>
       </>
     );
