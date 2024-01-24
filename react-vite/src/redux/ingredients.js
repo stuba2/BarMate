@@ -36,6 +36,7 @@ export const postIngredientThunk = (ingredientObj) => async (dispatch) => {
 
     const data = await response.json()
     console.log(data)
+    return data
 
     let ingredientImage = {
       ingredient_id: data.id,
@@ -47,24 +48,24 @@ export const postIngredientThunk = (ingredientObj) => async (dispatch) => {
   }
 }
 
-// export const postIngredientImageThunk = () => async (dispatch) => {
-//   try {
-//     const response = await fetch(`/api/ingredients/${data.id}/image`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(ingredientImage)
-//     })
+export const postIngredientImageThunk = (ingImgObj, id) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/ingredients/${id}/image`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(ingImgObj)
+    })
 
-//     const thisIngredient = await fetch(`/api/ingredients/${}/`)
+    // const thisIngredient = await fetch(`/api/ingredients/${}/`)
 
-//     const data = await response.json()
-//   } catch (error) {
-//     console.log('error: ', error)
-//     return error
-//   }
-// }
+    const data = await response.json()
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
 
 
 const initialState = {}

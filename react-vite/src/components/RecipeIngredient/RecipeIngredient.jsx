@@ -39,7 +39,7 @@ const RecipeIngredient = ({ recipeIngredients, setRecipeIngredients, recipeAmoun
             value={ingredientIndividual}
             onChange={(e) => {
               setIngredientIndividual(e.target.value)
-              setRecipeIngredients([...recipeIngredients,e.target.value])
+              setRecipeIngredients([...recipeIngredients, e.target.value])
             }}
             list="ingredient-options"
             id="ingredient-option"

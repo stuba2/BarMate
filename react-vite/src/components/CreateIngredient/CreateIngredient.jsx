@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as ingredientActions from "../../redux/ingredients"
 
 const CreateIngredient = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const ingredients = useSelector((state) => state.ingredients)
   const [ name, setName ] = useState('')
   const [ url, setUrl ] = useState('')
@@ -22,14 +23,18 @@ const CreateIngredient = () => {
     }
 
 
-    createdIngredient = dispatch(ingredientActions.postIngredientThunk(newIngredient))
+    createdIngredient = await dispatch(ingredientActions.postIngredientThunk(newIngredient))
 
     const newIngredientImage = {
       ingredient_id: +createdIngredient.id,
       url
     }
+    console.log(createdIngredient, createdIngredient.id)
 
-    if (createdIngredient) dispatch(ingredientActions.po)
+    if (createdIngredient) {
+      dispatch(ingredientActions.postIngredientImageThunk(newIngredientImage, createdIngredient.id))
+      navigate('/ingredients')
+    }
     // send new ing obj to thunk
   }
 
