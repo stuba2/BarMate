@@ -33,6 +33,18 @@ export const getRecipesThunk = (page) => async (dispatch) => {
   }
 }
 
+export const getRecipesThunkAll = () => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/`)
+
+    const data = await response.json()
+    dispatch(getRecipes(data))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
 export const getOneRecipeThunk = (recipeId) => async (dispatch) => {
   try {
     const response = await fetch(`/api/recipes/${+recipeId}`)
@@ -54,9 +66,56 @@ export const createRecipeThunk = (recipeForm) => async (dispatch) => {
       },
       body: JSON.stringify(recipeForm)
     })
+    console.log('thunk response: ', response)
 
     const data = await response.json()
+    console.log('thunk data: ', data)
     dispatch(createRecipe(data))
+    return data
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+
+    // const response = await fetch(`/api/recipes/`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(recipeForm)
+    // })
+    // console.log('thunk response: ', response)
+
+    // if (response.ok) {
+    //   const data = await response.json()
+    //   console.log('thunk data: ', data)
+    //   dispatch(createRecipe(data))
+    //   return data
+    // }
+    // if (!response.ok) {
+    //   // const error = await response.json()
+    //   // return error
+    //   console.log('not ok response: ', response)
+    //   return response
+    // }
+}
+
+export const addRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
+  console.log('add RI thunk')
+  try {
+    console.log('add RI try')
+    const response = await fetch(`/api/recipe_ingredients/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(RIObj)
+    })
+    console.log('add RI response: ', response)
+
+    const data = await response.json()
+    console.log('add RI data: ', data)
+
   } catch (error) {
     console.log('error: ', error)
     return error

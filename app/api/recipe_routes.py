@@ -63,7 +63,7 @@ def get_paginated_recipes(page):
   }
 
 @recipe_routes.route('/')
-def get_all_recipes(page):
+def get_all_recipes():
   ret = []
   # print('\n page:::::', page)
   # per_page = 10
@@ -103,7 +103,7 @@ def get_all_recipes(page):
         'username': owner_details.username,
         'dob': owner_details.dob
       },
-      'recipeImageUrl': recipe_image.url,
+      'recipeImageUrl': recipe_image.url if recipe_image else None,
       'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
@@ -148,7 +148,7 @@ def get_one_recipe(recipe_id):
       'username': owner_details.username,
       'dob': owner_details.dob
     },
-    'recipe_image_url': recipe_image.url,
+    'recipe_image_url': recipe_image.url if recipe_image else None,
     'recipe_ingredients': recipe_ingredient_list,
     'created_at': recipe.created_at,
     'updated_at': recipe.updated_at
@@ -176,7 +176,6 @@ def get_users_recipes():
       'owner_details': {
         'username': owner_details.username,
         'dob': owner_details.dob,
-        'bar_id': owner_details.bar_id
       },
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
@@ -213,7 +212,6 @@ def create_a_recipe():
       'owner_details': {
         'username': owner_details.username,
         'dob': owner_details.dob,
-        'bar_id': owner_details.bar_id
       },
       'created_at': new_recipe.created_at,
       'updated_at': new_recipe.updated_at
@@ -222,9 +220,8 @@ def create_a_recipe():
     return ret
 
   return {
-    'message': 'Bad Request',
-    'errors': form.errors
-  }
+      "Errors": form.errors
+    }, 500
 
 @recipe_routes.route('/<int:recipe_id>/image', methods=['POST'])
 def create_image_on_recipe(recipe_id):
