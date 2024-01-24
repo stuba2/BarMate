@@ -16,7 +16,7 @@ const OneRecipe = () => {
 
   }, [dispatch])
 
-  if (!recipe) {
+  if (!recipe || !recipe.recipe_ingredients) {
     return (
       <div>...loading</div>
     )

@@ -9,7 +9,7 @@ ingredient_routes = Blueprint('ingredients', __name__)
 @ingredient_routes.route('/')
 def get_all_ingredients():
   ret = []
-  all_ingredients = Ingredient.query.all()
+  all_ingredients = Ingredient.query.order_by(Ingredient.name).all()
 
   for ingredient in all_ingredients:
     ret_ingredient = {

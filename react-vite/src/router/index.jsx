@@ -8,6 +8,7 @@ import Layout from './Layout';
 import AllIngredients from '../components/AllIngredients/AllIngredients';
 import CreateRecipe from '../components/CreateRecipe/CreateRecipe';
 import EditRecipe from '../components/EditRecipe/EditRecipe';
+import CreateIngredient from '../components/CreateIngredient/CreateIngredient';
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path: "/ingredients",
         element: <AllIngredients />
+      },
+      {
+        path: "/ingredients/new",
+        element: <CreateIngredient />
       },
     ],
   },
