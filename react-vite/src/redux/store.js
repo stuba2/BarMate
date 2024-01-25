@@ -9,12 +9,16 @@ import sessionReducer from "./session";
 import recipeReducer from "./recipes";
 import barReducer from "./bars";
 import ingredientReducer from "./ingredients";
+import reviewReducer from "./reviews";
+import toastReducer from "./toasts";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   recipes: recipeReducer,
   bar: barReducer,
   ingredients: ingredientReducer,
+  reviews: reviewReducer,
+  toasts: toastReducer,
 });
 
 let enhancer;

@@ -395,7 +395,7 @@ def get_recipe_toasts(recipe_id):
   all_toasts = Toast.query.filter(Toast.recipe_id == recipe_id).all()
 
   for toast in all_toasts:
-    toaster_details = User.query.filter(User.id == toast.user_id)
+    toaster_details = User.query.filter(User.id == toast.user_id).first()
     ret_toast = {
       'id': toast.id,
       'user_id': toast.user_id,
