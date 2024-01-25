@@ -12,9 +12,7 @@ const Toasts = () => {
   const { user } = useSelector(state => state.session)
   const toasts = useSelector(state => state.toasts)
 
-  console.log('toasts: ', toasts)
   let numToasts = Object.keys(toasts).length
-  console.log(numToasts)
 
 
 

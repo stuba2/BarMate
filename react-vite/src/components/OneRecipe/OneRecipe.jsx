@@ -5,6 +5,7 @@ import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
 import Reviews from "../Reviews/Reviews";
 import Toasts from "../Toasts/Toasts";
+import CreateReview from "../CreateReview/CreateReview";
 
 const OneRecipe = () => {
   const dispatch = useDispatch()
@@ -14,9 +15,7 @@ const OneRecipe = () => {
   const recipe = recipes[+recipeId]
   const reviewsArr = Object.values(reviews)
 
-  let ratingAvg = reviewsArr.reduce((total, next) => total + next.rating, 0) / reviewsArr.length
-
-  console.log(ratingAvg)
+  let ratingAvg = (Math.round((reviewsArr.reduce((total, next) => total + next.rating, 0) / reviewsArr.length) * 100) / 100)
 
 
   useEffect(() => {
@@ -47,6 +46,7 @@ const OneRecipe = () => {
         <div>{recipe.instructions}</div>
         <div>Average Rating: <i class="fa-solid fa-star"></i> {ratingAvg}</div>
         <div><img src={recipe.recipe_image_url} width="335" /></div>
+        <div><CreateReview recipeId={recipeId}/></div>
         <div><Reviews /></div>
         <div><Toasts /></div>
       </div>

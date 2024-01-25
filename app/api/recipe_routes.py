@@ -310,6 +310,7 @@ def post_review(recipe_id):
   if form.validate_on_submit():
     new_review = Review(
       review_text = form.data['review_text'],
+      rating = form.data['rating'],
       user_id = current_user.get_id(),
       recipe_id = recipe_id
     )

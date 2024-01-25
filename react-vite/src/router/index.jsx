@@ -9,6 +9,7 @@ import AllIngredients from '../components/AllIngredients/AllIngredients';
 import CreateRecipe from '../components/CreateRecipe/CreateRecipe';
 import EditRecipe from '../components/EditRecipe/EditRecipe';
 import CreateIngredient from '../components/CreateIngredient/CreateIngredient';
+import CreateReview from '../components/CreateReview/CreateReview';
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
       {
         path: "/ingredients/new",
         element: <CreateIngredient />
+      },
+      {
+        path: "/reviews/new",
+        element: <CreateReview />
       },
     ],
   },
