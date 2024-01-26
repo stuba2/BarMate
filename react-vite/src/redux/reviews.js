@@ -21,6 +21,13 @@ const editReview = (data) => {
   }
 }
 
+const deleteReview = (data) => {
+  return {
+    type: DELETE_REVIEW,
+    payload: data
+  }
+}
+
 export const getReviewsThunk = (recipeId) => async (dispatch) => {
   try {
     const response = await fetch(`/api/reviews/${+recipeId}/reviews`)
@@ -51,9 +58,9 @@ export const createReviewThunk = (reviewForm, recipeId) => async (dispatch) => {
   }
 }
 
-export const editReviewThunk = () => async (dispatch) => {
+export const editReviewThunk = (recipeId, reviewId, reviewForm) => async (dispatch) => {
   try {
-    const response = await fetch(`/api/recipes/${recipeId}/reviews/${reviewId}`, {
+    const response = await fetch(`/api/recipes/${+recipeId}/reviews/${+reviewId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -61,8 +68,21 @@ export const editReviewThunk = () => async (dispatch) => {
       body: JSON.stringify(reviewForm)
     })
 
-    const data = response.json()
+    const data = await response.json()
     dispatch(editReview(data))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
+export const deleteReviewThunk = (reviewId, recipeId) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/${recipeId}/reviews/${reviewId}`, {
+      method: "DELETE"
+    })
+
+    dispatch(deleteReview(reviewId))
   } catch (error) {
     console.log('error: ', error)
     return error
@@ -89,6 +109,11 @@ const reviewReducer = (state = initialState, action) => {
       newState = {...state}
       const review = action.payload
       newState[review.id] = review
+      return newState
+    case DELETE_REVIEW:
+      newState = {...state}
+      const reviewId = action.payload
+      delete newState[reviewId]
       return newState
     default:
       return state

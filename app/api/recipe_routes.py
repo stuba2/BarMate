@@ -337,9 +337,9 @@ def post_review(recipe_id):
     "errors": form.errors
   }
 
-@recipe_routes.route('/<int:review_id>', methods=["PUT"])
+@recipe_routes.route('/<int:recipe_id>/reviews/<int:review_id>', methods=["PUT"])
 # @login_required
-def edit_a_review(review_id):
+def edit_a_review(recipe_id, review_id):
   existing_review = Review.query.get(review_id)
   reviewer_details = User.query.filter(User.id == existing_review.user_id).first()
   form = ReviewForm()

@@ -28,7 +28,7 @@ const Toasts = () => {
     return (
       <>
       <div>
-        <div><i class="fa-solid fa-champagne-glasses"></i> {numToasts}</div>
+        <div><i className="fa-solid fa-champagne-glasses"></i> {numToasts}</div>
       </div>
       </>
     );

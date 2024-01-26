@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import * as reviewActions from "../../redux/reviews"
-// import './CreateCommentComponent.css'
+import './EditReview.css'
 
-const CreateReview = ({ recipeId }) => {
+const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
+
   const dispatch = useDispatch()
   const { user } = useSelector(state => state.session)
+  const reviews = useSelector(state => state.reviews)
   const [ reviewText, setReviewText ] = useState('')
   const [ numStars, setNumStars ] = useState()
   const [ isStar1Clicked, setIsStar1Clicked ] = useState(false)
@@ -15,14 +17,51 @@ const CreateReview = ({ recipeId }) => {
   const [ isStar5Clicked, setIsStar5Clicked ] = useState(false)
   const [ validationErrors, setValidationErrors ] = useState({})
   const [ selected, setSelected ] = useState(false)
-  const [ textValidity, setTextValidity ] = useState(false)
-  const [ starsValidity, setStarsValidity ] = useState(false)
-  const [ validity, setValidity ] = useState(true)
+  const [ validity, setValidity ] = useState(false)
 
-  // const initials = `${user.first_name[0]}${user.last_name[0]}`
 
-console.log('validity: ', validity)
-console.log('selected: ', selected)
+  const review = reviews[+reviewId]
+
+  useEffect(() => {
+    setReviewText(review.review_text)
+    setNumStars(review.rating)
+    if (review.rating === 1) {
+      setIsStar1Clicked(true)
+      setIsStar2Clicked(false)
+      setIsStar3Clicked(false)
+      setIsStar4Clicked(false)
+      setIsStar5Clicked(false)
+    }
+    if (review.rating === 2) {
+      setIsStar1Clicked(true)
+      setIsStar2Clicked(true)
+      setIsStar3Clicked(false)
+      setIsStar4Clicked(false)
+      setIsStar5Clicked(false)
+    }
+    if (review.rating === 31) {
+      setIsStar1Clicked(true)
+      setIsStar2Clicked(true)
+      setIsStar3Clicked(true)
+      setIsStar4Clicked(false)
+      setIsStar5Clicked(false)
+    }
+    if (review.rating === 4) {
+      setIsStar1Clicked(true)
+      setIsStar2Clicked(true)
+      setIsStar3Clicked(true)
+      setIsStar4Clicked(true)
+      setIsStar5Clicked(false)
+    }
+    if (review.rating === 51) {
+      setIsStar1Clicked(true)
+      setIsStar2Clicked(true)
+      setIsStar3Clicked(true)
+      setIsStar4Clicked(true)
+      setIsStar5Clicked(true)
+    }
+  }, [dispatch])
+
   useEffect(() => {
     if (reviewText.length < 1001 && numStars > 0) setValidity(true)
     else setValidity(false)
@@ -32,9 +71,10 @@ console.log('selected: ', selected)
     const errors = {}
 
     if (reviewText.length >= 1001) {
-      errors.review_text = 'Comment must be 1000 characters or less'
+      errors.review = 'Review must be 1000 characters or less'
       setValidity(false)
     }
+
     setValidationErrors(errors)
 
   }, [reviewText])
@@ -46,7 +86,7 @@ console.log('selected: ', selected)
   if (selected) {
     buttonClass = "create-review-save"
   }
-  if (selected && reviewText && numStars > 0) {
+  if (selected && reviewText) {
     buttonClass = "create-review-save-enabled"
   }
   if (validationErrors.review_text) {
@@ -57,6 +97,7 @@ console.log('selected: ', selected)
     e.preventDefault()
 
     const reviewForm = {
+      id: reviewId,
       review_text: reviewText,
       rating: numStars,
       user_id: user.id,
@@ -64,21 +105,18 @@ console.log('selected: ', selected)
     }
 
     if (!Object.values(validationErrors).length) {
-      dispatch(reviewActions.createReviewThunk(reviewForm, recipeId))
+      dispatch(reviewActions.editReviewThunk(recipeId, reviewId, reviewForm))
     }
 
-
-    setReviewText('')
-    setIsStar1Clicked(false)
-    setIsStar2Clicked(false)
-    setIsStar3Clicked(false)
-    setIsStar4Clicked(false)
-    setIsStar5Clicked(false)
-    setSelected(false)
+    setIsBeingEdited(false)
   }
 
-  const reviewLengthErrorClass = 'review-length-error' + ((reviewText.length < 1001) ? '' : '-error')
+  const handleDiscard = async (e) => {
+    e.preventDefault()
+    setIsBeingEdited(false)
+  }
 
+  const reviewLengthErrorClass = 'review-length-error' + (validity ? '' : '-error')
 
   const star1ClassName = (isStar1Clicked ? 'fa-solid fa-star' : 'fa-regular fa-star')
   const star2ClassName = (isStar2Clicked ? 'fa-solid fa-star' : 'fa-regular fa-star')
@@ -92,6 +130,7 @@ console.log('selected: ', selected)
 
       <form onSubmit={handleSubmit} className="create-review-form">
         <div className="create-review-form">
+
           <div className="create-review-text-container">
             <textarea
               id= "review-text"
@@ -103,7 +142,6 @@ console.log('selected: ', selected)
               placeholder="Write a review..."
             />
           </div>
-
 
           <div className="post-review-stars">
           <span className="rate">
@@ -165,9 +203,10 @@ console.log('selected: ', selected)
           </span> Stars
         </div>
 
-          <div className="button-validation-combo">
-            <div className={reviewLengthErrorClass}>Comment must be 1000 characters or less</div>
+          <div className="edit-button-validation-combo">
             <button className={buttonClass} disabled={!validity ? true : false}>Save</button>
+            <button className="edit-review-discard" onClick={handleDiscard}>Discard changes</button>
+            <div className={reviewLengthErrorClass}>Review must be 1000 characters or less</div>
           </div>
 
         </div>
@@ -177,4 +216,4 @@ console.log('selected: ', selected)
   )
 }
 
-export default CreateReview
+export default EditReview

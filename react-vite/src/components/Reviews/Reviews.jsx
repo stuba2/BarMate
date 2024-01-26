@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as reviewActions from "../../redux/reviews"
-import Toasts from "../Toasts/Toasts";
+import EditReview from "../EditReview/EditReview";
+import DeleteReview from "../DeleteReview/DeleteReview";
+import './Reviews.css'
 
 const hourArr = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
@@ -11,9 +13,11 @@ const Reviews = () => {
   const reviews = useSelector((state) => state.reviews)
   const { recipeId } = useParams()
   const { user } = useSelector(state => state.session)
+  const [ isBeingEdited, setIsBeingEdited ] = useState(false)
+  const [ focusedReviewtId, setFocusedReviewId ] = useState()
+  const [ isBeingDeleted, setIsBeingDeleted ] = useState(false)
 
-  const reviewsArr = Object.values(reviews)
-  console.log('reviewsArr: ', reviewsArr)
+  const reviewsArr = Object.values(reviews).reverse()
 
 
 
@@ -28,8 +32,7 @@ const Reviews = () => {
     )
   } else {
     return (
-      <>
-      <div>
+      <div className="review-super-container">
         <div>{reviewsArr.map((review) => {
           let updatedDateSplit = new Date(review.updated_at).toDateString().split(' ')
           let updatedTimeSplit = new Date(review.updated_at).toTimeString().split(' ')
@@ -48,18 +51,82 @@ const Reviews = () => {
           }
           let postedMinute = timeTimeSplit[1]
 
-          return (
-            <div>
-              <div>{review.reviewer_details.username}</div>
-              <div>{review.review_text}</div>
-              <div><i class="fa-solid fa-star"></i> {review.rating}</div>
-              <div>{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
+          let editDeleteButtonClass
+          let deleteButtonClass
 
-            </div>
-          )
+          if (user && review.user_id !== user.id) {
+            editDeleteButtonClass = 'review-edit-delete-hidden'
+          } else {
+            editDeleteButtonClass = 'review-edit-delete'
+          }
+
+          if (isBeingDeleted) {
+            deleteButtonClass = 'review-delete-shown'
+          } else {
+            deleteButtonClass = 'review-delete-hidden'
+          }
+
+          if (isBeingEdited && focusedReviewtId === review.id) {
+            return <EditReview key={review.id} reviewId={review.id} setIsBeingEdited={setIsBeingEdited} recipeId={recipeId}/>
+          } else if (isBeingDeleted && focusedReviewtId === review.id) {
+            return (
+              // if review is being deleted
+              <div>
+                <div className="review-username">{review.reviewer_details.username}</div>
+                <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
+                <div className="review-text">{review.review_text}</div>
+                <div className="review-rating"><i class="fa-solid fa-star"></i> {review.rating}</div>
+                <div className={editDeleteButtonClass}>
+                  <div>
+                    <button className="review-edit" onClick={() => {
+                      setIsBeingEdited(true)
+                      setFocusedReviewId(review.id)
+                    }}>Edit</button>
+                  </div>
+                  <div className="review-dot">·</div>
+                  <div>
+                  <button className='review-delete' onClick={() => {
+                      setIsBeingDeleted(true)
+                      setFocusedReviewId(review.id)
+                    }}>Delete</button>
+                    <div className='review-delete-shown'>
+                      <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          } else {
+            return (
+              // standard review setup
+              <div>
+                <div className="review-username">{review.reviewer_details.username}</div>
+                <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
+                <div className="review-text">{review.review_text}</div>
+                <div className="review-rating"><i class="fa-solid fa-star"></i> {review.rating}</div>
+                <div className={editDeleteButtonClass}>
+                  <div>
+                    <button className="review-edit" onClick={() => {
+                      setIsBeingEdited(true)
+                      setFocusedReviewId(review.id)
+                    }}>Edit</button>
+                  </div>
+                  <div className="review-dot">·</div>
+                  <div>
+                  <button className='review-delete' onClick={() => {
+                      setIsBeingDeleted(true)
+                      setFocusedReviewId(review.id)
+                    }}>Delete</button>
+                    <div className='review-delete-hidden'>
+                      <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          }
         })}</div>
-      </div>
-      </>
+        </div>
     );
   }
 }
