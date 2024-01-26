@@ -1,0 +1,66 @@
+.edit-review-discard {
+  font-family: 'Open Sans';
+  font-size: 13px;
+  font-weight: bold;
+  grid-area: save-button;
+  background-color: #e4e6ea;
+  color: black;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  margin: 3px;
+}
+
+.edit-button-validation-combo{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.create-review-save {
+  font-family: 'Open Sans';
+  font-size: 13px;
+  font-weight: 300;
+  grid-area: save-button;
+  background-color: #e9ebee;
+  color: #808b9d;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  margin: 3px;
+  cursor: context-menu;
+}
+
+.create-review-save-enabled {
+  font-family: 'Open Sans';
+  font-size: 13px;
+  font-weight: bold;
+  grid-area: save-button;
+  color: white;
+  background-color: #0c66e4;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  margin: 3px;
+}
+
+.create-review-save-hidden {
+  display: none;
+}
+
+.review-length-error {
+  display: none;
+}
+
+.review-length-error-error {
+  color: #db1a1a;
+  padding-left: 15px;
+}
+
+.post-review-stars {
+  grid-area: stars;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

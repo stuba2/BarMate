@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
-import { thunkSignup } from "../../redux/session";
+import { useNavigate } from "react-router-dom";
 import * as ingredientActions from "../../redux/ingredients"
 import * as recipeActions from "../../redux/recipes"
 import RecipeIngredient from "../RecipeIngredient/RecipeIngredient";
@@ -21,22 +20,15 @@ const CreateRecipe = () => {
   const [ recipeIngredients, setRecipeIngredients ] = useState([])
   const [ recipeAmounts, setRecipeAmounts ] = useState([])
   const [ recipeUnits, setRecipeUnits ] = useState([])
-  const [ overallRecipeIngredients, setOverallRecipeIngredients ] = useState([])
-  // const [ finalRI, setFinalRI ] = useState([])
   const [ count, setCount ] = useState(1)
 
   const ingredientsArr = Object.values(ingredients)
   const recipesArr = Object.values(recipes)
 
-
+//************************************* need to include recipe image
 
   // tracking the changes in the individual CreateIngredient components
   useEffect(() => {
-    console.log('recipeIngredients: ', recipeIngredients)
-    console.log('recipeAmounts: ', recipeAmounts)
-    console.log('recipeUnits: ', recipeUnits)
-    console.log('===', recipesArr)
-
     for (let i = 0; i < recipeIngredients.length; i++) {
       let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
       console.log('---', matchedIng[0].id)
@@ -56,7 +48,7 @@ const CreateRecipe = () => {
       if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
       if (!name) errors['name'] = 'Cocktail name is required'
       if (!instructions) errors['instructions'] = 'Instructions are required'
-
+      // add in length requirements
       setValidationErrors(errors)
     },[name, instructions])
 
@@ -88,32 +80,26 @@ const CreateRecipe = () => {
       console.log('createdRecipe: ', createdRecipe)
       if (createdRecipe && createdRecipe.id) {
         console.log("i'm a real boy: ", createdRecipe)
-        // handleAddRI(createdRecipe.id)
 
         // handles the addition of RecipeIngredients to the store, called from the handleSubmit
-        // const handleAddRI = (createdRecipe.id) => {
-          let finalIngredient
-          let finalRI = []
-          for (let i = 0; i < recipeIngredients.length; i++) {
-            let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
+        let finalIngredient
+        let finalRI = []
+        for (let i = 0; i < recipeIngredients.length; i++) {
+          let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
 
-            finalIngredient = {
-              amount: recipeAmounts[i],
-              unit: recipeUnits[i],
-              recipe_id: createdRecipe.id,
-              ingredient_id: matchedIng[0].id
-            }
-            console.log('finalIngredient: ', finalIngredient)
-
-            finalRI.push(finalIngredient)
-
+          finalIngredient = {
+            amount: recipeAmounts[i],
+            unit: recipeUnits[i],
+            recipe_id: createdRecipe.id,
+            ingredient_id: matchedIng[0].id
           }
-          for (let i = 0; i < finalRI.length; i++) {
-            let singleRI = finalRI[i]
-            console.log('singleRI: ', singleRI)
-            dispatch(recipeActions.addRecipeIngredientsThunk(singleRI))
-          }
-        // }
+          finalRI.push(finalIngredient)
+        }
+
+        for (let i = 0; i < finalRI.length; i++) {
+          let singleRI = finalRI[i]
+          dispatch(recipeActions.addRecipeIngredientsThunk(singleRI))
+        }
 
         navigate(`/recipes/${createdRecipe.id}`)
       }

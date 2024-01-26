@@ -3,12 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
+import Reviews from "../Reviews/Reviews";
+import Toasts from "../Toasts/Toasts";
+import CreateReview from "../CreateReview/CreateReview";
 
 const OneRecipe = () => {
   const dispatch = useDispatch()
   const recipes = useSelector((state) => state.recipes)
+  const reviews = useSelector((state) => state.reviews)
   const { recipeId } = useParams()
   const recipe = recipes[+recipeId]
+  const reviewsArr = Object.values(reviews)
+
+  let ratingAvg = (Math.round((reviewsArr.reduce((total, next) => total + next.rating, 0) / reviewsArr.length) * 100) / 100)
 
 
   useEffect(() => {
@@ -37,7 +44,11 @@ const OneRecipe = () => {
           </ul>
         </div>
         <div>{recipe.instructions}</div>
+        <div>Average Rating: <i class="fa-solid fa-star"></i> {ratingAvg}</div>
         <div><img src={recipe.recipe_image_url} width="335" /></div>
+        <div><CreateReview recipeId={recipeId}/></div>
+        <div><Reviews /></div>
+        <div><Toasts /></div>
       </div>
       </>
     );

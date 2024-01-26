@@ -310,6 +310,7 @@ def post_review(recipe_id):
   if form.validate_on_submit():
     new_review = Review(
       review_text = form.data['review_text'],
+      rating = form.data['rating'],
       user_id = current_user.get_id(),
       recipe_id = recipe_id
     )
@@ -336,9 +337,9 @@ def post_review(recipe_id):
     "errors": form.errors
   }
 
-@recipe_routes.route('/<int:review_id>', methods=["PUT"])
+@recipe_routes.route('/<int:recipe_id>/reviews/<int:review_id>', methods=["PUT"])
 # @login_required
-def edit_a_review(review_id):
+def edit_a_review(recipe_id, review_id):
   existing_review = Review.query.get(review_id)
   reviewer_details = User.query.filter(User.id == existing_review.user_id).first()
   form = ReviewForm()
@@ -395,7 +396,7 @@ def get_recipe_toasts(recipe_id):
   all_toasts = Toast.query.filter(Toast.recipe_id == recipe_id).all()
 
   for toast in all_toasts:
-    toaster_details = User.query.filter(User.id == toast.user_id)
+    toaster_details = User.query.filter(User.id == toast.user_id).first()
     ret_toast = {
       'id': toast.id,
       'user_id': toast.user_id,
