@@ -75,7 +75,7 @@ const Reviews = () => {
                 <div className="review-username">{review.reviewer_details.username}</div>
                 <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
                 <div className="review-text">{review.review_text}</div>
-                <div className="review-rating"><i class="fa-solid fa-star"></i> {review.rating}</div>
+                <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
                 <div className={editDeleteButtonClass}>
                   <div>
                     <button className="review-edit" onClick={() => {
@@ -103,7 +103,7 @@ const Reviews = () => {
                 <div className="review-username">{review.reviewer_details.username}</div>
                 <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
                 <div className="review-text">{review.review_text}</div>
-                <div className="review-rating"><i class="fa-solid fa-star"></i> {review.rating}</div>
+                <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
                 <div className={editDeleteButtonClass}>
                   <div>
                     <button className="review-edit" onClick={() => {

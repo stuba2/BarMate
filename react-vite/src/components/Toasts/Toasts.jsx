@@ -3,22 +3,49 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as toastActions from "../../redux/toasts"
 
-const hourArr = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
-const Toasts = () => {
+const Toasts = ({  }) => {
   const dispatch = useDispatch()
-  // const reviews = useSelector((state) => state.reviews)
   const { recipeId } = useParams()
   const { user } = useSelector(state => state.session)
   const toasts = useSelector(state => state.toasts)
-
-  let numToasts = Object.keys(toasts).length
-
+  // const [ isToasted, setIsToasted ] = useState(false)
 
 
   useEffect(() => {
     dispatch(toastActions.getToastsThunk(+recipeId))
   }, [dispatch])
+
+  let numToasts = Object.keys(toasts).length
+
+  let toastsArr = Object.values(toasts)
+  let toast = toastsArr.find(obj => obj.user_id === user.id)
+
+  const handleToast = () => {
+    const toastObj = {
+      user_id: user.id,
+      recipe_id: recipeId
+    }
+
+    if (!toast) {
+        dispatch(toastActions.postToastThunk(recipeId, toastObj))
+        numToasts++
+    }else {
+        dispatch(toastActions.deleteToastThunk(recipeId, toast.id))
+        numToasts--
+      }
+
+    // if (!isToasted) {
+    //   setIsToasted(true)
+    //   dispatch(toastActions.postToastThunk(recipeId, toastObj))
+    //   numToasts++
+    // } else {
+    //   setIsToasted(false)
+    //   dispatch(toastActions.deleteToastThunk(recipeId, toast.id))
+    //   numToasts--
+    // }
+
+  }
+
 
   if (!toasts) {
     return (
@@ -28,7 +55,9 @@ const Toasts = () => {
     return (
       <>
       <div>
-        <div><i className="fa-solid fa-champagne-glasses"></i> {numToasts}</div>
+        <div>
+          <button onClick={handleToast}><i className="fa-solid fa-champagne-glasses"></i></button> {numToasts}
+        </div>
       </div>
       </>
     );

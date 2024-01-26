@@ -456,7 +456,7 @@ def post_toast(recipe_id):
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=['DELETE'])
 # @login_required
 def delete_a_toast(recipe_id):
-  toast_to_delete = Toast.query.filter(Toast.recipe_id == recipe_id).first()
+  toast_to_delete = Toast.query.filter(Toast.recipe_id == recipe_id, Toast.user_id == current_user.id).first()
 
   if not toast_to_delete:
     return {
