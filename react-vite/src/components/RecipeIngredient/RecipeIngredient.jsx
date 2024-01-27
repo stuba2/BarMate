@@ -15,10 +15,8 @@ const RecipeIngredient = ({ recipeIngredients, setRecipeIngredients, recipeAmoun
 
   const ingredientsArr = Object.values(ingredients)
   const ingredientsABC = ingredientsArr.sort((a,b) => {
-    let nameA = a.name
-    let nameB = b.name
-    if (nameA < nameB) return -1
-    if (nameA > nameB) return 1
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
     return 0
   })
 
