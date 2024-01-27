@@ -9,9 +9,9 @@ import './CreateRecipe.css'
 const CreateRecipe = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const { user } = useSelector((state) => state.session)
-  const recipes = useSelector((state) => state.recipes)
-  const ingredients = useSelector((state) => state.ingredients)
+  const { user } = useSelector(state => state.session)
+  const recipes = useSelector(state => state.recipes)
+  const ingredients = useSelector(state => state.ingredients)
   const userId = user.id
   const [ name, setName ] = useState('')
   const [ description, setDescription ] = useState('')

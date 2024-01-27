@@ -8,17 +8,15 @@ import './RecipeIngredient.css'
 
 const RecipeIngredient = ({ recipeIngredients, setRecipeIngredients, recipeAmounts, setRecipeAmounts, recipeUnits, setRecipeUnits }) => {
   const dispatch = useDispatch()
-  const ingredients = useSelector((state) => state.ingredients)
+  const ingredients = useSelector(state => state.ingredients)
   const [ ingredientIndividual, setIngredientIndividual ] = useState('')
   const [ amountIndividual, setAmountIndividual ] = useState()
   const [ unitIndividual, setUnitIndividual ] = useState('')
 
   const ingredientsArr = Object.values(ingredients)
   const ingredientsABC = ingredientsArr.sort((a,b) => {
-    let nameA = a.name
-    let nameB = b.name
-    if (nameA < nameB) return -1
-    if (nameA > nameB) return 1
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
     return 0
   })
 

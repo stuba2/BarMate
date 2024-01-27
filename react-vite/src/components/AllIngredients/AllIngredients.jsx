@@ -6,7 +6,7 @@ import * as ingredientActions from '../../redux/ingredients'
 
 const AllIngredients = () => {
   const dispatch = useDispatch()
-  const ingredients = useSelector((state) => state.ingredients)
+  const ingredients = useSelector(state => state.ingredients)
 
   useEffect(() => {
     dispatch(ingredientActions.getIngredientsThunk())

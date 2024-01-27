@@ -4,7 +4,7 @@ import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
 
-const AllRecipes = () => {
+const UsersRecipes = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   let { page } = useParams()
@@ -12,16 +12,17 @@ const AllRecipes = () => {
   if (!page) page = 1
 
   useEffect(() => {
-    dispatch(recipeActions.getRecipesThunk(page))
+    dispatch(recipeActions.getUsersRecipesTHunk())
   }, [dispatch, page])
 
   let recipesArr = Object.values(recipes)
+  console.log('recipesArr: ', recipesArr)
   // let paginatedRecipes = recipes? do it from the store?
     // probably should do it from the api side. only send the first 10/20 recipes?
 
 
-  let previousPage = `/recipes/index/${+page - 1}`
-  let nextPage = `/recipes/index/${+page + 1}`
+  // let previousPage = `/recipes/index/${+page - 1}`
+  // let nextPage = `/recipes/index/${+page + 1}`
 
 
   if (!recipes) {
@@ -37,24 +38,15 @@ const AllRecipes = () => {
             <div key={recipe.id} className="one-recipe-container">
               <img src={recipe.recipe_image_url} width="100"></img>
               <div>{recipe.name}</div>
-              {/* <ul>
-                {recipe.recipe_ingredients.map((ingredient) => {
-                  return (
-                    <div key={ingredient.name}>
-                      <li key={ingredient.name}>{ingredient.amount} {ingredient.unit} {ingredient.name}</li>
-                    </div>
-                  )
-                })}
-              </ul> */}
             </div>
           )
         })}
       </div>
-      <div><NavLink to={previousPage}>Previous page (Under Construction, please change the url to navigate to previous page)</NavLink></div>
-      <div><NavLink to={nextPage}>Next page (Under Construction, please change the url to navigate to next page)</NavLink></div>
+      {/* <div><NavLink to={previousPage}>Previous page (Under Construction, please change the url to navigate to previous page)</NavLink></div>
+      <div><NavLink to={nextPage}>Next page (Under Construction, please change the url to navigate to next page)</NavLink></div> */}
       </>
     );
   }
 }
 
-export default AllRecipes;
+export default UsersRecipes;

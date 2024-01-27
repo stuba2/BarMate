@@ -19,10 +19,6 @@ const CreateReview = ({ recipeId }) => {
   const [ starsValidity, setStarsValidity ] = useState(false)
   const [ validity, setValidity ] = useState(true)
 
-  // const initials = `${user.first_name[0]}${user.last_name[0]}`
-
-console.log('validity: ', validity)
-console.log('selected: ', selected)
   useEffect(() => {
     if (reviewText.length < 1001 && numStars > 0) setValidity(true)
     else setValidity(false)

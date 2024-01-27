@@ -9,8 +9,8 @@ import CreateReview from "../CreateReview/CreateReview";
 
 const OneRecipe = () => {
   const dispatch = useDispatch()
-  const recipes = useSelector((state) => state.recipes)
-  const reviews = useSelector((state) => state.reviews)
+  const recipes = useSelector(state => state.recipes)
+  const reviews = useSelector(state => state.reviews)
   const { recipeId } = useParams()
   const recipe = recipes[+recipeId]
   const reviewsArr = Object.values(reviews)
@@ -44,11 +44,11 @@ const OneRecipe = () => {
           </ul>
         </div>
         <div>{recipe.instructions}</div>
-        <div>Average Rating: <i class="fa-solid fa-star"></i> {ratingAvg}</div>
+        <div>Average Rating: <i className="fa-solid fa-star"></i> {ratingAvg}</div>
+        <div><Toasts recipeId={recipeId}/></div>
         <div><img src={recipe.recipe_image_url} width="335" /></div>
         <div><CreateReview recipeId={recipeId}/></div>
         <div><Reviews /></div>
-        <div><Toasts /></div>
       </div>
       </>
     );

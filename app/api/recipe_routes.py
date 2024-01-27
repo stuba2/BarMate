@@ -167,6 +167,9 @@ def get_users_recipes():
 
   for recipe in user_recipes:
     owner_details = User.query.filter(User.id == recipe.user_id).first()
+    recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
+    recipe_ingredient_list = []
+
     ret_recipe = {
       'id': recipe.id,
       'name': recipe.name,
@@ -177,6 +180,8 @@ def get_users_recipes():
         'username': owner_details.username,
         'dob': owner_details.dob,
       },
+      'recipe_image_url': recipe_image.url if recipe_image else None,
+      'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
     }
@@ -456,7 +461,7 @@ def post_toast(recipe_id):
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=['DELETE'])
 # @login_required
 def delete_a_toast(recipe_id):
-  toast_to_delete = Toast.query.filter(Toast.recipe_id == recipe_id).first()
+  toast_to_delete = Toast.query.filter(Toast.recipe_id == recipe_id, Toast.user_id == current_user.id).first()
 
   if not toast_to_delete:
     return {
