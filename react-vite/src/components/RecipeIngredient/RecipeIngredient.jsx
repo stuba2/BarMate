@@ -8,7 +8,7 @@ import './RecipeIngredient.css'
 
 const RecipeIngredient = ({ recipeIngredients, setRecipeIngredients, recipeAmounts, setRecipeAmounts, recipeUnits, setRecipeUnits }) => {
   const dispatch = useDispatch()
-  const ingredients = useSelector((state) => state.ingredients)
+  const ingredients = useSelector(state => state.ingredients)
   const [ ingredientIndividual, setIngredientIndividual ] = useState('')
   const [ amountIndividual, setAmountIndividual ] = useState()
   const [ unitIndividual, setUnitIndividual ] = useState('')

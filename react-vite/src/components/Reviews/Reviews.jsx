@@ -10,11 +10,11 @@ const hourArr = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
 const Reviews = () => {
   const dispatch = useDispatch()
-  const reviews = useSelector((state) => state.reviews)
+  const reviews = useSelector(state => state.reviews)
   const { recipeId } = useParams()
   const { user } = useSelector(state => state.session)
   const [ isBeingEdited, setIsBeingEdited ] = useState(false)
-  const [ focusedReviewtId, setFocusedReviewId ] = useState()
+  const [ focusedReviewId, setFocusedReviewId ] = useState()
   const [ isBeingDeleted, setIsBeingDeleted ] = useState(false)
 
   const reviewsArr = Object.values(reviews).reverse()
@@ -66,9 +66,9 @@ const Reviews = () => {
             deleteButtonClass = 'review-delete-hidden'
           }
 
-          if (isBeingEdited && focusedReviewtId === review.id) {
+          if (isBeingEdited && focusedReviewId === review.id) {
             return <EditReview key={review.id} reviewId={review.id} setIsBeingEdited={setIsBeingEdited} recipeId={recipeId}/>
-          } else if (isBeingDeleted && focusedReviewtId === review.id) {
+          } else if (isBeingDeleted && focusedReviewId === review.id) {
             return (
               // if review is being deleted
               <div>

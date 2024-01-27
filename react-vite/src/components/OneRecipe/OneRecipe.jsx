@@ -9,8 +9,8 @@ import CreateReview from "../CreateReview/CreateReview";
 
 const OneRecipe = () => {
   const dispatch = useDispatch()
-  const recipes = useSelector((state) => state.recipes)
-  const reviews = useSelector((state) => state.reviews)
+  const recipes = useSelector(state => state.recipes)
+  const reviews = useSelector(state => state.reviews)
   const { recipeId } = useParams()
   const recipe = recipes[+recipeId]
   const reviewsArr = Object.values(reviews)

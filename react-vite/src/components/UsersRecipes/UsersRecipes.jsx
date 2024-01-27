@@ -8,7 +8,7 @@ const UsersRecipes = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   let { page } = useParams()
-  const recipes = useSelector((state) => state.recipes)
+  const recipes = useSelector(state => state.recipes)
   if (!page) page = 1
 
   useEffect(() => {

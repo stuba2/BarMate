@@ -6,7 +6,7 @@ import * as ingredientActions from "../../redux/ingredients"
 const CreateIngredient = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const ingredients = useSelector((state) => state.ingredients)
+  const ingredients = useSelector(state => state.ingredients)
   const [ name, setName ] = useState('')
   const [ url, setUrl ] = useState('')
 

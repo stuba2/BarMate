@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
 import * as barActions from "../../redux/bars"
 import * as ingredientActions from "../../redux/ingredients"
 import EditBar from "../EditBar/EditBar";
@@ -11,7 +10,6 @@ const MyBar = () => {
   const userBar = useSelector(state => state.bar)
   const ingredients = useSelector(state => state.ingredients)
   const [ isSelected, setIsSelected ] = useState()
-  // const [ isInBar, setIsInBar ] = useState()
 
   let userBarr = Object.values(userBar).sort((a,b) => {
     if (a.name < b.name) return -1
@@ -23,7 +21,6 @@ const MyBar = () => {
     if (a.name > b.name) return 1
     return 0
   })
-  console.log('userBarr: ', userBarr)
 
   let existingBar
   useEffect(() => {
@@ -34,12 +31,9 @@ const MyBar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    console.log('isSelected: ', isSelected)
     let target = ingredientsArr.filter(ingObj => ingObj.name === isSelected)
-    console.log('target[0]: ', target[0])
 
     let ingInBar = userBarr.find(ing => ing.name === isSelected)
-    console.log('ingInBar: ', ingInBar)
 
     if (!ingInBar) {
       let retIngObj = {
@@ -47,7 +41,6 @@ const MyBar = () => {
         user_id: user.id
       }
 
-      console.log('retingobj: ', retIngObj)
       dispatch(barActions.postBarThunk(retIngObj))
     }
     if (ingInBar) {
@@ -55,16 +48,6 @@ const MyBar = () => {
     }
 
   }
-
-
-  // const handleAddToBar = (ingName) => {
-  //   setMyBarr([...myBarr, ingName])
-  // }
-
-  // const handleRemoveFromBar = (ing) => {
-  //   setMyBarr(myBarr.filter(ingredient => ingredient !== ing))
-  // }
-
 
   if (!true) {
     return (
@@ -81,7 +64,7 @@ const MyBar = () => {
             )
           })}
         </ul>
-        <div><EditBar isSelected={isSelected} setIsSelected={setIsSelected} ingredientsArr={ingredientsArr} handleSubmit={handleSubmit}/></div>
+        <div><EditBar setIsSelected={setIsSelected} ingredientsArr={ingredientsArr} handleSubmit={handleSubmit}/></div>
       </div>
     );
   }
