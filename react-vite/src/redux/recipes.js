@@ -21,6 +21,13 @@ const createRecipe = (data) => {
   }
 }
 
+const getUsersRecipes = (data) => {
+  return {
+    type: GET_USER_RECIPES,
+    payload: data
+  }
+}
+
 export const getRecipesThunk = (page) => async (dispatch) => {
   try {
     const response = await fetch(`/api/recipes/index/${+page}`)
@@ -39,6 +46,18 @@ export const getRecipesThunkAll = () => async (dispatch) => {
 
     const data = await response.json()
     dispatch(getRecipes(data))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
+export const getUsersRecipesTHunk = () => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/user`)
+
+    const data = await response.json()
+    dispatch(getUsersRecipes(data))
   } catch (error) {
     console.log('error: ', error)
     return error
@@ -141,6 +160,11 @@ const recipeReducer = (state = initialState, action) => {
       newState = {...state}
       const newRecipe = action.payload
       newState[newRecipe.id] = newRecipe
+      return newState
+    case GET_USER_RECIPES:
+      newState = {...state}
+      const UsersRecipesArr = action.payload.Recipes
+      UsersRecipesArr.map((recipeObj) => newState[recipeObj.id] = recipeObj)
       return newState
     default:
       return state

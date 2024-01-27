@@ -10,6 +10,8 @@ import CreateRecipe from '../components/CreateRecipe/CreateRecipe';
 import EditRecipe from '../components/EditRecipe/EditRecipe';
 import CreateIngredient from '../components/CreateIngredient/CreateIngredient';
 import CreateReview from '../components/CreateReview/CreateReview';
+import UsersRecipes from '../components/UsersRecipes/UsersRecipes';
+import EditBar from '../components/EditBar/EditBar';
 
 export const router = createBrowserRouter([
   {
@@ -48,8 +50,16 @@ export const router = createBrowserRouter([
         element: <OneRecipe />
       },
       {
-        path: "/myBar",
+        path: "/account/myBar",
         element: <MyBar />
+      },
+      {
+        path: "/account/myBar/edit",
+        element: <EditBar />
+      },
+      {
+        path: "/account/myCocktails",
+        element: <UsersRecipes />
       },
       {
         path: "/ingredients",
