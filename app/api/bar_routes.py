@@ -26,8 +26,6 @@ def create_bar():
   user = User.query.filter(User.id == current_user.id).first()
 
   if form.validate_on_submit():
-    ret = []
-    # for ingredient in ingredient_list:
     ing = Ingredient.query.filter(Ingredient.id == form.data['ingredient_id']).first()
 
     ing.bar_ingredients_users.append(user)
@@ -50,13 +48,7 @@ def create_bar():
 @bar_routes.route('/<int:ingredient_id>', methods=['DELETE'])
 def delete_bar(ingredient_id):
   user = User.query.filter(User.id == current_user.id).first()
-  # existing_bar_ingredients = Ingredient.query.filter(Ingredient.bar_ingredients_users.id == current_user.id).all()
   existing_ing = Ingredient.query.filter(Ingredient.id == ingredient_id).first()
-  print('\n ---', existing_ing)
-  print('\n ---', existing_ing.name)
-  print('\n ---', existing_ing.bar_ingredients_users) # this is a list of users that have this ingredient in their bar
-
-  print('\n +++', existing_ing.bar_ingredients_users) # this is a list of users that have this ingredient in their bar
 
   if not user:
     return {
@@ -68,8 +60,8 @@ def delete_bar(ingredient_id):
       "message": "Ingredient does not exist"
     }
 
-
   existing_ing.bar_ingredients_users.remove(user)
+  db.session.commit()
 
   return {
     "message": "Successfully Deleted"
