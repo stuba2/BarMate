@@ -37,3 +37,7 @@ def add_recipe_ingredient():
     'message': 'Bad Request',
     'errors': form.errors
   }
+
+@recipe_ingredient_routes.route('/', methods=['PUT'])
+def edit_recipe_ingredient():
+  existing_ri = RecipeIngredient.query.get()

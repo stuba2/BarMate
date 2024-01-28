@@ -1,44 +1,22 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
-import { thunkSignup } from "../../redux/session";
-import * as ingredientActions from "../../redux/ingredients"
 import unitTypes from "../../../dist/assets/unitTypes";
-import './RecipeIngredient.css'
+// import { useDispatch, useSelector } from "react-redux";
+// import { Navigate, useNavigate } from "react-router-dom";
+// import { thunkSignup } from "../../redux/session";
+// import * as ingredientActions from "../../redux/ingredients"
+// import unitTypes from "../../../dist/assets/unitTypes";
 
-const RecipeIngredient = ({ recipeIngredients, setRecipeIngredients, recipeAmounts, setRecipeAmounts, recipeUnits, setRecipeUnits, originalName, originalAmount, originalUnit, originalId }) => {
-  const dispatch = useDispatch()
-  const ingredients = useSelector(state => state.ingredients)
-  const [ ingredientIndividual, setIngredientIndividual ] = useState(originalName ? originalName : '')
-  const [ amountIndividual, setAmountIndividual ] = useState(originalAmount ? originalAmount : '')
-  const [ unitIndividual, setUnitIndividual ] = useState(originalUnit ? originalUnit : '')
-
-  const ingredientsArr = Object.values(ingredients)
-  const ingredientsABC = ingredientsArr.sort((a,b) => {
-    if (a.name < b.name) return -1
-    if (a.name > b.name) return 1
-    return 0
-  })
-
-
-  useEffect(() => {
-    dispatch(ingredientActions.getIngredientsThunk())
-  }, [dispatch])
-
-  // need to add ingredientIndividual, etc to recipeIngredients arr
-
+const OneRecipeIngredient = ({ obj, tryHandleChange, tryHandleDelete, recipeIngredients, setRecipeIngredients, recipeAmounts, setRecipeAmounts, recipeUnits, setRecipeUnits, ingredientsABC, ingredientIndividual, setIngredientIndividual, amountIndividual, setAmountIndividual, unitIndividual, setUnitIndividual }) => {
+  // const [ isEditing, setIsEditing ] = useState(false)
+  // const [ ingredientIndividual, setIngredientIndividual ] = useState('')
+  // const [ amountIndividual, setAmountIndividual ] = useState('')
+  // const [ unitIndividual, setUnitIndividual ] = useState('')
 
   return (
-    // <div>
-    //   <div>
-    //     {}
-    //   </div>
-    // </div>
-    <div className="create-rec-ing">
-      Ingredient!
+    <div>
       <div>
-        <div className="rec-ing-ingredient-drop">
-          <input
+         <div className="rec-ing-ingredient-drop">
+           <input
             value={ingredientIndividual}
             onChange={(e) => {
               setIngredientIndividual(e.target.value)
@@ -63,7 +41,6 @@ const RecipeIngredient = ({ recipeIngredients, setRecipeIngredients, recipeAmoun
             value={amountIndividual}
             onChange={(e) => {
               setAmountIndividual(e.target.value)
-              // console.log('recipeAmounts in RI comp', recipeAmounts)
               setRecipeAmounts([...recipeAmounts, e.target.value])
             }}
             required
@@ -96,4 +73,4 @@ const RecipeIngredient = ({ recipeIngredients, setRecipeIngredients, recipeAmoun
   )
 }
 
-export default RecipeIngredient
+export default OneRecipeIngredient

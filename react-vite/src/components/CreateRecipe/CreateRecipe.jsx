@@ -5,6 +5,7 @@ import * as ingredientActions from "../../redux/ingredients"
 import * as recipeActions from "../../redux/recipes"
 import RecipeIngredient from "../RecipeIngredient/RecipeIngredient";
 import './CreateRecipe.css'
+import AllRecipeIngredients from "../AllRecipeIngredients/AllRecipeIngredients";
 
 const CreateRecipe = () => {
   const dispatch = useDispatch()
@@ -22,6 +23,13 @@ const CreateRecipe = () => {
   const [ recipeUnits, setRecipeUnits ] = useState([])
   const [ count, setCount ] = useState(1)
 
+  const initialWhat = [
+    // {name: 'Wine', amount: 1, unit:'cl'},
+    // {name: 'Tea', amount: 2, unit:'oz'},
+    // {name: 'Port', amount: 3, unit:'tbs'}
+  ]
+  const [ what, setWhat ] = useState(initialWhat ? initialWhat : [])
+
   const ingredientsArr = Object.values(ingredients)
   const recipesArr = Object.values(recipes)
 
@@ -32,6 +40,9 @@ const CreateRecipe = () => {
     for (let i = 0; i < recipeIngredients.length; i++) {
       let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
       console.log('---', matchedIng[0].id)
+      console.log('recipeIngredients: ', recipeIngredients)
+      console.log('recipeAmounts: ', recipeAmounts)
+      console.log('recipeUnits: ', recipeUnits)
     }
   }, [recipeIngredients, recipeAmounts, recipeUnits])
 
@@ -113,8 +124,36 @@ const CreateRecipe = () => {
   const counterFunc = (e) => {
     e.preventDefault()
     setCount(+count+1)
+    console.log('componentArr: ', componentArr)
     setComponentArr([...componentArr, componentSingular])
   }
+
+  const antiCounterFunc = (e) => {
+    e.preventDefault()
+    setCount(+count-1)
+    setComponentArr([componentArr.filter(rI => rI.key !== keyCount)])
+  }
+
+  const tryHandleAdd = (name, amount, unit) => {
+    setWhat([
+      ...what,
+      {
+        name,
+        amount,
+        unit
+      }
+    ])
+  }
+
+  const tryHandleChange = () => {
+
+  }
+
+  const tryHandleDelete = () => {
+
+  }
+
+
 
   if (!recipes) {
     return (
@@ -153,6 +192,7 @@ const CreateRecipe = () => {
               )
             })}
           </div>
+          {/* <AllRecipeIngredients what={what} setWhat={setWhat} tryHandleChange={tryHandleChange} tryHandleDelete={tryHandleDelete} recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} recipeAmounts={recipeAmounts} setRecipeAmounts={setRecipeAmounts} recipeUnits={recipeUnits} setRecipeUnits={setRecipeUnits}/> */}
 
           <button onClick={counterFunc}>Add Ingredient</button>
 

@@ -28,6 +28,13 @@ const getUsersRecipes = (data) => {
   }
 }
 
+const editRecipe = (data) => {
+  return {
+    type: EDIT_RECIPE,
+    payload: data
+  }
+}
+
 export const getRecipesThunk = (page) => async (dispatch) => {
   try {
     const response = await fetch(`/api/recipes/index/${+page}`)
@@ -141,6 +148,34 @@ export const addRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
   }
 }
 
+export const editRecipeThunk = (recipeId, recipeForm) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/${recipeId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(recipeForm)
+    })
+
+    const data = await response.json()
+    dispatch(editRecipe(data))
+    return data
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
+export const editRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipe_ingredients/`)
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
 const initialState = {}
 
 const recipeReducer = (state = initialState, action) => {
@@ -160,6 +195,11 @@ const recipeReducer = (state = initialState, action) => {
       newState = {...state}
       const newRecipe = action.payload
       newState[newRecipe.id] = newRecipe
+      return newState
+    case EDIT_RECIPE:
+      newState = {...state}
+      const recipe = action.payload
+      newState[recipe.id] = recipe
       return newState
     case GET_USER_RECIPES:
       newState = {...state}
