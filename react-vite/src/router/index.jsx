@@ -12,6 +12,7 @@ import CreateIngredient from '../components/CreateIngredient/CreateIngredient';
 import CreateReview from '../components/CreateReview/CreateReview';
 import UsersRecipes from '../components/UsersRecipes/UsersRecipes';
 import EditBar from '../components/EditBar/EditBar';
+import MakableRecipes from '../components/MakeableRecipes/MakableRecipes';
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
       {
         path: "/recipes/new",
         element: <CreateRecipe />
+      },
+      {
+        path: "/recipes/makable",
+        element: <MakableRecipes />
       },
       {
         path: "/recipes/:recipeId/edit",
