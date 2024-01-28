@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
+import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
 
 const UsersRecipes = () => {
   const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const UsersRecipes = () => {
   }, [dispatch, page])
 
   let recipesArr = Object.values(recipes)
-  console.log('recipesArr: ', recipesArr)
+  // console.log('recipesArr: ', recipesArr)
   // let paginatedRecipes = recipes? do it from the store?
     // probably should do it from the api side. only send the first 10/20 recipes?
 
@@ -35,9 +36,21 @@ const UsersRecipes = () => {
       <div className="recipes-container">
         {recipesArr.map((recipe) => {
           return (
-            <div key={recipe.id} className="one-recipe-container">
-              <img src={recipe.recipe_image_url} width="100"></img>
-              <div>{recipe.name}</div>
+            <div>
+              <NavLink
+                to={`/recipes/${recipe.id}`}
+                className="one-recipe-container"
+                key={recipe.id}
+                title={recipe.name}>
+                  <OnceRecipeSmall recipeId={recipe.id}/>
+              </NavLink>
+              <div>
+                <NavLink to={`/recipes/${recipe.id}/edit`}>
+                  <button>
+                    Edit Recipe
+                  </button>
+                </NavLink>
+              </div>
             </div>
           )
         })}
