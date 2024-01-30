@@ -1,4 +1,4 @@
-import {GET_RECIPES, GET_A_RECIPE, GET_USER_RECIPES, POST_RECIPE, POST_RECIPE_IMAGE, EDIT_RECIPE, DELETE_RECIPE} from './actionTypes'
+import {GET_RECIPES, GET_A_RECIPE, GET_USER_RECIPES, POST_RECIPE, POST_RECIPE_IMAGE, EDIT_RECIPE, DELETE_RECIPE, RANDOM_RECIPE} from './actionTypes'
 
 const getRecipes = (data) => {
   return {
@@ -10,6 +10,13 @@ const getRecipes = (data) => {
 const getOneRecipe = (data) => {
   return {
     type: GET_A_RECIPE,
+    payload: data
+  }
+}
+
+const getRandomRecipe = (data) => {
+  return {
+    type: RANDOM_RECIPE,
     payload: data
   }
 }
@@ -77,6 +84,19 @@ export const getOneRecipeThunk = (recipeId) => async (dispatch) => {
 
     const data = await response.json()
     dispatch(getOneRecipe(data))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
+export const getRandomRecipeThunk = () => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/random`)
+
+    const data = await response.json()
+    dispatch(getRandomRecipe(data))
+    return data
   } catch (error) {
     console.log('error: ', error)
     return error
@@ -205,6 +225,11 @@ const recipeReducer = (state = initialState, action) => {
       newState = {...state}
       const UsersRecipesArr = action.payload.Recipes
       UsersRecipesArr.map((recipeObj) => newState[recipeObj.id] = recipeObj)
+      return newState
+    case RANDOM_RECIPE:
+      newState = {...state}
+      const randRec = action.payload.Recipe
+      randRec.map((recipeObj) => newState[recipeObj.id] = recipeObj)
       return newState
     default:
       return state

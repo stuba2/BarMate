@@ -7,6 +7,7 @@ from ..forms.review_form import ReviewForm
 from ..forms.toast_form import ToastForm
 from ..forms.recipe_edit_form import RecipeEditForm
 from ..models.ingredient import bar_ingredients
+import random
 
 recipe_routes = Blueprint('recipes', __name__)
 
@@ -14,7 +15,7 @@ recipe_routes = Blueprint('recipes', __name__)
 def get_paginated_recipes(page):
   ret = []
   print('\n page:::::', page)
-  per_page = 10
+  per_page = 8
   all_recipes = Recipe.query.all()
   # paginated = db.paginate(all_recipes, page=1, per_page=per_page, error_out=False)
   paginated = Recipe.query.paginate(page=page, per_page=per_page)
@@ -155,6 +156,52 @@ def get_one_recipe(recipe_id):
     'created_at': recipe.created_at,
     'updated_at': recipe.updated_at
   }
+
+  ret.append(ret_recipe)
+
+  return {
+    'Recipe': ret
+  }
+
+@recipe_routes.route('/random', methods=['GET'])
+def get_random_recipe():
+  ret = []
+  all_recipes = Recipe.query.all()
+  total_recipes = Recipe.query.count()
+  random_num = random.randrange(1,total_recipes)
+  rand_recipe = all_recipes[random_num - 1]
+  owner_details = User.query.filter(User.id == rand_recipe.user_id).first()
+  recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == rand_recipe.id).first()
+  recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == rand_recipe.id).all()
+
+  recipe_ingredient_list = []
+  for ingredient in recipe_ingredients:
+    ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
+    unit = ingredient.to_dict()['unit'].value
+    real_ingredient = {
+      'name': ingredient_name.name,
+      'amount': ingredient.amount,
+      'unit': unit,
+      'recipe_id': ingredient.recipe_id,
+      'ingredient_id': ingredient.ingredient_id
+    }
+    recipe_ingredient_list.append(real_ingredient)
+
+  ret_recipe = {
+      'id': rand_recipe.id,
+      'name': rand_recipe.name,
+      'description': rand_recipe.description,
+      'instructions': rand_recipe.instructions,
+      'user_id': rand_recipe.user_id,
+      'owner_details': {
+        'username': owner_details.username,
+        'dob': owner_details.dob
+      },
+      'recipe_image_url': recipe_image.url if recipe_image else None,
+      'recipe_ingredients': recipe_ingredient_list,
+      'created_at': rand_recipe.created_at,
+      'updated_at': rand_recipe.updated_at
+    }
 
   ret.append(ret_recipe)
 
