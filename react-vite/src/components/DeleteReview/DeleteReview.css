@@ -1,0 +1,44 @@
+.delete-container {
+  font-family: 'Open Sans';
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+  "top-row"
+  "text"
+  "button";
+  padding: 10px;
+  color: #b6c2cf;
+  background-color: #323940;
+  height: 120px;
+}
+
+.delete-top-row {
+  grid-area: top-row;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-header {
+  font-size: 15px;
+  align-self: center;
+}
+
+.delete-x {
+  font-size: 15px;
+  background: none;
+  border: none;
+  color: #b6c2cf;
+  align-self: center;
+}
+
+.delete-p {
+  font-size: 15px;
+}
+
+.delete-button {
+  background-color: #c9372c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}

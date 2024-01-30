@@ -7,12 +7,6 @@ const getIngredients = (data) => {
   }
 }
 
-// const getOneRecipe = (data) => {
-//   return {
-//     type: GET_A_RECIPE,
-//     payload: data
-//   }
-// }x
 
 export const getIngredientsThunk = () => async (dispatch) => {
   try {
@@ -26,17 +20,53 @@ export const getIngredientsThunk = () => async (dispatch) => {
   }
 }
 
-// export const getOneRecipeThunk = (recipeId) => async (dispatch) => {
-//   try {
-//     const response = await fetch(`/api/recipes/${+recipeId}`)
+export const postIngredientThunk = (ingredientObj) => async (dispatch) => {
+  try {
+    let ingredient = {
+      name: ingredientObj.name
+    }
 
-//     const data = await response.json()
-//     dispatch(getOneRecipe(data))
-//   } catch (error) {
-//     console.log('error: ', error)
-//     return error
-//   }
-// }
+    const response = await fetch(`/api/ingredients/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(ingredient)
+    })
+
+    const data = await response.json()
+    console.log(data)
+    return data
+
+    let ingredientImage = {
+      ingredient_id: data.id,
+      url: ingredientObj.url
+    }
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
+export const postIngredientImageThunk = (ingImgObj, id) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/ingredients/${id}/image`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(ingImgObj)
+    })
+
+    // const thisIngredient = await fetch(`/api/ingredients/${}/`)
+
+    const data = await response.json()
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
 
 const initialState = {}
 

@@ -13,12 +13,13 @@
   height: 50px;
   background-color: #090619;
   color: #fcfcfa;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  opacity: .85;
 }
 
 .nav-left {
   display: flex;
-  width: 60%;
+  width: 50%;
   justify-content: space-between;
   align-items: center;
 }
@@ -30,7 +31,7 @@
 
 .nav-logo {
   box-sizing: border-box;
-  height: 50px;
+  height: 47px;
 }
 
 .nav-link {

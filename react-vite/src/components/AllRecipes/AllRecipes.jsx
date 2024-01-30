@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
+import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
+import './AllRecipes.css'
 
 const AllRecipes = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   let { page } = useParams()
-  const recipes = useSelector((state) => state.recipes)
+  const recipes = useSelector(state => state.recipes)
   if (!page) page = 1
 
   useEffect(() => {
@@ -34,24 +36,18 @@ const AllRecipes = () => {
       <div className="recipes-container">
         {recipesArr.map((recipe) => {
           return (
-            <div key={recipe.id} className="one-recipe-container">
-              <img src={recipe.recipe_image_url} width="100"></img>
-              <div>{recipe.name}</div>
-              {/* <ul>
-                {recipe.recipe_ingredients.map((ingredient) => {
-                  return (
-                    <div key={ingredient.name}>
-                      <li key={ingredient.name}>{ingredient.amount} {ingredient.unit} {ingredient.name}</li>
-                    </div>
-                  )
-                })}
-              </ul> */}
-            </div>
+            <NavLink
+              to={`/recipes/${recipe.id}`}
+              className="one-recipe-container"
+              key={recipe.id}
+              title={recipe.name}>
+                <OnceRecipeSmall recipeId={recipe.id}/>
+              </NavLink>
           )
         })}
       </div>
-      <div><NavLink to={previousPage}>Previous page (Under Construction, please change the url to navigate to previous page)</NavLink></div>
-      <div><NavLink to={nextPage}>Next page (Under Construction, please change the url to navigate to next page)</NavLink></div>
+      {/* <div><NavLink to={previousPage}>Previous page (Under Construction, please change the url to navigate to previous page)</NavLink></div> */}
+      <div className="more-cocktails-container"><NavLink className="more-cocktails" to={nextPage}>More cocktails...</NavLink></div>
       </>
     );
   }

@@ -5,7 +5,9 @@ from ..forms.recipe_form import RecipeForm
 from ..forms.recipe_image_form import RecipeImageForm
 from ..forms.review_form import ReviewForm
 from ..forms.toast_form import ToastForm
+from ..forms.recipe_edit_form import RecipeEditForm
 from ..models.ingredient import bar_ingredients
+import random
 
 recipe_routes = Blueprint('recipes', __name__)
 
@@ -13,7 +15,7 @@ recipe_routes = Blueprint('recipes', __name__)
 def get_paginated_recipes(page):
   ret = []
   print('\n page:::::', page)
-  per_page = 10
+  per_page = 8
   all_recipes = Recipe.query.all()
   # paginated = db.paginate(all_recipes, page=1, per_page=per_page, error_out=False)
   paginated = Recipe.query.paginate(page=page, per_page=per_page)
@@ -63,7 +65,7 @@ def get_paginated_recipes(page):
   }
 
 @recipe_routes.route('/')
-def get_all_recipes(page):
+def get_all_recipes():
   ret = []
   # print('\n page:::::', page)
   # per_page = 10
@@ -103,7 +105,7 @@ def get_all_recipes(page):
         'username': owner_details.username,
         'dob': owner_details.dob
       },
-      'recipeImageUrl': recipe_image.url,
+      'recipe_image_url': recipe_image.url if recipe_image else None,
       'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
@@ -130,6 +132,7 @@ def get_one_recipe(recipe_id):
     ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
     unit = ingredient.to_dict()['unit'].value
     real_ingredient = {
+      'id': ingredient.id,
       'name': ingredient_name.name,
       'amount': ingredient.amount,
       'unit': unit,
@@ -148,11 +151,57 @@ def get_one_recipe(recipe_id):
       'username': owner_details.username,
       'dob': owner_details.dob
     },
-    'recipe_image_url': recipe_image.url,
+    'recipe_image_url': recipe_image.url if recipe_image else None,
     'recipe_ingredients': recipe_ingredient_list,
     'created_at': recipe.created_at,
     'updated_at': recipe.updated_at
   }
+
+  ret.append(ret_recipe)
+
+  return {
+    'Recipe': ret
+  }
+
+@recipe_routes.route('/random', methods=['GET'])
+def get_random_recipe():
+  ret = []
+  all_recipes = Recipe.query.all()
+  total_recipes = Recipe.query.count()
+  random_num = random.randrange(1,total_recipes)
+  rand_recipe = all_recipes[random_num - 1]
+  owner_details = User.query.filter(User.id == rand_recipe.user_id).first()
+  recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == rand_recipe.id).first()
+  recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == rand_recipe.id).all()
+
+  recipe_ingredient_list = []
+  for ingredient in recipe_ingredients:
+    ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
+    unit = ingredient.to_dict()['unit'].value
+    real_ingredient = {
+      'name': ingredient_name.name,
+      'amount': ingredient.amount,
+      'unit': unit,
+      'recipe_id': ingredient.recipe_id,
+      'ingredient_id': ingredient.ingredient_id
+    }
+    recipe_ingredient_list.append(real_ingredient)
+
+  ret_recipe = {
+      'id': rand_recipe.id,
+      'name': rand_recipe.name,
+      'description': rand_recipe.description,
+      'instructions': rand_recipe.instructions,
+      'user_id': rand_recipe.user_id,
+      'owner_details': {
+        'username': owner_details.username,
+        'dob': owner_details.dob
+      },
+      'recipe_image_url': recipe_image.url if recipe_image else None,
+      'recipe_ingredients': recipe_ingredient_list,
+      'created_at': rand_recipe.created_at,
+      'updated_at': rand_recipe.updated_at
+    }
 
   ret.append(ret_recipe)
 
@@ -167,6 +216,9 @@ def get_users_recipes():
 
   for recipe in user_recipes:
     owner_details = User.query.filter(User.id == recipe.user_id).first()
+    recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
+    recipe_ingredient_list = []
+
     ret_recipe = {
       'id': recipe.id,
       'name': recipe.name,
@@ -176,8 +228,9 @@ def get_users_recipes():
       'owner_details': {
         'username': owner_details.username,
         'dob': owner_details.dob,
-        'bar_id': owner_details.bar_id
       },
+      'recipe_image_url': recipe_image.url if recipe_image else None,
+      'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
     }
@@ -213,7 +266,6 @@ def create_a_recipe():
       'owner_details': {
         'username': owner_details.username,
         'dob': owner_details.dob,
-        'bar_id': owner_details.bar_id
       },
       'created_at': new_recipe.created_at,
       'updated_at': new_recipe.updated_at
@@ -222,9 +274,8 @@ def create_a_recipe():
     return ret
 
   return {
-    'message': 'Bad Request',
-    'errors': form.errors
-  }
+      "Errors": form.errors
+    }, 500
 
 @recipe_routes.route('/<int:recipe_id>/image', methods=['POST'])
 def create_image_on_recipe(recipe_id):
@@ -256,7 +307,7 @@ def create_image_on_recipe(recipe_id):
 def edit_a_recipe(recipe_id):
   existing_recipe = Recipe.query.get(recipe_id)
   owner_details = User.query.filter(User.id == existing_recipe.user_id).first()
-  form = RecipeForm()
+  form = RecipeEditForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if not existing_recipe:
@@ -265,12 +316,23 @@ def edit_a_recipe(recipe_id):
     }
 
   if form.validate_on_submit():
-    existing_recipe.url = form.data['url']
+    existing_recipe.name = form.data['name']
+    existing_recipe.description = form.data['description']
+    existing_recipe.instructions = form.data['instructions']
     db.session.commit()
+
     ret = {
       'id': existing_recipe.id,
-      'recipe_id': existing_recipe.recipe_id,
-      'url': existing_recipe.url
+      'name': existing_recipe.name,
+      'description': existing_recipe.description,
+      'instructions': existing_recipe.instructions,
+      'user_id': existing_recipe.user_id,
+      'owner_details': {
+        'username': owner_details.username,
+        'dob': owner_details.dob,
+      },
+      'created_at': existing_recipe.created_at,
+      'updated_at': existing_recipe.updated_at
     }
 
     return ret
@@ -313,6 +375,7 @@ def post_review(recipe_id):
   if form.validate_on_submit():
     new_review = Review(
       review_text = form.data['review_text'],
+      rating = form.data['rating'],
       user_id = current_user.get_id(),
       recipe_id = recipe_id
     )
@@ -339,9 +402,9 @@ def post_review(recipe_id):
     "errors": form.errors
   }
 
-@recipe_routes.route('/<int:review_id>', methods=["PUT"])
+@recipe_routes.route('/<int:recipe_id>/reviews/<int:review_id>', methods=["PUT"])
 # @login_required
-def edit_a_review(review_id):
+def edit_a_review(recipe_id, review_id):
   existing_review = Review.query.get(review_id)
   reviewer_details = User.query.filter(User.id == existing_review.user_id).first()
   form = ReviewForm()
@@ -398,7 +461,7 @@ def get_recipe_toasts(recipe_id):
   all_toasts = Toast.query.filter(Toast.recipe_id == recipe_id).all()
 
   for toast in all_toasts:
-    toaster_details = User.query.filter(User.id == toast.user_id)
+    toaster_details = User.query.filter(User.id == toast.user_id).first()
     ret_toast = {
       'id': toast.id,
       'user_id': toast.user_id,
@@ -458,7 +521,7 @@ def post_toast(recipe_id):
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=['DELETE'])
 # @login_required
 def delete_a_toast(recipe_id):
-  toast_to_delete = Toast.query.filter(Toast.recipe_id == recipe_id).first()
+  toast_to_delete = Toast.query.filter(Toast.recipe_id == recipe_id, Toast.user_id == current_user.id).first()
 
   if not toast_to_delete:
     return {
