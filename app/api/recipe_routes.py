@@ -5,6 +5,7 @@ from ..forms.recipe_form import RecipeForm
 from ..forms.recipe_image_form import RecipeImageForm
 from ..forms.review_form import ReviewForm
 from ..forms.toast_form import ToastForm
+from ..forms.recipe_edit_form import RecipeEditForm
 from ..models.ingredient import bar_ingredients
 import random
 
@@ -104,7 +105,7 @@ def get_all_recipes():
         'username': owner_details.username,
         'dob': owner_details.dob
       },
-      'recipeImageUrl': recipe_image.url if recipe_image else None,
+      'recipe_image_url': recipe_image.url if recipe_image else None,
       'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
@@ -131,6 +132,7 @@ def get_one_recipe(recipe_id):
     ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
     unit = ingredient.to_dict()['unit'].value
     real_ingredient = {
+      'id': ingredient.id,
       'name': ingredient_name.name,
       'amount': ingredient.amount,
       'unit': unit,
@@ -305,7 +307,7 @@ def create_image_on_recipe(recipe_id):
 def edit_a_recipe(recipe_id):
   existing_recipe = Recipe.query.get(recipe_id)
   owner_details = User.query.filter(User.id == existing_recipe.user_id).first()
-  form = RecipeForm()
+  form = RecipeEditForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if not existing_recipe:
@@ -314,12 +316,23 @@ def edit_a_recipe(recipe_id):
     }
 
   if form.validate_on_submit():
-    existing_recipe.url = form.data['url']
+    existing_recipe.name = form.data['name']
+    existing_recipe.description = form.data['description']
+    existing_recipe.instructions = form.data['instructions']
     db.session.commit()
+
     ret = {
       'id': existing_recipe.id,
-      'recipe_id': existing_recipe.recipe_id,
-      'url': existing_recipe.url
+      'name': existing_recipe.name,
+      'description': existing_recipe.description,
+      'instructions': existing_recipe.instructions,
+      'user_id': existing_recipe.user_id,
+      'owner_details': {
+        'username': owner_details.username,
+        'dob': owner_details.dob,
+      },
+      'created_at': existing_recipe.created_at,
+      'updated_at': existing_recipe.updated_at
     }
 
     return ret
