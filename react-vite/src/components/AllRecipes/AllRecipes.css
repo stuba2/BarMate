@@ -6,4 +6,28 @@
 .one-recipe-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 25px;
+  margin: 25px;
+  text-decoration: none;
+  background-color: rgba(252, 252, 250, .75);
+  border-radius: 8px;
+}
+
+.more-cocktails-container {
+  display: flex;
+  justify-content: center;
+}
+
+.more-cocktails {
+  text-decoration: none;
+  color: #090619;
+  background-color: rgba(172, 29, 53, .9);
+  background-color: rgba(177, 101, 62, .9);
+  background-color: rgba(96, 53, 146, .9);
+  color: #fdfdfb;
+  border: #603592 1px solid;
+  border-radius: 10px;
+  padding: 10px;
 }

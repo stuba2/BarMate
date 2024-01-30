@@ -13,6 +13,7 @@ import CreateReview from '../components/CreateReview/CreateReview';
 import UsersRecipes from '../components/UsersRecipes/UsersRecipes';
 import EditBar from '../components/EditBar/EditBar';
 import MakableRecipes from '../components/MakeableRecipes/MakableRecipes';
+import LandingPage from '../components/LandingPage/LandingPage';
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <h1>Welcome!</h1>,
+        element: <LandingPage />,
       },
       {
         path: "login",

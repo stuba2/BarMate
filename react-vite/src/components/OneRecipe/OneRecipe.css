@@ -1,0 +1,75 @@
+.one-rec-whole-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(252, 252, 250, .75);
+  padding: 15px;
+  margin: 30px;
+  border-radius: 13px;
+}
+ .one-rec-name-description-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 40px 0;
+ }
+
+ .one-rec-name-description-rating-toast {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .one-rec-name {
+
+ }
+
+ .one-rec-description {
+  padding-bottom: 15px;
+ }
+
+ .one-rec-rating-toast {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+ }
+
+ .one-rec-rating {
+  padding-right: 10px;
+ }
+
+ .one-rec-toast-container {
+  padding-left: 10px;
+ }
+
+ .one-rec-img {
+  border-radius: 13px;
+ }
+
+ .one-rec-ing-instructions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 40px 0;
+ }
+
+ .one-rec-ing-container {
+
+ }
+
+ .one-rec-instructions {
+  width: 30%;
+ }
+
+ .one-rec-rev-super-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 80px;
+ }
+
+ .one-rec-create-rev {
+  display: flex;
+  /* width: 100%; */
+ }
+
+ .one-rec-revs {
+  /* width: 50%; */
+ }
