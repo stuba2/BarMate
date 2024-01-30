@@ -189,7 +189,17 @@ export const editRecipeThunk = (recipeId, recipeForm) => async (dispatch) => {
 
 export const editRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
   try {
-    const response = await fetch(`/api/recipe_ingredients/`)
+    const response = await fetch(`/api/recipe_ingredients/`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(RIObj)
+    })
+    console.log('RI response: ', response)
+
+    const data = await response.json()
+    console.log('RI data: ', data)
   } catch (error) {
     console.log('error: ', error)
     return error

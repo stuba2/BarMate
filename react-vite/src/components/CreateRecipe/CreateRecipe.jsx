@@ -161,7 +161,7 @@ const CreateRecipe = () => {
     )
   } else {
     return (
-      <div>
+      <div className="create-rec-container">
         <div>create a recipe</div>
         <form onSubmit={handleSubmit}>
           <div>Name</div>

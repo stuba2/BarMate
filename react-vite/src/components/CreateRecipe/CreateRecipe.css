@@ -1,4 +1,8 @@
-/* .create-rec-ing {
-  background-color: lightsalmon;
-  margin-bottom: 10px;
-} */
+.create-rec-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(252, 252, 250, .75);
+  padding: 15px;
+  margin: 30px;
+  border-radius: 13px;
+}

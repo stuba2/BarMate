@@ -96,10 +96,10 @@ const EditRecipe = () => {
       user_id: userId
     }
 
-    let createdRecipe
+    let updatedRecipe
 
     if (!Object.values(validationErrors).length) {
-      createdRecipe = await dispatch(recipeActions.editRecipeThunk(recipeId, recipeForm))
+      updatedRecipe = await dispatch(recipeActions.editRecipeThunk(recipeId, recipeForm))
       .catch(async (res) => {
         const data = await res.json()
         console.log('create data: ', data)
@@ -107,13 +107,13 @@ const EditRecipe = () => {
           console.log('data errors: ', data.Errors)
         }
       })
-      if (createdRecipe && createdRecipe.Errors) {
-        setValidationErrors(createdRecipe.Errors)
+      if (updatedRecipe && updatedRecipe.Errors) {
+        setValidationErrors(updatedRecipe.Errors)
       }
 
-      console.log('createdRecipe: ', createdRecipe)
-      if (createdRecipe && createdRecipe.id) {
-        console.log("i'm a real boy: ", createdRecipe)
+      console.log('updatedRecipe: ', updatedRecipe)
+      if (updatedRecipe && updatedRecipe.id) {
+        console.log("i'm a real boy: ", updatedRecipe)
 
         // handles the addition of RecipeIngredients to the store, called from the handleSubmit
         let finalIngredient
@@ -127,9 +127,9 @@ const EditRecipe = () => {
 
           finalIngredient = {
             // id:
-            amount: recipeAmounts[i],
+            amount: +recipeAmounts[i],
             unit: recipeUnits[i],
-            recipe_id: createdRecipe.id,
+            recipe_id: updatedRecipe.id,
             ingredient_id: matchedIng[0].id
           }
           finalRI.push(finalIngredient)
@@ -141,7 +141,7 @@ const EditRecipe = () => {
           dispatch(recipeActions.editRecipeIngredientsThunk(singleRI))
         }
 
-        // navigate(`/recipes/${createdRecipe.id}`)
+        // navigate(`/recipes/${updatedRecipe.id}`)
       }
     } else {console.log('validation error to be done!', validationErrors)}
   }
@@ -176,7 +176,7 @@ const EditRecipe = () => {
     )
   } else {
     return (
-      <div>
+      <div className="edit-rec-container">
         <div>create a recipe</div>
         <form onSubmit={handleSubmit}>
           <div>Name</div>
