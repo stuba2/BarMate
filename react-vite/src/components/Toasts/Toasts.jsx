@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as toastActions from "../../redux/toasts"
+import './Toasts.css'
 
 const Toasts = ({  }) => {
   const dispatch = useDispatch()
   const { recipeId } = useParams()
   const { user } = useSelector(state => state.session)
   const toasts = useSelector(state => state.toasts)
-  // const [ isToasted, setIsToasted ] = useState(false)
 
 
   useEffect(() => {
@@ -33,17 +33,6 @@ const Toasts = ({  }) => {
         dispatch(toastActions.deleteToastThunk(recipeId, toast.id))
         numToasts--
       }
-
-    // if (!isToasted) {
-    //   setIsToasted(true)
-    //   dispatch(toastActions.postToastThunk(recipeId, toastObj))
-    //   numToasts++
-    // } else {
-    //   setIsToasted(false)
-    //   dispatch(toastActions.deleteToastThunk(recipeId, toast.id))
-    //   numToasts--
-    // }
-
   }
 
 
@@ -56,7 +45,7 @@ const Toasts = ({  }) => {
       <>
       <div>
         <div>
-          <button onClick={handleToast}><i className="fa-solid fa-champagne-glasses"></i></button> {numToasts}
+          <button className="toast-button" onClick={handleToast}><i className="fa-solid fa-champagne-glasses"></i> {numToasts}</button>
         </div>
       </div>
       </>

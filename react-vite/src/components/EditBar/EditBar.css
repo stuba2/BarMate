@@ -1,0 +1,38 @@
+.edit-bar-button-container {
+  height: 300px;
+  width: 217px;
+  overflow-y: auto;
+  border: #090619 2px solid;
+  border-radius: 8px;
+}
+
+.edit-bar-button-button {
+  background-color: #73c988;
+  padding: 5px;
+  border: #090619 solid 2px;
+  width: 202.5px;
+  cursor: pointer;
+}
+
+.ing-in-bar {
+  color: #090619;
+  background-color: #808782;
+  border: #090619 solid 2px;
+}
+
+.edit-bar-button-container::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 10px;
+}
+
+.edit-bar-button-container::-webkit-scrollbar-track {
+  background: #fed5aa;
+  border: 1px #090619 solid;
+  border-radius: 10px;
+}
+
+.edit-bar-button-container::-webkit-scrollbar-thumb {
+  background: #090619;
+  border: 1px #090619 solid;
+  border-radius: 10px;
+}

@@ -2,3 +2,12 @@
 * {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+
+body, html {
+  height: 100%;
+  background-image: url("../dist/assets/photo-1597290282695-edc43d0e7129.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
