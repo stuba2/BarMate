@@ -1,0 +1,26 @@
+.whole-thing-small-recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.small-recipe-image-container {
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+}
+
+.small-recipe-image {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.small-recipe-name-link {
+  text-decoration: none;
+  color: #090619;
+  display: flex;
+  justify-content: center;
+}

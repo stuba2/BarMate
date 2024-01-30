@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import * as reviewActions from "../../redux/reviews"
-// import './CreateCommentComponent.css'
+import './CreateReview.css'
 
 const CreateReview = ({ recipeId }) => {
   const dispatch = useDispatch()
@@ -84,8 +84,6 @@ const CreateReview = ({ recipeId }) => {
 
 
   return (
-    <div className="create-review-container">
-
       <form onSubmit={handleSubmit} className="create-review-form">
         <div className="create-review-form">
           <div className="create-review-text-container">
@@ -168,8 +166,6 @@ const CreateReview = ({ recipeId }) => {
 
         </div>
       </form>
-
-    </div>
   )
 }
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as barActions from "../../redux/bars"
 import * as ingredientActions from "../../redux/ingredients"
 import EditBar from "../EditBar/EditBar";
+import './MyBar.css'
 
 const MyBar = () => {
   const dispatch = useDispatch()
@@ -55,15 +56,17 @@ const MyBar = () => {
     )
   } else {
     return (
-      <div>
-        <div>My ingredients:</div>
-        <ul>
-          {userBarr.map((ingredient) => {
-            return (
-              <li key={ingredient.id}>{ingredient.name}</li>
-            )
-          })}
-        </ul>
+      <div className="my-bar-container">
+        <div className="my-bar-current-ings">
+          <div className="my-bar-ingredient-header">My Ingredients:</div>
+          <ul className="my-bar-ingredient-ul">
+            {userBarr.map((ingredient) => {
+              return (
+                <li key={ingredient.id} className="my-bar-ingredient">{ingredient.name}</li>
+              )
+            })}
+          </ul>
+        </div>
         <div><EditBar setIsSelected={setIsSelected} ingredientsArr={ingredientsArr} handleSubmit={handleSubmit}/></div>
       </div>
     );

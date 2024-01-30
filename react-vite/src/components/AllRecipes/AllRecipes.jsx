@@ -4,6 +4,7 @@ import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
+import './AllRecipes.css'
 
 const AllRecipes = () => {
   const dispatch = useDispatch()
@@ -45,8 +46,8 @@ const AllRecipes = () => {
           )
         })}
       </div>
-      <div><NavLink to={previousPage}>Previous page (Under Construction, please change the url to navigate to previous page)</NavLink></div>
-      <div><NavLink to={nextPage}>Next page (Under Construction, please change the url to navigate to next page)</NavLink></div>
+      {/* <div><NavLink to={previousPage}>Previous page (Under Construction, please change the url to navigate to previous page)</NavLink></div> */}
+      <div className="more-cocktails-container"><NavLink className="more-cocktails" to={nextPage}>More cocktails...</NavLink></div>
       </>
     );
   }

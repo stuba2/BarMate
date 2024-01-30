@@ -1,0 +1,54 @@
+.my-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.my-bar-current-ings {
+  margin: 50px;
+  height: 300px;
+  width: 217px;
+  overflow-y: auto;
+  border: #090619 2px solid;
+  background-color: #160e40;
+  color: #f9d39e;
+  border-radius: 8px;
+}
+
+.my-bar-current-ings::-webkit-scrollbar {
+  width: 15px;
+}
+
+.my-bar-current-ings::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border: 1px #090619 solid;
+  border-radius: 10px;
+}
+
+.my-bar-current-ings::-webkit-scrollbar-thumb {
+  background: #090619;
+  border: 1px #090619 solid;
+  border-radius: 10px;
+}
+
+.my-bar-current-ings::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.my-bar-ingredient-header {
+  padding-left: 5px;
+  background-color: #160e40;
+}
+
+.my-bar-ingredient-ul {
+  padding-left: 0px;
+  opacity: 0.5;
+}
+
+.my-bar-ingredient {
+  list-style-type: none;
+  padding-left: 5px;
+  background-color: #f9d39e;
+  color: #090619;
+}

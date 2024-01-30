@@ -4,6 +4,7 @@ import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
+import './UsersRecipes.css'
 
 const UsersRecipes = () => {
   const dispatch = useDispatch()
@@ -44,12 +45,15 @@ const UsersRecipes = () => {
                 title={recipe.name}>
                   <OnceRecipeSmall recipeId={recipe.id}/>
               </NavLink>
-              <div>
+              <div className="edit-delete-rec-button-container">
                 <NavLink to={`/recipes/${recipe.id}/edit`}>
-                  <button>
+                  <button className="edit-rec-button">
                     Edit Recipe
                   </button>
                 </NavLink>
+                <button className="delete-rec-button">
+                  Delete Recipe
+                </button>
               </div>
             </div>
           )
