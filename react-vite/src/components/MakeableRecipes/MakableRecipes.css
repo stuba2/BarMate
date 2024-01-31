@@ -1,0 +1,91 @@
+.makable-drinks-container {
+  display: flex;
+  justify-content: center;
+}
+
+.make-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.make-update-bar {
+  text-decoration: none;
+  color: #090619;
+  font-size: larger;
+  font-weight: 550;
+  background-color: rgba(96, 53, 146, .9);
+  padding: 7px;
+  border: #090619 solid 1px;
+  border-radius: 10px;
+}
+
+.makable-ings-container {
+  margin: 50px;
+  height: 300px;
+  width: 217px;
+  overflow-y: auto;
+  border: #090619 2px solid;
+  background-color: #160e40;
+  color: #f9d39e;
+  border-radius: 8px;
+}
+
+.makable-ings-header {
+  padding-left: 5px;
+  background-color: #160e40;
+}
+
+.makable-ings-ul {
+  padding-left: 0px;
+  opacity: 0.5;
+}
+
+.makable-ing {
+  list-style-type: none;
+  padding-left: 5px;
+  background-color: #f9d39e;
+  color: #090619;
+}
+
+.makable-ings-container::-webkit-scrollbar {
+  width: 15px;
+}
+
+.makable-ings-container::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border: 1px #090619 solid;
+  border-radius: 10px;
+}
+
+.makable-ings-container::-webkit-scrollbar-thumb {
+  background: #090619;
+  border: 1px #090619 solid;
+  border-radius: 10px;
+}
+
+.makable-ings-container::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.makable-recs-container {
+
+}
+
+.makable-rec-ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.makable-one-recipe-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 25px;
+  margin: 25px;
+  text-decoration: none;
+  background-color: rgba(252, 252, 250, .75);
+  border-radius: 8px;
+}

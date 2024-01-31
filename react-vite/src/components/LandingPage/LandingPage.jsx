@@ -23,18 +23,20 @@ const LandingPage = ({}) => {
   } else {
     return (
       <div className="land-main-contain">
-        <h1 className="land-h1">Welcome!</h1>
-        <div>Update your bar!</div>
-        <div className="land-rand-rec-container">
-          <h2>Featured Cocktail</h2>
-          <div className="land-rand-name">{displayRec.name}</div>
-          <NavLink
-            to={`/recipes/${displayRec.id}`}
-            className="land-rand-rec-nav"
-            key={displayRec.id}
-            title={displayRec.name}>
-              <OnceRecipeSmall recipeId={displayRec.id} />
-            </NavLink>
+        <div className="land-main-small-container">
+          <h1 className="land-h1">Welcome!</h1>
+          <div><NavLink to="/account/myBar" className="land-update-bar">Update your Bar</NavLink></div>
+          <div className="land-rand-rec-container">
+            <h2>Featured Cocktail</h2>
+            <div className="land-rand-name">{displayRec.name}</div>
+            <NavLink
+              to={`/recipes/${displayRec.id}`}
+              className="land-rand-rec-nav"
+              key={displayRec.id}
+              title={displayRec.name}>
+                <OnceRecipeSmall recipeId={displayRec.id} />
+              </NavLink>
+          </div>
         </div>
       </div>
     )

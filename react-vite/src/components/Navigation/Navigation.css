@@ -1,7 +1,3 @@
-.profile-dropdown {
-  position: absolute;
-}
-
 .navigation-container {
   box-sizing: border-box;
   display: flex;
@@ -25,8 +21,11 @@
 }
 
 .nav-right {
-  display: end;
-  margin-right: 20px;
+  display: flex;
+  width: 23%;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-right: 20px; */
 }
 
 .nav-logo {
@@ -38,3 +37,40 @@
   color: #fcfcfa;
   text-decoration: none;
 }
+
+.nav-create {
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+/* .nav-create > .nav-link {
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  width: 150%;
+} */
+
+.nav-link-special {
+  color: #fcfcfa;
+  text-decoration: none;
+  width: 150%;
+}
+
+/* .profile-dropdown {
+  position: absolute;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  border: #603592 1px solid;
+  list-style-type: none;
+  margin-top: 5px;
+}
+
+.profile-login {
+  padding: 5px;
+}
+
+.profile-signup {
+  padding: 5px;
+} */

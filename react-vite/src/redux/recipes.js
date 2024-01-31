@@ -42,6 +42,13 @@ const editRecipe = (data) => {
   }
 }
 
+const deleteRecipe = (data) => {
+  return {
+    type: DELETE_RECIPE,
+    payload: data
+  }
+}
+
 export const getRecipesThunk = (page) => async (dispatch) => {
   try {
     const response = await fetch(`/api/recipes/index/${+page}`)
@@ -206,6 +213,20 @@ export const editRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
   }
 }
 
+export const deleteRecipeThunk = (recipeId) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/${recipeId}`, {
+      method: "DELETE"
+    })
+
+    const data = await response.json()
+    dispatch(deleteRecipe(recipeId))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
 const initialState = {}
 
 const recipeReducer = (state = initialState, action) => {
@@ -240,6 +261,11 @@ const recipeReducer = (state = initialState, action) => {
       newState = {...state}
       const randRec = action.payload.Recipe
       randRec.map((recipeObj) => newState[recipeObj.id] = recipeObj)
+      return newState
+    case DELETE_RECIPE:
+      newState = {...state}
+      const recipeId = action.payload
+      delete newState[recipeId]
       return newState
     default:
       return state

@@ -20,7 +20,7 @@ const OneRecipeIngredient = ({ obj, tryHandleChange, tryHandleDelete, recipeIngr
             value={ingredientIndividual}
             onChange={(e) => {
               setIngredientIndividual(e.target.value)
-              setRecipeIngredients([...recipeIngredients, e.target.value])
+              setRecipeIngredients([...recipeIngredients, ...e.target.value])
             }}
             list="ingredient-options"
             id="ingredient-option"
@@ -41,7 +41,7 @@ const OneRecipeIngredient = ({ obj, tryHandleChange, tryHandleDelete, recipeIngr
             value={amountIndividual}
             onChange={(e) => {
               setAmountIndividual(e.target.value)
-              setRecipeAmounts([...recipeAmounts, e.target.value])
+              setRecipeAmounts([...recipeAmounts, ...e.target.value])
             }}
             required
             placeholder="Amount"

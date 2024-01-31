@@ -1,0 +1,31 @@
+/* .profile-button {
+  position: absolute;
+  margin-right: 170px;
+} */
+
+.log-sign-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-button {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.profile-logout-button {
+  background: none;
+  border: none;
+  color: #fcfcfa;
+  font-size: medium;
+}
+
+.profile-logout-button:hover {
+  background: none;
+  cursor: pointer;
+}
