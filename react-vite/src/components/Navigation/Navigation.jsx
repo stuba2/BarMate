@@ -19,7 +19,7 @@ function Navigation() {
   return (
     <ul className="navigation-container">
       <div className="nav-left">
-        <NavLink  to="/"><img className="nav-logo" src="../../../public/wholeLogoCropped2.jpg"/></NavLink>
+        <NavLink  to="/"><img className="nav-logo" src="../../../wholeLogoCropped2.jpg"/></NavLink>
         <div><NavLink to="/recipes/index/1" className="nav-link">Cocktails</NavLink></div>
         <div><NavLink to="/recipes/makable" className="nav-link">What Can You Make?</NavLink></div>
         <div><NavLink to="/account/myBar" className="nav-link">My Bar</NavLink></div>

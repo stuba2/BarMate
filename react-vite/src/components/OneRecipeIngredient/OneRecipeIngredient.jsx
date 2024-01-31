@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import unitTypes from "../../../public/unitTypes";
+import unitTypes from "../../../unitTypes";
 // import { useDispatch, useSelector } from "react-redux";
 // import { Navigate, useNavigate } from "react-router-dom";
 // import { thunkSignup } from "../../redux/session";
