@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
 import * as ingredientActions from "../../redux/ingredients"
-import unitTypes from "../../../public/unitTypes";
+import unitTypes from "../../../unitTypes";
 import './RecipeIngredient.css'
 
 const RecipeIngredient = ({ recipeIngredients, setRecipeIngredients, recipeAmounts, setRecipeAmounts, recipeUnits, setRecipeUnits, originalName, originalAmount, originalUnit, originalId }) => {
