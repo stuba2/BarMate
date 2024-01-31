@@ -54,8 +54,8 @@
 }
 
 .review-length-error-error {
-  color: #db1a1a;
-  padding-left: 15px;
+  color: red;
+  font-size: small;
 }
 
 .post-review-stars {

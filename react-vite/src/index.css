@@ -11,3 +11,8 @@ body, html {
   background-size: cover;
   background-attachment: fixed;
 }
+
+.validation-error {
+  color: red;
+  font-size: small;
+}

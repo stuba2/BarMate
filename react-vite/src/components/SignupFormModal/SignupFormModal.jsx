@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { thunkSignup } from "../../redux/session";
@@ -6,37 +6,71 @@ import "./SignupForm.css";
 
 function SignupFormModal() {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [dob, setDob] = useState()
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errors, setErrors] = useState({});
+  const [ email, setEmail ] = useState("");
+  const [ username, setUsername ] = useState("");
+  const [ dob, setDob ] = useState()
+  const [ password, setPassword ] = useState("");
+  const [ confirmPassword, setConfirmPassword ] = useState("");
+  const [ errors, setErrors ] = useState({});
+  const [ hasSubmitted, setHasSubmitted ] = useState(false)
   const { closeModal } = useModal();
+
+  // const UTCDob = new Date(new Date(dob).getTimezoneOffset()*60000 + new Date(dob).getTime())
+
+  const getAge = (bd) => {
+    let today = new Date()
+    let dob = new Date(new Date(bd).getTimezoneOffset()*60000 + new Date(bd).getTime())
+    let age = today.getFullYear() - dob.getFullYear()
+    let month = today.getMonth() - dob.getMonth()
+    if (month < 0 || (month === 0 && today.getDate() < dob.getDate())) age--
+    if (age < 21) return false
+    return true
+  }
+
+  useEffect(() => {
+    const errors = {}
+    if (!(email.includes('@') && email.includes('.'))) errors['email'] = 'Invalid Email'
+    if (!email) errors['email'] = 'Email is required'
+    if (email.length > 255) errors['email'] = 'Email is too long'
+    if (!username) errors['username'] = 'Username is required'
+    if (!dob) errors['dob'] = 'Date of birth is required'
+    if (!getAge(dob)) errors['dob'] = 'You must be 21 to use this site'
+    if (!password) errors['password'] = 'Date of birth is required'
+    if (password.length > 255) errors['password'] = 'Password is too long'
+    if (!confirmPassword) errors['confirmPassword'] = 'Date of birth is required'
+    if (confirmPassword.length > 255) errors['confirmPassword'] = 'Password is too long'
+    if (password !== confirmPassword) errors['confirmPassword'] = 'Passwords must match'
+
+    setErrors(errors)
+  },[email, username, dob, password, confirmPassword])
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setHasSubmitted(true)
 
-    if (password !== confirmPassword) {
-      return setErrors({
-        confirmPassword:
-          "Confirm Password field must be the same as the Password field",
-      });
-    }
+    // if (password !== confirmPassword) {
+    //   return setErrors({
+    //     confirmPassword:
+    //       "Confirm Password field must be the same as the Password field",
+    //   });
+    // }
 
-    const serverResponse = await dispatch(
-      thunkSignup({
-        email,
-        username,
-        dob,
-        password,
-      })
-    );
+    if (!(Object.values(errors).length)) {
+      const serverResponse = await dispatch(
+        thunkSignup({
+          email,
+          username,
+          dob,
+          password,
+        })
+      );
 
-    if (serverResponse) {
-      setErrors(serverResponse);
-    } else {
-      closeModal();
+      if (serverResponse) {
+        setErrors(serverResponse);
+      } else {
+        closeModal();
+      }
     }
   };
 
@@ -44,9 +78,17 @@ function SignupFormModal() {
     <div className="signup-modal-container">
       <h1 className="signup-h1">Sign Up</h1>
       {errors.server && <p>{errors.server}</p>}
+
       <form onSubmit={handleSubmit} className="signup-form">
+
         <label className="signup-email">
-          <div>Email</div>
+          <div className="signup-email-name-val">
+            <div className="signup-email-name">Email</div>
+            <div className="validation-error">
+              {hasSubmitted && errors.email && `*${errors.email}`}
+            </div>
+          </div>
+
           <input
             type="text"
             className="signup-email-input"
@@ -56,9 +98,15 @@ function SignupFormModal() {
             required
           />
         </label>
-        {errors.email && <p>{errors.email}</p>}
+
         <label className="signup-username">
-          <div>Username</div>
+          <div className="signup-username-name-val">
+            <div className="signup-username-name">Username</div>
+            <div className="validation-error">
+              {hasSubmitted && errors.username && `*${errors.username}`}
+            </div>
+          </div>
+
           <input
             type="text"
             className="signup-username-input"
@@ -68,9 +116,15 @@ function SignupFormModal() {
             required
           />
         </label>
-        {errors.username && <p>{errors.username}</p>}
+
         <label className="signup-dob">
-          <div>Date of Birth</div>
+          <div className="signup-dob-name-val">
+            <div className="signup-dob-name">Date of Birth</div>
+            <div className="validation-error">
+              {hasSubmitted && errors.dob && `*${errors.dob}`}
+            </div>
+          </div>
+
           <input
             type="date"
             className="signup-dob-input"
@@ -79,9 +133,15 @@ function SignupFormModal() {
             required
           />
         </label>
-        {errors.dob && <p>{errors.dob}</p>}
+
         <label className="signup-password">
-          <div>Password</div>
+          <div className="signup-password-name-val">
+            <div className="signup-password-name">Password</div>
+            <div className="validation-error">
+              {hasSubmitted && errors.password && `*${errors.password}`}
+            </div>
+          </div>
+
           <input
             type="password"
             className="signup-password-input"
@@ -91,9 +151,15 @@ function SignupFormModal() {
             required
           />
         </label>
-        {errors.password && <p>{errors.password}</p>}
+
         <label className="signup-confirm-password">
-          <div>Confirm Password</div>
+          <div className="signup-confirm-password-name-val">
+            <div className="signup-confirm-password-name">Confirm Password</div>
+            <div className="validation-error">
+              {hasSubmitted && errors.confirmPassword && `*${errors.confirmPassword}`}
+            </div>
+          </div>
+
           <input
             type="password"
             className="signup-confirm-password-input"
@@ -103,7 +169,7 @@ function SignupFormModal() {
             required
           />
         </label>
-        {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+
         <div className="signup-button-container"><button type="submit" className="signup-button">Sign Up</button></div>
       </form>
     </div>

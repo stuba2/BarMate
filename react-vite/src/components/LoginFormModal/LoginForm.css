@@ -20,8 +20,16 @@
   padding: 10px;
 }
 
+.login-email-input {
+  margin-bottom: 5px;
+}
+
 .login-password {
   padding: 10px
+}
+
+.login-password-input {
+  margin-bottom: 5px;
 }
 
 .login-button-container {
