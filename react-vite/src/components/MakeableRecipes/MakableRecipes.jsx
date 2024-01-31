@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
-import { thunkSignup } from "../../redux/session";
+import { NavLink } from "react-router-dom";
 import * as recipeActions from "../../redux/recipes"
 import * as barActions from "../../redux/bars"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
+import './MakableRecipes.css'
 
 const MakableRecipes = () => {
   const dispatch = useDispatch()
@@ -43,40 +43,40 @@ const MakableRecipes = () => {
     )
   } else {
     return (
-      <>
-      <div>My ingredients:</div>
-      <ul>
-        {barIngredients.map((ingredient) => {
-          return (
-            <li key={ingredient.id}>{ingredient.name}</li>
-          )
-        })}
-      </ul>
-      <div>Possible drinks:</div>
-      <ul>
-        {ret.map((recipe) => {
-          return (
-            <NavLink
-              to={`/recipes/${recipe.id}`}
-              className="one-recipe-container"
-              key={recipe.id}
-              title={recipe.name}>
-                <OnceRecipeSmall recipeId={recipe.id}/>
-              </NavLink>
-            // <div>
-            //   <li style={{backgroundColor:"lightsalmon"}}>{recipe.name} {recipe.id}</li>
-            //  { recipe.recipe_ingredients.map((ing) => {
-            //   return (
-            //     <>
-            //       <li>{ing.name}</li>
-            //     </>
-            //   )
-            //  })}
-            // </div>
-          )
-        })}
-      </ul>
-      </>
+      <div className="makable-drinks-container">
+
+        <div className="make-left">
+          <div><NavLink to="/account/myBar" className="make-update-bar">Update your Bar</NavLink></div>
+
+          <div className="makable-ings-container">
+            <div className="makable-ings-header">My Ingredients:</div>
+            <ul className="makable-ings-ul">
+              {barIngredients.map((ingredient) => {
+                return (
+                  <li key={ingredient.id} className="makable-ing">{ingredient.name}</li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+
+        <div className="makable-recs-container">
+          {/* <div>Possible drinks:</div> */}
+          <ul className="makable-rec-ul">
+            {ret.map((recipe) => {
+              return (
+                <NavLink
+                  to={`/recipes/${recipe.id}`}
+                  className="makable-one-recipe-container"
+                  key={recipe.id}
+                  title={recipe.name}>
+                    <OnceRecipeSmall recipeId={recipe.id}/>
+                  </NavLink>
+              )
+            })}
+          </ul>
+        </div>
+      </div>
     );
   }
 }

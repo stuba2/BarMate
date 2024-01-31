@@ -5,6 +5,8 @@ import { thunkSignup } from "../../redux/session";
 import * as recipeActions from "../../redux/recipes"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
 import './UsersRecipes.css'
+import OpenModalButton from "../OpenModalButton/OpenModalButton";
+import DeleteRecipe from "../DeleteRecipe/DeleteRecipe";
 
 const UsersRecipes = () => {
   const dispatch = useDispatch()
@@ -33,35 +35,36 @@ const UsersRecipes = () => {
     )
   } else {
     return (
-      <>
-      <div className="recipes-container">
-        {recipesArr.map((recipe) => {
-          return (
-            <div>
-              <NavLink
-                to={`/recipes/${recipe.id}`}
-                className="one-recipe-container"
-                key={recipe.id}
-                title={recipe.name}>
-                  <OnceRecipeSmall recipeId={recipe.id}/>
-              </NavLink>
-              <div className="edit-delete-rec-button-container">
-                <NavLink to={`/recipes/${recipe.id}/edit`}>
-                  <button className="edit-rec-button">
-                    Edit Recipe
-                  </button>
+      <div>
+        <div className="recipes-container">
+          {recipesArr.map((recipe) => {
+            return (
+              <div key={recipe.id}>
+                <NavLink
+                  to={`/recipes/${recipe.id}`}
+                  className="one-recipe-container"
+                  key={recipe.id}
+                  title={recipe.name}>
+                    <OnceRecipeSmall recipeId={recipe.id}/>
                 </NavLink>
-                <button className="delete-rec-button">
-                  Delete Recipe
-                </button>
+                <div className="edit-delete-rec-button-container">
+                  <NavLink to={`/recipes/${recipe.id}/edit`}>
+                    <button className="edit-rec-button">
+                      Edit Recipe
+                    </button>
+                  </NavLink>
+                  <OpenModalButton
+                    buttonText="Delete Recipe"
+                    modalComponent={<DeleteRecipe recipeId={recipe.id} />}
+                  />
+                </div>
               </div>
-            </div>
-          )
-        })}
-      </div>
+            )
+          })}
+        </div>
       {/* <div><NavLink to={previousPage}>Previous page (Under Construction, please change the url to navigate to previous page)</NavLink></div>
       <div><NavLink to={nextPage}>Next page (Under Construction, please change the url to navigate to next page)</NavLink></div> */}
-      </>
+      </div>
     );
   }
 }

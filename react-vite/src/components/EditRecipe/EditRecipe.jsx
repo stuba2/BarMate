@@ -37,6 +37,7 @@ const EditRecipe = () => {
 
   // tracking the changes in the individual CreateIngredient components
   useEffect(() => {
+    console.log('recipeIngredients before: ', recipeIngredients)
     for (let i = 0; i < recipeIngredients.length; i++) {
       let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
       // console.log('---', matchedIng[0].id)
@@ -65,9 +66,11 @@ const EditRecipe = () => {
 
       console.log('hi after')
 
-      oneIngFull = <RecipeIngredient  recipeIngredients={[...rIName]} setRecipeIngredients={setRecipeIngredients} recipeAmounts={[...rIAmt]} setRecipeAmounts={setRecipeAmounts} recipeUnits={[...rIUnit]} setRecipeUnits={setRecipeUnits} originalName={rI.name} originalAmount={rI.amount} originalUnit={rI.unit} originalId={rI.id}/>
+      oneIngFull = <RecipeIngredient key={i}  recipeIngredients={[...rIName]} setRecipeIngredients={setRecipeIngredients} recipeAmounts={[...rIAmt]} setRecipeAmounts={setRecipeAmounts} recipeUnits={[...rIUnit]} setRecipeUnits={setRecipeUnits} originalName={rI.name} originalAmount={rI.amount} originalUnit={rI.unit} originalId={rI.id}/>
 
       allIngFull.push(oneIngFull)
+      console.log('oneingfull : ', oneIngFull)
+      console.log('allIngFull : ', allIngFull)
     }
     setComponentArr([...allIngFull])
     setRecipeIngredients([...rIName])
