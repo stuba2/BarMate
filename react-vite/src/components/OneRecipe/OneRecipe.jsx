@@ -16,6 +16,7 @@ const OneRecipe = () => {
   const reviewsArr = Object.values(reviews)
 
   let ratingAvg = (Math.round((reviewsArr.reduce((total, next) => total + next.rating, 0) / reviewsArr.length) * 100) / 100)
+  if (Number.isNaN(ratingAvg)) ratingAvg = 'Be the first to rate!'
 
 
   useEffect(() => {

@@ -22,6 +22,25 @@ const CreateRecipe = () => {
   const [ recipeAmounts, setRecipeAmounts ] = useState([])
   const [ recipeUnits, setRecipeUnits ] = useState([])
   const [ count, setCount ] = useState(1)
+  const [ hasSubmitted, setHasSubmitted ] = useState(false)
+
+  useEffect(() => {
+    const errors = {}
+    let riLength = recipeIngredients.length
+    let raLength = recipeAmounts.length
+    let ruLength = recipeUnits.length
+    let existingRecipeName = recipesArr.filter((recipe) => (recipe.name) === name)[0]
+
+    if (!name) errors['name'] = 'Cocktail name is required'
+    if (name.length > 64) errors['name'] = 'Cocktail name must be 64 characters or less'
+    if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
+    if (description && description.length > 1000) errors['description'] = 'Cocktail description must be 1000 characters or less'
+    if (!instructions) errors['instructions'] = 'Instructions are required'
+    if (instructions.length > 2000) errors['instructions'] = 'Cocktail instructions must be 2000 characters or less'
+    if ((riLength + raLength + ruLength)%3 !== 0) errors['ingredient'] = 'All ingredient fields are needed'
+
+    setValidationErrors(errors)
+  },[name, description, instructions, recipeIngredients, recipeAmounts, recipeUnits])
 
   const initialWhat = [
     // {name: 'Wine', amount: 1, unit:'cl'},
@@ -65,6 +84,7 @@ const CreateRecipe = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setHasSubmitted(true)
 
     const recipeForm = {
       name: name,
@@ -163,52 +183,93 @@ const CreateRecipe = () => {
     return (
       <div className="create-rec-container">
         <div>create a recipe</div>
+
         <form onSubmit={handleSubmit}>
-          <div>Name</div>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            maxLength='64'
-            minLength='1'
-            placeholder="Name"
-          />
 
-          <div>description</div>
-          <textarea
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            maxLength='1000'
-            placeholder="Write a description (optional)"
-          />
+          <label className="create-rec-name">
+            <div className="create-rec-name-name-val">
+              <div className="create-rec-name-name">Name</div>
+              <div className="validation-error">
+                {hasSubmitted && validationErrors.name && `*${validationErrors.name}`}
+              </div>
+            </div>
 
-          <div>ingredients</div>
-          <div>
-            {componentArr.map((oneComponent) => {
-              return (
-                oneComponent
-              )
-            })}
+            <input
+              type="text"
+              className="create-rec-name-input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              maxLength='64'
+              minLength='1'
+              placeholder="Name"
+            />
+          </label>
+
+          <label className="create-rec-description">
+            <div className="create-rec-description-name-val">
+              <div className="create-rec-description-name">description</div>
+              <div className="validation-error">
+                {hasSubmitted && validationErrors.description && `*${validationErrors.description}`}
+              </div>
+            </div>
+
+            <textarea
+              type="text"
+              className="create-rec-description-input"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              maxLength='1000'
+              placeholder="Write a description (optional)"
+            />
+          </label>
+
+          <label className="create-rec-ingredients">
+            <div className="create-rec-ingredients-name-val">
+              <div className="create-rec-ingredients-name">ingredients</div>
+              <div className="validation-error">
+                {hasSubmitted && validationErrors.ingredient && `*${validationErrors.ingredient}`}
+              </div>
+            </div>
+
+            <div>
+              {componentArr.map((oneComponent) => {
+                return (
+                  oneComponent
+                )
+              })}
+            </div>
+            {/* <AllRecipeIngredients what={what} setWhat={setWhat} tryHandleChange={tryHandleChange} tryHandleDelete={tryHandleDelete} recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} recipeAmounts={recipeAmounts} setRecipeAmounts={setRecipeAmounts} recipeUnits={recipeUnits} setRecipeUnits={setRecipeUnits}/> */}
+
+          </label>
+
+          <div className="create-rec-add-ri-container">
+            <button onClick={counterFunc} className="create-rec-add-ri-button">Add Ingredient</button>
           </div>
-          {/* <AllRecipeIngredients what={what} setWhat={setWhat} tryHandleChange={tryHandleChange} tryHandleDelete={tryHandleDelete} recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} recipeAmounts={recipeAmounts} setRecipeAmounts={setRecipeAmounts} recipeUnits={recipeUnits} setRecipeUnits={setRecipeUnits}/> */}
 
-          <button onClick={counterFunc}>Add Ingredient</button>
+          <label className="create-rec-instructions">
+            <div className="create-rec-instructions-name-val">
+              <div className="create-rec-instructions-name">instructions</div>
+              <div className="validation-error">
+                {hasSubmitted && validationErrors.instructions && `*${validationErrors.instructions}`}
+              </div>
+            </div>
 
-          <div>instructions</div>
-          <textarea
-            type="text"
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
-            maxLength='2000'
-            required
-            placeholder="Recipe instructions..."
-          />
+            <textarea
+              type="text"
+              className="create-rec-instructions-input"
+              value={instructions}
+              onChange={(e) => setInstructions(e.target.value)}
+              maxLength='2000'
+              required
+              placeholder="Recipe instructions..."
+            />
+          </label>
 
-          <div>
-            <button>Create new drink!</button>
+          <div className="create-rec-submit-container">
+            <button className="create-rec-submit-button">Create new drink!</button>
           </div>
+
         </form>
       </div>
     );

@@ -64,3 +64,12 @@
 .rate > .fa-solid {
   color: rgb(243, 243, 56);
 }
+
+.review-length-error {
+  display: none;
+}
+
+.review-length-error-error {
+  color: red;
+  font-size: small;
+}
