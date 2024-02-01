@@ -1,29 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
+import { thunkSignup } from "../../redux/session";
+import * as ingredientActions from "../../redux/ingredients"
 import unitTypes from "../../../public/unitTypes";
+import './RecipeIngredient.css'
 
-const OneRecipeIngredient = ({ rIObj, ingredientsABC }) => {
-  const [ ingredientIndividual, setIngredientIndividual ] = useState(rIObj.ingName ? rIObj.ingName : '')
-  const [ amountIndividual, setAmountIndividual ] = useState(rIObj.ingAmt ? rIObj.ingAmt : '')
-  const [ unitIndividual, setUnitIndividual ] = useState(rIObj.ingUnit ? rIObj.ingUnit : '')
+const RecipeIngredient = ({  }) => {
+  const dispatch = useDispatch()
+  const ingredients = useSelector(state => state.ingredients)
+  
+  const ingredientsArr = Object.values(ingredients)
+  const ingredientsABC = ingredientsArr.sort((a,b) => {
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+  })
 
-  const handleChangeIngName = (name) => {
-    rIObj.ingName = name
-  }
-  const handleChangeIngAmt = (amt) => {
-    rIObj.ingAmt = amt
-  }
-  const handleChangeIngUnit = (unit) => {
-    rIObj.ingUnit = unit
-  }
+
+  useEffect(() => {
+    dispatch(ingredientActions.getIngredientsThunk())
+  }, [dispatch])
+
+  // need to add ingredientIndividual, etc to recipeIngredients arr
+
 
   return (
-    <div>
+    // <div>
+    //   <div>
+    //     {}
+    //   </div>
+    // </div>
+    <div className="create-rec-ing">
+      Ingredient!
+      <div>
         <div className="rec-ing-ingredient-drop">
-           <input
+          <input
             value={ingredientIndividual}
             onChange={(e) => {
               setIngredientIndividual(e.target.value)
-              handleChangeIngName(e.target.value)
+              setRecipeIngredients([...recipeIngredients, e.target.value])
             }}
             list="ingredient-options"
             id="ingredient-option"
@@ -38,26 +54,24 @@ const OneRecipeIngredient = ({ rIObj, ingredientsABC }) => {
             })}
           </datalist>
         </div>
-
         <div>
           <input
-            type="number"
+            type="text"
             value={amountIndividual}
             onChange={(e) => {
               setAmountIndividual(e.target.value)
-              handleChangeIngAmt(e.target.value)
+              // console.log('recipeAmounts in RI comp', recipeAmounts)
+              setRecipeAmounts([...recipeAmounts, e.target.value])
             }}
             required
             placeholder="Amount"
           />
         </div>
-
-        <div>
-          <input
+        <div><input
             value={unitIndividual}
             onChange={(e) => {
               setUnitIndividual(e.target.value)
-              handleChangeIngUnit(e.target.value)
+              setRecipeUnits([...recipeUnits, e.target.value])
             }}
             list="unit-options"
             id="unit-option"
@@ -70,10 +84,13 @@ const OneRecipeIngredient = ({ rIObj, ingredientsABC }) => {
                 <option value={unit} key={unit}></option>
               )
             })}
-          </datalist>
-        </div>
+          </datalist></div>
+          <div>
+            <button>X</button>
+          </div>
+      </div>
     </div>
   )
 }
 
-export default OneRecipeIngredient
+export default RecipeIngredient

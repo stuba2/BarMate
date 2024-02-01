@@ -13,11 +13,12 @@ const CreateReview = ({ recipeId }) => {
   const [ isStar3Clicked, setIsStar3Clicked ] = useState(false)
   const [ isStar4Clicked, setIsStar4Clicked ] = useState(false)
   const [ isStar5Clicked, setIsStar5Clicked ] = useState(false)
-  const [ validationErrors, setValidationErrors ] = useState({})
   const [ selected, setSelected ] = useState(false)
   const [ textValidity, setTextValidity ] = useState(false)
   const [ starsValidity, setStarsValidity ] = useState(false)
   const [ validity, setValidity ] = useState(true)
+  const [errors, setErrors] = useState({});
+  const [ hasSubmitted, setHasSubmitted ] = useState(false)
 
   useEffect(() => {
     if (reviewText.length < 1001 && numStars > 0) setValidity(true)
@@ -31,7 +32,7 @@ const CreateReview = ({ recipeId }) => {
       errors.review_text = 'Comment must be 1000 characters or less'
       setValidity(false)
     }
-    setValidationErrors(errors)
+    setErrors(errors)
 
   }, [reviewText])
 
@@ -45,7 +46,7 @@ const CreateReview = ({ recipeId }) => {
   if (selected && reviewText && numStars > 0) {
     buttonClass = "create-review-save-enabled"
   }
-  if (validationErrors.review_text) {
+  if (errors.review_text) {
     buttonClass = "create-review-save"
   }
 
@@ -59,7 +60,7 @@ const CreateReview = ({ recipeId }) => {
       recipe_id: +recipeId
     }
 
-    if (!Object.values(validationErrors).length) {
+    if (!Object.values(errors).length) {
       dispatch(reviewActions.createReviewThunk(reviewForm, recipeId))
     }
 
@@ -160,7 +161,7 @@ const CreateReview = ({ recipeId }) => {
         </div>
 
           <div className="button-validation-combo">
-            <div className={reviewLengthErrorClass}>Comment must be 1000 characters or less</div>
+            <div className={reviewLengthErrorClass}>Review must be 1000 characters or less</div>
             <button className={buttonClass} disabled={!validity ? true : false}>Save</button>
           </div>
 

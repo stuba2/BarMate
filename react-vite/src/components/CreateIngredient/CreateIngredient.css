@@ -1,0 +1,53 @@
+.create-ing-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.create-ing-header {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.create-ing-container > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-ing-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-ing-name-val {
+  margin-bottom: 5px;
+}
+
+.create-ing-name-input {
+  width: 100%;
+}
+
+.create-ing-submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.create-ing-submit-button {
+  text-decoration: none;
+  color: #090619;
+  background-color: rgba(172, 29, 53, .9);
+  background-color: rgba(177, 101, 62, .9);
+  background-color: rgba(22, 14, 64, .9);
+  background-color: rgba(96, 53, 146, .9);
+  color: #fdfdfb;
+  border: #603592 1px solid;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.create-ing-submit-button:hover {
+  background-color: rgba(22, 14, 64, .9);
+  cursor: pointer;
+}
