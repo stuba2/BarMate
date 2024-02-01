@@ -307,6 +307,7 @@ def create_image_on_recipe(recipe_id):
 def edit_a_recipe(recipe_id):
   existing_recipe = Recipe.query.get(recipe_id)
   owner_details = User.query.filter(User.id == existing_recipe.user_id).first()
+  recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == existing_recipe.id).first()
   form = RecipeEditForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -331,8 +332,34 @@ def edit_a_recipe(recipe_id):
         'username': owner_details.username,
         'dob': owner_details.dob,
       },
+      'recipe_image_url': recipe_image.url if recipe_image else None,
       'created_at': existing_recipe.created_at,
       'updated_at': existing_recipe.updated_at
+    }
+
+    return ret
+
+  return {
+    'message': 'Bad Request',
+    'errors': form.errors
+  }
+
+@recipe_routes.route('/<int:recipe_id>/image', methods=['PUT'])
+def edit_image_on_recipe(recipe_id):
+  form = RecipeImageForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+
+  recipe = Recipe.query.get(recipe_id)
+  existing_img = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
+
+  if form.validate_on_submit():
+    existing_img.url = form.data['url']
+    db.session.commit()
+
+    ret = {
+      'id': existing_img.id,
+      'recipe_id': existing_img.recipe_id,
+      'url': existing_img.url
     }
 
     return ret

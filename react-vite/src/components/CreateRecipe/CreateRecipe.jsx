@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as ingredientActions from "../../redux/ingredients"
 import * as recipeActions from "../../redux/recipes"
-import RecipeIngredient from "../RecipeIngredient/RecipeIngredient";
 import './CreateRecipe.css'
 import AllRecipeIngredients from "../AllRecipeIngredients/AllRecipeIngredients";
 
@@ -17,53 +16,14 @@ const CreateRecipe = () => {
   const [ name, setName ] = useState('')
   const [ description, setDescription ] = useState('')
   const [ instructions, setInstructions ] = useState('')
-  const [ validationErrors, setValidationErrors ] = useState({})
-  const [ recipeIngredients, setRecipeIngredients ] = useState([])
-  const [ recipeAmounts, setRecipeAmounts ] = useState([])
-  const [ recipeUnits, setRecipeUnits ] = useState([])
-  const [ count, setCount ] = useState(1)
+  const [ recipeImageUrl, setRecipeImageUrl ] = useState('')
+  const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
 
-  useEffect(() => {
-    const errors = {}
-    let riLength = recipeIngredients.length
-    let raLength = recipeAmounts.length
-    let ruLength = recipeUnits.length
-    let existingRecipeName = recipesArr.filter((recipe) => (recipe.name) === name)[0]
-
-    if (!name) errors['name'] = 'Cocktail name is required'
-    if (name.length > 64) errors['name'] = 'Cocktail name must be 64 characters or less'
-    if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
-    if (description && description.length > 1000) errors['description'] = 'Cocktail description must be 1000 characters or less'
-    if (!instructions) errors['instructions'] = 'Instructions are required'
-    if (instructions.length > 2000) errors['instructions'] = 'Cocktail instructions must be 2000 characters or less'
-    if ((riLength + raLength + ruLength)%3 !== 0) errors['ingredient'] = 'All ingredient fields are needed'
-
-    setValidationErrors(errors)
-  },[name, description, instructions, recipeIngredients, recipeAmounts, recipeUnits])
-
-  const initialWhat = [
-    // {name: 'Wine', amount: 1, unit:'cl'},
-    // {name: 'Tea', amount: 2, unit:'oz'},
-    // {name: 'Port', amount: 3, unit:'tbs'}
-  ]
-  const [ what, setWhat ] = useState(initialWhat ? initialWhat : [])
-
+  let num = 1
   const ingredientsArr = Object.values(ingredients)
-  const recipesArr = Object.values(recipes)
 
-//************************************* need to include recipe image
-
-  // tracking the changes in the individual CreateIngredient components
-  useEffect(() => {
-    for (let i = 0; i < recipeIngredients.length; i++) {
-      let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
-      console.log('---', matchedIng[0].id)
-      console.log('recipeIngredients: ', recipeIngredients)
-      console.log('recipeAmounts: ', recipeAmounts)
-      console.log('recipeUnits: ', recipeUnits)
-    }
-  }, [recipeIngredients, recipeAmounts, recipeUnits])
+  const [ recipeIngredients, setRecipeIngredients ] = useState([{ingNum: num, ingName: '', ingAmt: '', ingUnit: ''}])
 
   // keeping up with the up to date ing/rec
   useEffect(() => {
@@ -71,17 +31,23 @@ const CreateRecipe = () => {
     dispatch(recipeActions.getRecipesThunkAll())
   },[dispatch])
 
-  // tracking front end validation errors
   useEffect(() => {
-      const errors = {}
-      let existingRecipeName = recipesArr.filter((recipe) => (recipe.name) === name)[0]
-      if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
-      if (!name) errors['name'] = 'Cocktail name is required'
-      if (!instructions) errors['instructions'] = 'Instructions are required'
-      // add in length requirements
-      setValidationErrors(errors)
-    },[name, instructions])
+    console.log('recipeIngredients: ', recipeIngredients)
+  }, [recipeIngredients])
 
+  const handleNewRI = async (e) => {
+    e.preventDefault()
+    let newRI = {
+      ingNum: num,
+      ingName: '',
+      ingAmt: '',
+      ingUnit: ''
+    }
+    num += 1
+    setRecipeIngredients([...recipeIngredients, newRI])
+  }
+
+  //handle submit!
   const handleSubmit = async (e) => {
     e.preventDefault()
     setHasSubmitted(true)
@@ -94,8 +60,7 @@ const CreateRecipe = () => {
     }
 
     let createdRecipe
-
-    if (!Object.values(validationErrors).length) {
+    if (!Object.values(errors).length) {
       createdRecipe = await dispatch(recipeActions.createRecipeThunk(recipeForm))
       .catch(async (res) => {
         const data = await res.json()
@@ -104,76 +69,32 @@ const CreateRecipe = () => {
           console.log('data errors: ', data.Errors)
         }
       })
-      if (createdRecipe && createdRecipe.Errors) {
-        setValidationErrors(createdRecipe.Errors)
-      }
 
-      console.log('createdRecipe: ', createdRecipe)
+      if (createdRecipe && createdRecipe.Errors) setErrors(createdRecipe.Errors)
+
       if (createdRecipe && createdRecipe.id) {
-        console.log("i'm a real boy: ", createdRecipe)
-
-        // handles the addition of RecipeIngredients to the store, called from the handleSubmit
-        let finalIngredient
-        let finalRI = []
-        for (let i = 0; i < recipeIngredients.length; i++) {
-          let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
-
-          finalIngredient = {
-            amount: recipeAmounts[i],
-            unit: recipeUnits[i],
-            recipe_id: createdRecipe.id,
-            ingredient_id: matchedIng[0].id
+        let rIForm
+        for (let rIObj of recipeIngredients) {
+          let matchedIng = ingredientsArr.find(ing => ing.name === rIObj.ingName)
+          rIForm = {
+            amount: +rIObj.ingAmt,
+            unit: rIObj.ingUnit,
+            ingredient_id: matchedIng.id,
+            recipe_id: createdRecipe.id
           }
-          finalRI.push(finalIngredient)
+          dispatch(recipeActions.addRecipeIngredientsThunk(rIForm))
         }
 
-        for (let i = 0; i < finalRI.length; i++) {
-          let singleRI = finalRI[i]
-          dispatch(recipeActions.addRecipeIngredientsThunk(singleRI))
+        let imageForm = {
+          recipe_id: createdRecipe.id,
+          url: recipeImageUrl
         }
 
-        navigate(`/recipes/${createdRecipe.id}`)
+        dispatch(recipeActions.addRecipeImageThunk(createdRecipe.id, imageForm))
       }
-    } else {console.log('validation error to be done!', validationErrors)}
+      navigate(`/recipes/${createdRecipe.id}`)
+    }
   }
-
-  const componentSingular = <RecipeIngredient recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} recipeAmounts={recipeAmounts} setRecipeAmounts={setRecipeAmounts} recipeUnits={recipeUnits} setRecipeUnits={setRecipeUnits}/>
-
-  const [componentArr, setComponentArr ] = useState([componentSingular])
-
-  const counterFunc = (e) => {
-    e.preventDefault()
-    setCount(+count+1)
-    console.log('componentArr: ', componentArr)
-    setComponentArr([...componentArr, componentSingular])
-  }
-
-  const antiCounterFunc = (e) => {
-    e.preventDefault()
-    setCount(+count-1)
-    setComponentArr([componentArr.filter(rI => rI.key !== keyCount)])
-  }
-
-  const tryHandleAdd = (name, amount, unit) => {
-    setWhat([
-      ...what,
-      {
-        name,
-        amount,
-        unit
-      }
-    ])
-  }
-
-  const tryHandleChange = () => {
-
-  }
-
-  const tryHandleDelete = () => {
-
-  }
-
-
 
   if (!recipes) {
     return (
@@ -190,7 +111,7 @@ const CreateRecipe = () => {
             <div className="create-rec-name-name-val">
               <div className="create-rec-name-name">Name</div>
               <div className="validation-error">
-                {hasSubmitted && validationErrors.name && `*${validationErrors.name}`}
+                {hasSubmitted && errors.name && `*${errors.name}`}
               </div>
             </div>
 
@@ -210,7 +131,7 @@ const CreateRecipe = () => {
             <div className="create-rec-description-name-val">
               <div className="create-rec-description-name">description</div>
               <div className="validation-error">
-                {hasSubmitted && validationErrors.description && `*${validationErrors.description}`}
+                {hasSubmitted && errors.description && `*${errors.description}`}
               </div>
             </div>
 
@@ -228,30 +149,20 @@ const CreateRecipe = () => {
             <div className="create-rec-ingredients-name-val">
               <div className="create-rec-ingredients-name">ingredients</div>
               <div className="validation-error">
-                {hasSubmitted && validationErrors.ingredient && `*${validationErrors.ingredient}`}
+                {hasSubmitted && errors.ingredient && `*${errors.ingredient}`}
               </div>
             </div>
 
             <div>
-              {componentArr.map((oneComponent) => {
-                return (
-                  oneComponent
-                )
-              })}
+              <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI}/>
             </div>
-            {/* <AllRecipeIngredients what={what} setWhat={setWhat} tryHandleChange={tryHandleChange} tryHandleDelete={tryHandleDelete} recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} recipeAmounts={recipeAmounts} setRecipeAmounts={setRecipeAmounts} recipeUnits={recipeUnits} setRecipeUnits={setRecipeUnits}/> */}
-
           </label>
-
-          <div className="create-rec-add-ri-container">
-            <button onClick={counterFunc} className="create-rec-add-ri-button">Add Ingredient</button>
-          </div>
 
           <label className="create-rec-instructions">
             <div className="create-rec-instructions-name-val">
               <div className="create-rec-instructions-name">instructions</div>
               <div className="validation-error">
-                {hasSubmitted && validationErrors.instructions && `*${validationErrors.instructions}`}
+                {hasSubmitted && errors.instructions && `*${errors.instructions}`}
               </div>
             </div>
 
@@ -264,6 +175,18 @@ const CreateRecipe = () => {
               required
               placeholder="Recipe instructions..."
             />
+          </label>
+
+          <label>
+            <div>
+              <div>Recipe Image</div>
+              <input
+                value={recipeImageUrl}
+                onChange={(e) => setRecipeImageUrl(e.target.value)}
+                maxLength={'255'}
+                placeholder="Image URL"
+              />
+            </div>
           </label>
 
           <div className="create-rec-submit-container">

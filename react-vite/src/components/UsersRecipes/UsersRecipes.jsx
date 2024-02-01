@@ -53,7 +53,6 @@ const UsersRecipes = () => {
                       Edit Recipe
                     </button>
                   </NavLink>
-                  <NavLink to={`/recipes/${recipe.id}/edit2`}><button>whoops</button></NavLink>
                   <OpenModalButton
                     buttonText="Delete Recipe"
                     modalComponent={<DeleteRecipe recipeId={recipe.id} />}
