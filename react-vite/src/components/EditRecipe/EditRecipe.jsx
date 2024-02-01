@@ -23,6 +23,7 @@ const EditRecipe = () => {
   const [ description, setDescription ] = useState(recipe ? recipe.description : '')
   const [ instructions, setInstructions ] = useState(recipe ? recipe.instructions : '')
   const [ recipeIngredients, setRecipeIngredients ] = useState([])
+  const [ recipeImageUrl, setRecipeImageUrl ] = useState(recipe ? recipe.recipe_image_url : '')
   const [ errors, setErrors ] = useState({})
 
   // keeping up with the up to date ing/rec
@@ -94,27 +95,41 @@ const EditRecipe = () => {
       if (updatedRecipe && updatedRecipe.id) {
         let rIForm
         for (let rIObj of recipeIngredients) {
-          let matchedIng = ingredientsArr.filter(ing => ing.name === rIObj.ingName)
+          let matchedIng = ingredientsArr.find(ing => ing.name === rIObj.ingName)
           if (rIObj.ingNum > 15) {
             rIForm = {
               id: rIObj.ingNum,
               amount: +rIObj.ingAmt,
               unit: rIObj.ingUnit,
               recipe_id: updatedRecipe.id,
-              ingredient_id: matchedIng[0].id
+              ingredient_id: matchedIng.id
             }
-            console.log('riForm: ', rIForm)
             dispatch(recipeActions.editRecipeIngredientsThunk(rIObj.ingNum, rIForm))
           } else {
             rIForm = {
               amount: +rIObj.ingAmt,
               unit: rIObj.ingUnit,
-              ingredient_id: matchedIng[0].id,
+              ingredient_id: matchedIng.id,
               recipe_id: updatedRecipe.id
             }
-            console.log('riForm add: ', rIForm)
             dispatch(recipeActions.addRecipeIngredientsThunk(rIForm))
           }
+        }
+
+        if (updatedRecipe && updatedRecipe.recipe_image_url) {
+          let imageForm = {
+            recipe_id: updatedRecipe.id,
+            url: recipeImageUrl
+          }
+
+          dispatch(recipeActions.editRecipeImageThunk(updatedRecipe.id, imageForm))
+        } else if (updatedRecipe && !updatedRecipe.recipe_image_url) {
+          let imageForm = {
+            recipe_id: updatedRecipe.id,
+            url: recipeImageUrl
+          }
+
+          dispatch(recipeActions.addRecipeImageThunk(updatedRecipe.id, imageForm))
         }
       }
       navigate(`/recipes/${recipeId}`)
@@ -171,6 +186,18 @@ const EditRecipe = () => {
               placeholder="Recipe instructions..."
             />
           </div>
+
+          <label>
+            <div>
+              <div>Recipe Image</div>
+              <input
+                value={recipeImageUrl}
+                onChange={(e) => setRecipeImageUrl(e.target.value)}
+                maxLength={'255'}
+                placeholder="Image URL"
+              />
+            </div>
+          </label>
 
           <div>
             <button onClick={handleSubmit}>Save Cocktail!</button>

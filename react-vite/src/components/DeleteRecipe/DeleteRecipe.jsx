@@ -14,7 +14,7 @@ const DeleteRecipe = ({ recipeId }) => {
 
     dispatch(recipeActions.deleteRecipeThunk(recipeId))
     closeModal()
-    navigate('/myCocktails')
+    navigate('/account/myCocktails')
 
   }
 

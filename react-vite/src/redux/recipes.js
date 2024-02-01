@@ -155,9 +155,7 @@ export const createRecipeThunk = (recipeForm) => async (dispatch) => {
 }
 
 export const addRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
-  console.log('add RI thunk')
   try {
-    console.log('add RI try')
     const response = await fetch(`/api/recipe_ingredients/`, {
       method: "POST",
       headers: {
@@ -165,10 +163,8 @@ export const addRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
       },
       body: JSON.stringify(RIObj)
     })
-    console.log('add RI response: ', response)
 
     const data = await response.json()
-    console.log('add RI data: ', data)
 
   } catch (error) {
     console.log('error: ', error)
@@ -197,7 +193,7 @@ export const editRecipeThunk = (recipeId, recipeForm) => async (dispatch) => {
 
 export const editRecipeIngredientsThunk = (rIId, rIObj) => async (dispatch) => {
   try {
-    const response = await fetch(`/api/recipe_ingredients/${rIId}`, {
+    const response = await fetch(`/api/recipe_ingredients/${+rIId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -222,6 +218,40 @@ export const deleteRecipeThunk = (recipeId) => async (dispatch) => {
 
     const data = await response.json()
     dispatch(deleteRecipe(recipeId))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
+export const addRecipeImageThunk = (recipeId, imgForm) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/${+recipeId}/image`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(imgForm)
+    })
+
+    const data = await response.json()
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
+export const editRecipeImageThunk = (recipeId, imgForm) => async (dispatch ) => {
+  try {
+    const response = await fetch(`/api/recipes/${recipeId}/image`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(imgForm)
+    })
+
+    const data = await response.json()
   } catch (error) {
     console.log('error: ', error)
     return error
