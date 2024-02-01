@@ -36,8 +36,8 @@ def add_recipe_ingredient():
     'errors': form.errors
   }
 
-@recipe_ingredient_routes.route('/', methods=['PUT'])
-def edit_recipe_ingredient():
+@recipe_ingredient_routes.route('/<int:recipe_ingredient_id>', methods=['PUT'])
+def edit_recipe_ingredient(recipe_ingredient_id):
   form = RecipeIngredientForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -47,7 +47,8 @@ def edit_recipe_ingredient():
   print('\n recipefull: ', recipe_full.to_dict())
   print('\n ingredientfull: ', ingredient_full.to_dict())
 
-  existing_ri = RecipeIngredient.query.filter(Recipe.name == recipe_full.name).filter(Ingredient.name == ingredient_full.name)
+  # existing_ri = RecipeIngredient.query.filter(Recipe.name == recipe_full.name).filter(Ingredient.name == ingredient_full.name)
+  existing_ri = RecipeIngredient.query.get(recipe_ingredient_id)
 
   print('\n existing ri: ', existing_ri)
   if not existing_ri:
@@ -75,6 +76,7 @@ def edit_recipe_ingredient():
     existing_ri.unit = form.data['unit']
     existing_ri.ingredient_id = form.data['ingredient_id']
     existing_ri.recipe_id = form.data['recipe_id']
+    db.session.commit()
 
     ret = {
       'id': existing_ri.id,
