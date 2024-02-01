@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import * as ingredientActions from "../../redux/ingredients"
 import * as recipeActions from "../../redux/recipes"
-import RecipeIngredient from "../RecipeIngredient/RecipeIngredient";
 import './EditRecipe.css'
+import AllRecipeIngredients from "../AllRecipeIngredients/AllRecipeIngredients";
 
 const EditRecipe = () => {
   const dispatch = useDispatch()
@@ -15,12 +15,6 @@ const EditRecipe = () => {
   const ingredients = useSelector(state => state.ingredients)
   const userId = user.id
 
-  // keeping up with the up to date ing/rec
-  useEffect(() => {
-    dispatch(recipeActions.getOneRecipeThunk(recipeId))
-    dispatch(ingredientActions.getIngredientsThunk())
-  },[dispatch])
-
   const ingredientsArr = Object.values(ingredients)
   const recipesArr = Object.values(recipes)
   const recipe = recipesArr.find(recipe => recipe.id === +recipeId)
@@ -28,69 +22,51 @@ const EditRecipe = () => {
   const [ name, setName ] = useState(recipe ? recipe.name : '')
   const [ description, setDescription ] = useState(recipe ? recipe.description : '')
   const [ instructions, setInstructions ] = useState(recipe ? recipe.instructions : '')
-  const [ validationErrors, setValidationErrors ] = useState({})
   const [ recipeIngredients, setRecipeIngredients ] = useState([])
-  const [ recipeAmounts, setRecipeAmounts ] = useState([])
-  const [ recipeUnits, setRecipeUnits ] = useState([])
-  // const [ count, setCount ] = useState(recipe ? recipe.recipe_ingredients.length : 1)
-  const [componentArr, setComponentArr ] = useState([])
+  const [ errors, setErrors ] = useState({})
 
-  // tracking the changes in the individual CreateIngredient components
+  // keeping up with the up to date ing/rec
   useEffect(() => {
-    console.log('recipeIngredients before: ', recipeIngredients)
-    for (let i = 0; i < recipeIngredients.length; i++) {
-      let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
-      // console.log('---', matchedIng[0].id)
-      console.log('recipeIngredients up top: ', recipeIngredients)
-      console.log('recipeAmounts up top: ', recipeAmounts)
-      console.log('recipeUnits up top: ', recipeUnits)
+    dispatch(recipeActions.getOneRecipeThunk(recipeId))
+    dispatch(ingredientActions.getIngredientsThunk())
+  },[dispatch])
+
+  useEffect(() => {
+    console.log('recipeIngredients: ', recipeIngredients)
+  }, [recipeIngredients])
+
+  let allIngredientsArr = []
+  let num = 1
+  if (recipe && recipe.recipe_ingredients && recipeIngredients.length < recipe.recipe_ingredients.length) {
+    for (let rI of recipe.recipe_ingredients) {
+      let existingRI = {
+        ingNum: rI.id,
+        ingName: rI.name,
+        ingAmt: rI.amount,
+        ingUnit: rI.unit
+      }
+      num += 1
+      allIngredientsArr.push(existingRI)
     }
-  }, [recipeIngredients, recipeAmounts, recipeUnits])
-
-  // populates componentArr with existing RI
-  let allIngFull = []
-  let oneIngFull
-      let rIName = []
-      let rIAmt = []
-      let rIUnit = []
-  if (recipe && recipe.recipe_ingredients && componentArr.length < recipe.recipe_ingredients.length) {
-    for (let i = 0; i < recipe.recipe_ingredients.length; i ++) {
-      let rI = recipe.recipe_ingredients[i]
-      console.log('ri: ', rI)
-      console.log('ri.id: ', rI.id)
-      console.log('hi before')
-
-      rIName.push(rI.name)
-      rIAmt.push(+rI.amount)
-      rIUnit.push(rI.unit)
-
-      console.log('hi after')
-
-      oneIngFull = <RecipeIngredient key={i}  recipeIngredients={[...rIName]} setRecipeIngredients={setRecipeIngredients} recipeAmounts={[...rIAmt]} setRecipeAmounts={setRecipeAmounts} recipeUnits={[...rIUnit]} setRecipeUnits={setRecipeUnits} originalName={rI.name} originalAmount={rI.amount} originalUnit={rI.unit} originalId={rI.id}/>
-
-      allIngFull.push(oneIngFull)
-      console.log('oneingfull : ', oneIngFull)
-      console.log('allIngFull : ', allIngFull)
-    }
-    setComponentArr([...allIngFull])
-    setRecipeIngredients([...rIName])
-    setRecipeAmounts([...rIAmt])
-    setRecipeUnits([...rIUnit])
+    setRecipeIngredients([...allIngredientsArr])
   }
 
-  // tracking front end validation errors
-  // useEffect(() => {
-  //     const errors = {}
-  //     let existingRecipeName = recipesArr.filter((recipe) => (recipe.name) === name)[0]
-  //     if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
-  //     if (!name) errors['name'] = 'Cocktail name is required'
-  //     if (!instructions) errors['instructions'] = 'Instructions are required'
-  //     // add in length requirements
-  //     setValidationErrors(errors)
-  //   },[name, instructions])
+  let newNum = recipeIngredients.length +1
+  const handleNewRI = async (e) => {
+    e.preventDefault()
+    let newRI = {
+      ingNum: newNum,
+      ingName: '',
+      ingAmt: '',
+      ingUnit: ''
+    }
+    newNum += 1
+    setRecipeIngredients([...recipeIngredients, newRI])
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    console.log('recipeIngredients: ', recipeIngredients)
 
     const recipeForm = {
       name: name,
@@ -101,7 +77,7 @@ const EditRecipe = () => {
 
     let updatedRecipe
 
-    if (!Object.values(validationErrors).length) {
+    if (!Object.values(errors).length) {
       updatedRecipe = await dispatch(recipeActions.editRecipeThunk(recipeId, recipeForm))
       .catch(async (res) => {
         const data = await res.json()
@@ -110,67 +86,39 @@ const EditRecipe = () => {
           console.log('data errors: ', data.Errors)
         }
       })
+
       if (updatedRecipe && updatedRecipe.Errors) {
-        setValidationErrors(updatedRecipe.Errors)
+        setErrors(updatedRecipe.Errors)
       }
 
-      console.log('updatedRecipe: ', updatedRecipe)
       if (updatedRecipe && updatedRecipe.id) {
-        console.log("i'm a real boy: ", updatedRecipe)
-
-        // handles the addition of RecipeIngredients to the store, called from the handleSubmit
-        let finalIngredient
-        let finalRI = []
-        console.log('ingredientsArr: ', ingredientsArr)
-        console.log('recipeIngredients: ', recipeIngredients)
-        for (let i = 0; i < recipeIngredients.length; i++) {
-          console.log('hi')
-          let matchedIng = ingredientsArr.filter(ing => ing.name === recipeIngredients[i])
-          console.log('matchedIng: ', matchedIng)
-
-          finalIngredient = {
-            // id:
-            amount: +recipeAmounts[i],
-            unit: recipeUnits[i],
-            recipe_id: updatedRecipe.id,
-            ingredient_id: matchedIng[0].id
+        let rIForm
+        for (let rIObj of recipeIngredients) {
+          let matchedIng = ingredientsArr.filter(ing => ing.name === rIObj.ingName)
+          if (rIObj.ingNum > 15) {
+            rIForm = {
+              id: rIObj.ingNum,
+              amount: +rIObj.ingAmt,
+              unit: rIObj.ingUnit,
+              recipe_id: updatedRecipe.id,
+              ingredient_id: matchedIng[0].id
+            }
+            console.log('riForm: ', rIForm)
+            dispatch(recipeActions.editRecipeIngredientsThunk(rIObj.ingNum, rIForm))
+          } else {
+            rIForm = {
+              amount: +rIObj.ingAmt,
+              unit: rIObj.ingUnit,
+              ingredient_id: matchedIng[0].id,
+              recipe_id: updatedRecipe.id
+            }
+            console.log('riForm add: ', rIForm)
+            dispatch(recipeActions.addRecipeIngredientsThunk(rIForm))
           }
-          finalRI.push(finalIngredient)
         }
-
-        for (let i = 0; i < finalRI.length; i++) {
-          let singleRI = finalRI[i]
-          console.log('singleRI to thunk: ', singleRI)
-          dispatch(recipeActions.editRecipeIngredientsThunk(singleRI))
-        }
-
-        // navigate(`/recipes/${updatedRecipe.id}`)
       }
-    } else {console.log('validation error to be done!', validationErrors)}
-  }
-
-  const componentSingular = <RecipeIngredient recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} recipeAmounts={recipeAmounts} setRecipeAmounts={setRecipeAmounts} recipeUnits={recipeUnits} setRecipeUnits={setRecipeUnits}/>
-
-
-  const counterFunc = (e) => {
-    e.preventDefault()
-    // setCount(+(recipe.recipe_ingredients.length)+1)
-    // populate recipeI,A,U with existing ings
-    for (let rIComponent of componentArr) {
-      // console.log('props name: ', rIComponent.props.originalName)
-      // console.log('props amount: ', rIComponent.props.originalAmount)
-      // console.log('props unit: ', rIComponent.props.originalUnit)
-      // setRecipeIngredients([...recipeIngredients, rIComponent.props.originalName])
-      // setRecipeAmounts([...recipeAmounts, rIComponent.props.originalAmount])
-      // setRecipeUnits([...recipeUnits, rIComponent.props.originalUnit])
+      navigate(`/recipes/${recipeId}`)
     }
-                                            console.log('componentArr before: ', componentArr)
-    // allIngFull = [...allIngFull, componentSingular]
-    setComponentArr([...componentArr, componentSingular])
-                                            console.log('componentArr after: ', componentArr)
-                                            console.log('recipeIngredients: ', recipeIngredients)
-                                            console.log('recipeAmounts: ', recipeAmounts)
-                                            console.log('recipeUnits: ', recipeUnits)
   }
 
   if (!recipe) {
@@ -180,52 +128,54 @@ const EditRecipe = () => {
   } else {
     return (
       <div className="edit-rec-container">
-        <div>create a recipe</div>
+        <div>edit a recipe</div>
+
         <form onSubmit={handleSubmit}>
-          <div>Name</div>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            maxLength='64'
-            minLength='1'
-            placeholder="Name"
-          />
-
-          <div>description</div>
-          <textarea
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            maxLength='1000'
-            placeholder="Write a description (optional)"
-          />
-
-          <div>ingredients</div>
-          <div>
-            {componentArr.map((oneComponent) => {
-              return (
-                oneComponent
-              )
-            })}
-          </div>
-
-          <button onClick={counterFunc}>Add Ingredient</button>
-
-          <div>instructions</div>
-          <textarea
-            type="text"
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
-            maxLength='2000'
-            required
-            placeholder="Recipe instructions..."
-          />
 
           <div>
-            <button>Save Cocktail!</button>
+            <div>Name</div>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              maxLength='64'
+              minLength='1'
+              placeholder="Name"
+            />
           </div>
+
+          <div>
+            <div>description</div>
+            <textarea
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              maxLength='1000'
+              placeholder="Write a description (optional)"
+            />
+          </div>
+
+          <div>
+            <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI}/>
+          </div>
+
+          <div>
+            <div>instructions</div>
+            <textarea
+              type="text"
+              value={instructions}
+              onChange={(e) => setInstructions(e.target.value)}
+              maxLength='2000'
+              required
+              placeholder="Recipe instructions..."
+            />
+          </div>
+
+          <div>
+            <button onClick={handleSubmit}>Save Cocktail!</button>
+          </div>
+
         </form>
       </div>
     );

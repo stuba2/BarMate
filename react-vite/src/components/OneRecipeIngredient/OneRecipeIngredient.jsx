@@ -1,29 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import unitTypes from "../../../public/unitTypes";
-// import { useDispatch, useSelector } from "react-redux";
-// import { Navigate, useNavigate } from "react-router-dom";
-// import { thunkSignup } from "../../redux/session";
-// import * as ingredientActions from "../../redux/ingredients"
-// import unitTypes from "../../../dist/assets/unitTypes";
 
-const OneRecipeIngredient = ({ ingNum, ingName, ingAmt, imgUnit, ingredientsABC }) => {
-  // const [ isEditing, setIsEditing ] = useState(false)
-  const [ ingredientIndividual, setIngredientIndividual ] = useState(ingName ? ingName : '')
-  // const [ amountIndividual, setAmountIndividual ] = useState('')
-  // const [ unitIndividual, setUnitIndividual ] = useState('')
+const OneRecipeIngredient = ({ rIObj, ingredientsABC }) => {
+  const [ ingredientIndividual, setIngredientIndividual ] = useState(rIObj.ingName ? rIObj.ingName : '')
+  const [ amountIndividual, setAmountIndividual ] = useState(rIObj.ingAmt ? rIObj.ingAmt : '')
+  const [ unitIndividual, setUnitIndividual ] = useState(rIObj.ingUnit ? rIObj.ingUnit : '')
 
   const handleChangeIngName = (name) => {
-    //maybe send down riObj from AllRecipeIngredients so you can mutate it? I don't think changing ingName will actually do anything...but also maybe even changing rIObj won't do anything either...
+    rIObj.ingName = name
+  }
+  const handleChangeIngAmt = (amt) => {
+    rIObj.ingAmt = amt
+  }
+  const handleChangeIngUnit = (unit) => {
+    rIObj.ingUnit = unit
   }
 
   return (
     <div>
-      <div>
         <div className="rec-ing-ingredient-drop">
            <input
             value={ingredientIndividual}
             onChange={(e) => {
               setIngredientIndividual(e.target.value)
+              handleChangeIngName(e.target.value)
             }}
             list="ingredient-options"
             id="ingredient-option"
@@ -38,46 +38,26 @@ const OneRecipeIngredient = ({ ingNum, ingName, ingAmt, imgUnit, ingredientsABC 
             })}
           </datalist>
         </div>
-      </div>
 
-      {/* <div>
-         <div className="rec-ing-ingredient-drop">
-           <input
-            value={ingredientIndividual}
-            onChange={(e) => {
-              setIngredientIndividual(e.target.value)
-              setRecipeIngredients([...recipeIngredients, ...e.target.value])
-            }}
-            list="ingredient-options"
-            id="ingredient-option"
-            name="ingredient-option"
-            placeholder="Ingredient..."
-          />
-          <datalist id="ingredient-options">
-            {ingredientsABC.map((ingredientObj) => {
-              return (
-                <option value={ingredientObj.name} key={ingredientObj.id}></option>
-              )
-            })}
-          </datalist>
-        </div>
         <div>
           <input
-            type="text"
+            type="number"
             value={amountIndividual}
             onChange={(e) => {
               setAmountIndividual(e.target.value)
-              setRecipeAmounts([...recipeAmounts, ...e.target.value])
+              handleChangeIngAmt(e.target.value)
             }}
             required
             placeholder="Amount"
           />
         </div>
-        <div><input
+
+        <div>
+          <input
             value={unitIndividual}
             onChange={(e) => {
               setUnitIndividual(e.target.value)
-              setRecipeUnits([...recipeUnits, e.target.value])
+              handleChangeIngUnit(e.target.value)
             }}
             list="unit-options"
             id="unit-option"
@@ -90,11 +70,8 @@ const OneRecipeIngredient = ({ ingNum, ingName, ingAmt, imgUnit, ingredientsABC 
                 <option value={unit} key={unit}></option>
               )
             })}
-          </datalist></div>
-          <div>
-            <button>X</button>
-          </div>
-      </div> */}
+          </datalist>
+        </div>
     </div>
   )
 }

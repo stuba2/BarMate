@@ -195,14 +195,14 @@ export const editRecipeThunk = (recipeId, recipeForm) => async (dispatch) => {
   }
 }
 
-export const editRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
+export const editRecipeIngredientsThunk = (rIId, rIObj) => async (dispatch) => {
   try {
-    const response = await fetch(`/api/recipe_ingredients/`, {
+    const response = await fetch(`/api/recipe_ingredients/${rIId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(RIObj)
+      body: JSON.stringify(rIObj)
     })
     console.log('RI response: ', response)
 

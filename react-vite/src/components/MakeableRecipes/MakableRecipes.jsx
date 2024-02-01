@@ -10,7 +10,8 @@ const MakableRecipes = () => {
   const dispatch = useDispatch()
   const recipes = useSelector(state => state.recipes)
   const myBar = useSelector(state => state.bar)
-
+  let barIngredientsSet = new Set()
+  Object.values(myBar).forEach(obj => barIngredientsSet.add(obj.name))
   const barIngredients = Object.values(myBar).sort((a,b) => {
     if (a.name < b.name) return -1
     if (a.name > b.name) return 1
@@ -22,14 +23,15 @@ const MakableRecipes = () => {
   for (let recipe of recipesArr) {
     let found
     for (let rI of recipe.recipe_ingredients) {
-      found = barIngredients.find(ing => ing.name === rI.name)
+      found = barIngredientsSet.has(rI.name)
       if (!found) break
     }
     if (found) {
       ret.push(recipe)
     }
-
   }
+
+
 
   useEffect(() => {
     dispatch(recipeActions.getRecipesThunkAll())
