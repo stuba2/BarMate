@@ -1,12 +1,29 @@
 .my-bar-container {
   display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* margin-top: 10%; */
+}
+
+.my-bar-upper {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(252, 252, 250, .75);
+  width: 500px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.my-bar-lower {
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .my-bar-current-ings {
-  margin: 50px;
+  margin-right: 25px;
   height: 300px;
   width: 217px;
   overflow-y: auto;
@@ -14,6 +31,10 @@
   background-color: #160e40;
   color: #f9d39e;
   border-radius: 8px;
+}
+
+.my-bar-possible-ings {
+  margin-left: 25px;
 }
 
 .my-bar-current-ings::-webkit-scrollbar {

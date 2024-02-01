@@ -13,6 +13,6 @@ body, html {
 }
 
 .validation-error {
-  color: red;
+  color: #ac1d35;
   font-size: small;
 }

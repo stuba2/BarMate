@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as ingredientActions from "../../redux/ingredients"
+import './CreateIngredient.css'
 
 const CreateIngredient = () => {
   const dispatch = useDispatch()
@@ -54,12 +55,11 @@ const CreateIngredient = () => {
 
   return (
     <div className="create-ing-container">
-      <div>create an ingredient</div>
+      <div className="create-ing-header">Don't see an ingredient? Add it!</div>
 
       <form onSubmit={handleSubmit}>
         <div className="create-ing-name">
           <div className="create-ing-name-val">
-            <label className="create-ing-name-name">Name</label>
             <div className="validation-error">
               {hasSubmitted && errors.name && `*${errors.name}`}
             </div>
@@ -71,6 +71,8 @@ const CreateIngredient = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            min='0'
+            max={64}
             placeholder="Name"
           />
         </div>
@@ -83,7 +85,7 @@ const CreateIngredient = () => {
             placeholder="Image URL"
           />
         </div> */}
-        <button>Submit</button>
+        <div className="create-ing-submit-container"><button className="create-ing-submit-button">Submit</button></div>
       </form>
     </div>
   )
