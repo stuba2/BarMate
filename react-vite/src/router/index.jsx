@@ -14,6 +14,7 @@ import UsersRecipes from '../components/UsersRecipes/UsersRecipes';
 import EditBar from '../components/EditBar/EditBar';
 import MakableRecipes from '../components/MakeableRecipes/MakableRecipes';
 import LandingPage from '../components/LandingPage/LandingPage';
+import EditRecipe2 from '../components/EditRecipe2/EditRecipe2';
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: "/recipes/:recipeId/edit",
         element: <EditRecipe />
+      },
+      {
+        path: "/recipes/:recipeId/edit2",
+        element: <EditRecipe2 />
       },
       {
         path: "/recipes/:recipeId",

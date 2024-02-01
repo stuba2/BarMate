@@ -6,15 +6,41 @@ import unitTypes from "../../../public/unitTypes";
 // import * as ingredientActions from "../../redux/ingredients"
 // import unitTypes from "../../../dist/assets/unitTypes";
 
-const OneRecipeIngredient = ({ obj, tryHandleChange, tryHandleDelete, recipeIngredients, setRecipeIngredients, recipeAmounts, setRecipeAmounts, recipeUnits, setRecipeUnits, ingredientsABC, ingredientIndividual, setIngredientIndividual, amountIndividual, setAmountIndividual, unitIndividual, setUnitIndividual }) => {
+const OneRecipeIngredient = ({ ingNum, ingName, ingAmt, imgUnit, ingredientsABC }) => {
   // const [ isEditing, setIsEditing ] = useState(false)
-  // const [ ingredientIndividual, setIngredientIndividual ] = useState('')
+  const [ ingredientIndividual, setIngredientIndividual ] = useState(ingName ? ingName : '')
   // const [ amountIndividual, setAmountIndividual ] = useState('')
   // const [ unitIndividual, setUnitIndividual ] = useState('')
+
+  const handleChangeIngName = (name) => {
+    //maybe send down riObj from AllRecipeIngredients so you can mutate it? I don't think changing ingName will actually do anything...but also maybe even changing rIObj won't do anything either...
+  }
 
   return (
     <div>
       <div>
+        <div className="rec-ing-ingredient-drop">
+           <input
+            value={ingredientIndividual}
+            onChange={(e) => {
+              setIngredientIndividual(e.target.value)
+            }}
+            list="ingredient-options"
+            id="ingredient-option"
+            name="ingredient-option"
+            placeholder="Ingredient..."
+          />
+          <datalist id="ingredient-options">
+            {ingredientsABC.map((ingredientObj) => {
+              return (
+                <option value={ingredientObj.name} key={ingredientObj.id}></option>
+              )
+            })}
+          </datalist>
+        </div>
+      </div>
+
+      {/* <div>
          <div className="rec-ing-ingredient-drop">
            <input
             value={ingredientIndividual}
@@ -68,7 +94,7 @@ const OneRecipeIngredient = ({ obj, tryHandleChange, tryHandleDelete, recipeIngr
           <div>
             <button>X</button>
           </div>
-      </div>
+      </div> */}
     </div>
   )
 }
