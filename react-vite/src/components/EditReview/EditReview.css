@@ -45,6 +45,10 @@
   margin: 3px;
 }
 
+.create-review-save-enabled:hover {
+  cursor: pointer;
+}
+
 .create-review-save-hidden {
   display: none;
 }
