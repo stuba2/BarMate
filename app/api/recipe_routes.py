@@ -67,14 +67,7 @@ def get_paginated_recipes(page):
 @recipe_routes.route('/')
 def get_all_recipes():
   ret = []
-  # print('\n page:::::', page)
-  # per_page = 10
   all_recipes = Recipe.query.all()
-  # paginated = db.paginate(all_recipes, page=1, per_page=per_page, error_out=False)
-  # paginated = Recipe.query.paginate(page=page, per_page=per_page)
-  # print('\n ::::::::::', paginated)
-  # print('\n ::::::::::', paginated.items)
-  # print('\n ::::::::::', paginated.ret.allrecipes)
 
   for recipe in all_recipes:
     owner_details = User.query.filter(User.id == recipe.user_id).first()
@@ -208,6 +201,65 @@ def get_random_recipe():
   return {
     'Recipe': ret
   }
+
+@recipe_routes.route('/makable', methods=['GET'])
+def get_makable_recipes():
+  ret = []
+  all_recipes = Recipe.query.join('recipes_recipe_ingredients').all()
+  my_bar = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == current_user.get_id())).order_by(Ingredient.name).all()
+  ing_ids = []
+  for ing in my_bar:
+    ing_ids.append(ing.id)
+
+  bar_ing_set = set(ing_ids)
+
+  print('\n all_recs: ', all_recipes)
+  for recipe in all_recipes:
+    ris = recipe.recipes_recipe_ingredients
+    ri_id = [ri.ingredient_id for ri in ris]
+    yeah = set(ri_id).issubset(bar_ing_set)
+    if yeah:
+      owner_details = User.query.filter(User.id == recipe.user_id).first()
+      recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
+      recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
+
+      recipe_ingredient_list = []
+      for ingredient in recipe_ingredients:
+        ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
+        unit = ingredient.to_dict()['unit'].value
+        real_ingredient = {
+          'id': ingredient.id,
+          'name': ingredient_name.name,
+          'amount': ingredient.amount,
+          'unit': unit,
+          'recipe_id': ingredient.recipe_id,
+          'ingredient_id': ingredient.ingredient_id
+        }
+        recipe_ingredient_list.append(real_ingredient)
+
+      ret_recipe = {
+        'id': recipe.id,
+        'name': recipe.name,
+        'description': recipe.description,
+        'instructions': recipe.instructions,
+        'user_id': recipe.user_id,
+        'owner_details': {
+          'username': owner_details.username,
+          'dob': owner_details.dob
+        },
+        'recipe_image_url': recipe_image.url if recipe_image else None,
+        'recipe_ingredients': recipe_ingredient_list,
+        'created_at': recipe.created_at,
+        'updated_at': recipe.updated_at
+      }
+      ret.append(ret_recipe)
+
+  print('\n ==============', ret)
+
+  return {
+    "ret": ret
+  }
+
 
 @recipe_routes.route('/user', methods=['GET'])
 def get_users_recipes():

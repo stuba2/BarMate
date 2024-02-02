@@ -1,11 +1,13 @@
 .create-review-form {
   display: flex;
   flex-direction: column;
+  margin-right: 150px;
+  width: 360px;
 }
 
 .create-review-text-container {
   padding-top: 20px;
-  width: 200%;
+  width: 100%;
 }
 
 .create-review-text {

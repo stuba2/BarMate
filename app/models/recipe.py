@@ -34,6 +34,7 @@ class Recipe(db.Model, UserMixin):
             'description': self.description,
             'instructions': self.instructions,
             "user_id": self.user_id,
+            "recipes_recipe_ingredients": self.recipes_recipe_ingredients.to_dict(),
             "created_at": self.created_at,
             "updated_at": self.updated_at,
         }

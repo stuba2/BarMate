@@ -1,4 +1,4 @@
-import {GET_RECIPES, GET_A_RECIPE, GET_USER_RECIPES, POST_RECIPE, POST_RECIPE_IMAGE, EDIT_RECIPE, DELETE_RECIPE, RANDOM_RECIPE} from './actionTypes'
+import {GET_RECIPES, GET_A_RECIPE, GET_USER_RECIPES, POST_RECIPE, MAKABLE_RECIPES, EDIT_RECIPE, DELETE_RECIPE, RANDOM_RECIPE} from './actionTypes'
 
 const getRecipes = (data) => {
   return {
@@ -45,6 +45,13 @@ const editRecipe = (data) => {
 const deleteRecipe = (data) => {
   return {
     type: DELETE_RECIPE,
+    payload: data
+  }
+}
+
+const getMakableRecipes = (data) => {
+  return {
+    type: MAKABLE_RECIPES,
     payload: data
   }
 }
@@ -130,28 +137,6 @@ export const createRecipeThunk = (recipeForm) => async (dispatch) => {
     console.log('error: ', error)
     return error
   }
-
-    // const response = await fetch(`/api/recipes/`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(recipeForm)
-    // })
-    // console.log('thunk response: ', response)
-
-    // if (response.ok) {
-    //   const data = await response.json()
-    //   console.log('thunk data: ', data)
-    //   dispatch(createRecipe(data))
-    //   return data
-    // }
-    // if (!response.ok) {
-    //   // const error = await response.json()
-    //   // return error
-    //   console.log('not ok response: ', response)
-    //   return response
-    // }
 }
 
 export const addRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
@@ -258,6 +243,18 @@ export const editRecipeImageThunk = (recipeId, imgForm) => async (dispatch ) => 
   }
 }
 
+export const getMakableRecipesThunk = () => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/recipes/makable`)
+
+    const data = await response.json()
+    dispatch(getMakableRecipes(data))
+  } catch (error) {
+    console.log('error: ', error)
+    return error
+  }
+}
+
 const initialState = {}
 
 const recipeReducer = (state = initialState, action) => {
@@ -297,6 +294,11 @@ const recipeReducer = (state = initialState, action) => {
       newState = {...state}
       const recipeId = action.payload
       delete newState[recipeId]
+      return newState
+    case MAKABLE_RECIPES:
+      newState = {...state}
+      const makableRecipesArr = action.payload.ret
+      makableRecipesArr.map((obj) => newState[obj.id] = obj)
       return newState
     default:
       return state
