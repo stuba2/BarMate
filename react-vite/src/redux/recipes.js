@@ -80,7 +80,7 @@ export const getRecipesThunkAll = () => async (dispatch) => {
   }
 }
 
-export const getUsersRecipesTHunk = () => async (dispatch) => {
+export const getUsersRecipesThunk = () => async (dispatch) => {
   try {
     const response = await fetch(`/api/recipes/user`)
 
@@ -281,7 +281,7 @@ const recipeReducer = (state = initialState, action) => {
       newState[recipe.id] = recipe
       return newState
     case GET_USER_RECIPES:
-      newState = {...state}
+      newState = {}
       const UsersRecipesArr = action.payload.Recipes
       UsersRecipesArr.map((recipeObj) => newState[recipeObj.id] = recipeObj)
       return newState
@@ -296,7 +296,7 @@ const recipeReducer = (state = initialState, action) => {
       delete newState[recipeId]
       return newState
     case MAKABLE_RECIPES:
-      newState = {...state}
+      newState = {}
       const makableRecipesArr = action.payload.ret
       makableRecipesArr.map((obj) => newState[obj.id] = obj)
       return newState
