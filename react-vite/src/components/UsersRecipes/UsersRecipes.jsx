@@ -16,7 +16,7 @@ const UsersRecipes = () => {
   if (!page) page = 1
 
   useEffect(() => {
-    dispatch(recipeActions.getUsersRecipesTHunk())
+    dispatch(recipeActions.getUsersRecipesThunk())
   }, [dispatch, page])
 
   let recipesArr = Object.values(recipes)
