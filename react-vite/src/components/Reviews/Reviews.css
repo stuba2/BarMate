@@ -180,6 +180,10 @@
   font-size: 12px;
 }
 
+.review-edit:hover {
+  cursor: pointer;
+}
+
 .review-dot {
   grid-area: dot;
   color: #808b9d;
@@ -194,6 +198,10 @@
   text-decoration: underline;
   color: #808b9d;
   font-size: 12px;
+}
+
+.review-delete:hover {
+  cursor: pointer;
 }
 
 .review-delete-hidden {
