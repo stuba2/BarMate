@@ -39,7 +39,7 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
       setIsStar4Clicked(false)
       setIsStar5Clicked(false)
     }
-    if (review.rating === 31) {
+    if (review.rating === 3) {
       setIsStar1Clicked(true)
       setIsStar2Clicked(true)
       setIsStar3Clicked(true)
@@ -53,7 +53,7 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
       setIsStar4Clicked(true)
       setIsStar5Clicked(false)
     }
-    if (review.rating === 51) {
+    if (review.rating === 5) {
       setIsStar1Clicked(true)
       setIsStar2Clicked(true)
       setIsStar3Clicked(true)
