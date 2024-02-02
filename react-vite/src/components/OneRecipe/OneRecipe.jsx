@@ -42,22 +42,25 @@ const OneRecipe = () => {
               <div className="one-rec-rating">Average Rating: <i className="fa-solid fa-star"></i> {ratingAvg}</div>
               <div className="one-rec-toast-container"><Toasts recipeId={recipeId}/></div>
             </div>
+
+            <div className="one-rec-ing-container">
+              Ingredients:
+              <ul>
+                {recipe.recipe_ingredients.map((ingredient) => {
+                  return (
+                    <li key={ingredient.name}>{ingredient.name}: {ingredient.amount} {ingredient.unit}</li>
+                  )
+                })}
+              </ul>
+            </div>
+
           </div>
 
           <div><img src={recipe.recipe_image_url} width="335" className="one-rec-img"/></div>
         </div>
 
         <div className="one-rec-ing-instructions">
-          <div className="one-rec-ing-container">
-            Ingredients:
-            <ul>
-              {recipe.recipe_ingredients.map((ingredient) => {
-                return (
-                  <li key={ingredient.name}>{ingredient.name}: {ingredient.amount} {ingredient.unit}</li>
-                )
-              })}
-            </ul>
-          </div>
+          Instructions:
           <div className="one-rec-instructions">{recipe.instructions}</div>
         </div>
 

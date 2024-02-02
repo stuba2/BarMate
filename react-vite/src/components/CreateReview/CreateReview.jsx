@@ -16,21 +16,24 @@ const CreateReview = ({ recipeId }) => {
   const [ selected, setSelected ] = useState(false)
   const [ textValidity, setTextValidity ] = useState(false)
   const [ starsValidity, setStarsValidity ] = useState(false)
-  const [ validity, setValidity ] = useState(true)
+  const [ validity, setValidity ] = useState(false)
   const [errors, setErrors] = useState({});
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
 
   useEffect(() => {
     if (reviewText.length < 1001 && numStars > 0) setValidity(true)
     else setValidity(false)
-  }, [reviewText])
+  }, [reviewText, numStars])
 
   useEffect(() => {
     const errors = {}
 
     if (reviewText.length >= 1001) {
-      errors.review_text = 'Comment must be 1000 characters or less'
+      errors['review_text'] = 'Comment must be 1000 characters or less'
       setValidity(false)
+    }
+    if (numStars < 1 || numStars > 5) {
+      errors['numStars'] = 'Star Rating must be between 1 and 5'
     }
     setErrors(errors)
 
@@ -86,7 +89,7 @@ const CreateReview = ({ recipeId }) => {
 
   return (
       <form onSubmit={handleSubmit} className="create-review-form">
-        <div className="create-review-form">
+        <div className="create-review-formy">
           <div className="create-review-text-container">
             <textarea
               id= "review-text"

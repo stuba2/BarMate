@@ -33,7 +33,7 @@ const Reviews = () => {
   } else {
     return (
       <div className="review-super-container">
-        <div>{reviewsArr.map((review) => {
+        <div className="rev-lesser-container">{reviewsArr.map((review) => {
           let updatedDateSplit = new Date(review.updated_at).toDateString().split(' ')
           let updatedTimeSplit = new Date(review.updated_at).toTimeString().split(' ')
           let dateMonth = updatedDateSplit[1]
@@ -71,61 +71,73 @@ const Reviews = () => {
           } else if (isBeingDeleted && focusedReviewId === review.id) {
             return (
               // if review is being deleted
-              <div>
+              <div className="rev-container">
+
                 <div className="rev-name-time">
                   <div className="review-username">{review.reviewer_details.username}</div>
                   <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
                 </div>
+
                 <div className="review-text">{review.review_text}</div>
-                <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
-                <div className={editDeleteButtonClass}>
-                  <div>
-                    <button className="review-edit" onClick={() => {
-                      setIsBeingEdited(true)
-                      setFocusedReviewId(review.id)
-                    }}>Edit</button>
-                  </div>
-                  <div className="review-dot">·</div>
-                  <div>
-                  <button className='review-delete' onClick={() => {
-                      setIsBeingDeleted(true)
-                      setFocusedReviewId(review.id)
-                    }}>Delete</button>
-                    <div className='review-delete-shown'>
-                      <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
+
+                <div className="review-rating-edit-delete">
+                  <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
+                  <div className={editDeleteButtonClass}>
+                    <div>
+                      <button className="review-edit" onClick={() => {
+                        setIsBeingEdited(true)
+                        setFocusedReviewId(review.id)
+                      }}>Edit</button>
+                    </div>
+                    <div className="review-dot">·</div>
+                    <div>
+                    <button className='review-delete' onClick={() => {
+                        setIsBeingDeleted(true)
+                        setFocusedReviewId(review.id)
+                      }}>Delete</button>
+                      <div className='review-delete-shown'>
+                        <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
+                      </div>
                     </div>
                   </div>
                 </div>
+
               </div>
             )
           } else {
             return (
               // standard review setup
               <div className="rev-container">
+
                 <div className="rev-name-time">
                   <div className="review-username">{review.reviewer_details.username}</div>
                   <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
                 </div>
+
                 <div className="review-text">{review.review_text}</div>
-                <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
-                <div className={editDeleteButtonClass}>
-                  <div>
-                    <button className="review-edit" onClick={() => {
-                      setIsBeingEdited(true)
-                      setFocusedReviewId(review.id)
-                    }}>Edit</button>
-                  </div>
-                  <div className="review-dot">·</div>
-                  <div>
-                  <button className='review-delete' onClick={() => {
-                      setIsBeingDeleted(true)
-                      setFocusedReviewId(review.id)
-                    }}>Delete</button>
-                    <div className='review-delete-hidden'>
-                      <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
+
+                <div className="review-rating-edit-delete">
+                  <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
+                  <div className={editDeleteButtonClass}>
+                    <div>
+                      <button className="review-edit" onClick={() => {
+                        setIsBeingEdited(true)
+                        setFocusedReviewId(review.id)
+                      }}>Edit</button>
+                    </div>
+                    <div className="review-dot">·</div>
+                    <div>
+                    <button className='review-delete' onClick={() => {
+                        setIsBeingDeleted(true)
+                        setFocusedReviewId(review.id)
+                      }}>Delete</button>
+                      <div className='review-delete-hidden'>
+                        <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
+                      </div>
                     </div>
                   </div>
                 </div>
+
               </div>
             )
           }
