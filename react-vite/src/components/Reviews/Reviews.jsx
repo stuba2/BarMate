@@ -18,6 +18,7 @@ const Reviews = () => {
   const [ isBeingDeleted, setIsBeingDeleted ] = useState(false)
 
   const reviewsArr = Object.values(reviews).reverse()
+  const filteredRevs = reviewsArr.filter(rev => rev.recipe_id == recipeId)
 
 
 
@@ -33,7 +34,7 @@ const Reviews = () => {
   } else {
     return (
       <div className="review-super-container">
-        <div className="rev-lesser-container">{reviewsArr.map((review) => {
+        <div className="rev-lesser-container">{filteredRevs.map((review) => {
           let updatedDateSplit = new Date(review.updated_at).toDateString().split(' ')
           let updatedTimeSplit = new Date(review.updated_at).toTimeString().split(' ')
           let dateMonth = updatedDateSplit[1]
