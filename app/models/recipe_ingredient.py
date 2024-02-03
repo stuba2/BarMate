@@ -93,4 +93,6 @@ class RecipeIngredient(db.Model, UserMixin):
             'unit': self.unit,
             "recipe_id": self.recipe_id,
             "ingredient_id": self.ingredient_id,
+            "recipe_ingredients_recipe": self.recipe_ingredients_recipe,
+            "recipe_ingredients_ingredients": self.recipe_ingredients_ingredients,
         }

@@ -10,7 +10,6 @@ const CreateRecipe = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user } = useSelector(state => state.session)
-  const recipes = useSelector(state => state.recipes)
   const ingredients = useSelector(state => state.ingredients)
   const userId = user.id
   const [ name, setName ] = useState('')
@@ -21,14 +20,17 @@ const CreateRecipe = () => {
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
 
   let num = 1
-  const ingredientsArr = Object.values(ingredients)
+  const ingredientsArr = Object.values(ingredients).sort((a,b) => {
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+  })
 
   const [ recipeIngredients, setRecipeIngredients ] = useState([{ingNum: num, ingName: '', ingAmt: '', ingUnit: ''}])
 
   // keeping up with the up to date ing/rec
   useEffect(() => {
     dispatch(ingredientActions.getIngredientsThunk())
-    dispatch(recipeActions.getRecipesThunkAll())
   },[dispatch])
 
   useEffect(() => {
@@ -96,7 +98,7 @@ const CreateRecipe = () => {
     }
   }
 
-  if (!recipes) {
+  if (!ingredients) {
     return (
       <div>...loading</div>
     )
@@ -154,7 +156,7 @@ const CreateRecipe = () => {
             </div>
 
             <div>
-              <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI}/>
+              <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}/>
             </div>
           </label>
 
