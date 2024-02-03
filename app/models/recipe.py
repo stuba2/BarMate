@@ -34,7 +34,11 @@ class Recipe(db.Model, UserMixin):
             'description': self.description,
             'instructions': self.instructions,
             "user_id": self.user_id,
-            "recipes_recipe_ingredients": self.recipes_recipe_ingredients.to_dict(),
+            "recipes_user": self.recipes_user.to_dict(),
+            "recipe_reviews": self.recipe_reviews,
+            "recipe_toasts": self.recipe_toasts,
+            "recipes_recipe_ingredients": self.recipes_recipe_ingredients,
+            "recipe_recipe_image": self.recipe_recipe_image,
             "created_at": self.created_at,
             "updated_at": self.updated_at,
         }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import unitTypes from "../../../public/unitTypes";
 
-const OneRecipeIngredient = ({ rIObj, ingredientsABC }) => {
+const OneRecipeIngredient = ({ rIObj, ingredientsArr }) => {
   const [ ingredientIndividual, setIngredientIndividual ] = useState(rIObj.ingName ? rIObj.ingName : '')
   const [ amountIndividual, setAmountIndividual ] = useState(rIObj.ingAmt ? rIObj.ingAmt : '')
   const [ unitIndividual, setUnitIndividual ] = useState(rIObj.ingUnit ? rIObj.ingUnit : '')
@@ -31,7 +31,7 @@ const OneRecipeIngredient = ({ rIObj, ingredientsABC }) => {
             placeholder="Ingredient..."
           />
           <datalist id="ingredient-options">
-            {ingredientsABC.map((ingredientObj) => {
+            {ingredientsArr.map((ingredientObj) => {
               return (
                 <option value={ingredientObj.name} key={ingredientObj.id}></option>
               )
