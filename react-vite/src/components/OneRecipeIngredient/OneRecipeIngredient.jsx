@@ -1,18 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import unitTypes from "../../../public/unitTypes";
+import './OneRecipeIngredient.css'
+import { useSubmit } from "react-router-dom";
 
-const OneRecipeIngredient = ({ rIObj, ingredientsArr }) => {
+const OneRecipeIngredient = ({ rIObj, ingredientsArr, setSubmitValidity, hasSubmitted }) => {
   const [ ingredientIndividual, setIngredientIndividual ] = useState(rIObj.ingName ? rIObj.ingName : '')
   const [ amountIndividual, setAmountIndividual ] = useState(rIObj.ingAmt ? rIObj.ingAmt : '')
   const [ unitIndividual, setUnitIndividual ] = useState(rIObj.ingUnit ? rIObj.ingUnit : '')
+  const [ individualErrors, setIndividualErrors ] = useState({})
+  const [ errorClassName, setErrorClassName ] = useState('')
+  // let errorClassName
+
+  useEffect(() => {
+    let existingIngName = ingredientsArr.find(ing => ing.name === ingredientIndividual)
+    console.log('name:= ', ingredientIndividual)
+    console.log('existing=: ', existingIngName)
+    console.log('!existing=: ', !existingIngName)
+    if (!existingIngName && hasSubmitted) {
+      setErrorClassName('validation-error')
+    } else {
+      setErrorClassName('validation-error hidden')
+    }
+
+  }, [ingredientIndividual])
+
 
   const handleChangeIngName = (name) => {
+    let existingIngName = ingredientsArr.find(ing => ing.name === name)
+    if (!existingIngName) setSubmitValidity(false)
+    else setSubmitValidity(true)
+
     rIObj.ingName = name
   }
   const handleChangeIngAmt = (amt) => {
     rIObj.ingAmt = amt
   }
   const handleChangeIngUnit = (unit) => {
+    let existingUnitName = unitTypes.find(unitType => unitType === unit)
+    if (!existingUnitName) setSubmitValidity(false)
+    else setSubmitValidity(true)
+
     rIObj.ingUnit = unit
   }
 
@@ -41,6 +68,7 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr }) => {
                 )
               })}
           </datalist>
+          <div className={errorClassName}>Ingredient must be in dropdown list</div>
         </div>
 
         <div>
