@@ -54,8 +54,11 @@ const Reviews = () => {
 
           let editDeleteButtonClass
           let deleteButtonClass
+          console.log('user: ', user)
 
           if (user && review.user_id !== user.id) {
+            editDeleteButtonClass = 'review-edit-delete-hidden'
+          } else if (!user) {
             editDeleteButtonClass = 'review-edit-delete-hidden'
           } else {
             editDeleteButtonClass = 'review-edit-delete'
@@ -72,7 +75,7 @@ const Reviews = () => {
           } else if (isBeingDeleted && focusedReviewId === review.id) {
             return (
               // if review is being deleted
-              <div className="rev-container">
+              <div className="rev-container" key={review.id}>
 
                 <div className="rev-name-time">
                   <div className="review-username">{review.reviewer_details.username}</div>
@@ -108,7 +111,7 @@ const Reviews = () => {
           } else {
             return (
               // standard review setup
-              <div className="rev-container">
+              <div className="rev-container" key={review.id}>
 
                 <div className="rev-name-time">
                   <div className="review-username">{review.reviewer_details.username}</div>

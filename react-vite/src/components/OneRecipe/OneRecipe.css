@@ -76,6 +76,10 @@
   padding: 40px 80px;
 }
 
+.hidden {
+  display: none;
+}
+
 .one-rec-create-rev {
   display: flex;
   /* width: 100%; */

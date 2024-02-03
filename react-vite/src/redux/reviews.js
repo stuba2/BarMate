@@ -78,7 +78,7 @@ export const editReviewThunk = (recipeId, reviewId, reviewForm) => async (dispat
 
 export const deleteReviewThunk = (reviewId, recipeId) => async (dispatch) => {
   try {
-    const response = await fetch(`/api/recipes/${recipeId}/reviews/${reviewId}`, {
+    const response = await fetch(`/api/reviews/${reviewId}`, {
       method: "DELETE"
     })
 

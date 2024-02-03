@@ -11,6 +11,7 @@ const OneRecipe = () => {
   const dispatch = useDispatch()
   const recipes = useSelector(state => state.recipes)
   const reviews = useSelector(state => state.reviews)
+  const { user } = useSelector(state => state.session)
   const { recipeId } = useParams()
   const recipe = recipes[+recipeId]
   const reviewsArr = Object.values(reviews)
@@ -21,8 +22,15 @@ const OneRecipe = () => {
 
   useEffect(() => {
     dispatch(recipeActions.getOneRecipeThunk(+recipeId))
-
   }, [dispatch])
+
+  // const createRevClassName = 'one-rec-rev-super-container' + user ? '' : ' hidden'
+  let createRevClassName
+  if (!user) {
+    createRevClassName = 'one-rec-rev-super-container hidden'
+  } else (
+    createRevClassName = 'one-rec-rev-super-container'
+  )
 
   if (!recipe || !recipe.recipe_ingredients) {
     return (
@@ -65,7 +73,7 @@ const OneRecipe = () => {
         </div>
 
         <div className="one-rec-rev-super-container">
-          <div className="one-rec-create-rev"><CreateReview recipeId={recipeId}/></div>
+          <div className={createRevClassName}><CreateReview recipeId={recipeId}/></div>
           <div className="one-rec-revs"><Reviews /></div>
         </div>
       </div>
