@@ -52,6 +52,22 @@ const EditRecipe = () => {
     setRecipeIngredients([...allIngredientsArr])
   }
 
+  useEffect(() => {
+    const errors = {}
+    let existingRecipeName = recipesArr.filter((recipe) => (recipe.name) === name)[0]
+
+    if (!name) errors['name'] = 'Cocktail name is required'
+    if (name.length > 64) errors['name'] = 'Cocktail name must be 64 characters or less'
+    if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
+    if (description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
+    if (!instructions) errors['instructions'] = 'Instructions are required'
+    if (instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'
+    if (recipeImageUrl.length > 255) errors['description'] = 'Instructions must be 255 characters or less'
+
+
+    setErrors(errors)
+  }, [name, description, instructions, recipeIngredients])
+
   let newNum = recipeIngredients.length +1
   const handleNewRI = async (e) => {
     e.preventDefault()
