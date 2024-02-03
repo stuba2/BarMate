@@ -67,15 +67,20 @@ def get_paginated_recipes(page):
 @recipe_routes.route('/')
 def get_all_recipes():
   ret = []
-  all_recipes = Recipe.query.all()
+  all_recipes = Recipe.query.join(User).join('recipe_recipe_image').join('recipes_recipe_ingredients').all()
+
+  # owner_deets = [{'username': owner.username, 'dob': owner.dob} for owner in ]
 
   for recipe in all_recipes:
     owner_details = User.query.filter(User.id == recipe.user_id).first()
 
     recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
+    # ri_details = [{'name': ri.name, 'amount':ri.amount, 'unit': ri.to_dict()['unit'].value, 'recipe_id': ri.recipe_id, 'ingredient_id': ri.ingredient_id} for ri in recipe_ingredients]
+    # print('\n =====', ri_details)
+    recipe_ingredient_list = []
+    # recipe_ingredient_list.append(ri_details)
 
     recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
-    recipe_ingredient_list = []
     for ingredient in recipe_ingredients:
       ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
       unit = ingredient.to_dict()['unit'].value
@@ -205,7 +210,9 @@ def get_random_recipe():
 @recipe_routes.route('/makable', methods=['GET'])
 def get_makable_recipes():
   ret = []
-  all_recipes = Recipe.query.join('recipes_recipe_ingredients').all()
+  all_recipes = Recipe.query.join('recipes_recipe_ingredients').join('recipe_recipe_image').join('recipes_user').join(Ingredient).all()
+  print('\n ********************: ', all_recipes[0].to_dict())
+
   my_bar = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == current_user.get_id())).order_by(Ingredient.name).all()
   ing_ids = []
   for ing in my_bar:
@@ -217,19 +224,19 @@ def get_makable_recipes():
   for recipe in all_recipes:
     ris = recipe.recipes_recipe_ingredients
     ri_id = [ri.ingredient_id for ri in ris]
-    yeah = set(ri_id).issubset(bar_ing_set)
-    if yeah:
-      owner_details = User.query.filter(User.id == recipe.user_id).first()
-      recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
-      recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
+    found = set(ri_id).issubset(bar_ing_set)
+    if found:
+      owner_details = recipe.recipes_user
+      recipe_image = recipe.recipe_recipe_image[0]
+
+
 
       recipe_ingredient_list = []
-      for ingredient in recipe_ingredients:
-        ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
+      for ingredient in ris:
         unit = ingredient.to_dict()['unit'].value
         real_ingredient = {
           'id': ingredient.id,
-          'name': ingredient_name.name,
+          'name': ingredient.recipe_ingredients_ingredients.name,
           'amount': ingredient.amount,
           'unit': unit,
           'recipe_id': ingredient.recipe_id,
@@ -259,7 +266,6 @@ def get_makable_recipes():
   return {
     "ret": ret
   }
-
 
 @recipe_routes.route('/user', methods=['GET'])
 def get_users_recipes():
