@@ -18,9 +18,12 @@ const Toasts = ({  }) => {
   let numToasts = Object.keys(toasts).length
 
   let toastsArr = Object.values(toasts)
-  let toast = toastsArr.find(obj => obj.user_id === user.id)
+  let toast = toastsArr.find(obj => user ? obj.user_id === user.id : undefined)
 
   const handleToast = () => {
+    if (!user) {
+      return
+    }
     const toastObj = {
       user_id: user.id,
       recipe_id: recipeId

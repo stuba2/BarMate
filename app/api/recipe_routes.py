@@ -67,25 +67,19 @@ def get_paginated_recipes(page):
 @recipe_routes.route('/')
 def get_all_recipes():
   ret = []
-  all_recipes = Recipe.query.join(User).join('recipe_recipe_image').join('recipes_recipe_ingredients').all()
-
-  # owner_deets = [{'username': owner.username, 'dob': owner.dob} for owner in ]
+  all_recipes = Recipe.query.join('recipes_recipe_ingredients').join('recipe_recipe_image').join('recipes_user').join(Ingredient).all()
 
   for recipe in all_recipes:
-    owner_details = User.query.filter(User.id == recipe.user_id).first()
+    owner_details = recipe.recipes_user
+    recipe_image = recipe.recipe_recipe_image[0]
 
-    recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
-    # ri_details = [{'name': ri.name, 'amount':ri.amount, 'unit': ri.to_dict()['unit'].value, 'recipe_id': ri.recipe_id, 'ingredient_id': ri.ingredient_id} for ri in recipe_ingredients]
-    # print('\n =====', ri_details)
+    recipe_ingredients = recipe.recipes_recipe_ingredients
     recipe_ingredient_list = []
-    # recipe_ingredient_list.append(ri_details)
 
-    recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
     for ingredient in recipe_ingredients:
-      ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
       unit = ingredient.to_dict()['unit'].value
       real_ingredient = {
-        'name': ingredient_name.name,
+        'name': ingredient.recipe_ingredients_ingredients.name,
         'amount': ingredient.amount,
         'unit': unit,
         'recipe_id': ingredient.recipe_id,
@@ -110,7 +104,6 @@ def get_all_recipes():
     }
 
     ret.append(ret_recipe)
-
   return {
     'Recipes': ret
   }
@@ -523,22 +516,24 @@ def edit_a_review(recipe_id, review_id):
     "errors": form.errors
   }
 
-@recipe_routes.route('/<int:review_id>', methods=['DELETE'])
-# @login_required
-def delete_a_review(review_id):
-  review_to_delete = Review.query.filter(Review.id == review_id).first()
+# @recipe_routes.route('/<int:recipe_id>/reviews/<int:review_id>', methods=['DELETE'])
+# # @login_required
+# def delete_a_review(review_id):
+#   review_to_delete = Review.query.filter(Review.id == review_id).first()
+#   print('\n -----------review_to_delete: ', review_to_delete)
 
-  if not review_to_delete:
-    return {
-      "message": "Review does not exist"
-    }
+#   if not review_to_delete:
+#     print('\n ==========wrong')
+#     return {
+#       "message": "Review does not exist"
+#     }
 
-  db.session.delete(review_to_delete)
-  db.session.commit()
+#   db.session.delete(review_to_delete)
+#   db.session.commit()
 
-  return {
-    "message": "Successfully Deleted"
-  }
+#   return {
+#     "message": "Successfully Deleted"
+#   }
 
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=['GET'])
 def get_recipe_toasts(recipe_id):

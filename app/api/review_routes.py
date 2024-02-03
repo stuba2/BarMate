@@ -31,3 +31,20 @@ def get_recipe_reviews(recipe_id):
   return {
     'Reviews': ret
   }
+
+@review_routes.route('/<int:review_id>', methods=['DELETE'])
+# @login_required
+def delete_a_review(review_id):
+  review_to_delete = Review.query.filter(Review.id == review_id).first()
+
+  if not review_to_delete:
+    return {
+      "message": "Review does not exist"
+    }
+
+  db.session.delete(review_to_delete)
+  db.session.commit()
+
+  return {
+    "message": "Successfully Deleted"
+  }

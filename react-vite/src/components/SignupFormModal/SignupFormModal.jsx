@@ -33,6 +33,7 @@ function SignupFormModal() {
     if (!email) errors['email'] = 'Email is required'
     if (email.length > 255) errors['email'] = 'Email is too long'
     if (!username) errors['username'] = 'Username is required'
+    if (username.length > 64) errors['username'] = 'Username is too long'
     if (!dob) errors['dob'] = 'Date of birth is required'
     if (!getAge(dob)) errors['dob'] = 'You must be 21 to use this site'
     if (!password) errors['password'] = 'Date of birth is required'
@@ -96,6 +97,7 @@ function SignupFormModal() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            maxLength='255'
           />
         </label>
 
@@ -114,6 +116,7 @@ function SignupFormModal() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            maxLength='64'
           />
         </label>
 
@@ -149,6 +152,7 @@ function SignupFormModal() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            maxLength='255'
           />
         </label>
 
@@ -167,6 +171,7 @@ function SignupFormModal() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
+            maxLength='255'
           />
         </label>
 

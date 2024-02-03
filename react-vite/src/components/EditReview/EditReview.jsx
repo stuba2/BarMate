@@ -81,10 +81,10 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
 
   let buttonClass
   if (!selected) {
-    buttonClass = "create-review-save-hidden"
+    buttonClass = "create-review-save-enabled"
   }
   if (selected) {
-    buttonClass = "create-review-save"
+    buttonClass = "create-review-save-enabled"
   }
   if (selected && reviewText) {
     buttonClass = "create-review-save-enabled"
@@ -126,10 +126,10 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
 
 
   return (
-    <div className="create-review-container">
+    <div className="edit-review-container">
 
-      <form onSubmit={handleSubmit} className="create-review-form">
-        <div className="create-review-form">
+      <form onSubmit={handleSubmit} className="edit-review-form-container">
+        <div className="edit-review-form">
 
           <div className="create-review-text-container">
             <textarea

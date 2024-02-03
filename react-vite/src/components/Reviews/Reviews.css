@@ -125,6 +125,10 @@
   box-shadow: 0px 5px 4px #808b9d;
 } */
 
+.rev-lesser-container {
+  padding-top: 20px;
+}
+
 .rev-container {
   display: flex;
   flex-direction: column;

@@ -10,6 +10,7 @@ const CreateRecipe = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user } = useSelector(state => state.session)
+  const recipes = useSelector(state => state.recipes)
   const ingredients = useSelector(state => state.ingredients)
   const userId = user.id
   const [ name, setName ] = useState('')
@@ -25,17 +26,36 @@ const CreateRecipe = () => {
     if (a.name > b.name) return 1
     return 0
   })
+  const recipesArr = Object.values(recipes)
+  console.log('recipesArr: ', recipesArr)
 
   const [ recipeIngredients, setRecipeIngredients ] = useState([{ingNum: num, ingName: '', ingAmt: '', ingUnit: ''}])
 
   // keeping up with the up to date ing/rec
   useEffect(() => {
     dispatch(ingredientActions.getIngredientsThunk())
+    dispatch(recipeActions.getRecipesThunkAll())
   },[dispatch])
 
   useEffect(() => {
-    console.log('recipeIngredients: ', recipeIngredients)
-  }, [recipeIngredients])
+    const errors = {}
+    let existingRecipeName = recipesArr.filter((recipe) => (recipe.name) === name)[0]
+    console.log('existingRec: ', existingRecipeName)
+
+    if (!name) errors['name'] = 'Cocktail name is required'
+    if (name.length > 64) errors['name'] = 'Cocktail name must be 64 characters or less'
+    if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
+    if (description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
+    if (!instructions) errors['instructions'] = 'Instructions are required'
+    if (instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'
+    // for (let ri of recipeIngredients) {
+    //   if (ri.ingName === '') errors['recipeIngredient'] = 'Every ingredient field is required'
+    // }
+    if (recipeImageUrl.length > 255) errors['description'] = 'Instructions must be 255 characters or less'
+
+
+    setErrors(errors)
+  }, [name, description, instructions, recipeIngredients])
 
   const handleNewRI = async (e) => {
     e.preventDefault()
@@ -49,7 +69,6 @@ const CreateRecipe = () => {
     setRecipeIngredients([...recipeIngredients, newRI])
   }
 
-  //handle submit!
   const handleSubmit = async (e) => {
     e.preventDefault()
     setHasSubmitted(true)
@@ -65,10 +84,10 @@ const CreateRecipe = () => {
     if (!Object.values(errors).length) {
       createdRecipe = await dispatch(recipeActions.createRecipeThunk(recipeForm))
       .catch(async (res) => {
-        const data = await res.json()
-        console.log('create data: ', data)
-        if (data && data.Errors) {
-          console.log('data errors: ', data.Errors)
+        // const data = await res.json()
+        console.log('create res: ', res)
+        if (res && res.Errors) {
+          console.log('res errors: ', res.Errors)
         }
       })
 
@@ -151,13 +170,13 @@ const CreateRecipe = () => {
             <div className="create-rec-ingredients-name-val">
               <div className="create-rec-ingredients-name">ingredients</div>
               <div className="validation-error">
-                {hasSubmitted && errors.ingredient && `*${errors.ingredient}`}
+                {hasSubmitted && errors.recipeIngredient && `*${errors.recipeIngredient}`}
+              </div>
+              <div>
+                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}/>
               </div>
             </div>
 
-            <div>
-              <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}/>
-            </div>
           </label>
 
           <label className="create-rec-instructions">
