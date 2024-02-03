@@ -19,13 +19,13 @@ class Recipe(db.Model, UserMixin):
 
     recipes_user = db.relationship("User", back_populates="user_recipes")
 
-    recipe_reviews = db.relationship("Review", back_populates="reviews_recipe")
+    recipe_reviews = db.relationship("Review", back_populates="reviews_recipe", cascade="all, delete-orphan")
 
-    recipe_toasts = db.relationship("Toast", back_populates="toasts_recipe")
+    recipe_toasts = db.relationship("Toast", back_populates="toasts_recipe", cascade="all, delete-orphan")
 
-    recipes_recipe_ingredients = db.relationship("RecipeIngredient", back_populates="recipe_ingredients_recipe")
+    recipes_recipe_ingredients = db.relationship("RecipeIngredient", back_populates="recipe_ingredients_recipe", cascade="all, delete-orphan")
 
-    recipe_recipe_image = db.relationship("RecipeImage", back_populates="recipe_image_recipe")
+    recipe_recipe_image = db.relationship("RecipeImage", back_populates="recipe_image_recipe", cascade="all, delete-orphan")
 
     def to_dict(self):
         return {

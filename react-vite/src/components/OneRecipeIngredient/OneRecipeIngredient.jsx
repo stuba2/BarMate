@@ -16,8 +16,11 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr }) => {
     rIObj.ingUnit = unit
   }
 
-  return (
-    <div>
+  if (!ingredientsArr) {
+    return <div>...loading</div>
+  } else {
+    return (
+      <div>
         <div className="rec-ing-ingredient-drop">
            <input
             value={ingredientIndividual}
@@ -28,14 +31,15 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr }) => {
             list="ingredient-options"
             id="ingredient-option"
             name="ingredient-option"
+            required
             placeholder="Ingredient..."
           />
           <datalist id="ingredient-options">
             {ingredientsArr.map((ingredientObj) => {
               return (
                 <option value={ingredientObj.name} key={ingredientObj.id}></option>
-              )
-            })}
+                )
+              })}
           </datalist>
         </div>
 
@@ -48,8 +52,9 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr }) => {
               handleChangeIngAmt(e.target.value)
             }}
             required
+            min='1'
             placeholder="Amount"
-          />
+            />
         </div>
 
         <div>
@@ -62,18 +67,20 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr }) => {
             list="unit-options"
             id="unit-option"
             name="unit-option"
+            required
             placeholder="Unit..."
-          />
+            />
           <datalist id="unit-options">
             {unitTypes.map((unit) => {
               return (
                 <option value={unit} key={unit}></option>
-              )
-            })}
+                )
+              })}
           </datalist>
         </div>
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 export default OneRecipeIngredient
