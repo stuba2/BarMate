@@ -15,7 +15,17 @@ const EditRecipe = () => {
   const ingredients = useSelector(state => state.ingredients)
   const userId = user.id
 
-  const ingredientsArr = Object.values(ingredients)
+  // keeping up with the up to date ing/rec
+  useEffect(() => {
+    dispatch(recipeActions.getOneRecipeThunk(recipeId))
+    dispatch(ingredientActions.getIngredientsThunk())
+  },[dispatch])
+
+  const ingredientsArr = Object.values(ingredients).sort((a,b) => {
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+  })
   const recipesArr = Object.values(recipes)
   const recipe = recipesArr.find(recipe => recipe.id === +recipeId)
 
@@ -25,12 +35,8 @@ const EditRecipe = () => {
   const [ recipeIngredients, setRecipeIngredients ] = useState([])
   const [ recipeImageUrl, setRecipeImageUrl ] = useState(recipe ? recipe.recipe_image_url : '')
   const [ errors, setErrors ] = useState({})
+  const [ hasSubmitted, setHasSubmitted ] = useState(false)
 
-  // keeping up with the up to date ing/rec
-  useEffect(() => {
-    dispatch(recipeActions.getOneRecipeThunk(recipeId))
-    dispatch(ingredientActions.getIngredientsThunk())
-  },[dispatch])
 
   useEffect(() => {
     console.log('recipeIngredients: ', recipeIngredients)
@@ -54,15 +60,15 @@ const EditRecipe = () => {
 
   useEffect(() => {
     const errors = {}
-    let existingRecipeName = recipesArr.filter((recipe) => (recipe.name) === name)[0]
+    let existingRecipeName = recipesArr.find((recipe) => (recipe.name) === name)
 
     if (!name) errors['name'] = 'Cocktail name is required'
-    if (name.length > 64) errors['name'] = 'Cocktail name must be 64 characters or less'
-    if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
-    if (description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
+    if (name && name.length > 64) errors['name'] = 'Cocktail name must be 64 characters or less'
+    if (existingRecipeName && existingRecipeName.id !== recipe.id) errors['name'] = 'Recipe already exists with that name'
+    if (description && description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
     if (!instructions) errors['instructions'] = 'Instructions are required'
-    if (instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'
-    if (recipeImageUrl.length > 255) errors['description'] = 'Instructions must be 255 characters or less'
+    if (instructions && instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'
+    if (recipeImageUrl && recipeImageUrl.length > 255) errors['description'] = 'Instructions must be 255 characters or less'
 
 
     setErrors(errors)
@@ -83,7 +89,7 @@ const EditRecipe = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('recipeIngredients: ', recipeIngredients)
+    console.log('error stuff: ', errors)
 
     const recipeForm = {
       name: name,
@@ -95,6 +101,7 @@ const EditRecipe = () => {
     let updatedRecipe
 
     if (!Object.values(errors).length) {
+      console.log('i am here')
       updatedRecipe = await dispatch(recipeActions.editRecipeThunk(recipeId, recipeForm))
       .catch(async (res) => {
         const data = await res.json()
@@ -163,10 +170,17 @@ const EditRecipe = () => {
 
         <form onSubmit={handleSubmit}>
 
-          <div>
-            <div>Name</div>
+          <label className="edit-rec-name">
+            <div className="edit-rec-name-name-val">
+              <div className="edit-rec-name-name">Name</div>
+              <div className="validation-error">
+                {hasSubmitted && errors.name && `*${errors.name}`}
+              </div>
+            </div>
+
             <input
               type="text"
+              className="edit-rec-name-input"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -174,34 +188,56 @@ const EditRecipe = () => {
               minLength='1'
               placeholder="Name"
             />
-          </div>
+          </label>
 
-          <div>
-            <div>description</div>
+          <label className="edit-rec-description">
+            <div className="edit-rec-description-name-val">
+              <div className="edit-rec-description-name">description</div>
+              <div className="validation-error">
+                {hasSubmitted && errors.description && `*${errors.description}`}
+              </div>
+            </div>
+
             <textarea
               type="text"
+              className="edit-rec-description-input"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               maxLength='1000'
               placeholder="Write a description (optional)"
             />
-          </div>
+          </label>
 
-          <div>
-            <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI}/>
-          </div>
+          <label className="edit-rec-ingredients">
+            <div className="edit-rec-ingredients-name-val">
+              <div className="edit-rec-ingredients-name">ingredients</div>
+              <div className="validation-error">
+                {hasSubmitted && errors.recipeIngredient && `*${errors.recipeIngredient}`}
+              </div>
+              <div>
+                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}/>
+              </div>
+            </div>
+          </label>
 
-          <div>
-            <div>instructions</div>
+          <label className="edit-rec-instructions">
+            <div className="edit-rec-instructions-name-val">
+              <div className="edit-rec-instructions-name">instructions</div>
+              <div className="validation-error">
+                {hasSubmitted && errors.instructions && `*${errors.instructions}`}
+              </div>
+            </div>
+
             <textarea
               type="text"
+              className="edit-rec-instructions-input"
               value={instructions}
               onChange={(e) => setInstructions(e.target.value)}
               maxLength='2000'
               required
               placeholder="Recipe instructions..."
             />
-          </div>
+          </label>
 
           <label>
             <div>
@@ -215,8 +251,8 @@ const EditRecipe = () => {
             </div>
           </label>
 
-          <div>
-            <button onClick={handleSubmit}>Save Cocktail!</button>
+          <div className="edit-rec-submit-container">
+            <button className="edit-rec-submit-button" onClick={handleSubmit}>Save Cocktail!</button>
           </div>
 
         </form>

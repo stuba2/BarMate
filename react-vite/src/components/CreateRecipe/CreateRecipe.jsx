@@ -27,7 +27,6 @@ const CreateRecipe = () => {
     return 0
   })
   const recipesArr = Object.values(recipes)
-  console.log('recipesArr: ', recipesArr)
 
   const [ recipeIngredients, setRecipeIngredients ] = useState([{ingNum: num, ingName: '', ingAmt: '', ingUnit: ''}])
 

@@ -37,20 +37,11 @@ const CreateIngredient = () => {
 
     if (!(Object.values(errors).length)) {
       createdIngredient = await dispatch(ingredientActions.postIngredientThunk(newIngredient))
+
+      setName('')
+      setErrors({})
+      setHasSubmitted(false)
     }
-    // navigate somewhere (may be dependent on where this is rendered)
-
-    // const newIngredientImage = {
-    //   ingredient_id: +createdIngredient.id,
-    //   url
-    // }
-    // console.log(createdIngredient, createdIngredient.id)
-
-    // if (createdIngredient) {
-    //   dispatch(ingredientActions.postIngredientImageThunk(newIngredientImage, createdIngredient.id))
-    //   navigate('/ingredients')
-    // }
-    // // send new ing obj to thunk
   }
 
   return (
@@ -71,8 +62,8 @@ const CreateIngredient = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            min='0'
-            max={64}
+            minLength='0'
+            maxLength='64'
             placeholder="Name"
           />
         </div>
