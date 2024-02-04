@@ -74,6 +74,10 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
       errors.review = 'Review must be 1000 characters or less'
       setValidity(false)
     }
+    if (reviewText.length <= 0) {
+      errors.review = 'Review cannot be 0 characters'
+      setValidity(false)
+    }
 
     setValidationErrors(errors)
 
@@ -86,10 +90,7 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
   if (selected) {
     buttonClass = "create-review-save-enabled"
   }
-  if (selected && reviewText) {
-    buttonClass = "create-review-save-enabled"
-  }
-  if (validationErrors.review_text) {
+  if (validationErrors.review) {
     buttonClass = "create-review-save"
   }
 
@@ -206,7 +207,8 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
           <div className="edit-button-validation-combo">
             <button className={buttonClass} disabled={!validity ? true : false}>Save</button>
             <button className="edit-review-discard" onClick={handleDiscard}>Discard changes</button>
-            <div className={reviewLengthErrorClass}>Review must be 1000 characters or less</div>
+            {/* <div className={reviewLengthErrorClass}>Review must be 1000 characters or less</div> */}
+            <div className="validation-error">{validationErrors.review}</div>
           </div>
 
         </div>
