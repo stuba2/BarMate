@@ -19,6 +19,7 @@ const CreateRecipe = () => {
   const [ recipeImageUrl, setRecipeImageUrl ] = useState('')
   const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
+  const [ submitValidity, setSubmitValidity ] = useState(true)
 
   let num = 1
   const ingredientsArr = Object.values(ingredients).sort((a,b) => {
@@ -39,7 +40,6 @@ const CreateRecipe = () => {
   useEffect(() => {
     const errors = {}
     let existingRecipeName = recipesArr.filter((recipe) => (recipe.name) === name)[0]
-    console.log('existingRec: ', existingRecipeName)
 
     if (!name) errors['name'] = 'Cocktail name is required'
     if (name.length > 64) errors['name'] = 'Cocktail name must be 64 characters or less'
@@ -47,9 +47,10 @@ const CreateRecipe = () => {
     if (description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
     if (!instructions) errors['instructions'] = 'Instructions are required'
     if (instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'
-    // for (let ri of recipeIngredients) {
-    //   if (ri.ingName === '') errors['recipeIngredient'] = 'Every ingredient field is required'
-    // }
+    for (let ri of recipeIngredients) {
+      let existingIngName = ingredientsArr.find(ing => ing.name = ri.ingName)
+      if (!existingIngName) errors['ingredients'] = 'Ingredient names '
+    }
     if (recipeImageUrl.length > 255) errors['description'] = 'Instructions must be 255 characters or less'
 
 
@@ -80,7 +81,7 @@ const CreateRecipe = () => {
     }
 
     let createdRecipe
-    if (!Object.values(errors).length) {
+    if (!Object.values(errors).length && submitValidity) {
       createdRecipe = await dispatch(recipeActions.createRecipeThunk(recipeForm))
       .catch(async (res) => {
         // const data = await res.json()
@@ -172,7 +173,7 @@ const CreateRecipe = () => {
                 {hasSubmitted && errors.recipeIngredient && `*${errors.recipeIngredient}`}
               </div>
               <div>
-                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}/>
+                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr} setSubmitValidity={setSubmitValidity} hasSubmitted={hasSubmitted}/>
               </div>
             </div>
 
