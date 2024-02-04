@@ -2,3 +2,15 @@
   display: flex;
   align-items: center;
 }
+
+#ingredient-options {
+  width: 195px;
+}
+
+#number-options {
+  width: 188px;
+}
+
+#unit-options {
+  width: 195px;
+}

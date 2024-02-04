@@ -12,6 +12,7 @@ const EditRecipe = () => {
   const { recipeId } = useParams()
   const { user } = useSelector(state => state.session)
   const recipes = useSelector(state => state.recipes)
+  // const recipe = useSelector(state => state.recipes[recipeId])
   const ingredients = useSelector(state => state.ingredients)
   const userId = user.id
 
@@ -36,11 +37,17 @@ const EditRecipe = () => {
   const [ recipeImageUrl, setRecipeImageUrl ] = useState(recipe ? recipe.recipe_image_url : '')
   const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
+  const [ submitValidity, setSubmitValidity ] = useState(true)
+  console.log('name: ', name)
 
 
   useEffect(() => {
-    console.log('recipeIngredients: ', recipeIngredients)
+    if (recipe) setName(recipe.name)
+    if (recipe && recipe.description) setDescription(recipe.description)
+    if (recipe) setInstructions(recipe.instructions)
+    if (recipe && recipe.recipe_image_url) setRecipeImageUrl(recipe.recipe_image_url)
   }, [recipeIngredients])
+
 
   let allIngredientsArr = []
   let num = 1
@@ -215,7 +222,7 @@ const EditRecipe = () => {
                 {hasSubmitted && errors.recipeIngredient && `*${errors.recipeIngredient}`}
               </div>
               <div>
-                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}/>
+                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr} setSubmitValidity={setSubmitValidity}hasSubmitted={hasSubmitted}/>
               </div>
             </div>
           </label>

@@ -49,31 +49,29 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, setSubmitValidity, hasSubm
     return (
       <div>
         <div className="rec-ing-ingredient-drop">
-           <input
+          <select
+            id="ingredient-options"
             value={ingredientIndividual}
             onChange={(e) => {
               setIngredientIndividual(e.target.value)
               handleChangeIngName(e.target.value)
             }}
-            list="ingredient-options"
-            id="ingredient-option"
-            name="ingredient-option"
             required
-            placeholder="Ingredient..."
-          />
-          <datalist id="ingredient-options">
+          >
+            <option value={''}>Ingredient...</option>
             {ingredientsArr.map((ingredientObj) => {
               return (
-                <option value={ingredientObj.name} key={ingredientObj.id}></option>
+                <option value={ingredientObj.name} key={ingredientObj.id}>{ingredientObj.name}</option>
                 )
               })}
-          </datalist>
+          </select>
           <div className={errorClassName}>Ingredient must be in dropdown list</div>
         </div>
 
         <div>
           <input
             type="number"
+            id="number-options"
             value={amountIndividual}
             onChange={(e) => {
               setAmountIndividual(e.target.value)
@@ -86,25 +84,22 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, setSubmitValidity, hasSubm
         </div>
 
         <div>
-          <input
+          <select
+          id="unit-options"
             value={unitIndividual}
             onChange={(e) => {
               setUnitIndividual(e.target.value)
               handleChangeIngUnit(e.target.value)
             }}
-            list="unit-options"
-            id="unit-option"
-            name="unit-option"
             required
-            placeholder="Unit..."
-            />
-          <datalist id="unit-options">
+          >
+            <option value={''}>Unit...</option>
             {unitTypes.map((unit) => {
               return (
-                <option value={unit} key={unit}></option>
+                <option value={unit} key={unit}>{unit}</option>
                 )
               })}
-          </datalist>
+          </select>
         </div>
       </div>
     )
