@@ -14,13 +14,13 @@ recipe_routes = Blueprint('recipes', __name__)
 @recipe_routes.route('/index/<int:page>')
 def get_paginated_recipes(page):
   ret = []
-  print('\n page:::::', page)
+  # print('\n page:::::', page)
   per_page = 8
   all_recipes = Recipe.query.all()
   # paginated = db.paginate(all_recipes, page=1, per_page=per_page, error_out=False)
   paginated = Recipe.query.paginate(page=page, per_page=per_page)
-  print('\n ::::::::::', paginated)
-  print('\n ::::::::::', paginated.items)
+  # print('\n ::::::::::', paginated)
+  # print('\n ::::::::::', paginated.items)
   # print('\n ::::::::::', paginated.ret.allrecipes)
 
   for recipe in paginated.items:
@@ -104,7 +104,7 @@ def get_all_recipes():
     }
 
     ret.append(ret_recipe)
-    
+
   return {
     'Recipes': ret
   }
@@ -205,7 +205,7 @@ def get_random_recipe():
 def get_makable_recipes():
   ret = []
   all_recipes = Recipe.query.join('recipes_recipe_ingredients').join('recipe_recipe_image').join('recipes_user').join(Ingredient).all()
-  print('\n ********************: ', all_recipes[0].to_dict())
+  # print('\n ********************: ', all_recipes[0].to_dict())
 
   my_bar = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == current_user.get_id())).order_by(Ingredient.name).all()
   ing_ids = []
@@ -214,7 +214,7 @@ def get_makable_recipes():
 
   bar_ing_set = set(ing_ids)
 
-  print('\n all_recs: ', all_recipes)
+  # print('\n all_recs: ', all_recipes)
   for recipe in all_recipes:
     ris = recipe.recipes_recipe_ingredients
     ri_id = [ri.ingredient_id for ri in ris]
@@ -255,7 +255,7 @@ def get_makable_recipes():
       }
       ret.append(ret_recipe)
 
-  print('\n ==============', ret)
+  # print('\n ==============', ret)
 
   return {
     "ret": ret

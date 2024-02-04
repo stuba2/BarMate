@@ -42,7 +42,6 @@ export const postIngredientThunk = (ingredientObj) => async (dispatch) => {
     })
 
     const data = await response.json()
-    console.log(data)
     dispatch(postIngredient(data))
     return data
 
