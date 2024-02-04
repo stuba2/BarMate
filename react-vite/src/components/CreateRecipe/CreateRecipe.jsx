@@ -57,7 +57,7 @@ const CreateRecipe = () => {
 
 
     setErrors(errors)
-  }, [name, description, instructions, recipeIngredients])
+  }, [name, description, instructions, recipeIngredients, backendErr])
 
   const handleNewRI = async (e) => {
     e.preventDefault()
