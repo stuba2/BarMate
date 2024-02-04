@@ -127,12 +127,21 @@ export const createRecipeThunk = (recipeForm) => async (dispatch) => {
       },
       body: JSON.stringify(recipeForm)
     })
-    console.log('thunk response: ', response)
 
-    const data = await response.json()
-    console.log('thunk data: ', data)
-    dispatch(createRecipe(data))
-    return data
+    if (response.ok) {
+      const data = await response.json()
+      dispatch(createRecipe(data))
+      return data
+    }
+    if (!response.ok) {
+      const err = await response.json()
+      dispatch({
+        type: 'ERROR',
+        payload: err
+      })
+    }
+
+
   } catch (error) {
     console.log('error: ', error)
     return error
@@ -185,10 +194,8 @@ export const editRecipeIngredientsThunk = (rIId, rIObj) => async (dispatch) => {
       },
       body: JSON.stringify(rIObj)
     })
-    console.log('RI response: ', response)
 
     const data = await response.json()
-    console.log('RI data: ', data)
   } catch (error) {
     console.log('error: ', error)
     return error
@@ -299,6 +306,11 @@ const recipeReducer = (state = initialState, action) => {
       newState = {}
       const makableRecipesArr = action.payload.ret
       makableRecipesArr.map((obj) => newState[obj.id] = obj)
+      return newState
+    case 'ERROR':
+      newState = {}
+      const error = action.payload
+      newState['Errors'] = error.Errors
       return newState
     default:
       return state

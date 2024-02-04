@@ -12,6 +12,7 @@ const CreateRecipe = () => {
   const { user } = useSelector(state => state.session)
   const recipes = useSelector(state => state.recipes)
   const ingredients = useSelector(state => state.ingredients)
+  const backendErr = useSelector(state => state.recipes.Errors)
   const userId = user.id
   const [ name, setName ] = useState('')
   const [ description, setDescription ] = useState('')
@@ -44,6 +45,7 @@ const CreateRecipe = () => {
     if (!name) errors['name'] = 'Cocktail name is required'
     if (name.length > 64) errors['name'] = 'Cocktail name must be 64 characters or less'
     if (existingRecipeName) errors['name'] = 'Recipe already exists with that name'
+    if (backendErr && backendErr.name) errors['name'] = backendErr.name
     if (description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
     if (!instructions) errors['instructions'] = 'Instructions are required'
     if (instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'

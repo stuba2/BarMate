@@ -12,7 +12,6 @@
 }
 
 .edit-review-discard {
-  font-family: 'Open Sans';
   font-size: 13px;
   font-weight: bold;
   grid-area: save-button;
@@ -36,7 +35,6 @@
 }
 
 .create-review-save {
-  font-family: 'Open Sans';
   font-size: 13px;
   font-weight: 300;
   grid-area: save-button;
@@ -50,7 +48,6 @@
 }
 
 .create-review-save-enabled {
-  font-family: 'Open Sans';
   font-size: 13px;
   font-weight: bold;
   grid-area: save-button;
