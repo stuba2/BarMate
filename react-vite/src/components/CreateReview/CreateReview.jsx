@@ -46,6 +46,9 @@ const CreateReview = ({ recipeId }) => {
   if (selected) {
     buttonClass = "create-review-save"
   }
+  if (selected && numStars > 0) {
+    buttonClass = "create-review-save-hidden"
+  }
   if (selected && reviewText && numStars > 0) {
     buttonClass = "create-review-save-enabled"
   }
@@ -75,6 +78,7 @@ const CreateReview = ({ recipeId }) => {
     setIsStar4Clicked(false)
     setIsStar5Clicked(false)
     setSelected(false)
+    setNumStars(0)
   }
 
   const reviewLengthErrorClass = 'review-length-error' + ((reviewText.length < 1001) ? '' : '-error')

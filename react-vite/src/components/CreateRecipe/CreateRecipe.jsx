@@ -81,9 +81,7 @@ const CreateRecipe = () => {
     }
 
     let createdRecipe
-    console.log('errors what: ', errors)
     if (!Object.values(errors).length && submitValidity) {
-      console.log('here i am')
       createdRecipe = await dispatch(recipeActions.createRecipeThunk(recipeForm))
       .catch(async (res) => {
         // const data = await res.json()
@@ -98,7 +96,6 @@ const CreateRecipe = () => {
       if (createdRecipe && createdRecipe.id) {
         let rIForm
         for (let rIObj of recipeIngredients) {
-          console.log('riobj: ', rIObj)
           let matchedIng = ingredientsArr.find(ing => ing.name === rIObj.ingName)
           rIForm = {
             amount: +rIObj.ingAmt,

@@ -8,12 +8,20 @@ import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall"
 const LandingPage = ({}) => {
   const dispatch = useDispatch()
   const recipes = useSelector(state => state.recipes)
+  const { user } = useSelector(state => state.session)
   const displayRec = Object.values(recipes)[0]
 
 
   useEffect(() => {
     dispatch(recipeActions.getRandomRecipeThunk())
   }, [dispatch])
+
+  let updateClass
+  if (!user) {
+    updateClass = 'hidden'
+  } else {
+    updateClass = ''
+  }
 
 
   if (!recipes || !displayRec) {
@@ -25,7 +33,7 @@ const LandingPage = ({}) => {
       <div className="land-main-contain">
         <div className="land-main-small-container">
           <h1 className="land-h1">Welcome!</h1>
-          <div><NavLink to="/account/myBar" className="land-update-bar">Update your Bar</NavLink></div>
+          <div className={updateClass}><NavLink to="/account/myBar" className="land-update-bar">Update your Bar</NavLink></div>
           <div className="land-rand-rec-container">
             <h2>Featured Cocktail</h2>
             <div className="land-rand-name">{displayRec.name}</div>
