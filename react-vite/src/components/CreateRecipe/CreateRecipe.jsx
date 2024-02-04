@@ -29,7 +29,7 @@ const CreateRecipe = () => {
   })
   const recipesArr = Object.values(recipes)
 
-  const [ recipeIngredients, setRecipeIngredients ] = useState([{ingNum: num, ingName: '', ingAmt: '', ingUnit: ''}])
+  const [ recipeIngredients, setRecipeIngredients ] = useState([{ingNum: num, ingName: "Jeppson's Malort", ingAmt: 1, ingUnit: 'bottle'}])
 
   // keeping up with the up to date ing/rec
   useEffect(() => {
@@ -47,10 +47,10 @@ const CreateRecipe = () => {
     if (description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
     if (!instructions) errors['instructions'] = 'Instructions are required'
     if (instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'
-    for (let ri of recipeIngredients) {
-      let existingIngName = ingredientsArr.find(ing => ing.name = ri.ingName)
-      if (!existingIngName) errors['ingredients'] = 'Ingredient names '
-    }
+    // for (let ri of recipeIngredients) {
+    //   let existingIngName = ingredientsArr.find(ing => ing.name = ri.ingName)
+    //   if (!existingIngName) errors['ingredients'] = 'Ingredient names '
+    // }
     if (recipeImageUrl.length > 255) errors['description'] = 'Instructions must be 255 characters or less'
 
 
@@ -61,9 +61,9 @@ const CreateRecipe = () => {
     e.preventDefault()
     let newRI = {
       ingNum: num,
-      ingName: '',
-      ingAmt: '',
-      ingUnit: ''
+      ingName: "Jeppson's Malort",
+      ingAmt: 1,
+      ingUnit: 'bottle'
     }
     num += 1
     setRecipeIngredients([...recipeIngredients, newRI])

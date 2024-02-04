@@ -38,7 +38,6 @@ const EditRecipe = () => {
   const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
   const [ submitValidity, setSubmitValidity ] = useState(true)
-  console.log('name: ', name)
 
 
   useEffect(() => {
@@ -86,9 +85,9 @@ const EditRecipe = () => {
     e.preventDefault()
     let newRI = {
       ingNum: newNum,
-      ingName: '',
-      ingAmt: '',
-      ingUnit: ''
+      ingName: "Jeppson's Malort",
+      ingAmt: 1,
+      ingUnit: 'bottle'
     }
     newNum += 1
     setRecipeIngredients([...recipeIngredients, newRI])
@@ -96,7 +95,6 @@ const EditRecipe = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('error stuff: ', errors)
 
     const recipeForm = {
       name: name,
@@ -108,7 +106,6 @@ const EditRecipe = () => {
     let updatedRecipe
 
     if (!Object.values(errors).length) {
-      console.log('i am here')
       updatedRecipe = await dispatch(recipeActions.editRecipeThunk(recipeId, recipeForm))
       .catch(async (res) => {
         const data = await res.json()

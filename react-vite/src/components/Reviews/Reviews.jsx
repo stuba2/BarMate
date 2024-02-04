@@ -54,7 +54,6 @@ const Reviews = () => {
 
           let editDeleteButtonClass
           let deleteButtonClass
-          console.log('user: ', user)
 
           if (user && review.user_id !== user.id) {
             editDeleteButtonClass = 'review-edit-delete-hidden'

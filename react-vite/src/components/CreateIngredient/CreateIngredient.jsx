@@ -13,11 +13,19 @@ const CreateIngredient = () => {
   const [errors, setErrors] = useState({});
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
 
+  const ingredientsArr = Object.values(ingredients).sort((a,b) => {
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+  })
+
   useEffect(() => {
     const errors = {}
+    let existingIngName = ingredientsArr.find(ing => ing.name === name)
 
     if (!name) errors['name'] = 'Ingredient name is required'
     if (name.length > 64) errors['name'] = 'Ingredient name must be 64 characters or less'
+    if (existingIngName) errors['name'] = 'Ingredient already exists'
 
     setErrors(errors)
   },[name])

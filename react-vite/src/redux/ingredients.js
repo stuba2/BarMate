@@ -7,6 +7,13 @@ const getIngredients = (data) => {
   }
 }
 
+const postIngredient = (data) => {
+  return {
+    type: POST_INGREDIENT,
+    payload: data
+  }
+}
+
 
 export const getIngredientsThunk = () => async (dispatch) => {
   try {
@@ -36,6 +43,7 @@ export const postIngredientThunk = (ingredientObj) => async (dispatch) => {
 
     const data = await response.json()
     console.log(data)
+    dispatch(postIngredient(data))
     return data
 
     let ingredientImage = {
@@ -77,6 +85,11 @@ const ingredientReducer = (state = initialState, action) => {
       newState = {...state}
       const ingredientArr = action.payload.Ingredients
       ingredientArr.map((ingredientObj) => newState[ingredientObj.id] = ingredientObj)
+      return newState
+    case POST_INGREDIENT:
+      newState = {...state}
+      const newIng = action.payload
+      newState[newIng.id] = newIng
       return newState
     default:
       return state
