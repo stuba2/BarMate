@@ -86,9 +86,9 @@ const EditRecipe = () => {
     e.preventDefault()
     let newRI = {
       ingNum: newNum,
-      ingName: '',
-      ingAmt: '',
-      ingUnit: ''
+      ingName: "Jeppson's Malort",
+      ingAmt: 1,
+      ingUnit: 'bottle'
     }
     newNum += 1
     setRecipeIngredients([...recipeIngredients, newRI])

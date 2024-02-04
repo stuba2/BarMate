@@ -11,18 +11,18 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, setSubmitValidity, hasSubm
   const [ errorClassName, setErrorClassName ] = useState('')
   // let errorClassName
 
-  useEffect(() => {
-    let existingIngName = ingredientsArr.find(ing => ing.name === ingredientIndividual)
-    console.log('name:= ', ingredientIndividual)
-    console.log('existing=: ', existingIngName)
-    console.log('!existing=: ', !existingIngName)
-    if (!existingIngName && hasSubmitted) {
-      setErrorClassName('validation-error')
-    } else {
-      setErrorClassName('validation-error hidden')
-    }
+  // useEffect(() => {
+  //   let existingIngName = ingredientsArr.find(ing => ing.name === ingredientIndividual)
+  //   console.log('name:= ', ingredientIndividual)
+  //   console.log('existing=: ', existingIngName)
+  //   console.log('!existing=: ', !existingIngName)
+  //   if (!existingIngName && hasSubmitted) {
+  //     setErrorClassName('validation-error')
+  //   } else {
+  //     setErrorClassName('validation-error hidden')
+  //   }
 
-  }, [ingredientIndividual])
+  // }, [ingredientIndividual])
 
 
   const handleChangeIngName = (name) => {
@@ -51,32 +51,35 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, setSubmitValidity, hasSubm
         <div className="rec-ing-ingredient-drop">
           <select
             id="ingredient-options"
-            value={ingredientIndividual}
-            onChange={(e) => {
-              setIngredientIndividual(e.target.value)
-              handleChangeIngName(e.target.value)
-            }}
+            // value={ingredientIndividual}
+            // onChange={(e) => {
+              //   setIngredientIndividual(e.target.value)
+              //   handleChangeIngName(e.target.value)
+              // }}
+            value="Jeppson's Malort"
             required
           >
-            <option value={''}>Ingredient...</option>
+            <option value={"Jeppson's Malort"}>Jeppson's Malort</option>
+            {/* <option value={''}>Ingredient...</option>
             {ingredientsArr.map((ingredientObj) => {
               return (
                 <option value={ingredientObj.name} key={ingredientObj.id}>{ingredientObj.name}</option>
                 )
-              })}
+              })} */}
           </select>
-          <div className={errorClassName}>Ingredient must be in dropdown list</div>
+          {/* <div className={errorClassName}>Ingredient must be in dropdown list</div> */}
         </div>
 
         <div>
           <input
             type="number"
             id="number-options"
-            value={amountIndividual}
-            onChange={(e) => {
-              setAmountIndividual(e.target.value)
-              handleChangeIngAmt(e.target.value)
-            }}
+            // value={amountIndividual}
+            // onChange={(e) => {
+            //   setAmountIndividual(e.target.value)
+            //   handleChangeIngAmt(e.target.value)
+            // }}
+            value={1}
             required
             min='1'
             placeholder="Amount"
@@ -86,19 +89,20 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, setSubmitValidity, hasSubm
         <div>
           <select
           id="unit-options"
-            value={unitIndividual}
-            onChange={(e) => {
-              setUnitIndividual(e.target.value)
-              handleChangeIngUnit(e.target.value)
-            }}
+            // value={unitIndividual}
+            // onChange={(e) => {
+            //   setUnitIndividual(e.target.value)
+            //   handleChangeIngUnit(e.target.value)
+            // }}
+            value='bottle'
             required
           >
-            <option value={''}>Unit...</option>
-            {unitTypes.map((unit) => {
+            <option value={'bottle'}>bottle</option>
+            {/* {unitTypes.map((unit) => {
               return (
                 <option value={unit} key={unit}>{unit}</option>
                 )
-              })}
+              })} */}
           </select>
         </div>
       </div>
