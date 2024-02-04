@@ -26,9 +26,9 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, setSubmitValidity, hasSubm
 
 
   const handleChangeIngName = (name) => {
-    let existingIngName = ingredientsArr.find(ing => ing.name === name)
-    if (!existingIngName) setSubmitValidity(false)
-    else setSubmitValidity(true)
+    // let existingIngName = ingredientsArr.find(ing => ing.name === name)
+    // if (!existingIngName) setSubmitValidity(false)
+    // else setSubmitValidity(true)
 
     rIObj.ingName = name
   }
@@ -36,9 +36,9 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, setSubmitValidity, hasSubm
     rIObj.ingAmt = amt
   }
   const handleChangeIngUnit = (unit) => {
-    let existingUnitName = unitTypes.find(unitType => unitType === unit)
-    if (!existingUnitName) setSubmitValidity(false)
-    else setSubmitValidity(true)
+    // let existingUnitName = unitTypes.find(unitType => unitType === unit)
+    // if (!existingUnitName) setSubmitValidity(false)
+    // else setSubmitValidity(true)
 
     rIObj.ingUnit = unit
   }
