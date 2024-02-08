@@ -14,27 +14,19 @@ recipe_routes = Blueprint('recipes', __name__)
 @recipe_routes.route('/index/<int:page>')
 def get_paginated_recipes(page):
   ret = []
-  # print('\n page:::::', page)
   per_page = 8
-  all_recipes = Recipe.query.all()
-  # paginated = db.paginate(all_recipes, page=1, per_page=per_page, error_out=False)
   paginated = Recipe.query.paginate(page=page, per_page=per_page)
-  # print('\n ::::::::::', paginated)
-  # print('\n ::::::::::', paginated.items)
-  # print('\n ::::::::::', paginated.ret.allrecipes)
 
   for recipe in paginated.items:
-    owner_details = User.query.filter(User.id == recipe.user_id).first()
+    owner_details = recipe.recipes_user
+    recipe_ingredients = recipe.recipes_recipe_ingredients
+    recipe_image = recipe.recipe_recipe_image[0]
 
-    recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
-
-    recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
     recipe_ingredient_list = []
     for ingredient in recipe_ingredients:
-      ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
       unit = ingredient.to_dict()['unit'].value
       real_ingredient = {
-        'name': ingredient_name.name,
+        'name': ingredient.recipe_ingredients_ingredients.name,
         'amount': ingredient.amount,
         'unit': unit,
         'recipe_id': ingredient.recipe_id,
@@ -52,7 +44,7 @@ def get_paginated_recipes(page):
         'username': owner_details.username,
         'dob': owner_details.dob
       },
-      'recipe_image_url': recipe_image.url,
+      'recipe_image_url': recipe_image.url if recipe_image else None,
       'recipe_ingredients': recipe_ingredient_list,
       'created_at': recipe.created_at,
       'updated_at': recipe.updated_at
@@ -114,18 +106,16 @@ def get_one_recipe(recipe_id):
   ret = []
   recipe = Recipe.query.filter(Recipe.id == recipe_id).first()
 
-  owner_details = User.query.filter(User.id == recipe.user_id).first()
-
-  recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == recipe.id).all()
-  recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
+  owner_details = recipe.recipes_user
+  recipe_ingredients = recipe.recipes_recipe_ingredients
+  recipe_image = recipe.recipe_recipe_image[0]
 
   recipe_ingredient_list = []
   for ingredient in recipe_ingredients:
-    ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
     unit = ingredient.to_dict()['unit'].value
     real_ingredient = {
       'id': ingredient.id,
-      'name': ingredient_name.name,
+        'name': ingredient.recipe_ingredients_ingredients.name,
       'amount': ingredient.amount,
       'unit': unit,
       'recipe_id': ingredient.recipe_id,
@@ -159,19 +149,18 @@ def get_one_recipe(recipe_id):
 def get_random_recipe():
   ret = []
   all_recipes = Recipe.query.all()
-  total_recipes = Recipe.query.count()
+  total_recipes = len(all_recipes)
   random_num = random.randrange(1,total_recipes)
   rand_recipe = all_recipes[random_num - 1]
-  owner_details = User.query.filter(User.id == rand_recipe.user_id).first()
-  recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == rand_recipe.id).first()
-  recipe_ingredients = RecipeIngredient.query.filter(RecipeIngredient.recipe_id == rand_recipe.id).all()
+  owner_details = rand_recipe.recipes_user
+  recipe_image = rand_recipe.recipe_recipe_image[0]
+  recipe_ingredients = rand_recipe.recipes_recipe_ingredients
 
   recipe_ingredient_list = []
   for ingredient in recipe_ingredients:
-    ingredient_name = Ingredient.query.get(ingredient.ingredient_id)
     unit = ingredient.to_dict()['unit'].value
     real_ingredient = {
-      'name': ingredient_name.name,
+      'name': ingredient.recipe_ingredients_ingredients.name,
       'amount': ingredient.amount,
       'unit': unit,
       'recipe_id': ingredient.recipe_id,
@@ -205,7 +194,6 @@ def get_random_recipe():
 def get_makable_recipes():
   ret = []
   all_recipes = Recipe.query.join('recipes_recipe_ingredients').join('recipe_recipe_image').join('recipes_user').join(Ingredient).all()
-  # print('\n ********************: ', all_recipes[0].to_dict())
 
   my_bar = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == current_user.get_id())).order_by(Ingredient.name).all()
   ing_ids = []
@@ -214,7 +202,6 @@ def get_makable_recipes():
 
   bar_ing_set = set(ing_ids)
 
-  # print('\n all_recs: ', all_recipes)
   for recipe in all_recipes:
     ris = recipe.recipes_recipe_ingredients
     ri_id = [ri.ingredient_id for ri in ris]
@@ -222,8 +209,6 @@ def get_makable_recipes():
     if found:
       owner_details = recipe.recipes_user
       recipe_image = recipe.recipe_recipe_image[0]
-
-
 
       recipe_ingredient_list = []
       for ingredient in ris:
@@ -255,8 +240,6 @@ def get_makable_recipes():
       }
       ret.append(ret_recipe)
 
-  # print('\n ==============', ret)
-
   return {
     "ret": ret
   }
@@ -267,8 +250,8 @@ def get_users_recipes():
   user_recipes = Recipe.query.filter(Recipe.user_id == current_user.id).all()
 
   for recipe in user_recipes:
-    owner_details = User.query.filter(User.id == recipe.user_id).first()
-    recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
+    owner_details = recipe.recipes_user
+    recipe_image = recipe.recipe_recipe_image[0]
     recipe_ingredient_list = []
 
     ret_recipe = {
@@ -358,8 +341,8 @@ def create_image_on_recipe(recipe_id):
 @recipe_routes.route('/<int:recipe_id>', methods=['PUT'])
 def edit_a_recipe(recipe_id):
   existing_recipe = Recipe.query.get(recipe_id)
-  owner_details = User.query.filter(User.id == existing_recipe.user_id).first()
-  recipe_image = RecipeImage.query.filter(RecipeImage.recipe_id == existing_recipe.id).first()
+  owner_details = existing_recipe.recipes_user
+  recipe_image = existing_recipe.recipe_recipe_image[0]
   form = RecipeEditForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -402,7 +385,7 @@ def edit_image_on_recipe(recipe_id):
   form['csrf_token'].data = request.cookies['csrf_token']
 
   recipe = Recipe.query.get(recipe_id)
-  existing_img = RecipeImage.query.filter(RecipeImage.recipe_id == recipe.id).first()
+  existing_img = recipe.recipe_recipe_image[0]
 
   if form.validate_on_submit():
     existing_img.url = form.data['url']
@@ -437,7 +420,6 @@ def delete_a_recipe(recipe_id):
     "message": "Successfully Deleted"
   }
 
-# reorder these
 @recipe_routes.route('/<int:recipe_id>/reviews', methods=["POST"])
 # @login_required
 def post_review(recipe_id):
@@ -517,32 +499,13 @@ def edit_a_review(recipe_id, review_id):
     "errors": form.errors
   }
 
-# @recipe_routes.route('/<int:recipe_id>/reviews/<int:review_id>', methods=['DELETE'])
-# # @login_required
-# def delete_a_review(review_id):
-#   review_to_delete = Review.query.filter(Review.id == review_id).first()
-#   print('\n -----------review_to_delete: ', review_to_delete)
-
-#   if not review_to_delete:
-#     print('\n ==========wrong')
-#     return {
-#       "message": "Review does not exist"
-#     }
-
-#   db.session.delete(review_to_delete)
-#   db.session.commit()
-
-#   return {
-#     "message": "Successfully Deleted"
-#   }
-
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=['GET'])
 def get_recipe_toasts(recipe_id):
   ret = []
   all_toasts = Toast.query.filter(Toast.recipe_id == recipe_id).all()
 
   for toast in all_toasts:
-    toaster_details = User.query.filter(User.id == toast.user_id).first()
+    toaster_details = toast.toasts_user
     ret_toast = {
       'id': toast.id,
       'user_id': toast.user_id,

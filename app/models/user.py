@@ -57,5 +57,9 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'dob': self.dob
+            'dob': self.dob,
+            # 'user_recipes': self.user_recipes,
+            # 'user_toasts': self.user_toasts,
+            # 'user_reviews': self.user_reviews,
+            # 'users_bar_ingredients': self.users_bar_ingredients
         }

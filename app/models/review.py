@@ -28,6 +28,8 @@ class Review(db.Model, UserMixin):
             'rating': self.rating,
             'user_id': self.user_id,
             "recipe_id": self.recipe_id,
+            "reviews_user": self.reviews_user,
+            "reviews_recipe": self.reviews_recipe,
             "created_at": self.created_at,
             "updated_at": self.updated_at,
         }

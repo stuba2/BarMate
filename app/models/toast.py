@@ -23,6 +23,8 @@ class Toast(db.Model, UserMixin):
             'id': self.id,
             'user_id': self.user_id,
             'recipe_id': self.recipe_id,
+            'toasts_user': self.toasts_user,
+            'toasts_recipe': self.toasts_recipe,
             "created_at": self.created_at,
             "updated_at": self.updated_at,
         }
