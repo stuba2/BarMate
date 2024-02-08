@@ -12,7 +12,7 @@ def get_recipe_reviews(recipe_id):
   all_reviews = Review.query.filter(Review.recipe_id == recipe_id).all()
 
   for review in all_reviews:
-    reviewer_details = User.query.filter(User.id == review.user_id).first()
+    reviewer_details = review.reviews_user
     ret_review = {
       'id': review.id,
       'review_text': review.review_text,
