@@ -1,7 +1,7 @@
 .create-review-form {
   display: flex;
   flex-direction: column;
-  margin-right: 150px;
+  /* margin-right: 150px; */
   width: 360px;
 }
 
