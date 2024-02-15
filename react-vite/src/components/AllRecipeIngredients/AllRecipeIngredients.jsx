@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as ingredientActions from "../../redux/ingredients"
 import OneRecipeIngredient from "../OneRecipeIngredient/OneRecipeIngredient";
 
-const AllRecipeIngredients = ({ recipeIngredients, setRecipeIngredients, handleNewRI, ingredientsArr, setSubmitValidity, hasSubmitted }) => {
+const AllRecipeIngredients = ({ recipeIngredients, setRecipeIngredients, handleNewRI, ingredientsArr, hasSubmitted, errors, setErrors, rIErrors, setRIErrors }) => {
   const dispatch = useDispatch()
   const ingredients = useSelector(state => state.ingredients)
 
@@ -16,7 +16,7 @@ const AllRecipeIngredients = ({ recipeIngredients, setRecipeIngredients, handleN
       <div>
         {recipeIngredients.map(rIObj => {
           return (
-            <OneRecipeIngredient rIObj={rIObj} ingredientsArr={ingredientsArr} setSubmitValidity={setSubmitValidity} hasSubmitted={hasSubmitted}/>
+            <OneRecipeIngredient rIObj={rIObj} ingredientsArr={ingredientsArr} hasSubmitted={hasSubmitted} errors={errors} setErrors={setErrors} rIErrors={rIErrors} setRIErrors={setRIErrors}/>
           )
         })}
 

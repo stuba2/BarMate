@@ -14,6 +14,7 @@ const EditRecipe = () => {
   const recipes = useSelector(state => state.recipes)
   // const recipe = useSelector(state => state.recipes[recipeId])
   const ingredients = useSelector(state => state.ingredients)
+  const backendErr = useSelector(state => state.recipes.Errors)
   const userId = user.id
 
   // keeping up with the up to date ing/rec
@@ -38,6 +39,7 @@ const EditRecipe = () => {
   const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
   const [ submitValidity, setSubmitValidity ] = useState(true)
+  const [ rIErrors, setRIErrors ] = useState([])
 
 
   useEffect(() => {
@@ -73,21 +75,22 @@ const EditRecipe = () => {
     if (existingRecipeName && existingRecipeName.id !== recipe.id) errors['name'] = 'Recipe already exists with that name'
     if (description && description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
     if (!instructions) errors['instructions'] = 'Instructions are required'
-    if (instructions && instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'
-    if (recipeImageUrl && recipeImageUrl.length > 255) errors['description'] = 'Instructions must be 255 characters or less'
+    if (instructions && instructions.length > 2000) errors['instructions'] = 'Instructions must be 2000 characters or less'
+    if (recipeImageUrl && recipeImageUrl.length > 255) errors['instructions'] = 'Instructions must be 255 characters or less'
+    if (rIErrors) errors['recipeIngredient'] = 'Please fill out all fields'
 
 
     setErrors(errors)
-  }, [name, description, instructions, recipeIngredients])
+  }, [name, description, instructions, recipeIngredients, backendErr, rIErrors])
 
   let newNum = recipeIngredients.length +1
   const handleNewRI = async (e) => {
     e.preventDefault()
     let newRI = {
-      ingNum: newNum,
-      ingName: "Jeppson's Malort",
+      ingNum: num,
+      ingName: 'none',
       ingAmt: 1,
-      ingUnit: 'bottle'
+      ingUnit: 'none'
     }
     newNum += 1
     setRecipeIngredients([...recipeIngredients, newRI])
@@ -105,7 +108,7 @@ const EditRecipe = () => {
 
     let updatedRecipe
 
-    if (!Object.values(errors).length) {
+    if (!Object.values(errors).length && submitValidity) {
       updatedRecipe = await dispatch(recipeActions.editRecipeThunk(recipeId, recipeForm))
       .catch(async (res) => {
         const data = await res.json()
@@ -129,7 +132,7 @@ const EditRecipe = () => {
               amount: +rIObj.ingAmt,
               unit: rIObj.ingUnit,
               recipe_id: updatedRecipe.id,
-              ingredient_id: matchedIng.id
+              ingredient_id: matchedIng? matchedIng.id : undefined,
             }
             dispatch(recipeActions.editRecipeIngredientsThunk(rIObj.ingNum, rIForm))
           } else {
@@ -219,7 +222,7 @@ const EditRecipe = () => {
                 {hasSubmitted && errors.recipeIngredient && `*${errors.recipeIngredient}`}
               </div>
               <div>
-                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr} setSubmitValidity={setSubmitValidity}hasSubmitted={hasSubmitted}/>
+                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr} setSubmitValidity={setSubmitValidity}hasSubmitted={hasSubmitted} errors={errors} setErrors={setErrors} rIErrors={rIErrors} setRIErrors={setRIErrors}/>
               </div>
             </div>
           </label>
@@ -256,7 +259,7 @@ const EditRecipe = () => {
           </label>
 
           <div className="edit-rec-submit-container">
-            <button className="edit-rec-submit-button" onClick={handleSubmit}>Save Cocktail!</button>
+            <button className="edit-rec-submit-button" onClick={handleSubmit}>Save Cocktail! [change to defaulted disabled]</button>
           </div>
 
         </form>

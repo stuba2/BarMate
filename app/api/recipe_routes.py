@@ -20,7 +20,7 @@ def get_paginated_recipes(page):
   for recipe in paginated.items:
     owner_details = recipe.recipes_user
     recipe_ingredients = recipe.recipes_recipe_ingredients
-    recipe_image = recipe.recipe_recipe_image[0]
+    recipe_image = recipe.recipe_recipe_image[0] if recipe.recipe_recipe_image else None
 
     recipe_ingredient_list = []
     for ingredient in recipe_ingredients:
@@ -63,7 +63,7 @@ def get_all_recipes():
 
   for recipe in all_recipes:
     owner_details = recipe.recipes_user
-    recipe_image = recipe.recipe_recipe_image[0]
+    recipe_image = recipe.recipe_recipe_image[0] if recipe.recipe_recipe_image else None
 
     recipe_ingredients = recipe.recipes_recipe_ingredients
     recipe_ingredient_list = []
@@ -108,7 +108,7 @@ def get_one_recipe(recipe_id):
 
   owner_details = recipe.recipes_user
   recipe_ingredients = recipe.recipes_recipe_ingredients
-  recipe_image = recipe.recipe_recipe_image[0]
+  recipe_image = recipe.recipe_recipe_image[0] if recipe.recipe_recipe_image else None
 
   recipe_ingredient_list = []
   for ingredient in recipe_ingredients:
@@ -208,7 +208,7 @@ def get_makable_recipes():
     found = set(ri_id).issubset(bar_ing_set)
     if found:
       owner_details = recipe.recipes_user
-      recipe_image = recipe.recipe_recipe_image[0]
+      recipe_image = recipe.recipe_recipe_image[0] if recipe.recipe_recipe_image else None
 
       recipe_ingredient_list = []
       for ingredient in ris:
@@ -251,7 +251,7 @@ def get_users_recipes():
 
   for recipe in user_recipes:
     owner_details = recipe.recipes_user
-    recipe_image = recipe.recipe_recipe_image[0]
+    recipe_image = recipe.recipe_recipe_image[0] if recipe.recipe_recipe_image else None
     recipe_ingredient_list = []
 
     ret_recipe = {
