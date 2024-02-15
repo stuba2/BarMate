@@ -47,7 +47,8 @@ const Toasts = ({  }) => {
     return (
       <>
       <div>
-        <div>
+        <div className="toast-container">
+          <div className="toast-label">Like it? Toast it!</div>
           <button className="toast-button" onClick={handleToast}><i className="fa-solid fa-champagne-glasses"></i> {numToasts}</button>
         </div>
       </div>
