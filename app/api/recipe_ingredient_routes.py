@@ -23,7 +23,7 @@ def add_recipe_ingredient():
     ret = {
       'id': new_recipe_ingredient.id,
       'amount': new_recipe_ingredient.amount,
-      'unit': new_recipe_ingredient.unit,
+      'unit': new_recipe_ingredient.to_dict()['unit'].value,
       'ingredient_id': new_recipe_ingredient.ingredient_id,
       'recipe_id': new_recipe_ingredient.recipe_id
     }
