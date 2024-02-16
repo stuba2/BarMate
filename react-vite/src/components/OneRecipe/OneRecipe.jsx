@@ -27,9 +27,9 @@ const OneRecipe = () => {
   // const createRevClassName = 'one-rec-rev-super-container' + user ? '' : ' hidden'
   let createRevClassName
   if (!user) {
-    createRevClassName = 'one-rec-rev-super-container hidden'
+    createRevClassName = 'one-rec-rev-lesser-container hidden'
   } else (
-    createRevClassName = 'one-rec-rev-super-container'
+    createRevClassName = 'one-rec-rev-lesser-container'
   )
 
   if (!recipe || !recipe.recipe_ingredients) {

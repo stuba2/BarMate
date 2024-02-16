@@ -40,10 +40,6 @@ def edit_recipe_ingredient(recipe_ingredient_id):
   form = RecipeIngredientForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
-  recipe_full = Recipe.query.get(form.data['recipe_id'])
-  ingredient_full = Ingredient.query.get(form.data['ingredient_id'])
-
-
   existing_ri = RecipeIngredient.query.get(recipe_ingredient_id)
 
   if not existing_ri:

@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { thunkSignup } from "../../redux/session";
 import "./SignupForm.css";
+import OpenModalMenuItem from "../Navigation/OpenModalMenuItem";
+import LoginFormModal from "../LoginFormModal";
 
 function SignupFormModal() {
   const dispatch = useDispatch();
@@ -15,11 +17,9 @@ function SignupFormModal() {
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
   const { closeModal } = useModal();
 
-  // const UTCDob = new Date(new Date(dob).getTimezoneOffset()*60000 + new Date(dob).getTime())
-
-  const getAge = (bd) => {
+  const getAge = (birthdate) => {
     let today = new Date()
-    let dob = new Date(new Date(bd).getTimezoneOffset()*60000 + new Date(bd).getTime())
+    let dob = new Date(new Date(birthdate).getTimezoneOffset()*60000 + new Date(birthdate).getTime())
     let age = today.getFullYear() - dob.getFullYear()
     let month = today.getMonth() - dob.getMonth()
     if (month < 0 || (month === 0 && today.getDate() < dob.getDate())) age--
@@ -32,14 +32,17 @@ function SignupFormModal() {
     if (!(email.includes('@') && email.includes('.'))) errors['email'] = 'Invalid Email'
     if (!email) errors['email'] = 'Email is required'
     if (email.length > 255) errors['email'] = 'Email is too long'
+    if (email.length < 8) errors['email'] = 'Email must be at least 8 characters'
     if (!username) errors['username'] = 'Username is required'
     if (username.length > 64) errors['username'] = 'Username is too long'
+    if (username.length < 4) errors['username'] = 'Username must be at least 4 characters'
     if (!dob) errors['dob'] = 'Date of birth is required'
     if (!getAge(dob)) errors['dob'] = 'You must be 21 to use this site'
     if (!password) errors['password'] = 'Date of birth is required'
     if (password.length > 255) errors['password'] = 'Password is too long'
     if (!confirmPassword) errors['confirmPassword'] = 'Date of birth is required'
     if (confirmPassword.length > 255) errors['confirmPassword'] = 'Password is too long'
+    if (password.length < 8) errors['password'] = 'Password must be at least 8 characters'
     if (password !== confirmPassword) errors['confirmPassword'] = 'Passwords must match'
 
     setErrors(errors)
@@ -49,13 +52,6 @@ function SignupFormModal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setHasSubmitted(true)
-
-    // if (password !== confirmPassword) {
-    //   return setErrors({
-    //     confirmPassword:
-    //       "Confirm Password field must be the same as the Password field",
-    //   });
-    // }
 
     if (!(Object.values(errors).length)) {
       const serverResponse = await dispatch(
@@ -98,6 +94,7 @@ function SignupFormModal() {
             onChange={(e) => setEmail(e.target.value)}
             required
             maxLength='255'
+            minLength='8'
           />
         </label>
 
@@ -117,6 +114,7 @@ function SignupFormModal() {
             onChange={(e) => setUsername(e.target.value)}
             required
             maxLength='64'
+            minLength='4'
           />
         </label>
 
@@ -153,6 +151,7 @@ function SignupFormModal() {
             onChange={(e) => setPassword(e.target.value)}
             required
             maxLength='255'
+            minLength='8'
           />
         </label>
 
@@ -172,10 +171,18 @@ function SignupFormModal() {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
             maxLength='255'
+            minLength='8'
           />
         </label>
 
         <div className="signup-button-container"><button type="submit" className="signup-button">Sign Up</button></div>
+
+        <div className="signup-no-account">Already have an account?
+          <OpenModalMenuItem
+            itemText='Log in!'
+            modalComponent={<LoginFormModal />}
+          />
+        </div>
       </form>
     </div>
   );

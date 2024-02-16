@@ -73,18 +73,17 @@
   display: flex;
   /* justify-content: space-between; */
   justify-content: center;
-  padding: 20px 80px;
+  padding: 6% 10%;
+}
+
+.one-rec-rev-lesser-container {
+  margin-right: 5%;
 }
 
 .hidden {
   display: none;
 }
 
-.one-rec-create-rev {
-  display: flex;
-  /* width: 100%; */
-}
-
 .one-rec-revs {
-  /* width: 50%; */
+  margin-left: 5%;
 }

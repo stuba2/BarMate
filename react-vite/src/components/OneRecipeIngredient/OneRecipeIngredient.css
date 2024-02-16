@@ -14,3 +14,8 @@
 #unit-options {
   width: 195px;
 }
+
+.rec-ing-unit-drop {
+  display: flex;
+  align-items: center;
+}

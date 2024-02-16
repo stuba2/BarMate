@@ -110,3 +110,12 @@
   background-color: rgba(22, 14, 64, .9);
   cursor: pointer;
 }
+
+.signup-no-account {
+  display: flex;
+  margin-top: 10px;
+}
+
+.signup-no-account > .modal-button {
+  text-decoration: underline;
+}

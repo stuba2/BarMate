@@ -21,6 +21,7 @@ const CreateRecipe = () => {
   const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
   const [ submitValidity, setSubmitValidity ] = useState(true)
+  const [ rIErrors, setRIErrors ] = useState([])
 
   let num = 1
   const ingredientsArr = Object.values(ingredients).sort((a,b) => {
@@ -30,7 +31,7 @@ const CreateRecipe = () => {
   })
   const recipesArr = Object.values(recipes)
 
-  const [ recipeIngredients, setRecipeIngredients ] = useState([{ingNum: num, ingName: "Jeppson's Malort", ingAmt: 1, ingUnit: 'bottle'}])
+  const [ recipeIngredients, setRecipeIngredients ] = useState([{ingNum: num, ingName: 'none', ingAmt: 1, ingUnit: 'none'}])
 
   // keeping up with the up to date ing/rec
   useEffect(() => {
@@ -48,24 +49,21 @@ const CreateRecipe = () => {
     if (backendErr && backendErr.name) errors['name'] = backendErr.name
     if (description.length > 1000) errors['description'] = 'Description must be 1000 characters or less'
     if (!instructions) errors['instructions'] = 'Instructions are required'
-    if (instructions.length > 2000) errors['description'] = 'Instructions must be 2000 characters or less'
-    // for (let ri of recipeIngredients) {
-    //   let existingIngName = ingredientsArr.find(ing => ing.name = ri.ingName)
-    //   if (!existingIngName) errors['ingredients'] = 'Ingredient names '
-    // }
-    if (recipeImageUrl.length > 255) errors['description'] = 'Instructions must be 255 characters or less'
+    if (instructions.length > 2000) errors['instructions'] = 'Instructions must be 2000 characters or less'
+    if (recipeImageUrl.length > 255) errors['instructions'] = 'Instructions must be 255 characters or less'
+    if (rIErrors.length) errors['recipeIngredient'] = 'Please fill out all fields'
 
 
     setErrors(errors)
-  }, [name, description, instructions, recipeIngredients, backendErr])
+  }, [name, description, instructions, recipeIngredients, backendErr, rIErrors])
 
   const handleNewRI = async (e) => {
     e.preventDefault()
     let newRI = {
       ingNum: num,
-      ingName: "Jeppson's Malort",
+      ingName: 'none',
       ingAmt: 1,
-      ingUnit: 'bottle'
+      ingUnit: 'none'
     }
     num += 1
     setRecipeIngredients([...recipeIngredients, newRI])
@@ -102,7 +100,7 @@ const CreateRecipe = () => {
           rIForm = {
             amount: +rIObj.ingAmt,
             unit: rIObj.ingUnit,
-            ingredient_id: matchedIng.id,
+            ingredient_id: matchedIng? matchedIng.id : undefined,
             recipe_id: createdRecipe.id
           }
           dispatch(recipeActions.addRecipeIngredientsThunk(rIForm))
@@ -143,7 +141,7 @@ const CreateRecipe = () => {
               className="create-rec-name-input"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              required
+              // required
               maxLength='64'
               minLength='1'
               placeholder="Name"
@@ -171,11 +169,8 @@ const CreateRecipe = () => {
           <label className="create-rec-ingredients">
             <div className="create-rec-ingredients-name-val">
               <div className="create-rec-ingredients-name">ingredients</div>
-              <div className="validation-error">
-                {hasSubmitted && errors.recipeIngredient && `*${errors.recipeIngredient}`}
-              </div>
               <div>
-                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr} setSubmitValidity={setSubmitValidity} hasSubmitted={hasSubmitted}/>
+                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}  hasSubmitted={hasSubmitted} errors={errors} setErrors={setErrors} rIErrors={rIErrors} setRIErrors={setRIErrors}/>
               </div>
             </div>
 
@@ -195,7 +190,7 @@ const CreateRecipe = () => {
               value={instructions}
               onChange={(e) => setInstructions(e.target.value)}
               maxLength='2000'
-              required
+              // required
               placeholder="Recipe instructions..."
             />
           </label>
@@ -213,7 +208,7 @@ const CreateRecipe = () => {
           </label>
 
           <div className="create-rec-submit-container">
-            <button className="create-rec-submit-button">Create new drink!</button>
+            <button className="create-rec-submit-button">Create new drink! [change to defaulted disabled]</button>
           </div>
 
         </form>

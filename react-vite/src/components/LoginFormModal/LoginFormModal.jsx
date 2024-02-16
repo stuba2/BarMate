@@ -3,6 +3,8 @@ import { thunkLogin } from "../../redux/session";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 import "./LoginForm.css";
+import OpenModalMenuItem from "../Navigation/OpenModalMenuItem";
+import SignupFormModal from "../SignupFormModal";
 
 function LoginFormModal() {
   const dispatch = useDispatch();
@@ -98,6 +100,13 @@ function LoginFormModal() {
         <div className="login-button-container"><button type="submit" className="login-button">Log In</button></div>
 
         <div className="login-demo-button-container"><button onClick={handleDemoLogin} className="demo-button">Demo Log In</button></div>
+
+        <div className="login-no-account">Don't have an account?
+          <OpenModalMenuItem
+            itemText='Sign up!'
+            modalComponent={<SignupFormModal />}
+          />
+        </div>
       </form>
     </div>
   );
