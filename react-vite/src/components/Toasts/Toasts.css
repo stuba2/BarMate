@@ -13,6 +13,7 @@
   color: #fdfdfb;
   border: #603592 1px solid;
   border-radius: 10px;
+  margin: 0 5px;
 }
 
 .toast-button:hover {
