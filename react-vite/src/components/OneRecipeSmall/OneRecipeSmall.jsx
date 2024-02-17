@@ -14,7 +14,7 @@ const OnceRecipeSmall = ({recipeId}) => {
   else if (randRecipe) chosenRecipe = randRecipe
   else if (makableRecipe) chosenRecipe = makableRecipe
 
-  const recPic = chosenRecipe ? <img className="small-recipe-image" src={chosenRecipe.recipe_image_url} /> : <img src='https://source.unsplash.com/random/700x700/?house' style={{ width: '100px'}}/>
+  const recPic = chosenRecipe ? <img className="small-recipe-image" src={chosenRecipe.recipe_image_url} /> : <img src='https://source.unsplash.com/random/700x700/?house' style={{ width: '6.25rem'}}/>
 
 
   if (!chosenRecipe) {

@@ -9,16 +9,16 @@
   flex-direction: column;
   align-items: center;
   background-color: rgba(252, 252, 250, .75);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   width: 30%;
-  margin: 20px;
+  margin: 1.25rem;
 }
 
 .land-h1 {
   display: flex;
   justify-content: center;
   /* background-color: rgba(252, 252, 250, .75); */
-  border-radius: 8px;
+  border-radius: 0.5rem;
   width: 20%;
 }
 
@@ -28,14 +28,14 @@
   font-size: larger;
   font-weight: 550;
   background-color: rgba(96, 53, 146, .9);
-  padding: 7px;
-  border: #090619 solid 1px;
-  border-radius: 10px;
+  padding: 0.438rem;
+  border: #090619 solid 0.063rem;
+  border-radius: 0.625rem;
 }
 
 .land-rand-rec-container {
   /* background-color: rgba(252, 252, 250, .75); */
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,12 +47,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 15px;
+  padding-top: 0.938rem;
 }
 
 .land-rand-recipe-image {
-  width: 200px;
-  padding: 20px;
+  width: 12.5rem;
+  padding: 1.25rem;
 }
 
 .land-rand-rec-nav {
@@ -60,9 +60,9 @@
 }
 
 .land-rand-rec-nav > .whole-thing-small-recipe > .small-recipe-image-container > .small-recipe-image {
-  width: 200px;
-  height: 200px;
-  padding: 20px;
+  width: 12.5rem;
+  height: 12.5rem;
+  padding: 1.25rem;
 }
 
 .land-rand-rec-nav > .whole-thing-small-recipe > .under-pic {
