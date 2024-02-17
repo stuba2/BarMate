@@ -16,7 +16,7 @@ const AllRecipeIngredients = ({ recipeIngredients, setRecipeIngredients, handleN
       <div>
         {recipeIngredients.map(rIObj => {
           return (
-            <OneRecipeIngredient rIObj={rIObj} ingredientsArr={ingredientsArr} hasSubmitted={hasSubmitted} errors={errors} setErrors={setErrors} rIErrors={rIErrors} setRIErrors={setRIErrors}/>
+            <OneRecipeIngredient key={rIObj.ingNum} rIObj={rIObj} ingredientsArr={ingredientsArr} hasSubmitted={hasSubmitted} errors={errors} setErrors={setErrors} rIErrors={rIErrors} setRIErrors={setRIErrors}/>
           )
         })}
 

@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as toastActions from "../../redux/toasts"
 import './Toasts.css'
 
-const Toasts = ({  }) => {
+const Toasts = ({ recipe }) => {
   const dispatch = useDispatch()
   const { recipeId } = useParams()
   const { user } = useSelector(state => state.session)
@@ -38,6 +38,10 @@ const Toasts = ({  }) => {
       }
   }
 
+  let toastClass
+  if (user && recipe && user.id === recipe.user_id) {
+    toastClass = 'toast-button hidden'
+  } else toastClass = 'toast-button'
 
   if (!toasts) {
     return (
@@ -48,8 +52,8 @@ const Toasts = ({  }) => {
       <>
       <div>
         <div className="toast-container">
-          <div className="toast-label">Like it? Toast it!</div>
-          <button className="toast-button" onClick={handleToast}><i className="fa-solid fa-champagne-glasses"></i> {numToasts}</button>
+          <button className={toastClass} onClick={handleToast}>Toast it!</button>
+          <div><i className="fa-solid fa-champagne-glasses"></i> {numToasts}</div>
         </div>
       </div>
       </>

@@ -13,12 +13,9 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
 
   useEffect(() => {
     const localValErrors = {}
-    // let count = localValErrors.length
     if (rIObj.ingName === 'none') localValErrors['ingredientName'] = 'Pick an ingredient'
-    if (rIObj.ingName === 'none') console.log('wrong name')
     if (rIObj.ingAmt < 1) localValErrors['ingredientAmount'] = 'Amount must be greater than 0'
     if (rIObj.ingUnit === 'none') localValErrors['ingredientUnit'] = 'Pick a unit of measure'
-    if (rIObj.ingUnit === 'none') console.log('wrong unit')
 
     if (localValErrors.length) setRIErrors([...rIErrors ,localValErrors])
     else setRIErrors([...rIErrors])
@@ -54,7 +51,7 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
               }}
             required
           >
-            <option value='none' selected disabled>Ingredient...</option>
+            <option value='none' defaultValue='none' disabled>Ingredient...</option>
             {ingredientsArr.map((ingredientObj) => {
               return (
                 <option value={ingredientObj.name} key={ingredientObj.id}>{ingredientObj.name}</option>
@@ -93,7 +90,7 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
             }}
             required
           >
-            <option value='none' selected disabled>Unit...</option>
+            <option value='none' defaultValue='none' disabled>Unit...</option>
             {unitTypes.map((unit) => {
               return (
                 <option value={unit} key={unit}>{unit}</option>
