@@ -17,14 +17,15 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
     if (rIObj.ingAmt < 1) localValErrors['ingredientAmount'] = 'Amount must be greater than 0'
     if (rIObj.ingUnit === 'none') localValErrors['ingredientUnit'] = 'Pick a unit of measure'
 
-    if (localValErrors.length) setRIErrors([...rIErrors ,localValErrors])
-    else setRIErrors([...rIErrors])
+    if (Object.values(localValErrors).length) setRIErrors([...rIErrors, localValErrors])
+    else setRIErrors([])
 
     setIndividualErrors(localValErrors)
     setErrors({...individualErrors, ...errors})
   }, [rIObj.ingName, rIObj.ingAmt, rIObj.ingUnit])
 
 
+  // Updates recipeIngredients component in CreateRecipe on field change
   const handleChangeIngName = (name) => {
     rIObj.ingName = name
   }
@@ -41,7 +42,7 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
     return (
       <div>
         <div className="rec-ing-ingredient-drop">
-          <label>ing name</label>
+          <label>Ingredient Name</label>
           <select
             id="ingredient-options"
             value={ingredientIndividual}
@@ -62,7 +63,7 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
         </div>
 
         <div>
-          <label>amount</label>
+          <label>Amount</label>
           <input
             type="number"
             id="number-options"
@@ -80,7 +81,7 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
         <div className="validation-error">{hasSubmitted && individualErrors.ingredientAmount && `*${individualErrors.ingredientAmount}`}</div>
 
         <div className="rec-ing-unit-drop">
-          <label>unit</label>
+          <label>Unit</label>
           <select
           id="unit-options"
             value={unitIndividual}
