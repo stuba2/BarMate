@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import * as recipeActions from '../../redux/recipes'
+import * as randRecActions from '../../redux/random'
 import './LandingPage.css'
 import { NavLink } from "react-router-dom"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall"
 
 const LandingPage = ({}) => {
   const dispatch = useDispatch()
-  const recipes = useSelector(state => state.recipes)
+  const recipes = useSelector(state => state.randomRec)
   const { user } = useSelector(state => state.session)
   const displayRec = Object.values(recipes)[0]
 
 
   useEffect(() => {
-    dispatch(recipeActions.getRandomRecipeThunk())
+    dispatch(randRecActions.getRandomRecipeThunk())
   }, [dispatch])
 
   let updateClass

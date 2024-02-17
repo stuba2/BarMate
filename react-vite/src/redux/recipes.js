@@ -1,4 +1,4 @@
-import {GET_RECIPES, GET_A_RECIPE, GET_USER_RECIPES, POST_RECIPE, MAKABLE_RECIPES, EDIT_RECIPE, DELETE_RECIPE, RANDOM_RECIPE} from './actionTypes'
+import {GET_RECIPES, GET_A_RECIPE, GET_USER_RECIPES, POST_RECIPE, EDIT_RECIPE, DELETE_RECIPE} from './actionTypes'
 
 const getRecipes = (data) => {
   return {
@@ -10,13 +10,6 @@ const getRecipes = (data) => {
 const getOneRecipe = (data) => {
   return {
     type: GET_A_RECIPE,
-    payload: data
-  }
-}
-
-const getRandomRecipe = (data) => {
-  return {
-    type: RANDOM_RECIPE,
     payload: data
   }
 }
@@ -45,13 +38,6 @@ const editRecipe = (data) => {
 const deleteRecipe = (data) => {
   return {
     type: DELETE_RECIPE,
-    payload: data
-  }
-}
-
-const getMakableRecipes = (data) => {
-  return {
-    type: MAKABLE_RECIPES,
     payload: data
   }
 }
@@ -98,19 +84,6 @@ export const getOneRecipeThunk = (recipeId) => async (dispatch) => {
 
     const data = await response.json()
     dispatch(getOneRecipe(data))
-    return data
-  } catch (error) {
-    console.log('error: ', error)
-    return error
-  }
-}
-
-export const getRandomRecipeThunk = () => async (dispatch) => {
-  try {
-    const response = await fetch(`/api/recipes/random`)
-
-    const data = await response.json()
-    dispatch(getRandomRecipe(data))
     return data
   } catch (error) {
     console.log('error: ', error)
@@ -250,18 +223,6 @@ export const editRecipeImageThunk = (recipeId, imgForm) => async (dispatch ) => 
   }
 }
 
-export const getMakableRecipesThunk = () => async (dispatch) => {
-  try {
-    const response = await fetch(`/api/recipes/makable`)
-
-    const data = await response.json()
-    dispatch(getMakableRecipes(data))
-  } catch (error) {
-    console.log('error: ', error)
-    return error
-  }
-}
-
 const initialState = {}
 
 const recipeReducer = (state = initialState, action) => {
@@ -292,20 +253,10 @@ const recipeReducer = (state = initialState, action) => {
       const UsersRecipesArr = action.payload.Recipes
       UsersRecipesArr.map((recipeObj) => newState[recipeObj.id] = recipeObj)
       return newState
-    case RANDOM_RECIPE:
-      newState = {...state}
-      const randRec = action.payload.Recipe
-      randRec.map((recipeObj) => newState[recipeObj.id] = recipeObj)
-      return newState
     case DELETE_RECIPE:
       newState = {...state}
       const recipeId = action.payload
       delete newState[recipeId]
-      return newState
-    case MAKABLE_RECIPES:
-      newState = {}
-      const makableRecipesArr = action.payload.ret
-      makableRecipesArr.map((obj) => newState[obj.id] = obj)
       return newState
     case 'ERROR':
       newState = {}
