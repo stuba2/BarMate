@@ -1,18 +1,28 @@
+.rec-ing-container {
+  margin: 0.625rem 0;
+}
+
 .rec-ing-ingredient-drop {
   display: flex;
   align-items: center;
 }
 
 #ingredient-options {
-  width: 195px;
+  width: 12.188rem;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
 }
 
 #number-options {
-  width: 188px;
+  width: 10.813rem;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
 }
 
 #unit-options {
-  width: 195px;
+  width: 12.875rem;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
 }
 
 .rec-ing-unit-drop {

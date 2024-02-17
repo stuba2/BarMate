@@ -94,7 +94,7 @@ const CreateIngredient = () => {
             placeholder="Image URL"
           />
         </div> */}
-        <div className="create-ing-submit-container"><button className="create-ing-submit-button">Submit</button></div>
+        <div className="create-ing-submit-container"><button className="create-ing-submit-button">Create New Ingredient</button></div>
       </form>
     </div>
   )

@@ -1,7 +1,7 @@
 .create-ing-container {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 0.938rem;
 }
 
 .create-ing-header {

@@ -40,9 +40,9 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
     return <div>...loading</div>
   } else {
     return (
-      <div>
+      <div className="rec-ing-container">
         <div className="rec-ing-ingredient-drop">
-          <label>Ingredient Name</label>
+          <label>Name</label>
           <select
             id="ingredient-options"
             value={ingredientIndividual}

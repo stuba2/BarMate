@@ -342,7 +342,7 @@ def create_image_on_recipe(recipe_id):
 def edit_a_recipe(recipe_id):
   existing_recipe = Recipe.query.get(recipe_id)
   owner_details = existing_recipe.recipes_user
-  recipe_image = existing_recipe.recipe_recipe_image[0]
+  recipe_image = existing_recipe.recipe_recipe_image[0].url if existing_recipe.recipe_recipe_image else None
   form = RecipeEditForm()
   form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -367,7 +367,7 @@ def edit_a_recipe(recipe_id):
         'username': owner_details.username,
         'dob': owner_details.dob,
       },
-      'recipe_image_url': recipe_image.url if recipe_image else None,
+      'recipe_image_url': recipe_image if recipe_image else None,
       'created_at': existing_recipe.created_at,
       'updated_at': existing_recipe.updated_at
     }
