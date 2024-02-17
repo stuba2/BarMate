@@ -83,57 +83,39 @@ def seed_ingredients():
     Amaretto = Ingredient(
         name='Amaretto')
     Baileysirishcream = Ingredient(
-        name='Baileys irish cream')
+        name='Baileys Irish Cream')
     Cognac = Ingredient(
         name='Cognac')
     Heavycream = Ingredient(
-        name='Heavy cream')
+        name='Heavy Cream')
     Milk = Ingredient(
         name='Milk')
     EggWhite = Ingredient(
         name='Egg White')
     proofrum = Ingredient(
-        name='151 proof rum')
+        name='151 Proof Rum')
     WildTurkey = Ingredient(
         name='Wild Turkey')
-    Darkrum = Ingredient(
-        name='Dark rum')
-    Lemonjuice = Ingredient(
-        name='Lemon juice')
     AbsolutVodka = Ingredient(
         name='Absolut Vodka')
-    Tonicwater = Ingredient(
-        name='Tonic water')
     Applejack = Ingredient(
         name='Applejack')
-    Grapefruitjuice = Ingredient(
-        name='Grapefruit juice')
     Strawberryschnapps = Ingredient(
-        name='Strawberry schnapps')
-    Cranberryjuice = Ingredient(
-        name='Cranberry juice')
+        name='Strawberry Schnapps')
     Clubsoda = Ingredient(
-        name='Club soda')
+        name='Club Soda')
     Applejuice = Ingredient(
-        name='Apple juice')
-    Maraschinocherry = Ingredient(
-        name='Maraschino cherry')
+        name='Apple Juice')
     PisangAmbon = Ingredient(
         name='Pisang Ambon')
     Lemonade = Ingredient(
         name='Lemonade')
     Peachnectar = Ingredient(
-        name='Peach nectar')
+        name='Peach Nectar')
     Vermouth = Ingredient(
         name='Vermouth')
     Kahlua = Ingredient(
         name='Kahlua')
-    Eggwhite = Ingredient(
-        name='Egg white')
-    Lightrum = Ingredient(
-        name='Light rum')
-    Triplesec = Ingredient(
-        name='Triple sec')
     Sugar = Ingredient(
         name='Sugar')
     Scotch = Ingredient(
@@ -142,12 +124,6 @@ def seed_ingredients():
         name='Sweet Vermouth')
     DryVermouth = Ingredient(
         name='Dry Vermouth')
-    Orangebitters = Ingredient(
-        name='Orange bitters')
-    lemonjuice = Ingredient(
-        name='lemon juice')
-    maraschinoliqueur = Ingredient(
-        name='maraschino liqueur')
     Rum = Ingredient(
         name='Rum')
     Fruit = Ingredient(
@@ -157,13 +133,11 @@ def seed_ingredients():
     Salt = Ingredient(
         name='Salt')
     Fruitjuice = Ingredient(
-        name='Fruit juice')
+        name='Fruit Juice')
     SodaWater = Ingredient(
         name='Soda Water')
     CremedeBanane = Ingredient(
         name='Creme de Banane')
-    Pineapplejuice = Ingredient(
-        name='Pineapple juice')
     Frangelico = Ingredient(
         name='Frangelico')
     Coffee = Ingredient(
@@ -173,29 +147,23 @@ def seed_ingredients():
     CremedeCacao = Ingredient(
         name='Creme de Cacao')
     Lightcream = Ingredient(
-        name='Light cream')
+        name='Light Cream')
     Nutmeg = Ingredient(
         name='Nutmeg')
     Blendedwhiskey = Ingredient(
-        name='Blended whiskey')
+        name='Blended Whiskey')
     Blackberrybrandy = Ingredient(
-        name='Blackberry brandy')
-    Lemonpeel = Ingredient(
-        name='Lemon peel')
+        name='Blackberry Brandy')
     Campari = Ingredient(
         name='Campari')
-    Orangepeel = Ingredient(
-        name='Orange peel')
     JackDaniels = Ingredient(
         name='Jack Daniels')
     Midorimelonliqueur = Ingredient(
-        name='Midori melon liqueur')
+        name='Midori Melon Liqueur')
     Sourmix = Ingredient(
-        name='Sour mix')
+        name='Sour Mix')
     Bitters = Ingredient(
         name='Bitters')
-    Sodawater = Ingredient(
-        name='Soda water')
     CrownRoyal = Ingredient(
         name='Crown Royal')
     CremedeCassis = Ingredient(
@@ -203,11 +171,11 @@ def seed_ingredients():
     FreshLemonJuice = Ingredient(
         name='Fresh Lemon Juice')
     Peppermintschnapps = Ingredient(
-        name='Peppermint schnapps')
+        name='Peppermint Schnapps')
     Apricotbrandy = Ingredient(
-        name='Apricot brandy')
+        name='Apricot Brandy')
     Applebrandy = Ingredient(
-        name='Apple brandy')
+        name='Apple Brandy')
     Hpnotiq = Ingredient(
         name='Hpnotiq')
     PineappleJuice = Ingredient(
@@ -223,39 +191,31 @@ def seed_ingredients():
     Anise = Ingredient(
         name='Anise')
     Licoriceroot = Ingredient(
-        name='Licorice root')
+        name='Licorice Root')
     Wormwood = Ingredient(
         name='Wormwood')
     AbsolutKurant = Ingredient(
         name='Absolut Kurant')
     Sprite = Ingredient(
         name='Sprite')
-    Grapesoda = Ingredient(
-        name='Grape soda')
     Candy = Ingredient(
         name='Candy')
     Gingerale = Ingredient(
-        name='Ginger ale')
+        name='Ginger Ale')
     Water = Ingredient(
         name='Water')
     Tea = Ingredient(
         name='Tea')
-    Whippedcream = Ingredient(
-        name='Whipped cream')
-    Applecider = Ingredient(
-        name='Apple cider')
     Carrot = Ingredient(
         name='Carrot')
     Orange = Ingredient(
         name='Orange')
     Limejuicecordial = Ingredient(
-        name='Lime juice cordial')
+        name='Lime Juice Cordial')
     SouthernComfort = Ingredient(
         name='Southern Comfort')
     Passionfruitsyrup = Ingredient(
-        name='Passion fruit syrup')
-    Sweetandsour = Ingredient(
-        name='Sweet and sour')
+        name='Passion Fruit Syrup')
     AngosturaBitters = Ingredient(
         name='Angostura Bitters')
     WhiteWine = Ingredient(
@@ -269,7 +229,7 @@ def seed_ingredients():
     Up = Ingredient(
         name='7-Up')
     Appleschnapps = Ingredient(
-        name='Apple schnapps')
+        name='Apple Schnapps')
     Champagne = Ingredient(
         name='Champagne')
     GreenCremedeMenthe = Ingredient(
@@ -279,51 +239,45 @@ def seed_ingredients():
     Cherry = Ingredient(
         name='Cherry')
     Lemonvodka = Ingredient(
-        name='Lemon vodka')
+        name='Lemon Vodka')
     Chocolateicecream = Ingredient(
-        name='Chocolate ice-cream')
+        name='Chocolate Ice Cream')
     Brandy = Ingredient(
         name='Brandy')
-    AppleSchnapps = Ingredient(
-        name='Apple Schnapps')
     Ginger = Ingredient(
         name='Ginger')
     Sherry = Ingredient(
         name='Sherry')
     Sloegin = Ingredient(
-        name='Sloe gin')
+        name='Sloe Gin')
     YellowChartreuse = Ingredient(
         name='Yellow Chartreuse')
     Kummel = Ingredient(
         name='Kummel')
     Cider = Ingredient(
         name='Cider')
-    Maliburum = Ingredient(
-        name='Malibu rum')
     Goldtequila = Ingredient(
-        name='Gold tequila')
+        name='Gold Tequila')
     Creamofcoconut = Ingredient(
-        name='Cream of coconut')
+        name='Cream of Coconut')
     Pineapple = Ingredient(
         name='Pineapple')
-    Ryewhiskey = Ingredient(
-        name='Rye whiskey')
     Redwine = Ingredient(
-        name='Red wine')
+        name='Red Wine')
     Apricot = Ingredient(
         name='Apricot')
     Almondflavoring = Ingredient(
-        name='Almond flavoring')
+        name='Almond Flavoring')
     Grainalcohol = Ingredient(
-        name='Grain alcohol')
+        name='Grain Alcohol')
     Foodcoloring = Ingredient(
-        name='Food coloring')
+        name='Food Coloring')
     Glycerine = Ingredient(
         name='Glycerine')
     WhiteCremedeMenthe = Ingredient(
         name='White Creme de Menthe')
     Angelicaroot = Ingredient(
-        name='Angelica root')
+        name='Angelica Root')
     Almond = Ingredient(
         name='Almond')
     Allspice = Ingredient(
@@ -333,33 +287,29 @@ def seed_ingredients():
     Coriander = Ingredient(
         name='Coriander')
     Marjoramleaves = Ingredient(
-        name='Marjoram leaves')
+        name='Marjoram Leaves')
     Maui = Ingredient(
         name='Maui')
     Icedtea = Ingredient(
-        name='Iced tea')
+        name='Iced Tea')
     AbsolutCitron = Ingredient(
         name='Absolut Citron')
     Bitterlemon = Ingredient(
-        name='Bitter lemon')
+        name='Bitter Lemon')
     Peachschnapps = Ingredient(
-        name='Peach schnapps')
-    Coconutliqueur = Ingredient(
-        name='Coconut liqueur')
+        name='Peach Schnapps')
     Guavajuice = Ingredient(
-        name='Guava juice')
+        name='Guava Juice')
     Brownsugar = Ingredient(
-        name='Brown sugar')
+        name='Brown Sugar')
     Cloves = Ingredient(
         name='Cloves')
     Jägermeister = Ingredient(
         name='Jägermeister')
     Goldschlager = Ingredient(
-        name='Goldschlager')
+        name='Goldschläger')
     Coconutrum = Ingredient(
-        name='Coconut rum')
-    Gingerbeer = Ingredient(
-        name='Ginger beer')
+        name='Coconut Rum')
     Lemon = Ingredient(
         name='Lemon')
     CranberryJuice = Ingredient(
@@ -368,14 +318,12 @@ def seed_ingredients():
         name='Berries')
     Apple = Ingredient(
         name='Apple')
-    FreshLimeJuice = Ingredient(
-        name='Fresh Lime Juice')
     SugarSyrup = Ingredient(
         name='Sugar Syrup')
     Kirschwasser = Ingredient(
         name='Kirschwasser')
     Strawberryliqueur = Ingredient(
-        name='Strawberry liqueur')
+        name='Strawberry Liqueur')
     Strawberries = Ingredient(
         name='Strawberries')
     SchweppesRusschian = Ingredient(
@@ -384,8 +332,6 @@ def seed_ingredients():
         name='Añejo rum')
     DarkCremedeCacao = Ingredient(
         name='Dark Creme de Cacao')
-    Hotchocolate = Ingredient(
-        name='Hot chocolate')
     Sambuca = Ingredient(
         name='Sambuca')
     OrangeBitters = Ingredient(
@@ -393,9 +339,7 @@ def seed_ingredients():
     GreenChartreuse = Ingredient(
         name='Green Chartreuse')
     Irishcream = Ingredient(
-        name='Irish cream')
-    Sugarsyrup = Ingredient(
-        name='Sugar syrup')
+        name='Irish Cream')
     CremedeMure = Ingredient(
         name='Creme de Mure')
     RyeWhiskey = Ingredient(
@@ -405,9 +349,7 @@ def seed_ingredients():
     MaraschinoCherry = Ingredient(
         name='Maraschino Cherry')
     Passionfruitjuice = Ingredient(
-        name='Passion fruit juice')
-    Maraschinoliqueur = Ingredient(
-        name='Maraschino liqueur')
+        name='Passion Fruit Juice')
     Galliano = Ingredient(
         name='Galliano')
     HotChocolate = Ingredient(
@@ -422,42 +364,34 @@ def seed_ingredients():
         name='Everclear')
     Surge = Ingredient(
         name='Surge')
-    Bananaliqueur = Ingredient(
-        name='Banana liqueur')
-    Vanillaicecream = Ingredient(
-        name='Vanilla ice-cream')
     Powderedsugar = Ingredient(
-        name='Powdered sugar')
+        name='Powdered Sugar')
     DarkRum = Ingredient(
         name='Dark Rum')
     SweetandSour = Ingredient(
-        name='Sweet and Sour')
+        name='Sweet & Sour')
     ErinCream = Ingredient(
         name='Erin Cream')
     Advocaat = Ingredient(
         name='Advocaat')
-    Tomatojuice = Ingredient(
-        name='Tomato juice')
-    Worcestershiresauce = Ingredient(
-        name='Worcestershire sauce')
     Tabascosauce = Ingredient(
-        name='Tabasco sauce')
+        name='Tabasco Sauce')
     Ale = Ingredient(
         name='Ale')
     Guinnessstout = Ingredient(
-        name='Guinness stout')
+        name='Guinness Stout')
     Goldrum = Ingredient(
-        name='Gold rum')
+        name='Gold Rum')
     TripleSec = Ingredient(
         name='Triple Sec')
     Egg = Ingredient(
         name='Egg')
     VanillaIceCream = Ingredient(
-        name='Vanilla Ice-Cream')
+        name='Vanilla Ice Cream')
     Butterscotchschnapps = Ingredient(
-        name='Butterscotch schnapps')
+        name='Butterscotch Schnapps')
     Lemonlimesoda = Ingredient(
-        name='Lemon-lime soda')
+        name='Lemon-Lime Soda')
     Raisins = Ingredient(
         name='Raisins')
     Blueberries = Ingredient(
@@ -465,19 +399,19 @@ def seed_ingredients():
     KoolAid = Ingredient(
         name='Kool-Aid')
     Celerysalt = Ingredient(
-        name='Celery salt')
+        name='Celery Salt')
     Godivaliqueur = Ingredient(
-        name='Godiva liqueur')
+        name='Godiva Liqueur')
     Tiamaria = Ingredient(
-        name='Tia maria')
+        name='Tia Maria')
     CoconutLiqueur = Ingredient(
         name='Coconut Liqueur')
     Chambordraspberryliqueur = Ingredient(
-        name='Chambord raspberry liqueur')
+        name='Chambord Raspberry Liqueur')
     Peachtreeschnapps = Ingredient(
-        name='Peachtree schnapps')
+        name='Peachtree Schnapps')
     Coffeeliqueur = Ingredient(
-        name='Coffee liqueur')
+        name='Coffee Liqueur')
     Passoa = Ingredient(
         name='Passoa')
     MalibuRum = Ingredient(
@@ -485,27 +419,25 @@ def seed_ingredients():
     Banana = Ingredient(
         name='Banana')
     Rootbeer = Ingredient(
-        name='Root beer')
+        name='Root Beer')
     Carbonatedwater = Ingredient(
-        name='Carbonated water')
+        name='Carbonated Water')
     RaspberryVodka = Ingredient(
         name='Raspberry Vodka')
     Chocolatesyrup = Ingredient(
-        name='Chocolate syrup')
+        name='Chocolate Syrup')
     Cherrybrandy = Ingredient(
-        name='Cherry brandy')
+        name='Cherry Brandy')
     Yoghurt = Ingredient(
-        name='Yoghurt')
+        name='Yogurt')
     Honey = Ingredient(
         name='Honey')
     WhippedCream = Ingredient(
         name='Whipped Cream')
     caramelsauce = Ingredient(
-        name='caramel sauce')
-    chocolatesauce = Ingredient(
-        name='chocolate sauce')
+        name='Caramel Sauce')
     Minisnickersbars = Ingredient(
-        name='Mini-snickers bars')
+        name='Mini Snickers Bars')
     Cantaloupe = Ingredient(
         name='Cantaloupe')
     CocaCola = Ingredient(
@@ -513,13 +445,11 @@ def seed_ingredients():
     Cachaca = Ingredient(
         name='Cachaca')
     Spicedrum = Ingredient(
-        name='Spiced rum')
+        name='Spiced Rum')
     Falernum = Ingredient(
         name='Falernum')
     blackstraprum = Ingredient(
-        name='blackstrap rum')
-    Whiterum = Ingredient(
-        name='White rum')
+        name='Blackstrap Rum')
     Lager = Ingredient(
         name='Lager')
     Port = Ingredient(
@@ -529,47 +459,43 @@ def seed_ingredients():
     Vanilla = Ingredient(
         name='Vanilla')
     Caramelcoloring = Ingredient(
-        name='Caramel coloring')
-    Eggyolk = Ingredient(
-        name='Egg yolk')
+        name='Caramel Coloring')
     LilletBlanc = Ingredient(
         name='Lillet Blanc')
     Absinthe = Ingredient(
         name='Absinthe')
     Chocolateliqueur = Ingredient(
-        name='Chocolate liqueur')
+        name='Chocolate Liqueur')
     Vanillaextract = Ingredient(
-        name='Vanilla extract')
+        name='Vanilla Extract')
     Chocolate = Ingredient(
         name='Chocolate')
     Peppermintextract = Ingredient(
-        name='Peppermint extract')
+        name='Peppermint Extract')
     Chocolatemilk = Ingredient(
-        name='Chocolate milk')
+        name='Chocolate Milk')
     Cranberries = Ingredient(
         name='Cranberries')
     LemonPeel = Ingredient(
         name='Lemon Peel')
     Cocoapowder = Ingredient(
-        name='Cocoa powder')
+        name='Cocoa Powder')
     Cornstarch = Ingredient(
         name='Cornstarch')
     CherryGrenadine = Ingredient(
         name='Cherry Grenadine')
-    gin = Ingredient(
-        name='gin')
     PeachBitters = Ingredient(
         name='Peach Bitters')
     Blackcurrantcordial = Ingredient(
-        name='Blackcurrant cordial')
+        name='Blackcurrant Cordial')
     Fruitpunch = Ingredient(
-        name='Fruit punch')
+        name='Fruit Punch')
     Olive = Ingredient(
         name='Olive')
     OliveBrine = Ingredient(
         name='Olive Brine')
     demeraraSugar = Ingredient(
-        name='demerara Sugar')
+        name='Demerara Sugar')
     Pisco = Ingredient(
         name='Pisco')
     PineappleSyrup = Ingredient(
@@ -586,16 +512,14 @@ def seed_ingredients():
         name='Hot Damn')
     DubonnetRouge = Ingredient(
         name='Dubonnet Rouge')
-    Whippingcream = Ingredient(
-        name='Whipping cream')
     Vanillasyrup = Ingredient(
-        name='Vanilla syrup')
+        name='Vanilla Syrup')
     Espresso = Ingredient(
         name='Espresso')
     Condensedmilk = Ingredient(
-        name='Condensed milk')
+        name='Condensed Milk')
     Elderflowercordial = Ingredient(
-        name='Elderflower cordial')
+        name='Elderflower Cordial')
     Mezcal = Ingredient(
         name='Mezcal')
     Rose = Ingredient(
@@ -609,13 +533,9 @@ def seed_ingredients():
     ApricotNectar = Ingredient(
         name='Apricot Nectar')
     Pomegranatejuice = Ingredient(
-        name='Pomegranate juice')
-    lemon = Ingredient(
-        name='lemon')
+        name='Pomegranate Juice')
     RaspberryLiqueur = Ingredient(
         name='Raspberry Liqueur')
-    pineapplejuice = Ingredient(
-        name='pineapple juice')
     Lillet = Ingredient(
         name='Lillet')
     Firewater = Ingredient(
@@ -631,21 +551,17 @@ def seed_ingredients():
     PeachVodka = Ingredient(
         name='Peach Vodka')
     Sirupofroses = Ingredient(
-        name='Sirup of roses')
+        name='Sirup of Roses')
     GrapefruitJuice = Ingredient(
         name='Grapefruit Juice')
     Orangespiral = Ingredient(
-        name='Orange spiral')
+        name='Orange Spiral')
     Basil = Ingredient(
         name='Basil')
     AgaveSyrup = Ingredient(
         name='Agave Syrup')
-    Melonliqueur = Ingredient(
-        name='Melon liqueur')
     Grapes = Ingredient(
         name='Grapes')
-    Whisky = Ingredient(
-        name='Whisky')
     WhiteRum = Ingredient(
         name='White Rum')
     Blackberries = Ingredient(
@@ -655,59 +571,51 @@ def seed_ingredients():
     RedChiliFlakes = Ingredient(
         name='Red Chili Flakes')
     Grapejuice = Ingredient(
-        name='Grape juice')
+        name='Grape Juice')
     Carbonatedsoftdrink = Ingredient(
-        name='Carbonated soft drink')
+        name='Carbonated Soft Drink')
     Sherbet = Ingredient(
         name='Sherbet')
     Cornsyrup = Ingredient(
-        name='Corn syrup')
-    Irishwhiskey = Ingredient(
-        name='Irish whiskey')
+        name='Corn Syrup')
     Butter = Ingredient(
         name='Butter')
     Halfandhalf = Ingredient(
-        name='Half-and-half')
+        name='Half-and-Half')
     Marshmallows = Ingredient(
         name='Marshmallows')
     Coconutsyrup = Ingredient(
-        name='Coconut syrup')
+        name='Coconut Syrup')
     Peachbrandy = Ingredient(
-        name='Peach brandy')
-    Anis = Ingredient(
-        name='Anis')
+        name='Peach Brandy')
     Jello = Ingredient(
         name='Jello')
     Mintsyrup = Ingredient(
-        name='Mint syrup')
+        name='Mint Syrup')
     Tennesseewhiskey = Ingredient(
-        name='Tennessee whiskey')
+        name='Tennessee Whiskey')
     Kiwiliqueur = Ingredient(
-        name='Kiwi liqueur')
+        name='Kiwi Liqueur')
     Kiwi = Ingredient(
         name='Kiwi')
     Cranberryvodka = Ingredient(
-        name='Cranberry vodka')
+        name='Cranberry Vodka')
     Apfelkorn = Ingredient(
         name='Apfelkorn')
     Papaya = Ingredient(
         name='Papaya')
     Limepeel = Ingredient(
-        name='Lime peel')
-    Angosturabitters = Ingredient(
-        name='Angostura bitters')
+        name='Lime Peel')
     Asafoetida = Ingredient(
         name='Asafoetida')
     Cayennepepper = Ingredient(
-        name='Cayenne pepper')
+        name='Cayenne Pepper')
     Drambuie = Ingredient(
         name='Drambuie')
     Mango = Ingredient(
         name='Mango')
     Cuminseed = Ingredient(
-        name='Cumin seed')
-    Orgeatsyrup = Ingredient(
-        name='Orgeat syrup')
+        name='Cumin Seed')
     TomatoJuice = Ingredient(
         name='Tomato Juice')
     HotSauce = Ingredient(
@@ -723,59 +631,53 @@ def seed_ingredients():
     PepsiCola = Ingredient(
         name='Pepsi Cola')
     Pinacoladamix = Ingredient(
-        name='Pina colada mix')
+        name='Piña Colada Mix')
     Daiquirimix = Ingredient(
-        name='Daiquiri mix')
+        name='Daiquiri Mix')
     Cardamom = Ingredient(
         name='Cardamom')
     Blackpepper = Ingredient(
-        name='Black pepper')
+        name='Black Pepper')
     Cucumber = Ingredient(
         name='Cucumber')
     Tropicana = Ingredient(
         name='Tropicana')
     Oreocookie = Ingredient(
-        name='Oreo cookie')
-    Jagermeister = Ingredient(
-        name='Jagermeister')
+        name='Oreo Cookie')
     RosemarySyrup = Ingredient(
         name='Rosemary Syrup')
     Rosemary = Ingredient(
         name='Rosemary')
     GrapeSoda = Ingredient(
         name='Grape Soda')
-    ApricotBrandy = Ingredient(
-        name='Apricot Brandy')
     OrangeCuracao = Ingredient(
         name='Orange Curacao')
     BlendedScotch = Ingredient(
         name='Blended Scotch')
     Honeysyrup = Ingredient(
-        name='Honey syrup')
+        name='Honey Syrup')
     GingerSyrup = Ingredient(
         name='Ginger Syrup')
     IslaysinglemaltScotch = Ingredient(
-        name='Islay single malt Scotch')
+        name='Islay Single Malt Scotch')
     EggYolk = Ingredient(
         name='Egg Yolk')
     Coconutmilk = Ingredient(
-        name='Coconut milk')
+        name='Coconut Milk')
     Cherryliqueur = Ingredient(
-        name='Cherry liqueur')
+        name='Cherry Liqueur')
     Pinklemonade = Ingredient(
-        name='Pink lemonade')
+        name='Pink Lemonade')
     Coffeebrandy = Ingredient(
-        name='Coffee brandy')
+        name='Coffee Brandy')
     Limevodka = Ingredient(
-        name='Lime vodka')
+        name='Lime Vodka')
     BlackSambuca = Ingredient(
         name='Black Sambuca')
     Raspberrysyrup = Ingredient(
-        name='Raspberry syrup')
-    Raspberryvodka = Ingredient(
-        name='Raspberry vodka')
+        name='Raspberry Syrup')
     Peychaudbitters = Ingredient(
-        name='Peychaud bitters')
+        name='Peychaud Bitters')
     AmaroMontenegro = Ingredient(
         name='Amaro Montenegro')
     RubyPort = Ingredient(
@@ -786,8 +688,6 @@ def seed_ingredients():
         name='Jim Beam')
     Anisette = Ingredient(
         name='Anisette')
-    Cherries = Ingredient(
-        name='Cherries')
     Fresca = Ingredient(
         name='Fresca')
     Curacao = Ingredient(
@@ -795,7 +695,7 @@ def seed_ingredients():
     Aquavit = Ingredient(
         name='Aquavit')
     Blackcurrantsquash = Ingredient(
-        name='Blackcurrant squash')
+        name='Blackcurrant Squash')
     Ouzo = Ingredient(
         name='Ouzo')
     ChocolateSauce = Ingredient(
@@ -805,31 +705,21 @@ def seed_ingredients():
     JohnnieWalker = Ingredient(
         name='Johnnie Walker')
     Fennelseeds = Ingredient(
-        name='Fennel seeds')
+        name='Fennel Seeds')
     Watermelon = Ingredient(
         name='Watermelon')
-    CremeDeBanane = Ingredient(
-        name='Creme De Banane')
     IrishWhiskey = Ingredient(
         name='Irish Whiskey')
     RossoVermouth = Ingredient(
         name='Rosso Vermouth')
-    up = Ingredient(
-        name='7-up')
     MelonLiqueur = Ingredient(
         name='Melon Liqueur')
     YukonJack = Ingredient(
         name='Yukon Jack')
-    Agavesyrup = Ingredient(
-        name='Agave syrup')
     LightRum = Ingredient(
         name='Light Rum')
-    Maplesyrup = Ingredient(
-        name='Maple syrup')
     Limeade = Ingredient(
         name='Limeade')
-    AppleBrandy = Ingredient(
-        name='Apple Brandy')
     Pernod = Ingredient(
         name='Pernod')
     Zima = Ingredient(
@@ -845,14 +735,9 @@ def seed_ingredients():
     db.session.add(EggWhite)
     db.session.add(proofrum)
     db.session.add(WildTurkey)
-    db.session.add(Darkrum)
-    db.session.add(Lemonjuice)
     db.session.add(AbsolutVodka)
-    db.session.add(Tonicwater)
     db.session.add(Applejack)
-    db.session.add(Grapefruitjuice)
     db.session.add(Strawberryschnapps)
-    db.session.add(Cranberryjuice)
     db.session.add(Clubsoda)
     db.session.add(Applejuice)
     db.session.add(Maraschinocherry)
@@ -861,7 +746,6 @@ def seed_ingredients():
     db.session.add(Peachnectar)
     db.session.add(Vermouth)
     db.session.add(Kahlua)
-    db.session.add(Eggwhite)
     db.session.add(Lightrum)
     db.session.add(Triplesec)
     db.session.add(Sugar)
@@ -869,7 +753,6 @@ def seed_ingredients():
     db.session.add(SweetVermouth)
     db.session.add(DryVermouth)
     db.session.add(Orangebitters)
-    db.session.add(lemonjuice)
     db.session.add(maraschinoliqueur)
     db.session.add(Rum)
     db.session.add(Fruit)
@@ -918,7 +801,6 @@ def seed_ingredients():
     db.session.add(Water)
     db.session.add(Tea)
     db.session.add(Whippedcream)
-    db.session.add(Applecider)
     db.session.add(Carrot)
     db.session.add(Orange)
     db.session.add(Limejuicecordial)
@@ -976,12 +858,10 @@ def seed_ingredients():
     db.session.add(Jägermeister)
     db.session.add(Goldschlager)
     db.session.add(Coconutrum)
-    db.session.add(Gingerbeer)
     db.session.add(Lemon)
     db.session.add(CranberryJuice)
     db.session.add(Berries)
     db.session.add(Apple)
-    db.session.add(FreshLimeJuice)
     db.session.add(SugarSyrup)
     db.session.add(Kirschwasser)
     db.session.add(Strawberryliqueur)
@@ -1075,7 +955,6 @@ def seed_ingredients():
     db.session.add(Cocoapowder)
     db.session.add(Cornstarch)
     db.session.add(CherryGrenadine)
-    db.session.add(gin)
     db.session.add(PeachBitters)
     db.session.add(Blackcurrantcordial)
     db.session.add(Fruitpunch)
@@ -1209,7 +1088,6 @@ def seed_ingredients():
     db.session.add(YukonJack)
     db.session.add(Agavesyrup)
     db.session.add(LightRum)
-    db.session.add(Maplesyrup)
     db.session.add(Limeade)
     db.session.add(AppleBrandy)
     db.session.add(Pernod)
