@@ -15,7 +15,7 @@ def seed_recipe_images():
         url='https://live.staticflickr.com/7255/7560780984_6e2a5f066e_c.jpg')
     malort_highball_pic = RecipeImage(
         recipe_id=4,
-        url='https://negativespace.co/wp-content/uploads/2019/06/negative-space-red-summer-cocktail-473x708.jpg')
+        url='https://i.imgur.com/u0fNBxM.jpeg')
 
     db.session.add(vodka_red_bull_pic)
     db.session.add(gin_apple_cider_pic)

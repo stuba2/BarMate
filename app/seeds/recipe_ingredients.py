@@ -11433,7 +11433,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Raspberry Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Rasberry Vodka').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Raspberry Vodka').first().id
         )
     ir1891 = RecipeIngredient(
             amount=4,
