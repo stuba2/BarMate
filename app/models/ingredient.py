@@ -36,9 +36,7 @@ class Ingredient(db.Model, UserMixin):
         return {
             'id': self.id,
             'name': self.name,
-            'bar_ingredients_users': self.bar_ingredients_users,
-            'ingredients_recipe_ingredients': self.ingredients_recipe_ingredients,
-            'ingredient_ingredient_image': self.ingredient_ingredient_image,
+            'bar_ingredients_users': [user.to_dict() for user in self.bar_ingredients_users],
             "created_at": self.created_at,
             "updated_at": self.updated_at,
         }

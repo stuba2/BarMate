@@ -147,7 +147,7 @@ def seed_recipe_ingredients():
             amount=0.33,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'ABC').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir6 = RecipeIngredient(
             amount=0.33,
@@ -171,7 +171,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ace').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy Cream').first().id
         )
     ir10 = RecipeIngredient(
             amount=0.5,
@@ -189,7 +189,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'ACID').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir13 = RecipeIngredient(
             amount=1,
@@ -201,13 +201,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Adam').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir15 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Adam').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir16 = RecipeIngredient(
             amount=1,
@@ -231,7 +231,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'AT&T').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tonic water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tonic Water').first().id
         )
     ir20 = RecipeIngredient(
             amount=1.5,
@@ -243,13 +243,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A. J.').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit Juice').first().id
         )
     ir22 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Affair').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Strawberry schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Strawberry Schnapps').first().id
         )
     ir23 = RecipeIngredient(
             amount=2,
@@ -261,7 +261,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Affair').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir25 = RecipeIngredient(
             amount=4,
@@ -273,19 +273,19 @@ def seed_recipe_ingredients():
             amount=3,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apello').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit Juice').first().id
         )
     ir27 = RecipeIngredient(
             amount=1,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apello').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
     ir28 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apello').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir29 = RecipeIngredient(
             amount=3,
@@ -303,25 +303,25 @@ def seed_recipe_ingredients():
             amount=6,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Avalon').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
     ir32 = RecipeIngredient(
             amount=1.5,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Avalon').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir33 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Abilene').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir34 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Abilene').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach nectar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Nectar').first().id
         )
     ir35 = RecipeIngredient(
             amount=3,
@@ -345,7 +345,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Almeria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir39 = RecipeIngredient(
             amount=1,
@@ -357,19 +357,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Almeria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir41 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Acapulco').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir42 = RecipeIngredient(
             amount=1.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Acapulco').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir43 = RecipeIngredient(
             amount=1,
@@ -387,7 +387,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Acapulco').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir46 = RecipeIngredient(
             amount=1,
@@ -417,7 +417,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Affinity').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir51 = RecipeIngredient(
             amount=1,
@@ -429,13 +429,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Applecar').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir53 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Applecar').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir54 = RecipeIngredient(
             amount=4.5,
@@ -447,13 +447,13 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Aviation').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir56 = RecipeIngredient(
             amount=1.5,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Aviation').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'maraschino liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Liqueur').first().id
         )
     ir57 = RecipeIngredient(
             amount=1,
@@ -477,7 +477,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Adam Bomb').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir61 = RecipeIngredient(
             amount=1,
@@ -531,7 +531,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Afterglow').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir70 = RecipeIngredient(
             amount=1,
@@ -543,7 +543,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Afternoon').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir72 = RecipeIngredient(
             amount=1.5,
@@ -573,13 +573,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alexander').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir77 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Algonquin').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended Whiskey').first().id
         )
     ir78 = RecipeIngredient(
             amount=1,
@@ -591,7 +591,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Algonquin').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir80 = RecipeIngredient(
             amount=1,
@@ -609,19 +609,19 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Allegheny').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackberry brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackberry Brandy').first().id
         )
     ir83 = RecipeIngredient(
             amount=1.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Allegheny').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir84 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Allegheny').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir85 = RecipeIngredient(
             amount=1,
@@ -639,13 +639,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Americano').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir88 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Americano').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Peel').first().id
         )
     ir89 = RecipeIngredient(
             amount=1,
@@ -657,13 +657,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Applejack').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori Melon Liqueur').first().id
         )
     ir91 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Applejack').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour Mix').first().id
         )
     ir92 = RecipeIngredient(
             amount=1.5,
@@ -735,7 +735,7 @@ def seed_recipe_ingredients():
             amount=0.125,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Adam & Eve').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fresh Lemon Juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir104 = RecipeIngredient(
             amount=0.5,
@@ -753,19 +753,19 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Almond Joy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir107 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Angel Face').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir108 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Angel Face').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Brandy').first().id
         )
     ir109 = RecipeIngredient(
             amount=1,
@@ -837,7 +837,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absinthe #2').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Licorice root').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Licorice Root').first().id
         )
     ir121 = RecipeIngredient(
             amount=1,
@@ -855,13 +855,13 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut Sex').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori Melon Liqueur').first().id
         )
     ir124 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut Sex').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir125 = RecipeIngredient(
             amount=1,
@@ -879,7 +879,7 @@ def seed_recipe_ingredients():
             amount=0.33,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arctic Fish').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grape soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grape Soda').first().id
         )
     ir128 = RecipeIngredient(
             amount=0.33,
@@ -921,7 +921,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='bottle',
             recipe_id=Recipe.query.filter(Recipe.name == 'Aztec Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir135 = RecipeIngredient(
             amount=0.5,
@@ -963,7 +963,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped Cream').first().id
         )
     ir142 = RecipeIngredient(
             amount=3,
@@ -975,13 +975,13 @@ def seed_recipe_ingredients():
             amount=12,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apple Grande').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple cider').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Cider').first().id
         )
     ir144 = RecipeIngredient(
             amount=2,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apple Karate').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
     ir145 = RecipeIngredient(
             amount=1,
@@ -993,31 +993,31 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apricot Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir147 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apricot Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir148 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apricot Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir149 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apricot Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir150 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apricot Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir151 = RecipeIngredient(
             amount=1,
@@ -1041,7 +1041,7 @@ def seed_recipe_ingredients():
             amount=45,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Army special').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime juice cordial').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime Juice Cordial').first().id
         )
     ir155 = RecipeIngredient(
             amount=0.5,
@@ -1065,19 +1065,19 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Atlantic Sun').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion fruit syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion Fruit Syrup').first().id
         )
     ir159 = RecipeIngredient(
             amount=6,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Atlantic Sun').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir160 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Atlantic Sun').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir161 = RecipeIngredient(
             amount=2,
@@ -1161,7 +1161,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour Mix').first().id
         )
     ir175 = RecipeIngredient(
             amount=100,
@@ -1191,13 +1191,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apple Slammer').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Schnapps').first().id
         )
     ir180 = RecipeIngredient(
             amount=1,
             unit='qt',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apricot punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir181 = RecipeIngredient(
             amount=4,
@@ -1257,7 +1257,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Atomic Lokade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir191 = RecipeIngredient(
             amount=1,
@@ -1287,7 +1287,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Abbey Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir196 = RecipeIngredient(
             amount=0.25,
@@ -1305,19 +1305,19 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alfie Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon vodka').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Vodka').first().id
         )
     ir199 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alfie Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir200 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alfie Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir201 = RecipeIngredient(
             amount=1,
@@ -1335,7 +1335,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alice Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir204 = RecipeIngredient(
             amount=4,
@@ -1347,7 +1347,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='scoops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Shake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate ice-cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Ice Cream').first().id
         )
     ir206 = RecipeIngredient(
             amount=2,
@@ -1419,7 +1419,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Adonis Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir218 = RecipeIngredient(
             amount=1,
@@ -1437,19 +1437,19 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alabama Slammer').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe gin').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe Gin').first().id
         )
     ir221 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alabama Slammer').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir222 = RecipeIngredient(
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alaska Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir223 = RecipeIngredient(
             amount=1.5,
@@ -1467,7 +1467,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Alaska Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir226 = RecipeIngredient(
             amount=1,
@@ -1491,7 +1491,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='jigger',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Sunset').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir230 = RecipeIngredient(
             amount=3,
@@ -1521,13 +1521,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arizona Twister').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu Rum').first().id
         )
     ir235 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arizona Twister').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Gold tequila').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Gold Tequila').first().id
         )
     ir236 = RecipeIngredient(
             amount=1,
@@ -1539,13 +1539,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='splash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arizona Twister').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir238 = RecipeIngredient(
             amount=1,
             unit='splash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arizona Twister').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cream of coconut').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cream of Coconut').first().id
         )
     ir239 = RecipeIngredient(
             amount=1,
@@ -1581,13 +1581,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arthur Tompkins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir245 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arthur Tompkins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir246 = RecipeIngredient(
             amount=1,
@@ -1599,13 +1599,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='qt',
             recipe_id=Recipe.query.filter(Recipe.name == 'Artillery Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Rye whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Rye Whiskey').first().id
         )
     ir248 = RecipeIngredient(
             amount=1,
             unit='fifth',
             recipe_id=Recipe.query.filter(Recipe.name == 'Artillery Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir249 = RecipeIngredient(
             amount=1,
@@ -1635,25 +1635,25 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='pint',
             recipe_id=Recipe.query.filter(Recipe.name == 'Artillery Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir254 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Splash of Nash').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir255 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Splash of Nash').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir256 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Splash of Nash').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori Melon Liqueur').first().id
         )
     ir257 = RecipeIngredient(
             amount=0.5,
@@ -1683,13 +1683,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Almond flavoring').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Almond Flavoring').first().id
         )
     ir262 = RecipeIngredient(
             amount=0.5,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grain alcohol').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grain Alcohol').first().id
         )
     # ir263 = RecipeIngredient(
     #         amount=0.5,
@@ -1707,19 +1707,19 @@ def seed_recipe_ingredients():
             amount=3,
             unit='drops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food coloring').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food Coloring').first().id
         )
     # ir266 = RecipeIngredient(
     #         amount=6,
     #         unit='drops',
     #         recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Liqueur').first().id,
-    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food coloring').first().id
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food Coloring').first().id
     #     )
     # ir267 = RecipeIngredient(
     #         amount=2,
     #         unit='drops',
     #         recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Liqueur').first().id,
-    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food coloring').first().id
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food Coloring').first().id
     #     )
     ir268 = RecipeIngredient(
             amount=0.5,
@@ -1761,7 +1761,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Angelica Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angelica root').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angelica Root').first().id
         )
     ir275 = RecipeIngredient(
             amount=1,
@@ -1797,7 +1797,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Angelica Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Marjoram leaves').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Marjoram Leaves').first().id
         )
     ir281 = RecipeIngredient(
             amount=1.5,
@@ -1821,13 +1821,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='drop',
             recipe_id=Recipe.query.filter(Recipe.name == 'Angelica Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food coloring').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food Coloring').first().id
         )
     # ir285 = RecipeIngredient(
     #         amount=1,
     #         unit='drop',
     #         recipe_id=Recipe.query.filter(Recipe.name == 'Angelica Liqueur').first().id,
-    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food coloring').first().id
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food Coloring').first().id
     #     )
     ir286 = RecipeIngredient(
             amount=5,
@@ -1857,7 +1857,7 @@ def seed_recipe_ingredients():
             amount=12,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arizona Stingers').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Iced tea').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Iced Tea').first().id
         )
     ir291 = RecipeIngredient(
             amount=1.5,
@@ -1923,7 +1923,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut limousine').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tonic water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tonic Water').first().id
         )
     ir302 = RecipeIngredient(
             amount=1.5,
@@ -1935,25 +1935,25 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut Stress #2').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir304 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut Stress #2').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut Liqueur').first().id
         )
     ir305 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut Stress #2').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir306 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut Stress #2').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir307 = RecipeIngredient(
             amount=0.75,
@@ -1971,13 +1971,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Aloha Fruit punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Guava juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Guava Juice').first().id
         )
     ir310 = RecipeIngredient(
             amount=1.5,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Aloha Fruit punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir311 = RecipeIngredient(
             amount=1.5,
@@ -1995,19 +1995,19 @@ def seed_recipe_ingredients():
             amount=3,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Aloha Fruit punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir314 = RecipeIngredient(
             amount=4,
             unit='qt',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apple Cider Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple cider').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Cider').first().id
         )
     ir315 = RecipeIngredient(
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apple Cider Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Brown sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Brown Sugar').first().id
         )
     ir316 = RecipeIngredient(
             amount=6,
@@ -2055,13 +2055,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Auburn Headbanger').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschlager').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschläger').first().id
         )
     ir324 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Day at the Beach').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut Rum').first().id
         )
     ir325 = RecipeIngredient(
             amount=0.5,
@@ -2085,19 +2085,19 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Furlong Too Late').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir329 = RecipeIngredient(
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Furlong Too Late').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger beer').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Beer').first().id
         )
     ir330 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Furlong Too Late').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir331 = RecipeIngredient(
             amount=1.5,
@@ -2109,7 +2109,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut Summertime').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir333 = RecipeIngredient(
             amount=0.5,
@@ -2121,7 +2121,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolut Summertime').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir335 = RecipeIngredient(
             amount=1,
@@ -2139,7 +2139,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto And Cream').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir338 = RecipeIngredient(
             amount=0.33,
@@ -2151,13 +2151,13 @@ def seed_recipe_ingredients():
             amount=0.33,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arizona Antifreeze').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori Melon Liqueur').first().id
         )
     ir340 = RecipeIngredient(
             amount=0.33,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Arizona Antifreeze').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir341 = RecipeIngredient(
             amount=1,
@@ -2169,7 +2169,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Gilligan\'s Island').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir343 = RecipeIngredient(
             amount=3,
@@ -2181,7 +2181,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Gilligan\'s Island').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir345 = RecipeIngredient(
             amount=1,
@@ -2229,7 +2229,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Stone Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour Mix').first().id
         )
     ir353 = RecipeIngredient(
             amount=1,
@@ -2265,13 +2265,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolutly Screwed Up').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir359 = RecipeIngredient(
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolutly Screwed Up').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir360 = RecipeIngredient(
             amount=1,
@@ -2313,7 +2313,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Adios Amigos Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fresh Lime Juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime Juice').first().id
         )
     ir367 = RecipeIngredient(
             amount=0.25,
@@ -2331,13 +2331,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'After Dinner Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir370 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'After Dinner Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir371 = RecipeIngredient(
             amount=1,
@@ -2355,19 +2355,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'After Supper Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir374 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'After Supper Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir375 = RecipeIngredient(
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'After Supper Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir376 = RecipeIngredient(
             amount=2,
@@ -2385,7 +2385,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'A midsummernight dream').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Strawberry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Strawberry Liqueur').first().id
         )
     ir379 = RecipeIngredient(
             amount=5,
@@ -2397,13 +2397,13 @@ def seed_recipe_ingredients():
             amount=3,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apple Pie with A Crust').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
     ir381 = RecipeIngredient(
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Apple Pie with A Crust').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu Rum').first().id
         )
     ir382 = RecipeIngredient(
             amount=3,
@@ -2415,7 +2415,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Night In Old Mandalay').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir384 = RecipeIngredient(
             amount=1,
@@ -2433,19 +2433,19 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Night In Old Mandalay').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir387 = RecipeIngredient(
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Night In Old Mandalay').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir388 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'A Night In Old Mandalay').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir389 = RecipeIngredient(
             amount=0.75,
@@ -2487,7 +2487,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'A.D.M. (After Dinner Mint)').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Hot chocolate').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Hot Chocolate').first().id
         )
     ir396 = RecipeIngredient(
             amount=2,
@@ -2499,13 +2499,13 @@ def seed_recipe_ingredients():
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolutely Cranberry Smash').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir398 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Absolutely Cranberry Smash').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir399 = RecipeIngredient(
             amount=1,
@@ -2517,7 +2517,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Amaretto Stone Sour Alternative').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour Mix').first().id
         )
     ir401 = RecipeIngredient(
             amount=2,
@@ -2541,7 +2541,7 @@ def seed_recipe_ingredients():
             amount=0.33,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'B-52').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir405 = RecipeIngredient(
             amount=0.33,
@@ -2607,13 +2607,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boxcar').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir416 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boxcar').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir417 = RecipeIngredient(
             amount=0.5,
@@ -2625,19 +2625,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boxcar').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir419 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Big Red').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish Cream').first().id
         )
     ir420 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Big Red').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschlager').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschläger').first().id
         )
     ir421 = RecipeIngredient(
             amount=6,
@@ -2649,7 +2649,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bellini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir423 = RecipeIngredient(
             amount=4,
@@ -2661,13 +2661,13 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bramble').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir425 = RecipeIngredient(
             amount=1,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bramble').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir426 = RecipeIngredient(
             amount=1.5,
@@ -2709,7 +2709,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bluebird').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir433 = RecipeIngredient(
             amount=0.5,
@@ -2727,13 +2727,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bluebird').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir436 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bluebird').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir437 = RecipeIngredient(
             amount=2,
@@ -2769,19 +2769,19 @@ def seed_recipe_ingredients():
             amount=10,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bora Bora').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir443 = RecipeIngredient(
             amount=6,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bora Bora').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion fruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion Fruit Juice').first().id
         )
     ir444 = RecipeIngredient(
             amount=1,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bora Bora').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir445 = RecipeIngredient(
             amount=1,
@@ -2811,13 +2811,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boomerang').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Liqueur').first().id
         )
     ir450 = RecipeIngredient(
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boomerang').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir451 = RecipeIngredient(
             amount=4.5,
@@ -2871,7 +2871,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Broadside').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir460 = RecipeIngredient(
             amount=0.5,
@@ -2937,7 +2937,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='bottle',
             recipe_id=Recipe.query.filter(Recipe.name == 'Brain Fart').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir471 = RecipeIngredient(
             amount=1,
@@ -2955,19 +2955,19 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blackthorn').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe gin').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe Gin').first().id
         )
     ir474 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blackthorn').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir475 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bob Marley').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori Melon Liqueur').first().id
         )
     ir476 = RecipeIngredient(
             amount=0.5,
@@ -2979,7 +2979,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bob Marley').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschlager').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschläger').first().id
         )
     ir478 = RecipeIngredient(
             amount=2,
@@ -2991,7 +2991,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bible Belt').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir480 = RecipeIngredient(
             amount=2,
@@ -3003,7 +3003,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bible Belt').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour Mix').first().id
         )
     ir482 = RecipeIngredient(
             amount=0.25,
@@ -3015,7 +3015,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bubble Gum').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Banana liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Banana Liqueur').first().id
         )
     ir484 = RecipeIngredient(
             amount=0.25,
@@ -3027,13 +3027,13 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bubble Gum').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir486 = RecipeIngredient(
             amount=0.33,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bumble Bee').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir487 = RecipeIngredient(
             amount=0.33,
@@ -3063,13 +3063,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='scoops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Baby Eskimo').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla ice-cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Ice Cream').first().id
         )
     ir492 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boston Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended Whiskey').first().id
         )
     ir493 = RecipeIngredient(
             amount=0.5,
@@ -3081,13 +3081,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boston Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir495 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boston Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     # ir496 = RecipeIngredient(
     #         amount=1,
@@ -3117,7 +3117,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bahama Mama').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Banana liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Banana Liqueur').first().id
         )
     ir501 = RecipeIngredient(
             amount=1,
@@ -3141,7 +3141,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bahama Mama').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and Sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir505 = RecipeIngredient(
             amount=30,
@@ -3171,25 +3171,25 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Mary').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tomato juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tomato Juice').first().id
         )
     ir510 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Mary').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir511 = RecipeIngredient(
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Mary').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Worcestershire sauce').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Worcestershire Sauce').first().id
         )
     ir512 = RecipeIngredient(
             amount=2,
             unit='drops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Mary').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco sauce').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco Sauce').first().id
         )
     ir513 = RecipeIngredient(
             amount=1,
@@ -3207,7 +3207,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Black & Tan').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Guinness stout').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Guinness Stout').first().id
         )
     ir516 = RecipeIngredient(
             amount=1,
@@ -3225,7 +3225,7 @@ def seed_recipe_ingredients():
             amount=6,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bee\'s Knees').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Gold rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Gold Rum').first().id
         )
     ir519 = RecipeIngredient(
             amount=2,
@@ -3267,7 +3267,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Brandy Flip').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir526 = RecipeIngredient(
             amount=0.125,
@@ -3291,7 +3291,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Brandy Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     # ir530 = RecipeIngredient(
     #         amount=0.5,
@@ -3309,13 +3309,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='scoops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Butter Baby').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Ice-Cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Ice Cream').first().id
         )
     ir533 = RecipeIngredient(
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Butter Baby').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Butterscotch schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Butterscotch Schnapps').first().id
         )
     ir534 = RecipeIngredient(
             amount=1,
@@ -3345,7 +3345,7 @@ def seed_recipe_ingredients():
             amount=1.25,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boulevardier').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Rye whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Rye Whiskey').first().id
         )
     ir539 = RecipeIngredient(
             amount=1,
@@ -3363,7 +3363,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bourbon Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir542 = RecipeIngredient(
             amount=0.5,
@@ -3381,7 +3381,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bourbon Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir545 = RecipeIngredient(
             amount=2,
@@ -3393,7 +3393,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Belgian Blue').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut Liqueur').first().id
         )
     ir547 = RecipeIngredient(
             amount=1,
@@ -3429,13 +3429,13 @@ def seed_recipe_ingredients():
             amount=12,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-lime soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-Lime Soda').first().id
         )
     # ir553 = RecipeIngredient(
     #         amount=12,
     #         unit='oz',
     #         recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Punch').first().id,
-    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-lime soda').first().id
+    #         ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-Lime Soda').first().id
     #     )
     ir554 = RecipeIngredient(
             amount=1,
@@ -3483,25 +3483,25 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Maria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tomato juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tomato Juice').first().id
         )
     ir562 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Maria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir563 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Maria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco sauce').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco Sauce').first().id
         )
     ir564 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bloody Maria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Celery salt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Celery Salt').first().id
         )
     ir565 = RecipeIngredient(
             amount=1,
@@ -3513,13 +3513,13 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blind Russian').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir567 = RecipeIngredient(
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blind Russian').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Godiva liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Godiva Liqueur').first().id
         )
     ir568 = RecipeIngredient(
             amount=0.75,
@@ -3531,7 +3531,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blind Russian').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Butterscotch schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Butterscotch Schnapps').first().id
         )
     ir570 = RecipeIngredient(
             amount=1,
@@ -3549,7 +3549,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blue Mountain').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tia maria').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tia Maria').first().id
         )
     ir573 = RecipeIngredient(
             amount=0.5,
@@ -3567,7 +3567,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blue Mountain').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir576 = RecipeIngredient(
             amount=1,
@@ -3615,13 +3615,13 @@ def seed_recipe_ingredients():
             amount=15,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bombay Cassis').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fresh Lime Juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime Juice').first().id
         )
     ir584 = RecipeIngredient(
             amount=75,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bombay Cassis').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger beer').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Beer').first().id
         )
     ir585 = RecipeIngredient(
             amount=1,
@@ -3651,7 +3651,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bourbon Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir590 = RecipeIngredient(
             amount=2,
@@ -3663,7 +3663,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bourbon Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir592 = RecipeIngredient(
             amount=0.5,
@@ -3675,25 +3675,25 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bruised Heart').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord raspberry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord Raspberry Liqueur').first().id
         )
     ir594 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bruised Heart').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peachtree schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peachtree Schnapps').first().id
         )
     ir595 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bruised Heart').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir596 = RecipeIngredient(
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Black Russian').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee Liqueur').first().id
         )
     ir597 = RecipeIngredient(
             amount=1.5,
@@ -3711,7 +3711,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Baby Guinness').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir600 = RecipeIngredient(
             amount=1,
@@ -3723,7 +3723,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Brandy Cobbler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir602 = RecipeIngredient(
             amount=1,
@@ -3741,7 +3741,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Brandy Cobbler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir605 = RecipeIngredient(
             amount=1,
@@ -3777,7 +3777,7 @@ def seed_recipe_ingredients():
             amount=6,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blue Hurricane').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and Sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir611 = RecipeIngredient(
             amount=1,
@@ -3789,7 +3789,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boston Sidecar').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir613 = RecipeIngredient(
             amount=0.75,
@@ -3801,7 +3801,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boston Sidecar').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir615 = RecipeIngredient(
             amount=0.5,
@@ -3855,13 +3855,13 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Banana Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir624 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Banana Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir625 = RecipeIngredient(
             amount=1,
@@ -3903,31 +3903,31 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bellini Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach nectar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Nectar').first().id
         )
     ir632 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bellini Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir633 = RecipeIngredient(
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bellini Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir634 = RecipeIngredient(
             amount=0.5,
             unit='glass',
             recipe_id=Recipe.query.filter(Recipe.name == 'Black and Brown').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Guinness stout').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Guinness Stout').first().id
         )
     ir635 = RecipeIngredient(
             amount=0.5,
             unit='glass',
             recipe_id=Recipe.query.filter(Recipe.name == 'Black and Brown').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Root beer').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Root Beer').first().id
         )
     ir636 = RecipeIngredient(
             amount=1,
@@ -3945,13 +3945,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Brandy Alexander').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir639 = RecipeIngredient(
             amount=1.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bacardi Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir640 = RecipeIngredient(
             amount=1,
@@ -3963,7 +3963,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bacardi Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir642 = RecipeIngredient(
             amount=1,
@@ -3975,7 +3975,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bleeding Surgeon').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir644 = RecipeIngredient(
             amount=1,
@@ -3993,7 +3993,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='glass',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bleeding Surgeon').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir647 = RecipeIngredient(
             amount=2,
@@ -4023,7 +4023,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Blueberry Mojito').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-lime soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-Lime Soda').first().id
         )
     ir652 = RecipeIngredient(
             amount=0.75,
@@ -4101,7 +4101,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Banana Milk Shake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir665 = RecipeIngredient(
             amount=0.5,
@@ -4119,7 +4119,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Brave Bull Shooter').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco sauce').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco Sauce').first().id
         )
     ir668 = RecipeIngredient(
             amount=1,
@@ -4137,31 +4137,31 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Between The Sheets').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir671 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Between The Sheets').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir672 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Between The Sheets').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir673 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bailey\'s Dream Shake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir674 = RecipeIngredient(
             amount=2,
             unit='scoops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bailey\'s Dream Shake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla ice-cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Ice Cream').first().id
         )
     ir675 = RecipeIngredient(
             amount=1.5,
@@ -4185,7 +4185,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Bobby Burns Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir679 = RecipeIngredient(
             amount=0.5,
@@ -4203,7 +4203,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Banana Strawberry Shake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir682 = RecipeIngredient(
             amount=1,
@@ -4221,7 +4221,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boozy Snickers Milkshake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Ice-Cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Ice Cream').first().id
         )
     ir685 = RecipeIngredient(
             amount=1,
@@ -4233,7 +4233,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boozy Snickers Milkshake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Godiva liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Godiva Liqueur').first().id
         )
     ir687 = RecipeIngredient(
             amount=1,
@@ -4245,19 +4245,19 @@ def seed_recipe_ingredients():
             amount=4,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boozy Snickers Milkshake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'caramel sauce').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Caramel Sauce').first().id
         )
     ir689 = RecipeIngredient(
             amount=4,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boozy Snickers Milkshake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'chocolate sauce').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Sauce').first().id
         )
     ir690 = RecipeIngredient(
             amount=15,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Boozy Snickers Milkshake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Mini-snickers bars').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Mini Snickers Bars').first().id
         )
     ir691 = RecipeIngredient(
             amount=0.5,
@@ -4275,7 +4275,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='scoops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Brandon and Will\'s Coke Float').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla ice-cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Ice Cream').first().id
         )
     ir694 = RecipeIngredient(
             amount=1,
@@ -4305,7 +4305,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Banana Strawberry Shake Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
     ir699 = RecipeIngredient(
             amount=2,
@@ -4317,19 +4317,19 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casino').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Liqueur').first().id
         )
     ir701 = RecipeIngredient(
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casino').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir702 = RecipeIngredient(
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casino').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir703 = RecipeIngredient(
             amount=1,
@@ -4359,13 +4359,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cream Soda').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Spiced rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Spiced Rum').first().id
         )
     ir710 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cuba Libra').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir711 = RecipeIngredient(
             amount=1,
@@ -4383,25 +4383,25 @@ def seed_recipe_ingredients():
             amount=1.25,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cherry Rum').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir714 = RecipeIngredient(
             amount=1.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cherry Rum').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry Brandy').first().id
         )
     ir715 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cherry Rum').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir716 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cuba Libre').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir717 = RecipeIngredient(
             amount=0.5,
@@ -4437,7 +4437,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Corn n Oil').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'blackstrap rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackstrap Rum').first().id
         )
     ir723 = RecipeIngredient(
             amount=1,
@@ -4455,13 +4455,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casa Blanca').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir726 = RecipeIngredient(
             amount=1.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casa Blanca').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir727 = RecipeIngredient(
             amount=1.5,
@@ -4473,7 +4473,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casa Blanca').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Liqueur').first().id
         )
     ir729 = RecipeIngredient(
             amount=1.5,
@@ -4497,7 +4497,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Clover Club').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir733 = RecipeIngredient(
             amount=2,
@@ -4515,7 +4515,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Caipirissima').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'White rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'White Rum').first().id
         )
     ir736 = RecipeIngredient(
             amount=1,
@@ -4533,13 +4533,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'City Slicker').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir739 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'City Slicker').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir740 = RecipeIngredient(
             amount=1,
@@ -4557,7 +4557,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chicago Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir743 = RecipeIngredient(
             amount=1,
@@ -4575,13 +4575,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chicago Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir746 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chicago Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir747 = RecipeIngredient(
             amount=1.25,
@@ -4605,7 +4605,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cosmopolitan').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir751 = RecipeIngredient(
             amount=2,
@@ -4647,25 +4647,25 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casino Royale').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir758 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casino Royale').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Liqueur').first().id
         )
     ir759 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casino Royale').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir760 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Casino Royale').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg yolk').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg Yolk').first().id
         )
     ir761 = RecipeIngredient(
             amount=0.75,
@@ -4701,7 +4701,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chocolate Milk').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Liqueur').first().id
         )
     ir767 = RecipeIngredient(
             amount=0.5,
@@ -4725,7 +4725,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Clove Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe gin').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe Gin').first().id
         )
     ir771 = RecipeIngredient(
             amount=0.5,
@@ -4743,7 +4743,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Coffee Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir774 = RecipeIngredient(
             amount=2.5,
@@ -4773,7 +4773,7 @@ def seed_recipe_ingredients():
             amount=7,
             unit='drops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Coke and Drops').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir779 = RecipeIngredient(
             amount=125,
@@ -4791,7 +4791,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cranberry Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir782 = RecipeIngredient(
             amount=1.5,
@@ -4803,19 +4803,19 @@ def seed_recipe_ingredients():
             amount=4,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cranberry Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir784 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cranberry Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Almond flavoring').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Almond Flavoring').first().id
         )
     ir785 = RecipeIngredient(
             amount=2,
             unit='qt',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cranberry Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir786 = RecipeIngredient(
             amount=8,
@@ -4833,25 +4833,25 @@ def seed_recipe_ingredients():
             amount=1,
             unit='pint',
             recipe_id=Recipe.query.filter(Recipe.name == 'Creme de Menthe').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grain alcohol').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grain Alcohol').first().id
         )
     ir789 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Creme de Menthe').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peppermint extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peppermint Extract').first().id
         )
     ir790 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Creme de Menthe').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food coloring').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Food Coloring').first().id
         )
     ir791 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chocolate Monkey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Banana liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Banana Liqueur').first().id
         )
     ir792 = RecipeIngredient(
             amount=2,
@@ -4863,25 +4863,25 @@ def seed_recipe_ingredients():
             amount=2,
             unit='scoops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chocolate Monkey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate ice-cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Ice Cream').first().id
         )
     ir794 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chocolate Monkey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Syrup').first().id
         )
     ir795 = RecipeIngredient(
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chocolate Monkey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate milk').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Milk').first().id
         )
     ir796 = RecipeIngredient(
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chocolate Monkey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped Cream').first().id
         )
     ir797 = RecipeIngredient(
             amount=1,
@@ -4911,7 +4911,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='l',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cranberry Cordial').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir802 = RecipeIngredient(
             amount=6,
@@ -4959,7 +4959,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Champagne Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir810 = RecipeIngredient(
             amount=1,
@@ -4971,7 +4971,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'California Lemonade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended Whiskey').first().id
         )
     ir812 = RecipeIngredient(
             amount=1,
@@ -4989,7 +4989,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'California Lemonade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir815 = RecipeIngredient(
             amount=0.25,
@@ -5013,7 +5013,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'California Root Beer').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir819 = RecipeIngredient(
             amount=2,
@@ -5073,7 +5073,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='splash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cosmopolitan Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir829 = RecipeIngredient(
             amount=1,
@@ -5085,7 +5085,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Caribbean Boilermaker').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir831 = RecipeIngredient(
             amount=3,
@@ -5121,7 +5121,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Classic Old-Fashioned').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir837 = RecipeIngredient(
             amount=1,
@@ -5139,7 +5139,7 @@ def seed_recipe_ingredients():
             amount=5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Chocolate Black Russian').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate ice-cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Ice Cream').first().id
         )
     ir840 = RecipeIngredient(
             amount=4,
@@ -5187,7 +5187,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Castillian Hot Chocolate').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cocoa powder').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cocoa Powder').first().id
         )
     ir848 = RecipeIngredient(
             amount=1,
@@ -5235,7 +5235,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cherry Electric Lemonade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'White rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'White Rum').first().id
         )
     ir856 = RecipeIngredient(
             amount=1,
@@ -5253,19 +5253,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cherry Electric Lemonade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir859 = RecipeIngredient(
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Cherry Electric Lemonade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir860 = RecipeIngredient(
             amount=6,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Derby').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'gin').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Gin').first().id
         )
     ir861 = RecipeIngredient(
             amount=2,
@@ -5295,13 +5295,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Diesel').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackcurrant cordial').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackcurrant Cordial').first().id
         )
     ir866 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir867 = RecipeIngredient(
             amount=0.5,
@@ -5313,7 +5313,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir869 = RecipeIngredient(
             amount=3,
@@ -5331,7 +5331,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Downshift').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fruit punch').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fruit Punch').first().id
         )
     ir872 = RecipeIngredient(
             amount=1,
@@ -5349,7 +5349,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Downshift').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir875 = RecipeIngredient(
             amount=1.5,
@@ -5361,7 +5361,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Dragonfly').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir877 = RecipeIngredient(
             amount=1,
@@ -5403,7 +5403,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Dry Rob Roy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir884 = RecipeIngredient(
             amount=2,
@@ -5445,7 +5445,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Darkwood Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir891 = RecipeIngredient(
             amount=1,
@@ -5475,7 +5475,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Dark Caipirinha').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'demerara Sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Demerara Sugar').first().id
         )
     ir896 = RecipeIngredient(
             amount=1,
@@ -5565,13 +5565,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Dubonnet Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir911 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Drinking Chocolate').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy Cream').first().id
         )
     ir912 = RecipeIngredient(
             amount=6,
@@ -5601,7 +5601,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Drinking Chocolate').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped Cream').first().id
         )
     ir917 = RecipeIngredient(
             amount=2,
@@ -5619,7 +5619,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Cream').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Syrup').first().id
         )
     ir920 = RecipeIngredient(
             amount=6,
@@ -5631,13 +5631,13 @@ def seed_recipe_ingredients():
             amount=6,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Cream').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir922 = RecipeIngredient(
             amount=6,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Nog #4').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg yolk').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg Yolk').first().id
         )
     ir923 = RecipeIngredient(
             amount=0.25,
@@ -5655,7 +5655,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Nog #4').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir926 = RecipeIngredient(
             amount=0.5,
@@ -5667,7 +5667,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Nog #4').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir928 = RecipeIngredient(
             amount=0.25,
@@ -5679,13 +5679,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Nog #4').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipping cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped Cream').first().id
         )
     ir930 = RecipeIngredient(
             amount=6,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Nog #4').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     # ir931 = RecipeIngredient(
     #         amount=0.25,
@@ -5733,7 +5733,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Espresso Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir939 = RecipeIngredient(
             amount=1,
@@ -5745,7 +5745,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Espresso Rumtini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Syrup').first().id
         )
     ir941 = RecipeIngredient(
             amount=1,
@@ -5775,7 +5775,7 @@ def seed_recipe_ingredients():
             amount=13,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Nog - Healthy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Condensed milk').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Condensed Milk').first().id
         )
     ir946 = RecipeIngredient(
             amount=0.75,
@@ -5787,7 +5787,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg Nog - Healthy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir948 = RecipeIngredient(
             amount=1,
@@ -5805,7 +5805,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'English Rose Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir951 = RecipeIngredient(
             amount=1.5,
@@ -5829,7 +5829,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'English Rose Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir955 = RecipeIngredient(
             amount=1,
@@ -5853,7 +5853,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Elderflower Caipirinha').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Elderflower cordial').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Elderflower Cordial').first().id
         )
     ir959 = RecipeIngredient(
             amount=6,
@@ -5883,7 +5883,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Egg-Nog - Classic Cooked').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir964 = RecipeIngredient(
             amount=2,
@@ -5895,13 +5895,13 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Empellón Cocina\'s Fat-Washed Mezcal').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Liqueur').first().id
         )
     ir966 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Empellón Cocina\'s Fat-Washed Mezcal').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee Liqueur').first().id
         )
     ir967 = RecipeIngredient(
             amount=750,
@@ -5961,7 +5961,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Foxy Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir977 = RecipeIngredient(
             amount=1.5,
@@ -5979,7 +5979,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'French 75').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir980 = RecipeIngredient(
             amount=4,
@@ -5997,7 +5997,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'French 75').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir983 = RecipeIngredient(
             amount=2,
@@ -6039,7 +6039,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Frisco Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended Whiskey').first().id
         )
     ir990 = RecipeIngredient(
             amount=0.5,
@@ -6075,7 +6075,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Fruit Shake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir996 = RecipeIngredient(
             amount=1,
@@ -6105,7 +6105,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='can',
             recipe_id=Recipe.query.filter(Recipe.name == 'Fruit Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
     ir1001 = RecipeIngredient(
             amount=1,
@@ -6135,7 +6135,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='l',
             recipe_id=Recipe.query.filter(Recipe.name == 'Fruit Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir1006 = RecipeIngredient(
             amount=0.5,
@@ -6171,13 +6171,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Funk and Soul').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pomegranate juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pomegranate Juice').first().id
         )
     ir1012 = RecipeIngredient(
             amount=0.5,
             unit='juice',
             recipe_id=Recipe.query.filter(Recipe.name == 'Funk and Soul').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'lemon').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
         )
     ir1013 = RecipeIngredient(
             amount=1,
@@ -6195,7 +6195,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='glass',
             recipe_id=Recipe.query.filter(Recipe.name == 'Fuzzy Asshole').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir1016 = RecipeIngredient(
             amount=4.5,
@@ -6213,7 +6213,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'French Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1019 = RecipeIngredient(
             amount=1,
@@ -6255,7 +6255,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Fahrenheit 5000').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco sauce').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco Sauce').first().id
         )
     ir1026 = RecipeIngredient(
             amount=2,
@@ -6267,19 +6267,19 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Flying Dutchman').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1028 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Frozen Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1029 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Frozen Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1030 = RecipeIngredient(
             amount=1.5,
@@ -6309,13 +6309,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Fruit Flip-Flop').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir1035 = RecipeIngredient(
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Fruit Flip-Flop').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fruit Juice').first().id
         )
     ir1036 = RecipeIngredient(
             amount=1,
@@ -6339,7 +6339,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Flying Scotchman').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir1040 = RecipeIngredient(
             amount=1.5,
@@ -6369,7 +6369,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Flaming Dr. Pepper').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir1045 = RecipeIngredient(
             amount=1,
@@ -6405,7 +6405,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Flaming Lamborghini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1051 = RecipeIngredient(
             amount=0.25,
@@ -6423,7 +6423,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Frozen Mint Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1054 = RecipeIngredient(
             amount=1,
@@ -6447,7 +6447,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Frozen Pineapple Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1058 = RecipeIngredient(
             amount=4,
@@ -6513,7 +6513,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Godchild').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy Cream').first().id
         )
     ir1069 = RecipeIngredient(
             amount=2,
@@ -6531,7 +6531,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1072 = RecipeIngredient(
             amount=2,
@@ -6543,7 +6543,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1074 = RecipeIngredient(
             amount=0.5,
@@ -6561,7 +6561,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir1077 = RecipeIngredient(
             amount=5,
@@ -6573,7 +6573,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gagliardo').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1079 = RecipeIngredient(
             amount=1,
@@ -6585,7 +6585,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gagliardo').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sirup of roses').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sirup of Roses').first().id
         )
     ir1081 = RecipeIngredient(
             amount=1.5,
@@ -6615,7 +6615,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='l',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gluehwein').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir1086 = RecipeIngredient(
             amount=125,
@@ -6645,7 +6645,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gluehwein').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1091 = RecipeIngredient(
             amount=4,
@@ -6687,13 +6687,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Toddy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1098 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Toddy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1099 = RecipeIngredient(
             amount=2,
@@ -6705,7 +6705,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Smash').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Carbonated water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Carbonated Water').first().id
         )
     ir1101 = RecipeIngredient(
             amount=1,
@@ -6741,7 +6741,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Daisy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1107 = RecipeIngredient(
             amount=0.5,
@@ -6759,7 +6759,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Daisy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir1110 = RecipeIngredient(
             amount=1,
@@ -6807,7 +6807,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1118 = RecipeIngredient(
             amount=1,
@@ -6819,7 +6819,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Peel').first().id
         )
     ir1120 = RecipeIngredient(
             amount=1.5,
@@ -6849,7 +6849,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='juice',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Rickey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'lemon').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
         )
     ir1125 = RecipeIngredient(
             amount=1,
@@ -6879,7 +6879,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Squirt').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1130 = RecipeIngredient(
             amount=3,
@@ -6897,13 +6897,13 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Grand Blue').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu Rum').first().id
         )
     ir1133 = RecipeIngredient(
             amount=1.5,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Grand Blue').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir1134 = RecipeIngredient(
             amount=1.5,
@@ -6915,7 +6915,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Grand Blue').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir1136 = RecipeIngredient(
             amount=2,
@@ -6951,7 +6951,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin Swizzle').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir1142 = RecipeIngredient(
             amount=1.5,
@@ -6963,13 +6963,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Grass Skirt').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1144 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Grass Skirt').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1145 = RecipeIngredient(
             amount=0.5,
@@ -6999,7 +6999,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Grasshopper').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir1150 = RecipeIngredient(
             amount=1,
@@ -7011,7 +7011,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Grim Reaper').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir1152 = RecipeIngredient(
             amount=1,
@@ -7113,7 +7113,7 @@ def seed_recipe_ingredients():
             amount=5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gin And Tonic').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tonic water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tonic Water').first().id
         )
     ir1169 = RecipeIngredient(
             amount=1,
@@ -7167,7 +7167,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gentleman\'s Club').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir1178 = RecipeIngredient(
             amount=25,
@@ -7221,7 +7221,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gideon\'s Green Dinosaur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir1187 = RecipeIngredient(
             amount=0.5,
@@ -7233,7 +7233,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gideon\'s Green Dinosaur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1189 = RecipeIngredient(
             amount=0.5,
@@ -7245,7 +7245,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Gideon\'s Green Dinosaur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Melon Liqueur').first().id
         )
     ir1191 = RecipeIngredient(
             amount=1,
@@ -7275,13 +7275,13 @@ def seed_recipe_ingredients():
             amount=4,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'H.D.').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whisky').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whiskey').first().id
         )
     ir1196 = RecipeIngredient(
             amount=8,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'H.D.').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1197 = RecipeIngredient(
             amount=6,
@@ -7323,7 +7323,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Hot Toddy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'lemon').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
         )
     ir1204 = RecipeIngredient(
             amount=2,
@@ -7347,7 +7347,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Horse\'s Neck').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1208 = RecipeIngredient(
             amount=2,
@@ -7359,7 +7359,7 @@ def seed_recipe_ingredients():
             amount=5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Horse\'s Neck').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir1210 = RecipeIngredient(
             amount=2,
@@ -7371,7 +7371,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Happy Skipper').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Spiced rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Spiced Rum').first().id
         )
     ir1212 = RecipeIngredient(
             amount=25,
@@ -7443,19 +7443,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Havana Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1224 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Havana Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1225 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Havana Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1227 = RecipeIngredient(
             amount=2.5,
@@ -7467,7 +7467,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Homemade Kahlua').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Corn syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Corn Syrup').first().id
         )
     ir1229 = RecipeIngredient(
             amount=1.5,
@@ -7479,7 +7479,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Homemade Kahlua').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir1231 = RecipeIngredient(
             amount=3,
@@ -7497,13 +7497,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Hot Creamy Bush').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish Whiskey').first().id
         )
     ir1234 = RecipeIngredient(
             amount=0.75,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Hot Creamy Bush').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1235 = RecipeIngredient(
             amount=6,
@@ -7539,13 +7539,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Hawaiian Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1241 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Hawaiian Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1242 = RecipeIngredient(
             amount=12,
@@ -7587,7 +7587,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Highland Fling Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir1249 = RecipeIngredient(
             amount=1,
@@ -7611,13 +7611,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Hot Chocolate to Die for').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir1253 = RecipeIngredient(
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Hot Chocolate to Die for').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Half-and-half').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Half-and-Half').first().id
         )
     ir1254 = RecipeIngredient(
             amount=1,
@@ -7635,19 +7635,19 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ipamena').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Brown sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Brown Sugar').first().id
         )
     ir1257 = RecipeIngredient(
             amount=4,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ipamena').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion fruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion Fruit Juice').first().id
         )
     ir1258 = RecipeIngredient(
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ipamena').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir1259 = RecipeIngredient(
             amount=1,
@@ -7665,13 +7665,13 @@ def seed_recipe_ingredients():
             amount=6,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ice Pick').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Iced tea').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Iced Tea').first().id
         )
     ir1262 = RecipeIngredient(
             amount=1,
             unit='to taste',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ice Pick').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1263 = RecipeIngredient(
             amount=0.25,
@@ -7707,31 +7707,31 @@ def seed_recipe_ingredients():
             amount=1.25,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Cream').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Half-and-half').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Half-and-Half').first().id
         )
     ir1269 = RecipeIngredient(
             amount=1,
             unit='can',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Cream').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Condensed milk').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Condensed Milk').first().id
         )
     ir1270 = RecipeIngredient(
             amount=3,
             unit='drops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Cream').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut Syrup').first().id
         )
     ir1271 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Cream').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Syrup').first().id
         )
     ir1272 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Coffee').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish Whiskey').first().id
         )
     ir1273 = RecipeIngredient(
             amount=8,
@@ -7749,19 +7749,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Coffee').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Whipped Cream').first().id
         )
     ir1276 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Spring').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish Whiskey').first().id
         )
     ir1277 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Spring').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Brandy').first().id
         )
     ir1278 = RecipeIngredient(
             amount=1,
@@ -7773,7 +7773,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Spring').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir1280 = RecipeIngredient(
             amount=1,
@@ -7791,13 +7791,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Imperial Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1283 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Imperial Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended Whiskey').first().id
         )
     ir1284 = RecipeIngredient(
             amount=0.5,
@@ -7809,7 +7809,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Imperial Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1286 = RecipeIngredient(
             amount=1,
@@ -7833,7 +7833,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Russian').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Guinness stout').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Guinness Stout').first().id
         )
     ir1290 = RecipeIngredient(
             amount=4,
@@ -7869,7 +7869,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Irish Curdling Cow').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1296 = RecipeIngredient(
             amount=0.75,
@@ -7893,19 +7893,19 @@ def seed_recipe_ingredients():
             amount=0.67,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jam Donut').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1300 = RecipeIngredient(
             amount=0.33,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jam Donut').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord raspberry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord Raspberry Liqueur').first().id
         )
     ir1301 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jam Donut').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir1302 = RecipeIngredient(
             amount=2,
@@ -7947,13 +7947,13 @@ def seed_recipe_ingredients():
             amount=3,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jitterbug').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir1309 = RecipeIngredient(
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jitterbug').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir1310 = RecipeIngredient(
             amount=1,
@@ -7971,13 +7971,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jelly Bean').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackberry brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackberry Brandy').first().id
         )
     ir1313 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jelly Bean').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Anis').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Anise').first().id
         )
     ir1314 = RecipeIngredient(
             amount=2,
@@ -8001,13 +8001,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jamaica Kiss').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee Liqueur').first().id
         )
     ir1318 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jamaica Kiss').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1319 = RecipeIngredient(
             amount=1,
@@ -8025,7 +8025,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'John Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1322 = RecipeIngredient(
             amount=1,
@@ -8037,13 +8037,13 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'John Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir1324 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'John Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir1325 = RecipeIngredient(
             amount=1,
@@ -8055,7 +8055,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Japanese Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended Whiskey').first().id
         )
     ir1327 = RecipeIngredient(
             amount=0.5,
@@ -8067,7 +8067,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Japanese Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1329 = RecipeIngredient(
             amount=1,
@@ -8079,7 +8079,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Japanese Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir1331 = RecipeIngredient(
             amount=0.167,
@@ -8127,7 +8127,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jack Rose Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Brandy').first().id
         )
     ir1339 = RecipeIngredient(
             amount=1,
@@ -8151,13 +8151,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jack\'s Vanilla Coke').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tennessee whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tennessee Whiskey').first().id
         )
     ir1343 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Jack\'s Vanilla Coke').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir1344 = RecipeIngredient(
             amount=10,
@@ -8187,7 +8187,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Karsk').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grain alcohol').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grain Alcohol').first().id
         )
     ir1349 = RecipeIngredient(
             amount=1,
@@ -8199,7 +8199,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kamikaze').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1351 = RecipeIngredient(
             amount=1,
@@ -8223,13 +8223,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kiwi Lemon').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Kiwi liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Kiwi Liqueur').first().id
         )
     ir1355 = RecipeIngredient(
             amount=2,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kiwi Lemon').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Bitter lemon').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Bitter Lemon').first().id
         )
     ir1356 = RecipeIngredient(
             amount=1,
@@ -8295,7 +8295,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kiss me Quick').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry vodka').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Vodka').first().id
         )
     ir1367 = RecipeIngredient(
             amount=2,
@@ -8313,7 +8313,7 @@ def seed_recipe_ingredients():
             amount=8,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kiss me Quick').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
     ir1370 = RecipeIngredient(
             amount=1,
@@ -8337,19 +8337,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kool-Aid Shot').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe gin').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe Gin').first().id
         )
     ir1374 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kool-Aid Shot').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1375 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kool First Aid').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir1376 = RecipeIngredient(
             amount=0.5,
@@ -8385,7 +8385,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Kentucky Colonel').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1382 = RecipeIngredient(
             amount=0.5,
@@ -8445,7 +8445,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Limeade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir1392 = RecipeIngredient(
             amount=0.75,
@@ -8523,13 +8523,13 @@ def seed_recipe_ingredients():
             amount=4,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Long vodka').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angostura bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angostura Bitters').first().id
         )
     ir1405 = RecipeIngredient(
             amount=1,
             unit='dl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Long vodka').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tonic water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tonic Water').first().id
         )
     ir1406 = RecipeIngredient(
             amount=4,
@@ -8541,7 +8541,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lassi Khara').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir1408 = RecipeIngredient(
             amount=2,
@@ -8565,7 +8565,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lassi Raita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir1412 = RecipeIngredient(
             amount=1,
@@ -8601,7 +8601,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lemouroudji').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cayenne pepper').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cayenne Pepper').first().id
         )
     ir1418 = RecipeIngredient(
             amount=2,
@@ -8625,7 +8625,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Loch Lomond').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1422 = RecipeIngredient(
             amount=1.5,
@@ -8637,13 +8637,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'London Town').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Liqueur').first().id
         )
     ir1424 = RecipeIngredient(
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'London Town').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir1425 = RecipeIngredient(
             amount=2,
@@ -8655,7 +8655,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lassi - Mango').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir1427 = RecipeIngredient(
             amount=0.5,
@@ -8673,7 +8673,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lassi - Sweet').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir1430 = RecipeIngredient(
             amount=2,
@@ -8697,7 +8697,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lassi - Sweet').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1434 = RecipeIngredient(
             amount=1,
@@ -8715,13 +8715,13 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lord And Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir1437 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lord And Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tia maria').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tia Maria').first().id
         )
     ir1438 = RecipeIngredient(
             amount=2,
@@ -8733,13 +8733,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lady Love Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir1440 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lady Love Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1441 = RecipeIngredient(
             amount=0.5,
@@ -8751,7 +8751,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lady Love Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir1443 = RecipeIngredient(
             amount=0.5,
@@ -8763,7 +8763,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Long Island Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1445 = RecipeIngredient(
             amount=0.5,
@@ -8835,7 +8835,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Long Island Iced Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1457 = RecipeIngredient(
             amount=0.5,
@@ -8853,13 +8853,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Long Island Iced Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1460 = RecipeIngredient(
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lemon Elderflower Spritzer').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Elderflower cordial').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Elderflower Cordial').first().id
         )
     ir1461 = RecipeIngredient(
             amount=1,
@@ -8877,13 +8877,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lemon Elderflower Spritzer').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fresh Lemon Juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1464 = RecipeIngredient(
             amount=0.5,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lassi - A South Indian Drink').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir1465 = RecipeIngredient(
             amount=1.25,
@@ -8895,7 +8895,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Lassi - A South Indian Drink').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cumin seed').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cumin Seed').first().id
         )
     ir1467 = RecipeIngredient(
             amount=0.25,
@@ -8913,7 +8913,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mojito').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1471 = RecipeIngredient(
             amount=1,
@@ -8949,25 +8949,25 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mai Tai').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1477 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mai Tai').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orgeat syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orgeat Syrup').first().id
         )
     ir1478 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mai Tai').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1479 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mai Tai').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir1480 = RecipeIngredient(
             amount=1,
@@ -9045,7 +9045,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Manhattan').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angostura bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angostura Bitters').first().id
         )
     ir1493 = RecipeIngredient(
             amount=2,
@@ -9057,13 +9057,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Manhattan').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir1495 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Manhattan').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Peel').first().id
         )
     ir1496 = RecipeIngredient(
             amount=1.5,
@@ -9075,7 +9075,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Margarita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1498 = RecipeIngredient(
             amount=1,
@@ -9117,7 +9117,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mint Julep').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1505 = RecipeIngredient(
             amount=2,
@@ -9189,19 +9189,19 @@ def seed_recipe_ingredients():
             amount=5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Miami Vice').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir1517 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Miami Vice').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pina colada mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Piña Colada Mix').first().id
         )
     ir1518 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Miami Vice').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Daiquiri mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Daiquiri Mix').first().id
         )
     ir1519 = RecipeIngredient(
             amount=2,
@@ -9219,7 +9219,7 @@ def seed_recipe_ingredients():
             amount=8,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Moscow Mule').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir1522 = RecipeIngredient(
             amount=3,
@@ -9249,13 +9249,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mulled Wine').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1527 = RecipeIngredient(
             amount=750,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mulled Wine').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir1528 = RecipeIngredient(
             amount=0.25,
@@ -9303,7 +9303,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Masala Chai').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Black pepper').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Black Pepper').first().id
         )
     ir1536 = RecipeIngredient(
             amount=0,
@@ -9345,7 +9345,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Munich Mule').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'lemon').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
         )
     ir1543 = RecipeIngredient(
             amount=6,
@@ -9357,13 +9357,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mocha-Berry').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord raspberry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord Raspberry Liqueur').first().id
         )
     ir1545 = RecipeIngredient(
             amount=2,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mocha-Berry').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cocoa powder').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cocoa Powder').first().id
         )
     ir1546 = RecipeIngredient(
             amount=3,
@@ -9417,25 +9417,25 @@ def seed_recipe_ingredients():
             amount=3,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mojito Extra').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1555 = RecipeIngredient(
             amount=0.125,
             unit='l',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mojito Extra').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir1556 = RecipeIngredient(
             amount=0.125,
             unit='l',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mojito Extra').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir1557 = RecipeIngredient(
             amount=8,
             unit='drops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mojito Extra').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angostura bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angostura Bitters').first().id
         )
     ir1558 = RecipeIngredient(
             amount=2,
@@ -9465,7 +9465,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Midnight Mint').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1563 = RecipeIngredient(
             amount=0.75,
@@ -9483,19 +9483,19 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mary Pickford').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1566 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mary Pickford').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1567 = RecipeIngredient(
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mary Pickford').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Liqueur').first().id
         )
     ir1568 = RecipeIngredient(
             amount=0.5,
@@ -9507,19 +9507,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mary Pickford').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir1570 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Monkey Wrench').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1571 = RecipeIngredient(
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Monkey Wrench').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit Juice').first().id
         )
     ir1572 = RecipeIngredient(
             amount=1,
@@ -9531,13 +9531,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mother\'s Milk').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschlager').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschläger').first().id
         )
     ir1574 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mother\'s Milk').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Butterscotch schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Butterscotch Schnapps').first().id
         )
     ir1575 = RecipeIngredient(
             amount=1,
@@ -9555,19 +9555,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Midnight Manx').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1578 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Midnight Manx').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschlager').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschläger').first().id
         )
     ir1579 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Midnight Manx').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy Cream').first().id
         )
     ir1580 = RecipeIngredient(
             amount=2,
@@ -9579,7 +9579,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Malibu Twister').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu Rum').first().id
         )
     ir1582 = RecipeIngredient(
             amount=2,
@@ -9591,7 +9591,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Malibu Twister').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir1584 = RecipeIngredient(
             amount=2,
@@ -9603,13 +9603,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Midnight Cowboy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir1586 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Midnight Cowboy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Heavy Cream').first().id
         )
     ir1587 = RecipeIngredient(
             amount=2,
@@ -9663,13 +9663,13 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Martinez Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1596 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Martinez Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir1597 = RecipeIngredient(
             amount=1,
@@ -9687,7 +9687,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Microwave Hot Cocoa').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cocoa powder').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cocoa Powder').first().id
         )
     ir1600 = RecipeIngredient(
             amount=1,
@@ -9711,7 +9711,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Microwave Hot Cocoa').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir1604 = RecipeIngredient(
             amount=1,
@@ -9735,7 +9735,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mississippi Planters Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1608 = RecipeIngredient(
             amount=0.5,
@@ -9753,7 +9753,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Mississippi Planters Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1611 = RecipeIngredient(
             amount=1,
@@ -9777,7 +9777,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'New York Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended Whiskey').first().id
         )
     ir1615 = RecipeIngredient(
             amount=0.5,
@@ -9795,13 +9795,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'New York Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir1618 = RecipeIngredient(
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Nutty Irishman').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1619 = RecipeIngredient(
             amount=1,
@@ -9843,13 +9843,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'National Aquarium').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour Mix').first().id
         )
     ir1626 = RecipeIngredient(
             amount=1,
             unit='splash',
             recipe_id=Recipe.query.filter(Recipe.name == 'National Aquarium').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-lime soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-Lime Soda').first().id
         )
     ir1627 = RecipeIngredient(
             amount=2,
@@ -9867,19 +9867,19 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'New York Lemonade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1630 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'New York Lemonade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir1631 = RecipeIngredient(
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Nuked Hot Chocolate').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cocoa powder').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cocoa Powder').first().id
         )
     ir1632 = RecipeIngredient(
             amount=1,
@@ -9891,7 +9891,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Nuked Hot Chocolate').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir1634 = RecipeIngredient(
             amount=12,
@@ -9915,7 +9915,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orgasm').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1638 = RecipeIngredient(
             amount=0.5,
@@ -9927,13 +9927,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orgasm').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir1640 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Old Pal').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Rye whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Rye Whiskey').first().id
         )
     ir1641 = RecipeIngredient(
             amount=1,
@@ -9981,7 +9981,7 @@ def seed_recipe_ingredients():
             amount=5,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orangeade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1649 = RecipeIngredient(
             amount=15,
@@ -9993,7 +9993,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orangeade').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir1651 = RecipeIngredient(
             amount=4,
@@ -10035,7 +10035,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orange Crush').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1658 = RecipeIngredient(
             amount=1,
@@ -10047,7 +10047,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orange Oasis').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry Brandy').first().id
         )
     ir1660 = RecipeIngredient(
             amount=1.5,
@@ -10071,7 +10071,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Old Fashioned').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angostura bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angostura Bitters').first().id
         )
     ir1664 = RecipeIngredient(
             amount=1,
@@ -10101,19 +10101,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Oreo Mudslide').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1669 = RecipeIngredient(
             amount=2,
             unit='scoops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Oreo Mudslide').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla ice-cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Ice Cream').first().id
         )
     ir1670 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Oreo Mudslide').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Oreo cookie').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Oreo Cookie').first().id
         )
     ir1671 = RecipeIngredient(
             amount=2,
@@ -10125,31 +10125,31 @@ def seed_recipe_ingredients():
             amount=2,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Oatmeal Cookie').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1673 = RecipeIngredient(
             amount=4,
             unit='parts',
             recipe_id=Recipe.query.filter(Recipe.name == 'Oatmeal Cookie').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Butterscotch schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Butterscotch Schnapps').first().id
         )
     ir1674 = RecipeIngredient(
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Oatmeal Cookie').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Jagermeister').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Jägermeister').first().id
         )
     ir1675 = RecipeIngredient(
             amount=0.5,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Oatmeal Cookie').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschlager').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Goldschläger').first().id
         )
     ir1676 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orange Push-up').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Spiced rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Spiced Rum').first().id
         )
     ir1677 = RecipeIngredient(
             amount=0.5,
@@ -10167,7 +10167,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='splash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orange Push-up').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour mix').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sour Mix').first().id
         )
     ir1680 = RecipeIngredient(
             amount=1,
@@ -10227,7 +10227,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Orange Scented Hot Chocolate').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Peel').first().id
         )
     ir1690 = RecipeIngredient(
             amount=0.5,
@@ -10353,13 +10353,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pink Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir1711 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pink Lady').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir1712 = RecipeIngredient(
             amount=1,
@@ -10377,7 +10377,7 @@ def seed_recipe_ingredients():
             amount=25,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pink Moon').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Elderflower cordial').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Elderflower Cordial').first().id
         )
     ir1715 = RecipeIngredient(
             amount=30,
@@ -10407,7 +10407,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Penicillin').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Honey syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Honey Syrup').first().id
         )
     ir1720 = RecipeIngredient(
             amount=2,
@@ -10419,7 +10419,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Penicillin').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Islay single malt Scotch').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Islay Single Malt Scotch').first().id
         )
     ir1722 = RecipeIngredient(
             amount=2,
@@ -10431,7 +10431,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pisco Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1724 = RecipeIngredient(
             amount=1,
@@ -10467,13 +10467,13 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pina Colada').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1730 = RecipeIngredient(
             amount=3,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pina Colada').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut milk').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coconut Milk').first().id
         )
     ir1731 = RecipeIngredient(
             amount=3,
@@ -10497,7 +10497,7 @@ def seed_recipe_ingredients():
             amount=1750,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pink Penocha').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir1735 = RecipeIngredient(
             amount=1,
@@ -10509,7 +10509,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='gal',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pink Penocha').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir1737 = RecipeIngredient(
             amount=40,
@@ -10533,7 +10533,7 @@ def seed_recipe_ingredients():
             amount=15,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pure Passion').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion fruit syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion Fruit Syrup').first().id
         )
     ir1741 = RecipeIngredient(
             amount=1,
@@ -10557,13 +10557,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Popped cherry').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry Liqueur').first().id
         )
     ir1745 = RecipeIngredient(
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Popped cherry').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir1746 = RecipeIngredient(
             amount=4,
@@ -10593,13 +10593,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Port Wine Flip').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir1751 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Port Wine Flip').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1752 = RecipeIngredient(
             amount=1,
@@ -10611,13 +10611,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Planter\'s Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir1754 = RecipeIngredient(
             amount=0.5,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Planter\'s Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orgeat syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orgeat Syrup').first().id
         )
     ir1755 = RecipeIngredient(
             amount=2,
@@ -10629,7 +10629,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Planter\'s Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1757 = RecipeIngredient(
             amount=4,
@@ -10647,7 +10647,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pineapple Paloma').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fresh Lime Juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime Juice').first().id
         )
     ir1760 = RecipeIngredient(
             amount=8,
@@ -10683,7 +10683,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pornstar Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion fruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion Fruit Juice').first().id
         )
     ir1766 = RecipeIngredient(
             amount=1,
@@ -10767,13 +10767,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pysch Vitamin Light').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
     ir1780 = RecipeIngredient(
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pysch Vitamin Light').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1781 = RecipeIngredient(
             amount=1,
@@ -10785,7 +10785,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Pink Panty Pulldowns').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pink lemonade').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pink Lemonade').first().id
         )
     ir1783 = RecipeIngredient(
             amount=2,
@@ -10809,7 +10809,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='glass',
             recipe_id=Recipe.query.filter(Recipe.name == 'Passion Fruit Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion fruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Passion Fruit Juice').first().id
         )
     ir1787 = RecipeIngredient(
             amount=0.25,
@@ -10827,7 +10827,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Quentin').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir1790 = RecipeIngredient(
             amount=0.5,
@@ -10839,7 +10839,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Quentin').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir1792 = RecipeIngredient(
             amount=0.125,
@@ -10851,13 +10851,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Queen Bee').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee Brandy').first().id
         )
     ir1794 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Queen Bee').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime vodka').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime Vodka').first().id
         )
     ir1795 = RecipeIngredient(
             amount=0.5,
@@ -10875,13 +10875,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Quick F**K').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori Melon Liqueur').first().id
         )
     ir1798 = RecipeIngredient(
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Quick F**K').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir1799 = RecipeIngredient(
             amount=25,
@@ -10899,7 +10899,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Queen Charlotte').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir1802 = RecipeIngredient(
             amount=1,
@@ -10929,7 +10929,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Quaker\'s Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1807 = RecipeIngredient(
             amount=0.75,
@@ -10947,13 +10947,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Quaker\'s Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Raspberry syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Raspberry Syrup').first().id
         )
     ir1810 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Quarter Deck Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1811 = RecipeIngredient(
             amount=0.33,
@@ -10983,13 +10983,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rose').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir1816 = RecipeIngredient(
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rose').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1817 = RecipeIngredient(
             amount=1,
@@ -11013,13 +11013,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1821 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1822 = RecipeIngredient(
             amount=0.5,
@@ -11037,7 +11037,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir1825 = RecipeIngredient(
             amount=1,
@@ -11049,13 +11049,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='bottle',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger ale').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Ale').first().id
         )
     ir1827 = RecipeIngredient(
             amount=355,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fruit punch').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fruit Punch').first().id
         )
     ir1828 = RecipeIngredient(
             amount=355,
@@ -11079,13 +11079,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Toddy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1832 = RecipeIngredient(
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Toddy').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1833 = RecipeIngredient(
             amount=2,
@@ -11103,7 +11103,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Royal Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir1836 = RecipeIngredient(
             amount=1,
@@ -11121,7 +11121,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-lime soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-Lime Soda').first().id
         )
     ir1839 = RecipeIngredient(
             amount=1,
@@ -11133,13 +11133,13 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Runner').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu Rum').first().id
         )
     ir1841 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Runner').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackberry brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackberry Brandy').first().id
         )
     ir1842 = RecipeIngredient(
             amount=3,
@@ -11151,13 +11151,13 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Runner').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1844 = RecipeIngredient(
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Runner').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir1845 = RecipeIngredient(
             amount=1.5,
@@ -11175,7 +11175,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rusty Nail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1848 = RecipeIngredient(
             amount=1,
@@ -11193,7 +11193,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Red Snapper').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir1851 = RecipeIngredient(
             amount=1,
@@ -11217,19 +11217,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Royal Flush').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir1855 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Royal Flush').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord raspberry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord Raspberry Liqueur').first().id
         )
     ir1856 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Royal Flush').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir1857 = RecipeIngredient(
             amount=1,
@@ -11241,7 +11241,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Cobbler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir1859 = RecipeIngredient(
             amount=1,
@@ -11253,13 +11253,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Cobbler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir1861 = RecipeIngredient(
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Cobbler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir1862 = RecipeIngredient(
             amount=1,
@@ -11277,7 +11277,7 @@ def seed_recipe_ingredients():
             amount=5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ruby Tuesday').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir1865 = RecipeIngredient(
             amount=2,
@@ -11289,7 +11289,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rail Splitter').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sugar Syrup').first().id
         )
     ir1867 = RecipeIngredient(
             amount=50,
@@ -11349,7 +11349,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='drop',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ramos Gin Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir1877 = RecipeIngredient(
             amount=2,
@@ -11373,7 +11373,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Royal Gin Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1881 = RecipeIngredient(
             amount=1,
@@ -11385,7 +11385,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Milk Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1883 = RecipeIngredient(
             amount=1,
@@ -11397,7 +11397,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Milk Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1885 = RecipeIngredient(
             amount=2,
@@ -11409,7 +11409,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Raspberry Julep').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Raspberry syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Raspberry Syrup').first().id
         )
     ir1887 = RecipeIngredient(
             amount=8,
@@ -11421,7 +11421,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Screwdriver').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1889 = RecipeIngredient(
             amount=5,
@@ -11433,31 +11433,31 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Raspberry Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Raspberry vodka').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Rasberry Vodka').first().id
         )
     ir1891 = RecipeIngredient(
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Raspberry Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-lime soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-Lime Soda').first().id
         )
     ir1892 = RecipeIngredient(
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Old-fashioned').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir1893 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Old-fashioned').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir1894 = RecipeIngredient(
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Old-fashioned').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1895 = RecipeIngredient(
             amount=1,
@@ -11475,7 +11475,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Rum Old-fashioned').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime Peel').first().id
         )
     ir1898 = RecipeIngredient(
             amount=2.5,
@@ -11529,37 +11529,37 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Radioactive Long Island Iced Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir1907 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Radioactive Long Island Iced Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord raspberry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord Raspberry Liqueur').first().id
         )
     ir1908 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Radioactive Long Island Iced Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori Melon Liqueur').first().id
         )
     ir1909 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Radioactive Long Island Iced Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu Rum').first().id
         )
     ir1910 = RecipeIngredient(
             amount=0.33,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Smut').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir1911 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Smut').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir1912 = RecipeIngredient(
             amount=0.33,
@@ -11607,13 +11607,13 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Scooter').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir1920 = RecipeIngredient(
             amount=1,
             unit='bottle',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sangria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir1921 = RecipeIngredient(
             amount=0.5,
@@ -11631,7 +11631,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sangria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1924 = RecipeIngredient(
             amount=1.5,
@@ -11661,7 +11661,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sazerac').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peychaud bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peychaud Bitters').first().id
         )
     ir1929 = RecipeIngredient(
             amount=1,
@@ -11679,7 +11679,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sazerac').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir1932 = RecipeIngredient(
             amount=2,
@@ -11697,7 +11697,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sidecar').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir1935 = RecipeIngredient(
             amount=1,
@@ -11769,7 +11769,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Spice 75').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange spiral').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Spiral').first().id
         )
     ir1947 = RecipeIngredient(
             amount=1.5,
@@ -11817,7 +11817,7 @@ def seed_recipe_ingredients():
             amount=5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Salty Dog').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit Juice').first().id
         )
     ir1955 = RecipeIngredient(
             amount=1.5,
@@ -11835,7 +11835,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Stone Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir1958 = RecipeIngredient(
             amount=1,
@@ -11847,7 +11847,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Stone Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir1960 = RecipeIngredient(
             amount=1.5,
@@ -11859,13 +11859,13 @@ def seed_recipe_ingredients():
             amount=4,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sea breeze').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cranberry Juice').first().id
         )
     ir1962 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sea breeze').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grapefruit Juice').first().id
         )
     ir1963 = RecipeIngredient(
             amount=1.5,
@@ -11883,7 +11883,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Scotch Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1966 = RecipeIngredient(
             amount=0.5,
@@ -11901,7 +11901,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='shots',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sweet Tooth').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Godiva liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Godiva Liqueur').first().id
         )
     ir1969 = RecipeIngredient(
             amount=2,
@@ -11919,13 +11919,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sherry Flip').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Cream').first().id
         )
     ir1972 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sherry Flip').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1973 = RecipeIngredient(
             amount=1,
@@ -11979,19 +11979,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Space Odyssey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir1982 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Space Odyssey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Malibu Rum').first().id
         )
     ir1983 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Space Odyssey').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir1984 = RecipeIngredient(
             amount=2,
@@ -12003,7 +12003,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sherry Eggnog').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir1986 = RecipeIngredient(
             amount=1,
@@ -12033,7 +12033,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='bottles',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sweet Sangria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir1991 = RecipeIngredient(
             amount=1,
@@ -12117,7 +12117,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Singapore Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry Brandy').first().id
         )
     ir2005 = RecipeIngredient(
             amount=0.5,
@@ -12135,7 +12135,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Singapore Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir2008 = RecipeIngredient(
             amount=1,
@@ -12147,7 +12147,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Slippery Nipple').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish Cream').first().id
         )
     ir2010 = RecipeIngredient(
             amount=0.5,
@@ -12171,7 +12171,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Screaming Orgasm').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir2014 = RecipeIngredient(
             amount=0.5,
@@ -12189,7 +12189,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sex on the Beach').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Schnapps').first().id
         )
     ir2017 = RecipeIngredient(
             amount=1,
@@ -12201,7 +12201,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sidecar Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir2019 = RecipeIngredient(
             amount=0.25,
@@ -12231,7 +12231,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sloe Gin Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe gin').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sloe Gin').first().id
         )
     ir2024 = RecipeIngredient(
             amount=0.25,
@@ -12243,7 +12243,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sloe Gin Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir2026 = RecipeIngredient(
             amount=2,
@@ -12267,13 +12267,13 @@ def seed_recipe_ingredients():
             amount=2,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Spanish chocolate').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg yolk').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg Yolk').first().id
         )
     ir2030 = RecipeIngredient(
             amount=1.5,
             unit='l',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sangria The  Best').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir2031 = RecipeIngredient(
             amount=1,
@@ -12309,7 +12309,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Shanghai Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir2037 = RecipeIngredient(
             amount=1,
@@ -12333,7 +12333,7 @@ def seed_recipe_ingredients():
             amount=46,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Spiced Peach Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach nectar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peach Nectar').first().id
         )
     ir2041 = RecipeIngredient(
             amount=20,
@@ -12345,7 +12345,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Spiced Peach Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Brown sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Brown Sugar').first().id
         )
     ir2043 = RecipeIngredient(
             amount=9,
@@ -12387,13 +12387,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Strawberry Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Strawberry schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Strawberry Schnapps').first().id
         )
     ir2050 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Strawberry Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir2051 = RecipeIngredient(
             amount=1,
@@ -12405,7 +12405,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Strawberry Daiquiri').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir2053 = RecipeIngredient(
             amount=1,
@@ -12453,19 +12453,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='splash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Snakebite and Black').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackcurrant squash').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blackcurrant Squash').first().id
         )
     ir2061 = RecipeIngredient(
             amount=46,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sunny Holiday Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir2062 = RecipeIngredient(
             amount=28,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Sunny Holiday Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir2063 = RecipeIngredient(
             amount=6,
@@ -12501,7 +12501,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Surf City Lifesaver').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir2069 = RecipeIngredient(
             amount=2,
@@ -12519,7 +12519,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Strawberry Margarita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Strawberry schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Strawberry Schnapps').first().id
         )
     ir2072 = RecipeIngredient(
             amount=1,
@@ -12531,13 +12531,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Strawberry Margarita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir2074 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Strawberry Margarita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir2075 = RecipeIngredient(
             amount=1,
@@ -12555,7 +12555,7 @@ def seed_recipe_ingredients():
             amount=30,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'Salted Toffee Martini').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chocolate Liqueur').first().id
         )
     ir2078 = RecipeIngredient(
             amount=15,
@@ -12591,19 +12591,19 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Scottish Highland Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angelica root').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Angelica Root').first().id
         )
     ir2084 = RecipeIngredient(
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Scottish Highland Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fennel seeds').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Fennel Seeds').first().id
         )
     ir2085 = RecipeIngredient(
             amount=2,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Scottish Highland Liqueur').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Peel').first().id
         )
     ir2086 = RecipeIngredient(
             amount=0.5,
@@ -12681,7 +12681,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'The Galah').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Creme De Banane').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Creme de Banane').first().id
         )
     ir2099 = RecipeIngredient(
             amount=1,
@@ -12705,7 +12705,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tia-Maria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Brown sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Brown Sugar').first().id
         )
     ir2103 = RecipeIngredient(
             amount=4,
@@ -12723,7 +12723,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tia-Maria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla extract').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vanilla Extract').first().id
         )
     ir2106 = RecipeIngredient(
             amount=2,
@@ -12759,7 +12759,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='splash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Turkeyball').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir2112 = RecipeIngredient(
             amount=0.5,
@@ -12771,7 +12771,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Texas Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Irish Cream').first().id
         )
     ir2114 = RecipeIngredient(
             amount=0.5,
@@ -12783,7 +12783,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Texas Sling').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir2116 = RecipeIngredient(
             amount=1,
@@ -12819,7 +12819,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tom Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir2122 = RecipeIngredient(
             amount=1,
@@ -12831,13 +12831,13 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tom Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Club Soda').first().id
         )
     ir2124 = RecipeIngredient(
             amount=1,
             unit='garnish',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tom Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino cherry').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Cherry').first().id
         )
     ir2125 = RecipeIngredient(
             amount=1,
@@ -12849,19 +12849,19 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cups',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tomato Tang').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tomato juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tomato Juice').first().id
         )
     ir2127 = RecipeIngredient(
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tomato Tang').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir2128 = RecipeIngredient(
             amount=1,
             unit='dash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tomato Tang').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Celery salt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Celery Salt').first().id
         )
     ir2129 = RecipeIngredient(
             amount=3,
@@ -12903,7 +12903,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tequila Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir2136 = RecipeIngredient(
             amount=0.75,
@@ -12915,7 +12915,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tequila Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir2138 = RecipeIngredient(
             amount=2,
@@ -12933,7 +12933,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tequila Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     # ir2141 = RecipeIngredient(
     #         amount=0.5,
@@ -12963,7 +12963,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Thai Iced Tea').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Condensed milk').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Condensed Milk').first().id
         )
     ir2146 = RecipeIngredient(
             amount=1,
@@ -13017,7 +13017,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Turf Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Anis').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Anise').first().id
         )
     ir2155 = RecipeIngredient(
             amount=2,
@@ -13029,7 +13029,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='twist',
             recipe_id=Recipe.query.filter(Recipe.name == 'Turf Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange peel').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Peel').first().id
         )
     ir2157 = RecipeIngredient(
             amount=50,
@@ -13041,7 +13041,7 @@ def seed_recipe_ingredients():
             amount=15,
             unit='ml',
             recipe_id=Recipe.query.filter(Recipe.name == 'The Laverstoke').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Elderflower cordial').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Elderflower Cordial').first().id
         )
     ir2159 = RecipeIngredient(
             amount=15,
@@ -13083,7 +13083,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tequila Slammer').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '7-up').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '7-Up').first().id
         )
     ir2166 = RecipeIngredient(
             amount=2,
@@ -13137,19 +13137,19 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tuxedo Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maraschino Liqueur').first().id
         )
     ir2175 = RecipeIngredient(
             amount=0.25,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tuxedo Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Anis').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Anise').first().id
         )
     ir2176 = RecipeIngredient(
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tuxedo Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir2177 = RecipeIngredient(
             amount=1,
@@ -13167,7 +13167,7 @@ def seed_recipe_ingredients():
             amount=8,
             unit='drops',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tequila Surprise').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco sauce').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tabasco Sauce').first().id
         )
     ir2180 = RecipeIngredient(
             amount=1,
@@ -13209,7 +13209,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='part',
             recipe_id=Recipe.query.filter(Recipe.name == 'Texas Rattlesnake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry Brandy').first().id
         )
     ir2187 = RecipeIngredient(
             amount=1,
@@ -13221,7 +13221,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='splash',
             recipe_id=Recipe.query.filter(Recipe.name == 'Texas Rattlesnake').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet and sour').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Sweet & Sour').first().id
         )
     ir2189 = RecipeIngredient(
             amount=4.5,
@@ -13239,7 +13239,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Tommy\'s Margarita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Agave syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Agave Syrup').first().id
         )
     ir2192 = RecipeIngredient(
             amount=1,
@@ -13299,7 +13299,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'The Evil Blue Thing').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir2202 = RecipeIngredient(
             amount=6,
@@ -13377,7 +13377,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Vesuvio').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir2215 = RecipeIngredient(
             amount=0.5,
@@ -13395,43 +13395,43 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Vesuvio').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir2218 = RecipeIngredient(
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'Vesuvio').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg white').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Egg White').first().id
         )
     ir2219 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Veteran').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Dark Rum').first().id
         )
     ir2220 = RecipeIngredient(
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Veteran').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cherry Brandy').first().id
         )
     ir2221 = RecipeIngredient(
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Van Vleet').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Light Rum').first().id
         )
     ir2222 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Van Vleet').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maple syrup').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maple Syrup').first().id
         )
     ir2223 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Van Vleet').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir2224 = RecipeIngredient(
             amount=2,
@@ -13443,7 +13443,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Vodka Fizz').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Half-and-half').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Half-and-Half').first().id
         )
     ir2226 = RecipeIngredient(
             amount=2,
@@ -13557,19 +13557,19 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Victory Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir2245 = RecipeIngredient(
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Victory Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grape juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Grape Juice').first().id
         )
     ir2246 = RecipeIngredient(
             amount=1,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Victory Collins').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir2247 = RecipeIngredient(
             amount=1,
@@ -13587,7 +13587,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Valencia Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot brandy').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apricot Brandy').first().id
         )
     ir2250 = RecipeIngredient(
             amount=1,
@@ -13599,7 +13599,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='dashes',
             recipe_id=Recipe.query.filter(Recipe.name == 'Valencia Cocktail').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange bitters').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Bitters').first().id
         )
     ir2252 = RecipeIngredient(
             amount=1.5,
@@ -13635,7 +13635,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='bottle',
             recipe_id=Recipe.query.filter(Recipe.name == 'Wine Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir2258 = RecipeIngredient(
             amount=2,
@@ -13659,19 +13659,19 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Wine Punch').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir2262 = RecipeIngredient(
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Wine Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red wine').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Wine').first().id
         )
     ir2263 = RecipeIngredient(
             amount=5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Wine Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-lime soda').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon-Lime Soda').first().id
         )
     ir2264 = RecipeIngredient(
             amount=1,
@@ -13719,7 +13719,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Whiskey Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended whiskey').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Blended Whiskey').first().id
         )
     ir2272 = RecipeIngredient(
             amount=0.5,
@@ -13731,7 +13731,7 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='tsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Whiskey Sour').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered sugar').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Powdered Sugar').first().id
         )
     ir2274 = RecipeIngredient(
             amount=1,
@@ -13755,7 +13755,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'White Russian').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Coffee Liqueur').first().id
         )
     ir2278 = RecipeIngredient(
             amount=2,
@@ -13797,7 +13797,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='unit',
             recipe_id=Recipe.query.filter(Recipe.name == 'White Wine Sangria').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'lemon').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon').first().id
         )
     ir2285 = RecipeIngredient(
             amount=750,
@@ -13845,7 +13845,7 @@ def seed_recipe_ingredients():
             amount=0.25,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Whitecap Margarita').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cream of coconut').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Cream of Coconut').first().id
         )
     ir2293 = RecipeIngredient(
             amount=3,
@@ -13857,7 +13857,7 @@ def seed_recipe_ingredients():
             amount=0.75,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Waikiki Beachcomber').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple sec').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Triple Sec').first().id
         )
     ir2295 = RecipeIngredient(
             amount=0.75,
@@ -13869,7 +13869,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='tbsp',
             recipe_id=Recipe.query.filter(Recipe.name == 'Waikiki Beachcomber').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Pineapple Juice').first().id
         )
     ir2297 = RecipeIngredient(
             amount=3,
@@ -13899,7 +13899,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='cup',
             recipe_id=Recipe.query.filter(Recipe.name == 'Yoghurt Cooler').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yoghurt').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Yogurt').first().id
         )
     ir2302 = RecipeIngredient(
             amount=1,
@@ -13917,7 +13917,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zorro').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys irish cream').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Baileys Irish Cream').first().id
         )
     ir2305 = RecipeIngredient(
             amount=2,
@@ -13929,7 +13929,7 @@ def seed_recipe_ingredients():
             amount=4,
             unit='shots',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zinger').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peachtree schnapps').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Peachtree Schnapps').first().id
         )
     ir2307 = RecipeIngredient(
             amount=4,
@@ -13947,13 +13947,13 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zombie').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Gold rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Gold Rum').first().id
         )
     ir2311 = RecipeIngredient(
             amount=1,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zombie').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 proof rum').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == '151 Proof Rum').first().id
         )
     ir2312 = RecipeIngredient(
             amount=1,
@@ -13989,7 +13989,7 @@ def seed_recipe_ingredients():
             amount=10,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zambeer').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Root beer').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Root Beer').first().id
         )
     ir2318 = RecipeIngredient(
             amount=1,
@@ -14019,13 +14019,13 @@ def seed_recipe_ingredients():
             amount=0.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zenmeister').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Root beer').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Root Beer').first().id
         )
     ir2323 = RecipeIngredient(
             amount=1,
             unit='shot',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zipperhead').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord raspberry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord Raspberry Liqueur').first().id
         )
     ir2324 = RecipeIngredient(
             amount=1,
@@ -14037,7 +14037,7 @@ def seed_recipe_ingredients():
             amount=1,
             unit='top off',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zipperhead').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda water').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Soda Water').first().id
         )
     ir2326 = RecipeIngredient(
             amount=12,
@@ -14049,7 +14049,7 @@ def seed_recipe_ingredients():
             amount=3,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zima Blaster').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord raspberry liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Chambord Raspberry Liqueur').first().id
         )
     ir2328 = RecipeIngredient(
             amount=5,
@@ -14061,7 +14061,7 @@ def seed_recipe_ingredients():
             amount=2,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zizi Coin-coin').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     ir2330 = RecipeIngredient(
             amount=1,
@@ -14079,7 +14079,7 @@ def seed_recipe_ingredients():
             amount=1.5,
             unit='oz',
             recipe_id=Recipe.query.filter(Recipe.name == 'Zimadori Zinger').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori melon liqueur').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Midori Melon Liqueur').first().id
         )
     ir2333 = RecipeIngredient(
             amount=12,
@@ -14115,7 +14115,7 @@ def seed_recipe_ingredients():
             amount=16,
             unit='cl',
             recipe_id=Recipe.query.filter(Recipe.name == 'Ziemes Martini Apfelsaft').first().id,
-            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple juice').first().id
+            ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Juice').first().id
         )
 
 
