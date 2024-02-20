@@ -6,7 +6,7 @@
   align-items: center;
   padding-left: 0;
   margin: 0;
-  height: 50px;
+  height: 3.125rem;
   background-color: #090619;
   color: #fcfcfa;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -25,12 +25,12 @@
   width: 23%;
   justify-content: space-between;
   align-items: center;
-  /* margin-right: 20px; */
+  /* margin-right: 1.25rem; */
 }
 
 .nav-logo {
   box-sizing: border-box;
-  height: 47px;
+  height: 2.938rem;
 }
 
 .nav-link {
@@ -59,20 +59,20 @@
 
 /* .profile-dropdown {
   position: absolute;
-  right: 28px;
+  right: 1.75rem;
   display: flex;
   flex-direction: column;
-  border: #603592 1px solid;
+  border: #603592 0.063rem solid;
   list-style-type: none;
-  margin-top: 5px;
+  margin-top: 0.313rem;
 }
 
 .profile-login {
-  padding: 5px;
+  padding: 0.313rem;
 }
 
 .profile-signup {
-  padding: 5px;
+  padding: 0.313rem;
 } */
 
 #hidden {

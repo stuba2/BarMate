@@ -1,38 +1,38 @@
 .edit-bar-button-container {
-  height: 300px;
-  width: 217px;
+  height: 18.75rem;
+  width: 13.563rem;
   overflow-y: auto;
-  border: #090619 2px solid;
-  border-radius: 8px;
+  border: #090619 0.125rem solid;
+  border-radius: 0.5rem;
 }
 
 .edit-bar-button-button {
   background-color: #73c988;
-  padding: 5px;
-  border: #090619 solid 2px;
-  width: 202.5px;
+  padding: 0.313rem;
+  border: #090619 solid 0.125rem;
+  width: 12.656rem;
   cursor: pointer;
 }
 
 .ing-in-bar {
   color: #090619;
   background-color: #808782;
-  border: #090619 solid 2px;
+  border: #090619 solid 0.125rem;
 }
 
 .edit-bar-button-container::-webkit-scrollbar {
-  width: 15px;
-  border-radius: 10px;
+  width: 0.938rem;
+  border-radius: 0.625rem;
 }
 
 .edit-bar-button-container::-webkit-scrollbar-track {
   background: #fed5aa;
-  border: 1px #090619 solid;
-  border-radius: 10px;
+  border: 0.063rem #090619 solid;
+  border-radius: 0.625rem;
 }
 
 .edit-bar-button-container::-webkit-scrollbar-thumb {
   background: #090619;
-  border: 1px #090619 solid;
-  border-radius: 10px;
+  border: 0.063rem #090619 solid;
+  border-radius: 0.625rem;
 }

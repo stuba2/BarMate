@@ -6,10 +6,10 @@
   "top-row"
   "text"
   "button";
-  padding: 10px;
+  padding: 0.625rem;
   color: #fdfdfb;
   background-color: #090619;
-  height: 120px;
+  height: 11.25rem;
 }
 
 .delete-top-row {
@@ -19,12 +19,12 @@
 }
 
 .delete-header {
-  font-size: 15px;
+  font-size: 0.938rem;
   align-self: center;
 }
 
 .delete-x {
-  font-size: 15px;
+  font-size: 0.938rem;
   background: none;
   border: none;
   color: #fdfdfb;
@@ -38,14 +38,14 @@
 
 
 .delete-p {
-  font-size: 15px;
+  font-size: 0.938rem;
 }
 
 .delete-button {
   background-color: rgba(172, 29, 53, .9);
   color: #fdfdfb;
-  border: #ac1d35 1px solid;
-  border-radius: 5px;
+  border: #ac1d35 0.063rem solid;
+  border-radius: 0.313rem;
   font-weight: bold;
 }
 

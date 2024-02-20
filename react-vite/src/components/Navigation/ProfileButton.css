@@ -1,6 +1,6 @@
 /* .profile-button {
   position: absolute;
-  margin-right: 170px;
+  margin-right: 10.625rem;
 } */
 
 .log-sign-container {
@@ -14,7 +14,7 @@
 }
 
 .modal-button {
-  padding: 0 5px;
+  padding: 0 0.313rem;
   cursor: pointer;
 }
 

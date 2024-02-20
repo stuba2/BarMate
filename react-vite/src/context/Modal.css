@@ -22,6 +22,6 @@
   position: absolute;
   color: #fcfcfa;
   background-color:#090619;
-  border-radius: 10px;
-  border: #603592 2px solid;
+  border-radius: 0.625rem;
+  border: #603592 0.125rem solid;
 }
