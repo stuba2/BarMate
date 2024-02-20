@@ -8,92 +8,92 @@ def seed_recipe_ingredients():
     vodkaa = RecipeIngredient(
         amount=2,
         unit='oz',
-        recipe_id=1,
-        ingredient_id=5
+        recipe_id=Recipe.query.filter(Recipe.name == 'Vodka Red Bull').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Vodka').first().id
         )
     red_bulll = RecipeIngredient(
         amount=1,
         unit='can',
-        recipe_id=1,
-        ingredient_id=2
+        recipe_id=Recipe.query.filter(Recipe.name == 'Vodka Red Bull').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Red Bull').first().id
         )
     ginn = RecipeIngredient(
         amount=2,
         unit='oz',
-        recipe_id=2,
-        ingredient_id=6
+        recipe_id=Recipe.query.filter(Recipe.name == 'Gin Apple Cider').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Gin').first().id
         )
     apple_ciderr = RecipeIngredient(
         amount=1,
         unit='oz',
-        recipe_id=2,
-        ingredient_id=7
+        recipe_id=Recipe.query.filter(Recipe.name == 'Gin Apple Cider').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Apple Cider').first().id
         )
     lemon_juicee = RecipeIngredient(
         amount=1,
         unit='oz',
-        recipe_id=2,
-        ingredient_id=8
+        recipe_id=Recipe.query.filter(Recipe.name == 'Gin Apple Cider').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lemon Juice').first().id
         )
     maple_syrupp = RecipeIngredient(
         amount=0.75,
         unit='oz',
-        recipe_id=2,
-        ingredient_id=9
+        recipe_id=Recipe.query.filter(Recipe.name == 'Gin Apple Cider').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Maple Syrup').first().id
         )
     bourbonn = RecipeIngredient(
         amount=2,
         unit='oz',
-        recipe_id=3,
-        ingredient_id=10
+        recipe_id=Recipe.query.filter(Recipe.name == 'Kentucky Mule').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Bourbon').first().id
         )
     lime_juicee_1 = RecipeIngredient(
         amount=0.5,
         unit='oz',
-        recipe_id=3,
-        ingredient_id=11
+        recipe_id=Recipe.query.filter(Recipe.name == 'Kentucky Mule').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime Juice').first().id
         )
     ginger_beerr_1 = RecipeIngredient(
         amount=3,
         unit='oz',
-        recipe_id=3,
-        ingredient_id=12
+        recipe_id=Recipe.query.filter(Recipe.name == 'Kentucky Mule').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Beer').first().id
         )
     mintt = RecipeIngredient(
         amount=1,
         unit='sprig',
-        recipe_id=3,
-        ingredient_id=13
+        recipe_id=Recipe.query.filter(Recipe.name == 'Kentucky Mule').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Mint').first().id
         )
     tequilaa = RecipeIngredient(
         amount=1.5,
         unit='oz',
-        recipe_id=4,
-        ingredient_id=14
+        recipe_id=Recipe.query.filter(Recipe.name == 'Malort Highball').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Tequila').first().id
         )
     lime_juicee_2 = RecipeIngredient(
         amount=0.75,
         unit='oz',
-        recipe_id=4,
-        ingredient_id=11
+        recipe_id=Recipe.query.filter(Recipe.name == 'Malort Highball').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Lime Juice').first().id
         )
     orange_juicee = RecipeIngredient(
         amount=0.75,
         unit='oz',
-        recipe_id=4,
-        ingredient_id=15
+        recipe_id=Recipe.query.filter(Recipe.name == 'Malort Highball').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Orange Juice').first().id
         )
     malortt = RecipeIngredient(
         amount=0.5,
         unit='oz',
-        recipe_id=4,
-        ingredient_id=1
+        recipe_id=Recipe.query.filter(Recipe.name == 'Malort Highball').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Jeppson\'s Malort').first().id
         )
     ginger_beerr_2 = RecipeIngredient(
         amount=2,
         unit='oz',
-        recipe_id=4,
-        ingredient_id=12
+        recipe_id=Recipe.query.filter(Recipe.name == 'Malort Highball').first().id,
+        ingredient_id=Ingredient.query.filter(Ingredient.name == 'Ginger Beer').first().id
         )
 
     db.session.add(vodkaa)
