@@ -5,6 +5,7 @@ import * as ingredientActions from "../../redux/ingredients"
 import * as recipeActions from "../../redux/recipes"
 import './EditRecipe.css'
 import AllRecipeIngredients from "../AllRecipeIngredients/AllRecipeIngredients";
+import CreateIngredient from "../CreateIngredient/CreateIngredient";
 
 const EditRecipe = () => {
   const dispatch = useDispatch()
@@ -38,7 +39,7 @@ const EditRecipe = () => {
   const [ recipeImageUrl, setRecipeImageUrl ] = useState(recipe ? recipe.recipe_image_url : '')
   const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
-  const [ submitValidity, setSubmitValidity ] = useState(false)
+  const [ submitValidity, setSubmitValidity ] = useState(true)
   const [ rIErrors, setRIErrors ] = useState([])
 
 
@@ -77,7 +78,8 @@ const EditRecipe = () => {
     if (!instructions) errors['instructions'] = 'Instructions are required'
     if (instructions && instructions.length > 2000) errors['instructions'] = 'Instructions must be 2000 characters or less'
     if (recipeImageUrl && recipeImageUrl.length > 255) errors['instructions'] = 'Instructions must be 255 characters or less'
-    if (rIErrors) errors['recipeIngredient'] = 'Please fill out all fields'
+    if (rIErrors.length) errors['recipeIngredient'] = 'Please fill out all fields'
+    if (recipeImageUrl && recipeImageUrl.length > 255) errors['recipeImage'] = 'Image URL must be 255 characters or less'
 
     if (!Object.values(errors).length) setSubmitValidity(true)
     setErrors(errors)
@@ -97,6 +99,7 @@ const EditRecipe = () => {
   }
 
   const handleSubmit = async (e) => {
+    console.log('hi')
     e.preventDefault()
 
     const recipeForm = {
@@ -166,7 +169,7 @@ const EditRecipe = () => {
     }
   }
 
-  const submitButtonClass = submitValidity ? 'create-rec-submit-button' : 'create-rec-submit-button-disabled'
+  const submitButtonClass = submitValidity ? 'edit-rec-submit-button' : 'edit-rec-submit-button-disabled'
 
 
   if (!recipe) {
@@ -175,97 +178,121 @@ const EditRecipe = () => {
     )
   } else {
     return (
-      <div className="edit-rec-container">
-        <div>edit a recipe</div>
+      <div className="edit-rec-super-container">
+        <div className="edit-rec-lesser-container">
 
-        <form onSubmit={handleSubmit}>
+          <div className="edit-rec-header">Edit a Recipe</div>
 
-          <label className="edit-rec-name">
-            <div className="edit-rec-name-name-val">
+          <form className="edit-rec-form" onSubmit={handleSubmit}>
+
+            <label className="edit-rec-name">
               <div className="edit-rec-name-name">Name</div>
-              <div className="validation-error">
-                {hasSubmitted && errors.name && `*${errors.name}`}
+
+              <div className="edit-rec-name-input-val">
+                <input
+                  type="text"
+                  className="edit-rec-name-input"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  // required
+                  maxLength='64'
+                  minLength='1'
+                  placeholder="Name"
+                />
+
+                <div className="validation-error">
+                  {hasSubmitted && errors.name && `*${errors.name}`}
+                </div>
+
               </div>
-            </div>
+            </label>
 
-            <input
-              type="text"
-              className="edit-rec-name-input"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              maxLength='64'
-              minLength='1'
-              placeholder="Name"
-            />
-          </label>
-
-          <label className="edit-rec-description">
-            <div className="edit-rec-description-name-val">
+            <label className="edit-rec-description">
               <div className="edit-rec-description-name">Description</div>
-              <div className="validation-error">
-                {hasSubmitted && errors.description && `*${errors.description}`}
-              </div>
-            </div>
 
-            <textarea
-              type="text"
-              className="edit-rec-description-input"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              maxLength='1000'
-              placeholder="Write a description (optional)"
-            />
-          </label>
+              <div className="edit-rec-description-input-val">
+                <textarea
+                  type="text"
+                  className="edit-rec-description-input"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  maxLength='1000'
+                  placeholder="Write a description (optional)"
+                />
 
-          <label className="edit-rec-ingredients">
-            <div className="edit-rec-ingredients-name-val">
-              <div className="edit-rec-ingredients-name">Ingredients</div>
-              <div className="validation-error">
-                {hasSubmitted && errors.recipeIngredient && `*${errors.recipeIngredient}`}
-              </div>
-              <div>
-                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr} setSubmitValidity={setSubmitValidity}hasSubmitted={hasSubmitted} errors={errors} setErrors={setErrors} rIErrors={rIErrors} setRIErrors={setRIErrors}/>
-              </div>
-            </div>
-          </label>
+                <div className="validation-error">
+                  {hasSubmitted && errors.description && `*${errors.description}`}
+                </div>
 
-          <label className="edit-rec-instructions">
-            <div className="edit-rec-instructions-name-val">
+              </div>
+            </label>
+
+            <label className="edit-rec-ingredients">
+              <div className="edit-rec-ingredients-name-val">
+                <div className="edit-rec-ingredients-name">Ingredients</div>
+                <div>
+                  <AllRecipeIngredients
+                    recipeIngredients={recipeIngredients}
+                    handleNewRI={handleNewRI}
+                    ingredientsArr={ingredientsArr}
+                    hasSubmitted={hasSubmitted}
+                    errors={errors}
+                    setErrors={setErrors}
+                    rIErrors={rIErrors}
+                    setRIErrors={setRIErrors}
+                  />
+                </div>
+              </div>
+            </label>
+
+            <label className="edit-rec-instructions">
               <div className="edit-rec-instructions-name">Instructions</div>
-              <div className="validation-error">
-                {hasSubmitted && errors.instructions && `*${errors.instructions}`}
+
+              <div className="edit-rec-instructions-input-val">
+                <textarea
+                  type="text"
+                  className="edit-rec-instructions-input"
+                  value={instructions}
+                  onChange={(e) => setInstructions(e.target.value)}
+                  maxLength='2000'
+                  // required
+                  placeholder="Recipe instructions..."
+                />
+
+                <div className="validation-error">
+                  {hasSubmitted && errors.instructions && `*${errors.instructions}`}
+                </div>
+
               </div>
+            </label>
+
+            <label className="edit-rec-rec-image">
+              <div className="edit-rec-rec-image-name">Recipe Image</div>
+
+              <div className="edit-rec-rec-image-input-val">
+                <input
+                  className="edit-rec-rec-image-input"
+                  value={recipeImageUrl}
+                  onChange={(e) => setRecipeImageUrl(e.target.value)}
+                  maxLength={'255'}
+                  placeholder="Image URL"
+                />
+
+                <div className="validation-error">
+                  {hasSubmitted && errors.recipeImage && `*${errors.recipeImage}`}
+                </div>
+
+              </div>
+            </label>
+
+            <div className="edit-rec-submit-container">
+              <button className={submitButtonClass} onClick={handleSubmit} disabled={submitValidity ? false : true}>Save Cocktail!</button>
             </div>
 
-            <textarea
-              type="text"
-              className="edit-rec-instructions-input"
-              value={instructions}
-              onChange={(e) => setInstructions(e.target.value)}
-              maxLength='2000'
-              required
-              placeholder="Recipe instructions..."
-            />
-          </label>
+          </form>
+        </div>
 
-          <label>
-            <div>
-              <div>Recipe Image</div>
-              <input
-                value={recipeImageUrl}
-                onChange={(e) => setRecipeImageUrl(e.target.value)}
-                maxLength={'255'}
-                placeholder="Image URL"
-              />
-            </div>
-          </label>
-
-          <div className="edit-rec-submit-container">
-            <button className="edit-rec-submit-button" onClick={handleSubmit} disabled={submitValidity ? false : true}>Save Cocktail!</button>
-          </div>
-
-        </form>
+        <CreateIngredient />
       </div>
     );
   }

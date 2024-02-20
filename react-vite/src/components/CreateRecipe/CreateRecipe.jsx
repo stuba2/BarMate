@@ -5,6 +5,7 @@ import * as ingredientActions from "../../redux/ingredients"
 import * as recipeActions from "../../redux/recipes"
 import './CreateRecipe.css'
 import AllRecipeIngredients from "../AllRecipeIngredients/AllRecipeIngredients";
+import CreateIngredient from "../CreateIngredient/CreateIngredient";
 
 const CreateRecipe = () => {
   const dispatch = useDispatch()
@@ -52,6 +53,7 @@ const CreateRecipe = () => {
     if (instructions.length > 2000) errors['instructions'] = 'Instructions must be 2000 characters or less'
     if (recipeImageUrl.length > 255) errors['instructions'] = 'Instructions must be 255 characters or less'
     if (rIErrors.length) errors['recipeIngredient'] = 'Please fill out all fields'
+    if (recipeImageUrl.length > 255) errors['recipeImage'] = 'Image URL must be 255 characters or less'
 
     if (!Object.values(errors).length) setSubmitValidity(true)
     setErrors(errors)
@@ -126,95 +128,121 @@ const CreateRecipe = () => {
     )
   } else {
     return (
-      <div className="create-rec-container">
-        <div>create a recipe</div>
+      <div className="create-rec-super-container">
+        <div className="create-rec-lesser-container">
 
-        <form onSubmit={handleSubmit}>
+          <div className="create-rec-header">Create a Recipe</div>
 
-          <label className="create-rec-name">
-            <div className="create-rec-name-name-val">
+          <form className="create-rec-form" onSubmit={handleSubmit}>
+
+            <label className="create-rec-name">
               <div className="create-rec-name-name">Name</div>
-              <div className="validation-error">
-                {hasSubmitted && errors.name && `*${errors.name}`}
+
+              <div className="create-rec-name-input-val">
+                <input
+                  type="text"
+                  className="create-rec-name-input"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  // required
+                  maxLength='64'
+                  minLength='1'
+                  placeholder="Name"
+                />
+
+                <div className="validation-error">
+                  {hasSubmitted && errors.name && `*${errors.name}`}
+                </div>
+
               </div>
-            </div>
+            </label>
 
-            <input
-              type="text"
-              className="create-rec-name-input"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              // required
-              maxLength='64'
-              minLength='1'
-              placeholder="Name"
-            />
-          </label>
-
-          <label className="create-rec-description">
-            <div className="create-rec-description-name-val">
+            <label className="create-rec-description">
               <div className="create-rec-description-name">Description</div>
-              <div className="validation-error">
-                {hasSubmitted && errors.description && `*${errors.description}`}
+
+              <div className="create-rec-description-input-val">
+                <textarea
+                  type="text"
+                  className="create-rec-description-input"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  maxLength='1000'
+                  placeholder="Write a description (optional)"
+                />
+
+                <div className="validation-error">
+                  {hasSubmitted && errors.description && `*${errors.description}`}
+                </div>
+
               </div>
-            </div>
+            </label>
 
-            <textarea
-              type="text"
-              className="create-rec-description-input"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              maxLength='1000'
-              placeholder="Write a description (optional)"
-            />
-          </label>
-
-          <label className="create-rec-ingredients">
-            <div className="create-rec-ingredients-name-val">
-              <div className="create-rec-ingredients-name">Ingredients</div>
-              <div>
-                <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}  hasSubmitted={hasSubmitted} errors={errors} setErrors={setErrors} rIErrors={rIErrors} setRIErrors={setRIErrors}/>
+            <label className="create-rec-ingredients">
+              <div className="create-rec-ingredients-name-val">
+                <div className="create-rec-ingredients-name">Ingredients</div>
+                <div>
+                  <AllRecipeIngredients
+                    recipeIngredients={recipeIngredients}
+                    handleNewRI={handleNewRI}
+                    ingredientsArr={ingredientsArr}
+                    hasSubmitted={hasSubmitted}
+                    errors={errors}
+                    setErrors={setErrors}
+                    rIErrors={rIErrors}
+                    setRIErrors={setRIErrors}
+                  />
+                </div>
               </div>
-            </div>
+            </label>
 
-          </label>
-
-          <label className="create-rec-instructions">
-            <div className="create-rec-instructions-name-val">
+            <label className="create-rec-instructions">
               <div className="create-rec-instructions-name">Instructions</div>
-              <div className="validation-error">
-                {hasSubmitted && errors.instructions && `*${errors.instructions}`}
+
+              <div className="create-rec-instructions-input-val">
+                <textarea
+                  type="text"
+                  className="create-rec-instructions-input"
+                  value={instructions}
+                  onChange={(e) => setInstructions(e.target.value)}
+                  maxLength='2000'
+                  // required
+                  placeholder="Recipe instructions..."
+                />
+
+                <div className="validation-error">
+                  {hasSubmitted && errors.instructions && `*${errors.instructions}`}
+                </div>
+
               </div>
+            </label>
+
+            <label className="create-rec-rec-image">
+              <div className="create-rec-rec-image-name">Recipe Image</div>
+
+              <div className="create-rec-rec-image-input-val">
+                <input
+                  className="create-rec-rec-image-input"
+                  value={recipeImageUrl}
+                  onChange={(e) => setRecipeImageUrl(e.target.value)}
+                  maxLength={'255'}
+                  placeholder="Image URL"
+                />
+
+                <div className="validation-error">
+                  {hasSubmitted && errors.recipeImage && `*${errors.recipeImage}`}
+                </div>
+
+              </div>
+            </label>
+
+            <div className="create-rec-submit-container">
+              <button className={submitButtonClass} disabled={submitValidity ? false : true}>Create new drink!</button>
             </div>
 
-            <textarea
-              type="text"
-              className="create-rec-instructions-input"
-              value={instructions}
-              onChange={(e) => setInstructions(e.target.value)}
-              maxLength='2000'
-              // required
-              placeholder="Recipe instructions..."
-            />
-          </label>
+          </form>
+        </div>
 
-          <label>
-            <div>
-              <div>Recipe Image</div>
-              <input
-                value={recipeImageUrl}
-                onChange={(e) => setRecipeImageUrl(e.target.value)}
-                maxLength={'255'}
-                placeholder="Image URL"
-              />
-            </div>
-          </label>
-
-          <div className="create-rec-submit-container">
-            <button className={submitButtonClass} disabled={submitValidity ? false : true}>Create new drink!</button>
-          </div>
-
-        </form>
+        <CreateIngredient />
       </div>
     );
   }

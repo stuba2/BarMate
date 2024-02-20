@@ -1,9 +1,8 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as ingredientActions from "../../redux/ingredients"
 import OneRecipeIngredient from "../OneRecipeIngredient/OneRecipeIngredient";
+import './AllRecipeIngredients.css'
 
-const AllRecipeIngredients = ({ recipeIngredients, setRecipeIngredients, handleNewRI, ingredientsArr, hasSubmitted, errors, setErrors, rIErrors, setRIErrors }) => {
+const AllRecipeIngredients = ({ recipeIngredients, handleNewRI, ingredientsArr, hasSubmitted, errors, setErrors, rIErrors, setRIErrors }) => {
   const dispatch = useDispatch()
   const ingredients = useSelector(state => state.ingredients)
 
@@ -20,7 +19,7 @@ const AllRecipeIngredients = ({ recipeIngredients, setRecipeIngredients, handleN
           )
         })}
 
-      <div><button onClick={handleNewRI}>Add Ingredient</button></div>
+      <div className="add-ri-container"><button className="add-ri-button" onClick={handleNewRI}>Add Ingredient</button></div>
     </div>
   )
 }
