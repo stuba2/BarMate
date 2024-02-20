@@ -20,7 +20,7 @@ const CreateRecipe = () => {
   const [ recipeImageUrl, setRecipeImageUrl ] = useState('')
   const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
-  const [ submitValidity, setSubmitValidity ] = useState(true)
+  const [ submitValidity, setSubmitValidity ] = useState(false)
   const [ rIErrors, setRIErrors ] = useState([])
 
   let num = 1
@@ -53,7 +53,7 @@ const CreateRecipe = () => {
     if (recipeImageUrl.length > 255) errors['instructions'] = 'Instructions must be 255 characters or less'
     if (rIErrors.length) errors['recipeIngredient'] = 'Please fill out all fields'
 
-
+    if (!Object.values(errors).length) setSubmitValidity(true)
     setErrors(errors)
   }, [name, description, instructions, recipeIngredients, backendErr, rIErrors])
 
@@ -117,6 +117,9 @@ const CreateRecipe = () => {
     }
   }
 
+  const submitButtonClass = submitValidity ? 'create-rec-submit-button' : 'create-rec-submit-button-disabled'
+
+
   if (!ingredients) {
     return (
       <div>...loading</div>
@@ -150,7 +153,7 @@ const CreateRecipe = () => {
 
           <label className="create-rec-description">
             <div className="create-rec-description-name-val">
-              <div className="create-rec-description-name">description</div>
+              <div className="create-rec-description-name">Description</div>
               <div className="validation-error">
                 {hasSubmitted && errors.description && `*${errors.description}`}
               </div>
@@ -168,7 +171,7 @@ const CreateRecipe = () => {
 
           <label className="create-rec-ingredients">
             <div className="create-rec-ingredients-name-val">
-              <div className="create-rec-ingredients-name">ingredients</div>
+              <div className="create-rec-ingredients-name">Ingredients</div>
               <div>
                 <AllRecipeIngredients recipeIngredients={recipeIngredients} setRecipeIngredients={setRecipeIngredients} handleNewRI={handleNewRI} ingredientsArr={ingredientsArr}  hasSubmitted={hasSubmitted} errors={errors} setErrors={setErrors} rIErrors={rIErrors} setRIErrors={setRIErrors}/>
               </div>
@@ -178,7 +181,7 @@ const CreateRecipe = () => {
 
           <label className="create-rec-instructions">
             <div className="create-rec-instructions-name-val">
-              <div className="create-rec-instructions-name">instructions</div>
+              <div className="create-rec-instructions-name">Instructions</div>
               <div className="validation-error">
                 {hasSubmitted && errors.instructions && `*${errors.instructions}`}
               </div>
@@ -208,7 +211,7 @@ const CreateRecipe = () => {
           </label>
 
           <div className="create-rec-submit-container">
-            <button className="create-rec-submit-button">Create new drink! [change to defaulted disabled]</button>
+            <button className={submitButtonClass} disabled={submitValidity ? false : true}>Create new drink!</button>
           </div>
 
         </form>

@@ -38,7 +38,7 @@ const EditRecipe = () => {
   const [ recipeImageUrl, setRecipeImageUrl ] = useState(recipe ? recipe.recipe_image_url : '')
   const [ errors, setErrors ] = useState({})
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
-  const [ submitValidity, setSubmitValidity ] = useState(true)
+  const [ submitValidity, setSubmitValidity ] = useState(false)
   const [ rIErrors, setRIErrors ] = useState([])
 
 
@@ -79,7 +79,7 @@ const EditRecipe = () => {
     if (recipeImageUrl && recipeImageUrl.length > 255) errors['instructions'] = 'Instructions must be 255 characters or less'
     if (rIErrors) errors['recipeIngredient'] = 'Please fill out all fields'
 
-
+    if (!Object.values(errors).length) setSubmitValidity(true)
     setErrors(errors)
   }, [name, description, instructions, recipeIngredients, backendErr, rIErrors])
 
@@ -166,6 +166,9 @@ const EditRecipe = () => {
     }
   }
 
+  const submitButtonClass = submitValidity ? 'create-rec-submit-button' : 'create-rec-submit-button-disabled'
+
+
   if (!recipe) {
     return (
       <div>...loading</div>
@@ -199,7 +202,7 @@ const EditRecipe = () => {
 
           <label className="edit-rec-description">
             <div className="edit-rec-description-name-val">
-              <div className="edit-rec-description-name">description</div>
+              <div className="edit-rec-description-name">Description</div>
               <div className="validation-error">
                 {hasSubmitted && errors.description && `*${errors.description}`}
               </div>
@@ -217,7 +220,7 @@ const EditRecipe = () => {
 
           <label className="edit-rec-ingredients">
             <div className="edit-rec-ingredients-name-val">
-              <div className="edit-rec-ingredients-name">ingredients</div>
+              <div className="edit-rec-ingredients-name">Ingredients</div>
               <div className="validation-error">
                 {hasSubmitted && errors.recipeIngredient && `*${errors.recipeIngredient}`}
               </div>
@@ -229,7 +232,7 @@ const EditRecipe = () => {
 
           <label className="edit-rec-instructions">
             <div className="edit-rec-instructions-name-val">
-              <div className="edit-rec-instructions-name">instructions</div>
+              <div className="edit-rec-instructions-name">Instructions</div>
               <div className="validation-error">
                 {hasSubmitted && errors.instructions && `*${errors.instructions}`}
               </div>
@@ -259,7 +262,7 @@ const EditRecipe = () => {
           </label>
 
           <div className="edit-rec-submit-container">
-            <button className="edit-rec-submit-button" onClick={handleSubmit}>Save Cocktail! [change to defaulted disabled]</button>
+            <button className="edit-rec-submit-button" onClick={handleSubmit} disabled={submitValidity ? false : true}>Save Cocktail!</button>
           </div>
 
         </form>
