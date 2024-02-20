@@ -39,8 +39,18 @@ const CreateIngredient = () => {
     setHasSubmitted(true)
     let createdIngredient
 
+    const capitalizeFirst = (ing) => {
+      let ret = []
+      const words = ing.split(' ')
+      for (let word of words) {
+        if (word === 'de' || word === 'of') ret.push(word)
+        else ret.push(word.charAt(0).toUpperCase() + word.slice(1))
+      }
+      return ret.join(' ')
+    }
+
     const newIngredient = {
-      name: name
+      name: capitalizeFirst(name)
     }
 
     if (!(Object.values(errors).length)) {
@@ -84,7 +94,7 @@ const CreateIngredient = () => {
             placeholder="Image URL"
           />
         </div> */}
-        <div className="create-ing-submit-container"><button className="create-ing-submit-button">Submit</button></div>
+        <div className="create-ing-submit-container"><button className="create-ing-submit-button">Create New Ingredient</button></div>
       </form>
     </div>
   )

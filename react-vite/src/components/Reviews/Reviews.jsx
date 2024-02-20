@@ -63,7 +63,7 @@ const Reviews = () => {
             editDeleteButtonClass = 'review-edit-delete'
           }
 
-          if (isBeingDeleted) {
+          if (isBeingDeleted && focusedReviewId === review.id) {
             deleteButtonClass = 'review-delete-shown'
           } else {
             deleteButtonClass = 'review-delete-hidden'
@@ -71,45 +71,8 @@ const Reviews = () => {
 
           if (isBeingEdited && focusedReviewId === review.id) {
             return <EditReview key={review.id} reviewId={review.id} setIsBeingEdited={setIsBeingEdited} recipeId={recipeId}/>
-          } else if (isBeingDeleted && focusedReviewId === review.id) {
-            return (
-              // if review is being deleted
-              <div className="rev-container" key={review.id}>
-
-                <div className="rev-name-time">
-                  <div className="review-username">{review.reviewer_details.username}</div>
-                  <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
-                </div>
-
-                <div className="review-text">{review.review_text}</div>
-
-                <div className="review-rating-edit-delete">
-                  <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
-                  <div className={editDeleteButtonClass}>
-                    <div>
-                      <button className="review-edit" onClick={() => {
-                        setIsBeingEdited(true)
-                        setFocusedReviewId(review.id)
-                      }}>Edit</button>
-                    </div>
-                    <div className="review-dot">·</div>
-                    <div>
-                    <button className='review-delete' onClick={() => {
-                        setIsBeingDeleted(true)
-                        setFocusedReviewId(review.id)
-                      }}>Delete</button>
-                      <div className='review-delete-shown'>
-                        <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            )
           } else {
             return (
-              // standard review setup
               <div className="rev-container" key={review.id}>
 
                 <div className="rev-name-time">
@@ -134,7 +97,7 @@ const Reviews = () => {
                         setIsBeingDeleted(true)
                         setFocusedReviewId(review.id)
                       }}>Delete</button>
-                      <div className='review-delete-hidden'>
+                      <div className={deleteButtonClass}>
                         <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
                       </div>
                     </div>

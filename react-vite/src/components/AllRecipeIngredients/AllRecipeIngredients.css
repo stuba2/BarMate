@@ -1,0 +1,19 @@
+.add-ri-container {
+  display: flex;
+  margin: 0.625rem 0;
+  /* margin-left: 5rem; */
+}
+
+.add-ri-button {
+  text-decoration: none;
+  background-color: rgba(96, 53, 146, .9);
+  color: #fdfdfb;
+  border: #603592 0.063rem solid;
+  border-radius: 0.313rem;
+  padding: 0.313rem;
+}
+
+.add-ri-button:hover {
+  background-color: rgba(22, 14, 64, .9);
+  cursor: pointer;
+}

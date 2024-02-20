@@ -1,26 +1,26 @@
 .edit-review-form-container {
   display: flex;
   /* justify-content: center; */
-  margin-left: 150px;
+  margin-left: 9.375rem;
 }
 
 .edit-review-form {
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 300px;
+  width: 18.75rem;
 }
 
 .edit-review-discard {
-  font-size: 13px;
+  font-size: 0.813rem;
   font-weight: bold;
   grid-area: save-button;
   background-color: #e4e6ea;
   color: black;
-  padding: 8px 15px;
+  padding: 0.5rem 0.938rem;
   border: none;
-  border-radius: 4px;
-  margin: 3px;
+  border-radius: 0.25rem;
+  margin: 0.188rem;
 }
 
 .edit-review-discard:hover {
@@ -35,28 +35,28 @@
 }
 
 .create-review-save {
-  font-size: 13px;
+  font-size: 0.813rem;
   font-weight: 300;
   grid-area: save-button;
   background-color: #e9ebee;
   color: #808b9d;
-  padding: 8px 15px;
+  padding: 0.5rem 0.938rem;
   border: none;
-  border-radius: 4px;
-  margin: 3px;
+  border-radius: 0.25rem;
+  margin: 0.188rem;
   cursor: context-menu;
 }
 
 .create-review-save-enabled {
-  font-size: 13px;
+  font-size: 0.813rem;
   font-weight: bold;
   grid-area: save-button;
   color: white;
   background-color: #0c66e4;
-  padding: 8px 15px;
+  padding: 0.5rem 0.938rem;
   border: none;
-  border-radius: 4px;
-  margin: 3px;
+  border-radius: 0.25rem;
+  margin: 0.188rem;
 }
 
 .create-review-save-enabled:hover {

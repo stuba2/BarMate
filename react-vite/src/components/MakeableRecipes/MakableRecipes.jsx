@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as recipeActions from "../../redux/recipes"
+import * as makableActions from "../../redux/makable"
 import * as barActions from "../../redux/bars"
 import { NavLink } from "react-router-dom";
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
@@ -8,7 +8,7 @@ import './MakableRecipes.css'
 
 const MakableRecipes = () => {
   const dispatch = useDispatch()
-  const recipes = useSelector(state => state.recipes)
+  const recipes = useSelector(state => state.makableRec)
   const myBar = useSelector(state => state.bar)
 
   let recipesArr = Object.values(recipes)
@@ -19,7 +19,7 @@ const MakableRecipes = () => {
   })
 
   useEffect(() => {
-    dispatch(recipeActions.getMakableRecipesThunk())
+    dispatch(makableActions.getMakableRecipesThunk())
     dispatch(barActions.getBarThunk())
   }, [])
 

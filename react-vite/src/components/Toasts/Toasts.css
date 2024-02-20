@@ -1,9 +1,19 @@
+.toast-container {
+  display: flex;
+  align-items: center;
+}
+
+.toast-label {
+  margin-right: 0.313rem;
+}
+
 .toast-button {
-  padding: 4px 6px;
+  padding: 0.25rem 0.375rem;
   background-color: rgba(96, 53, 146, .9);
   color: #fdfdfb;
-  border: #603592 1px solid;
-  border-radius: 10px;
+  border: #603592 0.063rem solid;
+  border-radius: 0.625rem;
+  margin: 0 0.313rem;
 }
 
 .toast-button:hover {

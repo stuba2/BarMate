@@ -27,9 +27,11 @@ const OneRecipe = () => {
   // const createRevClassName = 'one-rec-rev-super-container' + user ? '' : ' hidden'
   let createRevClassName
   if (!user) {
-    createRevClassName = 'one-rec-rev-super-container hidden'
+    createRevClassName = 'one-rec-rev-lesser-container hidden'
+  } else if (user && recipe && user.id === recipe.user_id) {
+    createRevClassName = 'one-rec-rev-lesser-container hidden'
   } else (
-    createRevClassName = 'one-rec-rev-super-container'
+    createRevClassName = 'one-rec-rev-lesser-container'
   )
 
   if (!recipe || !recipe.recipe_ingredients) {
@@ -48,7 +50,7 @@ const OneRecipe = () => {
 
             <div className="one-rec-rating-toast">
               <div className="one-rec-rating">Average Rating: <i className="fa-solid fa-star"></i> {ratingAvg}</div>
-              <div className="one-rec-toast-container"><Toasts recipeId={recipeId}/></div>
+              <div className="one-rec-toast-container"><Toasts recipe={recipe}/></div>
             </div>
 
             <div className="one-rec-ing-container">

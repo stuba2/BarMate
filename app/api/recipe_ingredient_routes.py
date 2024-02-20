@@ -23,7 +23,7 @@ def add_recipe_ingredient():
     ret = {
       'id': new_recipe_ingredient.id,
       'amount': new_recipe_ingredient.amount,
-      'unit': new_recipe_ingredient.unit,
+      'unit': new_recipe_ingredient.to_dict()['unit'].value,
       'ingredient_id': new_recipe_ingredient.ingredient_id,
       'recipe_id': new_recipe_ingredient.recipe_id
     }
@@ -39,10 +39,6 @@ def add_recipe_ingredient():
 def edit_recipe_ingredient(recipe_ingredient_id):
   form = RecipeIngredientForm()
   form['csrf_token'].data = request.cookies['csrf_token']
-
-  recipe_full = Recipe.query.get(form.data['recipe_id'])
-  ingredient_full = Ingredient.query.get(form.data['ingredient_id'])
-
 
   existing_ri = RecipeIngredient.query.get(recipe_ingredient_id)
 

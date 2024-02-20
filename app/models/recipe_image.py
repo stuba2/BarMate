@@ -21,6 +21,7 @@ class RecipeImage(db.Model, UserMixin):
             'id': self.id,
             'recipe_id': self.recipe_id,
             'url': self.url,
+            'recipe_image_recipe': self.recipe_image_recipe,
             "created_at": self.created_at,
             "updated_at": self.updated_at,
         }

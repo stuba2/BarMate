@@ -1,28 +1,27 @@
 .create-review-form {
   display: flex;
   flex-direction: column;
-  margin-right: 150px;
-  width: 360px;
+  width: 22.5rem;
 }
 
 .create-review-text-container {
-  padding-top: 20px;
+  padding-top: 1.25rem;
   width: 100%;
 }
 
 .create-review-text {
-  font-size: 15px;
+  font-size: 0.938rem;
   color: #aaa0eb;
   background-color: #090619;
-  border: 1px solid #603592;
-  border-radius: 10px;
-  box-shadow: 0px 1px #b7bdc8;
-  padding: 4px 10px;
-  margin: 3px;
+  border: 0.063rem solid #603592;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.063rem #b7bdc8;
+  padding: 0.25rem 0.625rem;
+  margin: 0.188rem;
   width: 100%;
   display: flex;
   align-items: center;
-  min-height: 15px;
+  min-height: 0.938rem;
   overflow-wrap: break-word;
   overflow: scroll;
   overflow: auto;
@@ -32,19 +31,19 @@
 }
 
 .create-review-text::-webkit-scrollbar {
-  width: 15px;
+  width: 0.938rem;
 }
 
 .create-review-text::-webkit-scrollbar-track {
   background: #f5f5f5;
-  border: 1px #090619 solid;
-  border-radius: 10px;
+  border: 0.063rem #090619 solid;
+  border-radius: 0.625rem;
 }
 
 .create-review-text::-webkit-scrollbar-thumb {
   background: #090619;
-  border: 1px #090619 solid;
-  border-radius: 10px;
+  border: 0.063rem #090619 solid;
+  border-radius: 0.625rem;
 }
 
 .create-review-text::-webkit-scrollbar-thumb:hover {
@@ -58,8 +57,8 @@
 .post-review-stars {
   display: flex;
   justify-content: start;
-  padding-left: 5px;
-  padding-top: 5px;
+  padding-left: 0.313rem;
+  padding-top: 0.313rem;
   color: #160e40;
 }
 
