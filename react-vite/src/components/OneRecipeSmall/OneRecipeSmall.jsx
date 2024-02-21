@@ -4,13 +4,16 @@ import './OneRecipeSmall.css'
 const OnceRecipeSmall = ({recipeId}) => {
   const randRecipes = useSelector(state => state.randomRec)
   const makableRecipes = useSelector(state => state.makableRec)
+  const userRecipes = useSelector(state => state.userRecipes)
   const recipes = useSelector(state => state.recipes)
   const randRecipe = randRecipes[+recipeId]
   const makableRecipe = makableRecipes[+recipeId]
   const recipe = recipes[+recipeId]
+  const userRecipe = userRecipes[+recipeId]
 
   let chosenRecipe
   if (recipe) chosenRecipe = recipe
+  else if (userRecipe) chosenRecipe = userRecipe
   else if (randRecipe) chosenRecipe = randRecipe
   else if (makableRecipe) chosenRecipe = makableRecipe
 

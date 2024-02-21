@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import { thunkSignup } from "../../redux/session";
-import * as recipeActions from "../../redux/recipes"
+import * as userRecipeActions from "../../redux/userRecipes"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
 import './UsersRecipes.css'
 import OpenModalButton from "../OpenModalButton/OpenModalButton";
@@ -12,11 +12,11 @@ const UsersRecipes = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   let { page } = useParams()
-  const recipes = useSelector(state => state.recipes)
+  const recipes = useSelector(state => state.userRecipes)
   if (!page) page = 1
 
   useEffect(() => {
-    dispatch(recipeActions.getUsersRecipesThunk())
+    dispatch(userRecipeActions.getUsersRecipesThunk())
   }, [dispatch, page])
 
   let recipesArr = Object.values(recipes)
