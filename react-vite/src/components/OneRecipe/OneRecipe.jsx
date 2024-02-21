@@ -68,15 +68,17 @@ const OneRecipe = () => {
           <div><img src={recipe.recipe_image_url} width="335" className="one-rec-img"/></div>
         </div>
 
-        <div className="one-rec-ing-instructions">
-          Instructions:
-          <div className="one-rec-instructions">{recipe.instructions}</div>
+        <div className="one-rec-reviews-instructions">
+          <div className="one-rec-ing-instructions">
+            Instructions:
+            <div className="one-rec-instructions">{recipe.instructions}</div>
+          </div>
+          <div className="one-rec-rev-super-container">
+            <div className={createRevClassName}><CreateReview recipeId={recipeId}/></div>
+            <div className="one-rec-revs"><Reviews /></div>
+          </div>
         </div>
 
-        <div className="one-rec-rev-super-container">
-          <div className={createRevClassName}><CreateReview recipeId={recipeId}/></div>
-          <div className="one-rec-revs"><Reviews /></div>
-        </div>
       </div>
     );
   }
