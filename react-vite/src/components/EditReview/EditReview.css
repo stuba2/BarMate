@@ -1,20 +1,48 @@
 .edit-review-form-container {
-  display: flex;
+  /* display: flex; */
   /* justify-content: center; */
-  margin-left: 9.375rem;
+  /* margin-left: 19.375rem; */
+  /* width: fit-content; */
+  /* width: 25rem; */
+  display: grid;
+  grid-template-areas:
+  "text"
+  "stars"
+  "buttons";
 }
 
 .edit-review-form {
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 18.75rem;
+  /* width: 18.75rem; */
+  /* box-sizing: border-box; */
+}
+
+.edit-review-text {
+  font-size: 0.938rem;
+  color: #aaa0eb;
+  background-color: #090619;
+  border: 0.063rem solid #603592;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.063rem #b7bdc8;
+  padding: 0.25rem 0.625rem;
+  margin: 0.188rem;
+  display: flex;
+  align-items: center;
+  min-height: 0.938rem;
+  overflow-wrap: break-word;
+  overflow: scroll;
+  overflow: auto;
+  /* overflow: hidden; */
+  resize: vertical;
+  box-sizing: border-box;
+  width: 98.7%;
 }
 
 .edit-review-discard {
   font-size: 0.813rem;
   font-weight: bold;
-  grid-area: save-button;
   background-color: #e4e6ea;
   color: black;
   padding: 0.5rem 0.938rem;

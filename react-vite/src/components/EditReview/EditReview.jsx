@@ -127,22 +127,22 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
 
 
   return (
-    <div className="edit-review-container">
+    // <div className="edit-review-container">
 
       <form onSubmit={handleSubmit} className="edit-review-form-container">
         <div className="edit-review-form">
 
-          <div className="create-review-text-container">
+          {/* <div className="create-review-text-container"> */}
             <textarea
               id= "review-text"
-              className="create-review-text"
+              className="edit-review-text"
               type="text"
               onChange={e => setReviewText(e.target.value)}
               onClick={() => setSelected(true)}
               value={reviewText}
               placeholder="Write a review..."
             />
-          </div>
+          {/* </div> */}
 
           <div className="post-review-stars">
           <span className="rate">
@@ -214,7 +214,7 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
         </div>
       </form>
 
-    </div>
+    // </div>
   )
 }
 

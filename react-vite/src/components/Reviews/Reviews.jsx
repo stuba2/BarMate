@@ -33,82 +33,82 @@ const Reviews = () => {
     )
   } else {
     return (
-      <div className="review-super-container">
-        <div className="rev-lesser-container">{filteredRevs.map((review) => {
-          let updatedDateSplit = new Date(review.updated_at).toDateString().split(' ')
-          let updatedTimeSplit = new Date(review.updated_at).toTimeString().split(' ')
-          let dateMonth = updatedDateSplit[1]
-          let dateDate = updatedDateSplit[2]
-          let timeTimeSplit = updatedTimeSplit[0].split(':')
-          let timeHour = timeTimeSplit[0]
-          let postedHour
-          let meridiem
-          if (timeHour < 12) {
-            postedHour = hourArr[+timeHour]
-            meridiem = 'AM'
-          } else {
-            postedHour = hourArr[+timeHour - 12]
-            meridiem = 'PM'
-          }
-          let postedMinute = timeTimeSplit[1]
+      <div className="rev-greater-container">{filteredRevs.map((review) => {
+        let updatedDateSplit = new Date(review.updated_at).toDateString().split(' ')
+        let updatedTimeSplit = new Date(review.updated_at).toTimeString().split(' ')
+        let dateMonth = updatedDateSplit[1]
+        let dateDate = updatedDateSplit[2]
+        let timeTimeSplit = updatedTimeSplit[0].split(':')
+        let timeHour = timeTimeSplit[0]
+        let postedHour
+        let meridiem
+        if (timeHour < 12) {
+          postedHour = hourArr[+timeHour]
+          meridiem = 'AM'
+        } else {
+          postedHour = hourArr[+timeHour - 12]
+          meridiem = 'PM'
+        }
+        let postedMinute = timeTimeSplit[1]
 
-          let editDeleteButtonClass
-          let deleteButtonClass
+        let editDeleteButtonClass
+        let deleteButtonClass
 
-          if (user && review.user_id !== user.id) {
-            editDeleteButtonClass = 'review-edit-delete-hidden'
-          } else if (!user) {
-            editDeleteButtonClass = 'review-edit-delete-hidden'
-          } else {
-            editDeleteButtonClass = 'review-edit-delete'
-          }
+        if (user && review.user_id !== user.id) {
+          editDeleteButtonClass = 'review-edit-delete-hidden'
+        } else if (!user) {
+          editDeleteButtonClass = 'review-edit-delete-hidden'
+        } else {
+          editDeleteButtonClass = 'review-edit-delete'
+        }
 
-          if (isBeingDeleted && focusedReviewId === review.id) {
-            deleteButtonClass = 'review-delete-shown'
-          } else {
-            deleteButtonClass = 'review-delete-hidden'
-          }
+        if (isBeingDeleted && focusedReviewId === review.id) {
+          deleteButtonClass = 'review-delete-shown'
+        } else {
+          deleteButtonClass = 'review-delete-hidden'
+        }
 
-          if (isBeingEdited && focusedReviewId === review.id) {
-            return <EditReview key={review.id} reviewId={review.id} setIsBeingEdited={setIsBeingEdited} recipeId={recipeId}/>
-          } else {
-            return (
-              <div className="rev-container" key={review.id}>
+        if (isBeingEdited && focusedReviewId === review.id) {
+          return <div className="rev-container">
+            <EditReview key={review.id} reviewId={review.id} setIsBeingEdited={setIsBeingEdited} recipeId={recipeId}/>
+          </div>
+        } else {
+          return (
+            <div className="rev-container" key={review.id}>
 
-                <div className="rev-name-time">
-                  <div className="review-username">{review.reviewer_details.username}</div>
-                  <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
-                </div>
+              <div className="rev-name-time">
+                <div className="review-username">{review.reviewer_details.username}</div>
+                <div className="review-timestamp">{dateMonth} {dateDate} at {postedHour}:{postedMinute} {meridiem}</div>
+              </div>
 
-                <div className="review-text">{review.review_text}</div>
+              <div className="review-text">{review.review_text}</div>
 
-                <div className="review-rating-edit-delete">
-                  <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
-                  <div className={editDeleteButtonClass}>
-                    <div>
-                      <button className="review-edit" onClick={() => {
-                        setIsBeingEdited(true)
-                        setFocusedReviewId(review.id)
-                      }}>Edit</button>
-                    </div>
-                    <div className="review-dot">·</div>
-                    <div>
-                    <button className='review-delete' onClick={() => {
-                        setIsBeingDeleted(true)
-                        setFocusedReviewId(review.id)
-                      }}>Delete</button>
-                      <div className={deleteButtonClass}>
-                        <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
-                      </div>
+              <div className="review-rating-edit-delete">
+                <div className="review-rating"><i className="fa-solid fa-star"></i> {review.rating}</div>
+                <div className={editDeleteButtonClass}>
+                  <div>
+                    <button className="review-edit" onClick={() => {
+                      setIsBeingEdited(true)
+                      setFocusedReviewId(review.id)
+                    }}>Edit</button>
+                  </div>
+                  <div className="review-dot">·</div>
+                  <div>
+                  <button className='review-delete' onClick={() => {
+                      setIsBeingDeleted(true)
+                      setFocusedReviewId(review.id)
+                    }}>Delete</button>
+                    <div className={deleteButtonClass}>
+                      <DeleteReview reviewId={review.id} setIsBeingDeleted={setIsBeingDeleted} recipeId={recipeId}/>
                     </div>
                   </div>
                 </div>
-
               </div>
-            )
-          }
-        })}</div>
-        </div>
+
+            </div>
+          )
+        }
+      })}</div>
     );
   }
 }
