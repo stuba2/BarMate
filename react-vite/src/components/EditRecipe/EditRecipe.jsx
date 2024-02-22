@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import * as ingredientActions from "../../redux/ingredients"
 import * as recipeActions from "../../redux/recipes"
+import * as oneRecipeActions from "../../redux/oneRecipe"
 import './EditRecipe.css'
 import AllRecipeIngredients from "../AllRecipeIngredients/AllRecipeIngredients";
 import CreateIngredient from "../CreateIngredient/CreateIngredient";
@@ -12,15 +13,15 @@ const EditRecipe = () => {
   const navigate = useNavigate()
   const { recipeId } = useParams()
   const { user } = useSelector(state => state.session)
+  const recipe = useSelector(state => state.oneRecipe[+recipeId])
   const recipes = useSelector(state => state.recipes)
-  // const recipe = useSelector(state => state.recipes[recipeId])
   const ingredients = useSelector(state => state.ingredients)
   const backendErr = useSelector(state => state.recipes.Errors)
   const userId = user.id
 
   // keeping up with the up to date ing/rec
   useEffect(() => {
-    dispatch(recipeActions.getOneRecipeThunk(recipeId))
+    dispatch(oneRecipeActions.getOneRecipeThunk(recipeId))
     dispatch(ingredientActions.getIngredientsThunk())
   },[dispatch])
 
@@ -30,7 +31,6 @@ const EditRecipe = () => {
     return 0
   })
   const recipesArr = Object.values(recipes)
-  const recipe = recipesArr.find(recipe => recipe.id === +recipeId)
 
   const [ name, setName ] = useState(recipe ? recipe.name : '')
   const [ description, setDescription ] = useState(recipe ? recipe.description : '')

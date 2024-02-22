@@ -13,6 +13,8 @@ import reviewReducer from "./reviews";
 import toastReducer from "./toasts";
 import randRecReducer from "./random";
 import makableReducer from "./makable";
+import oneRecipeReducer from "./oneRecipe";
+import userRecipeReducer from "./userRecipes";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -22,7 +24,9 @@ const rootReducer = combineReducers({
   reviews: reviewReducer,
   toasts: toastReducer,
   randomRec: randRecReducer,
-  makableRec: makableReducer
+  makableRec: makableReducer,
+  oneRecipe: oneRecipeReducer,
+  userRecipes: userRecipeReducer,
 });
 
 let enhancer;
