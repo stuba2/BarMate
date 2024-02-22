@@ -1,4 +1,7 @@
 .navigation-container {
+  position: sticky;
+  top: 0;
+  z-index: 999;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
