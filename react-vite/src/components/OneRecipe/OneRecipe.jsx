@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import * as recipeActions from "../../redux/recipes"
+import * as oneRecipeActions from "../../redux/oneRecipe"
 import Reviews from "../Reviews/Reviews";
 import Toasts from "../Toasts/Toasts";
 import CreateReview from "../CreateReview/CreateReview";
@@ -9,11 +9,10 @@ import './OneRecipe.css'
 
 const OneRecipe = () => {
   const dispatch = useDispatch()
-  const recipes = useSelector(state => state.recipes)
+  const { recipeId } = useParams()
+  const recipe = useSelector(state => state.oneRecipe[+recipeId])
   const reviews = useSelector(state => state.reviews)
   const { user } = useSelector(state => state.session)
-  const { recipeId } = useParams()
-  const recipe = recipes[+recipeId]
   const reviewsArr = Object.values(reviews)
 
   let ratingAvg = (Math.round((reviewsArr.reduce((total, next) => total + next.rating, 0) / reviewsArr.length) * 100) / 100)
@@ -21,7 +20,7 @@ const OneRecipe = () => {
 
 
   useEffect(() => {
-    dispatch(recipeActions.getOneRecipeThunk(+recipeId))
+    dispatch(oneRecipeActions.getOneRecipeThunk(+recipeId))
   }, [dispatch])
 
   // const createRevClassName = 'one-rec-rev-super-container' + user ? '' : ' hidden'
