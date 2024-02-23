@@ -48,7 +48,7 @@ function LoginFormModal() {
 
     const serverResponse = await dispatch(
       thunkLogin({
-        email: 'demo@aa.io',
+        email: 'kyle@mooney.io',
         password: 'password',
       })
     );
