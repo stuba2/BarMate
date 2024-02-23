@@ -49,11 +49,21 @@
 .one-rec-ing-container {
   display: flex;
   flex-direction: column;
-  margin-top: 9.375rem;
+  margin-top: 2rem;
   /* margin-right: 9.375rem; */
 }
 
+.one-rec-reviews-instructions {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "instructions reviews";
+}
+
 .one-rec-ing-instructions {
+  grid-area: instructions;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +72,7 @@
 }
 
 .one-rec-instructions {
-  width: 30%;
+  width: 60%;
   display: flex;
   font-weight: normal;
   padding-top: 0.625rem;
@@ -70,10 +80,10 @@
 }
 
 .one-rec-rev-super-container {
+  grid-area: reviews;
   display: flex;
-  /* justify-content: space-between; */
+  flex-direction: column;
   justify-content: center;
-  padding: 6% 10%;
 }
 
 .one-rec-rev-lesser-container {
@@ -82,8 +92,4 @@
 
 .hidden {
   display: none;
-}
-
-.one-rec-revs {
-  margin-left: 5%;
 }

@@ -93,8 +93,7 @@ const CreateReview = ({ recipeId }) => {
 
   return (
       <form onSubmit={handleSubmit} className="create-review-form">
-        <div className="create-review-formy">
-          <div className="create-review-text-container">
+          {/* <div className="create-review-text-container"> */}
             <textarea
               id= "review-text"
               className="create-review-text"
@@ -104,7 +103,7 @@ const CreateReview = ({ recipeId }) => {
               value={reviewText}
               placeholder="Write a review..."
             />
-          </div>
+          {/* </div> */}
 
 
           <div className="post-review-stars">
@@ -172,7 +171,6 @@ const CreateReview = ({ recipeId }) => {
             <button className={buttonClass} disabled={!validity ? true : false}>Save</button>
           </div>
 
-        </div>
       </form>
   )
 }
