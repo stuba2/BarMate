@@ -6,9 +6,9 @@ ex = []
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(
-        username='demo',
-        email='demo@aa.io',
+    peter = User(
+        username='peter',
+        email='peter@peter.io',
         password='password',
         dob=datetime(1985,1,1))
     tobey = User(
@@ -26,17 +26,24 @@ def seed_users():
         email='tom@tom.io',
         password='password',
         dob=datetime(2000,1,1))
+    kyle = User(
+        username='kyle',
+        email='kyle@mooney.io',
+        password='password',
+        dob=datetime(1990,11,13))
 
-    db.session.add(demo)
+    db.session.add(peter)
     db.session.add(tobey)
     db.session.add(andrew)
     db.session.add(tom)
+    db.session.add(kyle)
     db.session.commit()
 
-    ex.append(demo)
+    ex.append(peter)
     ex.append(tobey)
     ex.append(andrew)
     ex.append(tom)
+    ex.append(kyle)
 
 
 # Uses a raw SQL query to TRUNCATE or DELETE the users table. SQLAlchemy doesn't
