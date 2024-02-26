@@ -35,7 +35,7 @@ export const getRecipesThunk = (page) => async (dispatch) => {
     const data = await response.json()
     dispatch(getRecipes(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -47,7 +47,7 @@ export const getRecipesThunkAll = () => async (dispatch) => {
     const data = await response.json()
     dispatch(getRecipes(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -77,7 +77,7 @@ export const createRecipeThunk = (recipeForm) => async (dispatch) => {
 
 
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -95,7 +95,7 @@ export const addRecipeIngredientsThunk = (RIObj) => async (dispatch) => {
     const data = await response.json()
 
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -114,7 +114,7 @@ export const editRecipeThunk = (recipeId, recipeForm) => async (dispatch) => {
     dispatch(editRecipe(data))
     return data
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -131,7 +131,7 @@ export const editRecipeIngredientsThunk = (rIId, rIObj) => async (dispatch) => {
 
     const data = await response.json()
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -145,7 +145,7 @@ export const deleteRecipeThunk = (recipeId) => async (dispatch) => {
     const data = await response.json()
     dispatch(deleteRecipe(recipeId))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -162,7 +162,7 @@ export const addRecipeImageThunk = (recipeId, imgForm) => async (dispatch) => {
 
     const data = await response.json()
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -179,7 +179,7 @@ export const editRecipeImageThunk = (recipeId, imgForm) => async (dispatch ) => 
 
     const data = await response.json()
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }

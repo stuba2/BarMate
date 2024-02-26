@@ -33035,7 +33035,6 @@ const zCocktails = {
 
 const objOfObj = {aCocktails, bCocktails, cCocktails, dCocktails, eCocktails, fCocktails, gCocktails, hCocktails, iCocktails, jCocktails, kCocktails, lCocktails, mCocktails, nCocktails, oCocktails, pCocktails, qCocktails, rCocktails, sCocktails, tCocktails, vCocktails, wCocktails, yCocktails, zCocktails}
 
-// console.log(objOfObj)
 
 
 const formatter = () => {
@@ -33104,23 +33103,10 @@ const turnApiToRecipeSeeds = () => {
       instructions: drinkObj.instructions,
       user_id: randNum
     }
-    // let variableName = drinkObj.name.split(' ').join('').split('.').join('').split('#').join('').split("'").join('').split('(').join('').split(')').join('').split('-').join('').split("’").join('').split('é').join('').split('*').join('').split('ó').join('').split('&').join('')
-    // let seed = `${variableName} = Recipe(
-    //   name='${drinkObj.name}',
-    //   description=null,
-    //   instructions='${drinkObj.instructions}',
-    //   user_id=${randNum}
-    // )`
-    // console.log(seed)
-    // let dbSession = `db.session.add(${variableName})`
-    // console.log(dbSession)
 
     arrOfRecipeObjs.push(newRecipeObj)
   })
   return arrOfRecipeObjs
-
-  // console.dir(arrOfRecipeObjs, {'maxArrayLength': null})
-
 }
 
 const turnApiToIngredientSeeds = () => {
@@ -33219,19 +33205,11 @@ const turnApiToIngredientSeeds = () => {
     }
     arrOfIngredientSeedObjs.push(ingredientObj)
   }
-  // console.log(arrOfIngredientSeedObjs)
-  // console.dir(arrOfIngredientSeedObjs, {'maxArrayLength': null})
 
   for (let ingObj of arrOfIngredientSeedObjs) {
     let variableName = ingObj.name.split(' ').join('').split('-').join('')
-    // console.log(variableName)
-
-    // let seed = `${variableName} = Ingredient(
-    //   name='${ingObj.name}')`
-    // console.log(seed)
 
     let dbSession = `db.session.add(${variableName})`
-    console.log(dbSession)
   }
 
   return arrOfIngredientSeedObjs
@@ -33605,42 +33583,7 @@ const turnApiToRecipeIngredientSeeds = () => {
       // push it to the arr
       arrOfRecipeIngredientSeeds.push(seed)
     }
-
-
-    // if (!drinkObj['strMeasure1']) {
-    //   console.log(drinkObj['strDrink'])
-
-      //figure out variable name for ingredient seed
-      // let variableName = drinkObj['strIngredient1'].split(' ').join('').split('-').join('').toLowerCase()
-
-      // // find amount and unit for seed info
-      // let splitMeasure = drinkObj['strMeasure1'].split(' ')
-      // let lastSplit = splitMeasure[splitMeasure.length - 1]
-      // if (lastSplit === '') {
-      //   splitMeasure.pop()
-      // }
-      // let amount = +splitMeasure.shift()
-      // let unit = splitMeasure.join(' ')
-
-      // let seed = `${variableName} = RecipeIngredient(
-      //   amount=${amount},
-      //   unit=${unit},
-      //   recipe_id=Recipe.query.filter(Recipe.name == '${recipeName}').first().id,
-      //   ingredient_id=Ingredient.query.filter(Ingredient.name == '${ingredientName}').first().id
-      // // )`
-
-    // }
-
-
   })
-
-  // for (let seed of arrOfRecipeIngredientSeeds) {
-  //   console.log(seed)
-  // }
-  for (let add of variableNamesArr) {
-    console.log(`db.session.add(${add})`)
-  }
-  // console.log(arrOfRecipeIngredientSeeds)
 }
 
 const turnApiToRecipeImages = () => {
@@ -33661,12 +33604,6 @@ const turnApiToRecipeImages = () => {
 
     arrOfRecipeImageSeeds.push(seed)
   })
-  // for (let seed of arrOfRecipeImageSeeds) {
-  //   console.log(seed)
-  // }
-  for (let add of variableNamesArr) {
-    console.log(`db.session.add(${add})`)
-  }
 }
 const turnApiToIngredientImages = () => {
 

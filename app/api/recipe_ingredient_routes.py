@@ -6,6 +6,7 @@ from ..forms.recipe_ingredient_form import RecipeIngredientForm
 recipe_ingredient_routes = Blueprint('recipe_ingredients', __name__)
 
 @recipe_ingredient_routes.route('/', methods=['POST'])
+@login_required
 def add_recipe_ingredient():
   form = RecipeIngredientForm()
   form['csrf_token'].data = request.cookies['csrf_token']
@@ -36,6 +37,7 @@ def add_recipe_ingredient():
   }
 
 @recipe_ingredient_routes.route('/<int:recipe_ingredient_id>', methods=['PUT'])
+@login_required
 def edit_recipe_ingredient(recipe_ingredient_id):
   form = RecipeIngredientForm()
   form['csrf_token'].data = request.cookies['csrf_token']

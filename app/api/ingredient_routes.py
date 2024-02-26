@@ -44,6 +44,7 @@ def get_one_ingredient(ingredient_id):
   }
 
 @ingredient_routes.route('/', methods=['POST'])
+@login_required
 def create_an_ingredient():
   form = IngredientForm()
   form['csrf_token'].data = request.cookies['csrf_token']
@@ -70,6 +71,7 @@ def create_an_ingredient():
   }
 
 @ingredient_routes.route('/<int:ingredient_id>/image', methods=['POST'])
+@login_required
 def create_image_on_ingredient(ingredient_id):
   form = IngredientImageForm()
   form['csrf_token'].data = request.cookies['csrf_token']

@@ -99,7 +99,6 @@ const EditRecipe = () => {
   }
 
   const handleSubmit = async (e) => {
-    console.log('hi')
     e.preventDefault()
 
     const recipeForm = {
@@ -115,9 +114,9 @@ const EditRecipe = () => {
       updatedRecipe = await dispatch(recipeActions.editRecipeThunk(recipeId, recipeForm))
       .catch(async (res) => {
         const data = await res.json()
-        console.log('create data: ', data)
+        // console.log('create data: ', data)
         if (data && data.Errors) {
-          console.log('data errors: ', data.Errors)
+          // console.log('data errors: ', data.Errors)
         }
       })
 

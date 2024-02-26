@@ -33,7 +33,7 @@ def get_recipe_reviews(recipe_id):
   }
 
 @review_routes.route('/<int:review_id>', methods=['DELETE'])
-# @login_required
+@login_required
 def delete_a_review(review_id):
   review_to_delete = Review.query.filter(Review.id == review_id).first()
 

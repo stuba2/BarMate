@@ -25,7 +25,6 @@ const MakableRecipes = () => {
   }, [])
 
   useEffect(() => {
-    console.log('!recipes: ', recipes)
     if (!Object.values(recipes).length) setIsLoading(true)
     else setIsLoading(false)
   }, [recipes])

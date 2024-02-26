@@ -20,14 +20,6 @@ const UsersRecipes = () => {
   }, [dispatch, page])
 
   let recipesArr = Object.values(recipes)
-  // console.log('recipesArr: ', recipesArr)
-  // let paginatedRecipes = recipes? do it from the store?
-    // probably should do it from the api side. only send the first 10/20 recipes?
-
-
-  // let previousPage = `/recipes/index/${+page - 1}`
-  // let nextPage = `/recipes/index/${+page + 1}`
-
 
   if (!recipes) {
     return (
