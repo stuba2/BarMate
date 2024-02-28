@@ -14,7 +14,7 @@ export const getMakableRecipesThunk = () => async (dispatch) => {
     const data = await response.json()
     dispatch(getMakableRecipes(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }

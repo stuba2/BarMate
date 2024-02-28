@@ -7,7 +7,7 @@ from ..models.ingredient import bar_ingredients
 bar_routes = Blueprint('bars', __name__)
 
 @bar_routes.route('/')
-# @login_required
+@login_required
 def get_bar():
   bar_ings = Ingredient.query.join(bar_ingredients).join(User).filter((bar_ingredients.c.ingredient_id == Ingredient.id) & (bar_ingredients.c.user_id == current_user.get_id())).all()
 
@@ -20,6 +20,7 @@ def get_bar():
   }
 
 @bar_routes.route('/', methods=['POST'])
+@login_required
 def create_bar():
   form = BarForm()
   form['csrf_token'].data = request.cookies['csrf_token']
@@ -46,6 +47,7 @@ def create_bar():
   }
 
 @bar_routes.route('/<int:ingredient_id>', methods=['DELETE'])
+@login_required
 def delete_bar(ingredient_id):
   user = User.query.filter(User.id == current_user.id).first()
   existing_ing = Ingredient.query.filter(Ingredient.id == ingredient_id).first()

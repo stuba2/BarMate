@@ -277,6 +277,7 @@ def get_users_recipes():
   }
 
 @recipe_routes.route('/', methods=['POST'])
+@login_required
 def create_a_recipe():
   owner_details = User.query.filter(User.id == current_user.id).first()
   form = RecipeForm()
@@ -313,6 +314,7 @@ def create_a_recipe():
     }, 500
 
 @recipe_routes.route('/<int:recipe_id>/image', methods=['POST'])
+@login_required
 def create_image_on_recipe(recipe_id):
   form = RecipeImageForm()
   form['csrf_token'].data = request.cookies['csrf_token']
@@ -339,6 +341,7 @@ def create_image_on_recipe(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>', methods=['PUT'])
+@login_required
 def edit_a_recipe(recipe_id):
   existing_recipe = Recipe.query.get(recipe_id)
   owner_details = existing_recipe.recipes_user
@@ -380,6 +383,7 @@ def edit_a_recipe(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>/image', methods=['PUT'])
+@login_required
 def edit_image_on_recipe(recipe_id):
   form = RecipeImageForm()
   form['csrf_token'].data = request.cookies['csrf_token']
@@ -405,6 +409,7 @@ def edit_image_on_recipe(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>', methods=['DELETE'])
+@login_required
 def delete_a_recipe(recipe_id):
   recipe_to_delete = Recipe.query.filter(Recipe.id == recipe_id).first()
 
@@ -421,7 +426,7 @@ def delete_a_recipe(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>/reviews', methods=["POST"])
-# @login_required
+@login_required
 def post_review(recipe_id):
   recipe = Recipe.query.get(recipe_id)
   reviewer_details = User.query.filter(User.id == current_user.id).first()
@@ -464,7 +469,7 @@ def post_review(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>/reviews/<int:review_id>', methods=["PUT"])
-# @login_required
+@login_required
 def edit_a_review(recipe_id, review_id):
   existing_review = Review.query.get(review_id)
   reviewer_details = User.query.filter(User.id == existing_review.user_id).first()
@@ -524,7 +529,7 @@ def get_recipe_toasts(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=["POST"])
-# @login_required
+@login_required
 def post_toast(recipe_id):
   recipe = Recipe.query.get(recipe_id)
   toaster_details = User.query.filter(User.id == current_user.id).first()
@@ -563,7 +568,7 @@ def post_toast(recipe_id):
   }
 
 @recipe_routes.route('/<int:recipe_id>/toasts', methods=['DELETE'])
-# @login_required
+@login_required
 def delete_a_toast(recipe_id):
   toast_to_delete = Toast.query.filter(Toast.recipe_id == recipe_id, Toast.user_id == current_user.id).first()
 

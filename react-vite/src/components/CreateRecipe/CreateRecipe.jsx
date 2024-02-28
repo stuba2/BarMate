@@ -87,9 +87,9 @@ const CreateRecipe = () => {
       createdRecipe = await dispatch(recipeActions.createRecipeThunk(recipeForm))
       .catch(async (res) => {
         // const data = await res.json()
-        console.log('create res: ', res)
+        // console.log('create res: ', res)
         if (res && res.Errors) {
-          console.log('res errors: ', res.Errors)
+          // console.log('res errors: ', res.Errors)
         }
       })
 

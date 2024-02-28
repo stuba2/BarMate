@@ -62,9 +62,8 @@ const CreateIngredient = () => {
       setErrors({})
       setHasSubmitted(false)
     }
-    
+
     if (createdIngredient && createdIngredient.id) {
-      console.log()
       let retIngObj = {
         ingredient_id: createdIngredient.id,
         user_id: user.id

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as makableActions from "../../redux/makable"
 import * as barActions from "../../redux/bars"
@@ -10,6 +10,7 @@ const MakableRecipes = () => {
   const dispatch = useDispatch()
   const recipes = useSelector(state => state.makableRec)
   const myBar = useSelector(state => state.bar)
+  const [ isLoading, setIsLoading ] = useState(false)
 
   let recipesArr = Object.values(recipes)
   const barIngredients = Object.values(myBar).sort((a,b) => {
@@ -22,6 +23,38 @@ const MakableRecipes = () => {
     dispatch(makableActions.getMakableRecipesThunk())
     dispatch(barActions.getBarThunk())
   }, [])
+
+  useEffect(() => {
+    if (!Object.values(recipes).length) setIsLoading(true)
+    else setIsLoading(false)
+  }, [recipes])
+
+  const loadingOption = <div className="center">
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                          <div className="wave"></div>
+                        </div>
+
+  const recipesOption = <ul className="makable-rec-ul">
+                          {recipesArr.map((recipe) => {
+                            return (
+                              <NavLink
+                              to={`/recipes/${recipe.id}`}
+                              className="makable-one-recipe-container"
+                              key={recipe.id}
+                              title={recipe.name}>
+                                  <OnceRecipeSmall recipeId={recipe.id}/>
+                                </NavLink>
+                            )
+                          })}
+                        </ul>
 
 
   return (
@@ -43,19 +76,7 @@ const MakableRecipes = () => {
       </div>
 
       <div className="makable-recs-container">
-        <ul className="makable-rec-ul">
-          {recipesArr.map((recipe) => {
-            return (
-              <NavLink
-                to={`/recipes/${recipe.id}`}
-                className="makable-one-recipe-container"
-                key={recipe.id}
-                title={recipe.name}>
-                  <OnceRecipeSmall recipeId={recipe.id}/>
-                </NavLink>
-            )
-          })}
-        </ul>
+        {isLoading ? loadingOption : recipesOption}
       </div>
     </div>
   );
