@@ -15,7 +15,7 @@ export const getOneRecipeThunk = (recipeId) => async (dispatch) => {
     dispatch(getOneRecipe(data))
     return data
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }

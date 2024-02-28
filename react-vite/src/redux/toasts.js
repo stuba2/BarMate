@@ -29,7 +29,7 @@ export const getToastsThunk = (recipeId) => async (dispatch) => {
     const data = await response.json()
     dispatch(getToasts(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -47,7 +47,7 @@ export const postToastThunk = (recipeId, toastObj) => async (dispatch) => {
     const data = await response.json()
     dispatch(postToast(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -61,7 +61,7 @@ export const deleteToastThunk = (recipeId, toastId) => async (dispatch) => {
     const data = await response.json()
     dispatch(deleteToast(+toastId))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }

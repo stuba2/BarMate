@@ -15,7 +15,7 @@ export const getUsersRecipesThunk = () => async (dispatch) => {
     const data = await response.json()
     dispatch(getUsersRecipes(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }

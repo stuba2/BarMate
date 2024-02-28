@@ -29,7 +29,7 @@ export const getBarThunk = () => async (dispatch) => {
     dispatch(getBar(data))
     return data
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -47,7 +47,7 @@ export const postBarThunk = (barIng) => async (dispatch) => {
     const data = await response.json()
     dispatch(postBar(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -61,7 +61,7 @@ export const deleteBarThunk = (ingId) => async (dispatch) => {
     const data = await response.json()
     dispatch(deleteBarIng(ingId))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }

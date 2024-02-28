@@ -35,7 +35,7 @@ export const getReviewsThunk = (recipeId) => async (dispatch) => {
     const data = await response.json()
     dispatch(getReviews(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -53,7 +53,7 @@ export const createReviewThunk = (reviewForm, recipeId) => async (dispatch) => {
     const data = await response.json()
     dispatch(createReview(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -71,7 +71,7 @@ export const editReviewThunk = (recipeId, reviewId, reviewForm) => async (dispat
     const data = await response.json()
     dispatch(editReview(data))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
@@ -84,7 +84,7 @@ export const deleteReviewThunk = (reviewId, recipeId) => async (dispatch) => {
 
     dispatch(deleteReview(reviewId))
   } catch (error) {
-    console.log('error: ', error)
+    // console.log('error: ', error)
     return error
   }
 }
