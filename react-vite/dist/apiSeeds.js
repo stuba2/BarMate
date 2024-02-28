@@ -33036,7 +33036,6 @@ const zCocktails = {
 const objOfObj = {aCocktails, bCocktails, cCocktails, dCocktails, eCocktails, fCocktails, gCocktails, hCocktails, iCocktails, jCocktails, kCocktails, lCocktails, mCocktails, nCocktails, oCocktails, pCocktails, qCocktails, rCocktails, sCocktails, tCocktails, vCocktails, wCocktails, yCocktails, zCocktails}
 
 
-
 const formatter = () => {
   let combinedArrOfDrinks = []
   let arrOfObj = Object.values(objOfObj)
@@ -33107,6 +33106,7 @@ const turnApiToRecipeSeeds = () => {
     arrOfRecipeObjs.push(newRecipeObj)
   })
   return arrOfRecipeObjs
+
 }
 
 const turnApiToIngredientSeeds = () => {
@@ -33208,7 +33208,6 @@ const turnApiToIngredientSeeds = () => {
 
   for (let ingObj of arrOfIngredientSeedObjs) {
     let variableName = ingObj.name.split(' ').join('').split('-').join('')
-
     let dbSession = `db.session.add(${variableName})`
   }
 
@@ -33609,7 +33608,3 @@ const turnApiToIngredientImages = () => {
 
 }
 
-// turnApiToRecipeSeeds()
-turnApiToIngredientSeeds()
-// turnApiToRecipeIngredientSeeds()
-// turnApiToRecipeImages()
