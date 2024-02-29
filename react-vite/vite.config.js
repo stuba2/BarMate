@@ -11,12 +11,6 @@ export default defineConfig((mode) => ({
       lintOnStart: true,
       failOnError: mode === "production",
     }),
-    VitePluginRadar({
-      // Google Analytics tag injection
-      analytics: {
-        id: 'G-6X3XNRVH54',
-      },
-    })
   ],
   server: {
     open: true,
