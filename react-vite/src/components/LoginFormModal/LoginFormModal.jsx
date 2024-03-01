@@ -45,6 +45,7 @@ function LoginFormModal() {
 
   const handleDemoLogin = async (e) => {
     e.preventDefault()
+    setHasSubmitted(true)
 
     const serverResponse = await dispatch(
       thunkLogin({

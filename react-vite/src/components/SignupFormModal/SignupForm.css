@@ -32,6 +32,12 @@
   padding-right: 0.625rem;
 }
 
+.signup-email-input {
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
+}
+
 .signup-username {
   padding: 0.625rem;
 }
@@ -45,6 +51,12 @@
 
 .signup-username-name {
   padding-right: 0.625rem;
+}
+
+.signup-username-input {
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
 }
 
 .signup-dob {
@@ -62,6 +74,12 @@
   padding-right: 0.625rem;
 }
 
+.signup-dob-input {
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
+}
+
 .signup-password {
   padding: 0.625rem
 }
@@ -77,6 +95,12 @@
   padding-right: 0.625rem;
 }
 
+.signup-password-input {
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
+}
+
 .signup-confirm-password {
   padding: 0.625rem
 }
@@ -90,6 +114,12 @@
 
 .signup-confirm-password-name {
   padding-right: 0.625rem;
+}
+
+.signup-confirm-password-input {
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
 }
 
 .signup-button-container {
