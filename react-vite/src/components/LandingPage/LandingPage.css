@@ -24,13 +24,18 @@
 
 .land-update-bar {
   text-decoration: none;
-  color: #090619;
+  color: #fdfdfb;
   font-size: larger;
   font-weight: 550;
   background-color: rgba(96, 53, 146, .9);
   padding: 0.438rem;
   border: #090619 solid 0.063rem;
   border-radius: 0.625rem;
+}
+
+.land-update-bar:hover {
+  background-color: rgba(22, 14, 64, .9);
+  cursor: pointer;
 }
 
 .land-rand-rec-container {

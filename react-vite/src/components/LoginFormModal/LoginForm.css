@@ -22,6 +22,9 @@
 
 .login-email-input {
   margin-bottom: 0.313rem;
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
 }
 
 .login-password {
@@ -30,6 +33,9 @@
 
 .login-password-input {
   margin-bottom: 0.313rem;
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
 }
 
 .login-button-container {
@@ -39,6 +45,7 @@
 .login-button {
   background-color: #603592;
   color: #fdfdfb;
+  width: 8rem;
   border: #603592 0.063rem solid;
   padding: 0.625rem 1.25rem;
   border-radius: 0.625rem;
@@ -50,12 +57,13 @@
 }
 
 .login-demo-button-container {
-  padding-top: 1.563rem;
+  padding-top: 1rem;
 }
 
 .demo-button {
   background-color: #603592;
   color: #fdfdfb;
+  width: 8rem;
   border: #603592 0.063rem solid;
   padding: 0.625rem 1.25rem;
   border-radius: 0.625rem;

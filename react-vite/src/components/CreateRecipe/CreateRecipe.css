@@ -36,6 +36,9 @@
 .create-rec-name-input {
   margin-right: 0.313rem;
   width: 14.875rem;
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
 }
 
 .create-rec-description-name {
@@ -56,6 +59,8 @@
 .create-rec-description-input {
   margin-right: 0.625rem;
   width: 15rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
 }
 
 .create-rec-ingredients-name {
@@ -80,6 +85,8 @@
 .create-rec-instructions-input {
   margin-right: 0.625rem;
   width: 15rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
 }
 
 .create-rec-rec-image-name {
@@ -100,6 +107,9 @@
 .create-rec-rec-image-input {
   margin-right: 0.625rem;
   width: 14.938rem;
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
 }
 
 .create-rec-submit-container {

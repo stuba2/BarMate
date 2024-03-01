@@ -23,7 +23,7 @@ const CreateIngredient = () => {
 
   useEffect(() => {
     const errors = {}
-    let existingIngName = ingredientsArr.find(ing => ing.name === name)
+    let existingIngName = ingredientsArr.find(ing => ing.name.toLowerCase() === name.toLowerCase())
 
     if (!name) errors['name'] = 'Ingredient name is required'
     if (name.length > 64) errors['name'] = 'Ingredient name must be 64 characters or less'
