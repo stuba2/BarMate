@@ -72,9 +72,9 @@ const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setE
               setAmountIndividual(e.target.value)
               handleChangeIngAmt(e.target.value)
             }}
-            // value={1}
             required
             min='1'
+            max='1000'
             placeholder="Amount"
             />
         </div>

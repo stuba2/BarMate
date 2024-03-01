@@ -29,3 +29,21 @@
   display: flex;
   align-items: center;
 }
+
+#ingredient-options {
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
+}
+
+#number-options {
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
+}
+
+#unit-options {
+  height: 1.5rem;
+  border-radius: 0.313rem;
+  border-width: 0.063rem;
+}
