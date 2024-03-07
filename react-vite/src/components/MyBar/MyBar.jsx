@@ -8,10 +8,10 @@ import CreateIngredient from "../CreateIngredient/CreateIngredient";
 
 const MyBar = () => {
   const dispatch = useDispatch()
-  const { user } = useSelector(state => state.session)
   const userBar = useSelector(state => state.bar)
   const ingredients = useSelector(state => state.ingredients)
-  const [ isSelected, setIsSelected ] = useState()
+  const [ isLoading, setIsLoading ] = useState(false)
+  const [ barChangeIsLoading, setBarChangeIsLoading ] = useState(false)
 
   let userBarr = Object.values(userBar).sort((a,b) => {
     if (a.name < b.name) return -1
@@ -30,30 +30,29 @@ const MyBar = () => {
     existingBar = dispatch(barActions.getBarThunk())
   }, [dispatch])
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  useEffect(() => {
+    if (!Object.values(ingredients).length && !Object.values(userBar).length) setIsLoading(true)
+    else setIsLoading(false)
+  }, [ingredients, userBar])
 
-    let target = ingredientsArr.filter(ingObj => ingObj.name === isSelected)
+  let possibleIngClass
+  if (!barChangeIsLoading) possibleIngClass = 'my-bar-possible-ings'
+  if (barChangeIsLoading) possibleIngClass = 'ing-loading'
 
-    let ingInBar = userBarr.find(ing => ing.name === isSelected)
-
-    if (!ingInBar) {
-      let retIngObj = {
-        ingredient_id: target[0].id,
-        user_id: user.id
-      }
-
-      dispatch(barActions.postBarThunk(retIngObj))
-    }
-    if (ingInBar) {
-      dispatch(barActions.deleteBarThunk(ingInBar.id))
-    }
-
-  }
-
-  if (!true) {
+  if (isLoading) {
     return (
-      <div>...loading</div>
+      <div className="center">
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+      </div>
     )
   } else {
     return (
@@ -69,7 +68,7 @@ const MyBar = () => {
               })}
             </ul>
           </div>
-          <div className="my-bar-possible-ings"><EditBar setIsSelected={setIsSelected} ingredientsArr={ingredientsArr} handleSubmit={handleSubmit}/></div>
+          <div className="my-bar-possible-ings"><EditBar ingredientsArr={ingredientsArr} /></div>
         </div>
         <div className="my-bar-upper">
           <CreateIngredient />

@@ -6,18 +6,33 @@
   border-radius: 0.5rem;
 }
 
-.edit-bar-button-button {
+.ing-out-bar {
   background-color: #73c988;
+  animation: fadeRemoveButton 0.5s;
   padding: 0.313rem;
   border: #090619 solid 0.125rem;
   width: 12.656rem;
   cursor: pointer;
 }
 
+@keyframes fadeRemoveButton {
+  from {background-color: #808782;}
+  to {background-color: #73c988;}
+}
+
 .ing-in-bar {
   color: #090619;
+  padding: 0.313rem;
   background-color: #808782;
+  animation: fadeAddButton 0.5s;
+  width: 12.656rem;
   border: #090619 solid 0.125rem;
+  cursor: pointer;
+}
+
+@keyframes fadeAddButton {
+  from {background-color: #73c988;}
+  to {background-color: #808782;}
 }
 
 .edit-bar-button-container::-webkit-scrollbar {
