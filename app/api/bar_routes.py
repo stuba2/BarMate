@@ -27,7 +27,7 @@ def create_bar():
   user = User.query.filter(User.id == current_user.id).first()
 
   if form.validate_on_submit():
-    ing = Ingredient.query.filter(Ingredient.id == form.data['ingredient_id']).first()
+    ing = Ingredient.query.get(form.data['ingredient_id'])
 
     ing.bar_ingredients_users.append(user)
     db.session.commit()

@@ -1,27 +1,55 @@
-import { useState } from "react"
-import { useSelector } from "react-redux"
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import * as barActions from "../../redux/bars"
+import './EditBarButton.css'
 
-const EditBarButton = ({ ingredient, handleSubmit, setIsSelected}) => {
-  const userBar = useSelector(state => state.bar)
-  const [ ingName, setIngName ] = useState()
-  let userBarr = Object.values(userBar).sort((a,b) => {
-    if (a.name < b.name) return -1
-    if (a.name > b.name) return 1
-    return 0
-  })
+const EditBarButton = ({ ingredient, ingBool }) => {
+  const dispatch = useDispatch()
+  const { user } = useSelector(state => state.session)
+  const ing = useSelector(state => state.bar[ingredient.id])
+  const [ isSelected, setIsSelected ] = useState()
+  const [ isLoaded, setIsLoaded ] = useState(false)
+  const [ buttonClassName, setButtonClassName ] = useState(ingBool ? 'ing-in-bar' : 'ing-out-bar')
 
-  let buttonClassName
-  let target = userBarr.find(ingObj => ingObj.name === ingredient.name)
 
-  if (target) buttonClassName = 'edit-bar-button-button ing-in-bar'
-  if (!target) buttonClassName = 'edit-bar-button-button'
+  useEffect(() => {
+    if (ing) setButtonClassName('ing-in-bar')
+    if (!ing) setButtonClassName('ing-out-bar')
+    setIsLoaded(true)
+  }, [ing])
 
+
+  const handleAddIng = () => {
+    setButtonClassName('ing-in-bar')
+    let retIngObj = {
+      ingredient_id: isSelected,
+      user_id: user.id
+    }
+    dispatch(barActions.postBarThunk(retIngObj))
+  }
+
+  const handleRemoveIng = () => {
+    setButtonClassName('ing-out-bar')
+    dispatch(barActions.deleteBarThunk(isSelected))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const ingInBar = ing
+
+    if (!ingInBar) handleAddIng(isSelected)
+    if (ingInBar) handleRemoveIng(isSelected)
+  }
+
+  if (!isLoaded) {
+    return null
+  }
   return (
     <div>
       <form action="" onSubmit={handleSubmit} key={ingredient.id}>
         <button className={buttonClassName} id={ingredient.name} onClick={() =>{
-          setIsSelected(ingredient.name)
-          setIngName(ingredient.name)
+          setIsSelected(ingredient.id)
           }}>
           {ingredient.name}
         </button>
