@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
-import { thunkSignup } from "../../redux/session";
 import * as ingredientActions from '../../redux/ingredients'
 
 const AllIngredients = () => {

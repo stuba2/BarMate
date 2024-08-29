@@ -1,14 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
-import { thunkSignup } from "../../redux/session";
+import { NavLink, useParams } from "react-router-dom";
 import * as recipeActions from "../../redux/recipes"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
 import './AllRecipes.css'
 
 const AllRecipes = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   let { page } = useParams()
   const recipes = useSelector(state => state.recipes)
   if (!page) page = 1
@@ -18,11 +16,6 @@ const AllRecipes = () => {
   }, [dispatch, page])
 
   let recipesArr = Object.values(recipes)
-  // let paginatedRecipes = recipes? do it from the store?
-    // probably should do it from the api side. only send the first 10/20 recipes?
-
-
-  let previousPage = `/recipes/index/${+page - 1}`
   let nextPage = `/recipes/index/${+page + 1}`
 
 

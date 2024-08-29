@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import * as reviewActions from "../../redux/reviews"
 import './EditReview.css'
 
-const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
+const EditReview = ({ reviewId, setIsBeingEdited, recipeId }) => {
 
   const dispatch = useDispatch()
   const { user } = useSelector(state => state.session)
@@ -127,94 +127,87 @@ const EditReview = ({reviewId, setIsBeingEdited, recipeId}) => {
 
 
   return (
-    // <div className="edit-review-container">
+    <form onSubmit={handleSubmit} className="edit-review-form-container">
+      <div className="edit-review-form">
 
-      <form onSubmit={handleSubmit} className="edit-review-form-container">
-        <div className="edit-review-form">
+          <textarea
+            id= "review-text"
+            className="edit-review-text"
+            type="text"
+            onChange={e => setReviewText(e.target.value)}
+            onClick={() => setSelected(true)}
+            value={reviewText}
+            placeholder="Write a review..."
+          />
 
-          {/* <div className="create-review-text-container"> */}
-            <textarea
-              id= "review-text"
-              className="edit-review-text"
-              type="text"
-              onChange={e => setReviewText(e.target.value)}
-              onClick={() => setSelected(true)}
-              value={reviewText}
-              placeholder="Write a review..."
-            />
-          {/* </div> */}
+        <div className="post-review-stars">
+        <span className="rate">
+          <i
+            className={star1ClassName}
+            onClick={e => {
+              setNumStars(1)
+              setIsStar1Clicked(true)
+              setIsStar2Clicked(false)
+              setIsStar3Clicked(false)
+              setIsStar4Clicked(false)
+              setIsStar5Clicked(false)
+            }}
+          />
+          <i
+            className={star2ClassName}
+            onClick={e => {
+              setNumStars(2)
+              setIsStar1Clicked(true)
+              setIsStar2Clicked(true)
+              setIsStar3Clicked(false)
+              setIsStar4Clicked(false)
+              setIsStar5Clicked(false)
+            }}
+          />
+          <i
+            className={star3ClassName}
+            onClick={e => {
+              setNumStars(3)
+              setIsStar1Clicked(true)
+              setIsStar2Clicked(true)
+              setIsStar3Clicked(true)
+              setIsStar4Clicked(false)
+              setIsStar5Clicked(false)
+            }}
+          />
+          <i
+            className={star4ClassName}
+            onClick={e => {
+              setNumStars(4)
+              setIsStar1Clicked(true)
+              setIsStar2Clicked(true)
+              setIsStar3Clicked(true)
+              setIsStar4Clicked(true)
+              setIsStar5Clicked(false)
+            }}
+          />
+          <i
+            className={star5ClassName}
+            onClick={e => {
+              setNumStars(5)
+              setIsStar1Clicked(true)
+              setIsStar2Clicked(true)
+              setIsStar3Clicked(true)
+              setIsStar4Clicked(true)
+              setIsStar5Clicked(true)
+            }}
+          />
+        </span> Stars
+      </div>
 
-          <div className="post-review-stars">
-          <span className="rate">
-            <i
-              className={star1ClassName}
-              onClick={e => {
-                setNumStars(1)
-                setIsStar1Clicked(true)
-                setIsStar2Clicked(false)
-                setIsStar3Clicked(false)
-                setIsStar4Clicked(false)
-                setIsStar5Clicked(false)
-              }}
-            />
-            <i
-              className={star2ClassName}
-              onClick={e => {
-                setNumStars(2)
-                setIsStar1Clicked(true)
-                setIsStar2Clicked(true)
-                setIsStar3Clicked(false)
-                setIsStar4Clicked(false)
-                setIsStar5Clicked(false)
-              }}
-            />
-            <i
-              className={star3ClassName}
-              onClick={e => {
-                setNumStars(3)
-                setIsStar1Clicked(true)
-                setIsStar2Clicked(true)
-                setIsStar3Clicked(true)
-                setIsStar4Clicked(false)
-                setIsStar5Clicked(false)
-              }}
-            />
-            <i
-              className={star4ClassName}
-              onClick={e => {
-                setNumStars(4)
-                setIsStar1Clicked(true)
-                setIsStar2Clicked(true)
-                setIsStar3Clicked(true)
-                setIsStar4Clicked(true)
-                setIsStar5Clicked(false)
-              }}
-            />
-            <i
-              className={star5ClassName}
-              onClick={e => {
-                setNumStars(5)
-                setIsStar1Clicked(true)
-                setIsStar2Clicked(true)
-                setIsStar3Clicked(true)
-                setIsStar4Clicked(true)
-                setIsStar5Clicked(true)
-              }}
-            />
-          </span> Stars
+        <div className="edit-button-validation-combo">
+          <button className={buttonClass} disabled={!validity ? true : false}>Save</button>
+          <button className="edit-review-discard" onClick={handleDiscard}>Discard changes</button>
+          <div className="validation-error">{validationErrors.review}</div>
         </div>
 
-          <div className="edit-button-validation-combo">
-            <button className={buttonClass} disabled={!validity ? true : false}>Save</button>
-            <button className="edit-review-discard" onClick={handleDiscard}>Discard changes</button>
-            {/* <div className={reviewLengthErrorClass}>Review must be 1000 characters or less</div> */}
-            <div className="validation-error">{validationErrors.review}</div>
-          </div>
-
-        </div>
-      </form>
-
-    // </div>
+      </div>
+    </form>
   )
 }
 

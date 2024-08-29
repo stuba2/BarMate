@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import './DeleteReview.css'
 import * as reviewActions from "../../redux/reviews"
 
-const DeleteReview = ({reviewId, setIsBeingDeleted, recipeId}) => {
+const DeleteReview = ({ reviewId, setIsBeingDeleted, recipeId }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -15,7 +15,6 @@ const DeleteReview = ({reviewId, setIsBeingDeleted, recipeId}) => {
 
     dispatch(reviewActions.deleteReviewThunk(reviewId, recipeId))
     setIsBeingDeleted(false)
-    // setCounter(+counter+1)
   }
 
   const handleDiscard = () => {

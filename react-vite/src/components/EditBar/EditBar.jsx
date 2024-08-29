@@ -2,7 +2,7 @@ import './EditBar.css'
 import { useSelector } from 'react-redux';
 import EditBarButton from '../EditBarButton/EditBarButton';
 
-const EditBar = ({ ingredientsArr}) => {
+const EditBar = ({ ingredientsArr }) => {
   const userBar = useSelector(state => state.bar)
 
   return (

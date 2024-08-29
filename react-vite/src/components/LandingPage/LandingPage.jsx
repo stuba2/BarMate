@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import * as randRecActions from '../../redux/random'
 import './LandingPage.css'
 import { NavLink } from "react-router-dom"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall"
 
-const LandingPage = ({}) => {
+const LandingPage = () => {
   const dispatch = useDispatch()
   const recipes = useSelector(state => state.randomRec)
   const { user } = useSelector(state => state.session)

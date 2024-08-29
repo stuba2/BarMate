@@ -23,7 +23,6 @@ const OneRecipe = () => {
     dispatch(oneRecipeActions.getOneRecipeThunk(+recipeId))
   }, [dispatch])
 
-  // const createRevClassName = 'one-rec-rev-super-container' + user ? '' : ' hidden'
   let createRevClassName
   if (!user) {
     createRevClassName = 'one-rec-rev-lesser-container hidden'

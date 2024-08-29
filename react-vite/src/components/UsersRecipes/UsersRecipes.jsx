@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
-import { thunkSignup } from "../../redux/session";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import * as userRecipeActions from "../../redux/userRecipes"
 import OnceRecipeSmall from "../OneRecipeSmall/OneRecipeSmall";
 import './UsersRecipes.css'
@@ -10,7 +9,6 @@ import DeleteRecipe from "../DeleteRecipe/DeleteRecipe";
 
 const UsersRecipes = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   let { page } = useParams()
   const recipes = useSelector(state => state.userRecipes)
   if (!page) page = 1
@@ -54,8 +52,6 @@ const UsersRecipes = () => {
             )
           })}
         </div>
-      {/* <div><NavLink to={previousPage}>Previous page (Under Construction, please change the url to navigate to previous page)</NavLink></div>
-      <div><NavLink to={nextPage}>Next page (Under Construction, please change the url to navigate to next page)</NavLink></div> */}
       </div>
     );
   }

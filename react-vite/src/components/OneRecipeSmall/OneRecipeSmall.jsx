@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import './OneRecipeSmall.css'
 
-const OnceRecipeSmall = ({recipeId}) => {
+const OnceRecipeSmall = ({ recipeId }) => {
   const randRecipes = useSelector(state => state.randomRec)
   const makableRecipes = useSelector(state => state.makableRec)
   const userRecipes = useSelector(state => state.userRecipes)

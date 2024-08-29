@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import * as ingredientActions from "../../redux/ingredients"
 import * as barActions from "../../redux/bars"
 import './CreateIngredient.css'
 
 const CreateIngredient = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   const { user } = useSelector(state => state.session)
   const ingredients = useSelector(state => state.ingredients)
   const [ name, setName ] = useState('')
-  // const [ url, setUrl ] = useState('')
   const [errors, setErrors] = useState({});
   const [ hasSubmitted, setHasSubmitted ] = useState(false)
 
@@ -96,15 +93,6 @@ const CreateIngredient = () => {
             placeholder="Name"
           />
         </div>
-        {/* <div>
-          <label>Image URL</label>
-          <input
-            type="text"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            placeholder="Image URL"
-          />
-        </div> */}
         <div className="create-ing-submit-container"><button className="create-ing-submit-button">Create New Ingredient</button></div>
       </form>
     </div>

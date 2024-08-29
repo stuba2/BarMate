@@ -3,8 +3,6 @@ import OneRecipeIngredient from "../OneRecipeIngredient/OneRecipeIngredient";
 import './AllRecipeIngredients.css'
 
 const AllRecipeIngredients = ({ recipeIngredients, handleNewRI, ingredientsArr, hasSubmitted, errors, setErrors, rIErrors, setRIErrors }) => {
-  const dispatch = useDispatch()
-  const ingredients = useSelector(state => state.ingredients)
 
   if (!true) {
     return (

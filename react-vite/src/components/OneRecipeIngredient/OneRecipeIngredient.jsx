@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import unitTypes from "../../../public/unitTypes";
 import './OneRecipeIngredient.css'
-import { useSubmit } from "react-router-dom";
 
 const OneRecipeIngredient = ({ rIObj, ingredientsArr, hasSubmitted, errors, setErrors, rIErrors, setRIErrors }) => {
   const [ ingredientIndividual, setIngredientIndividual ] = useState(rIObj.ingName ? rIObj.ingName : '')
   const [ amountIndividual, setAmountIndividual ] = useState(rIObj.ingAmt ? rIObj.ingAmt : '')
   const [ unitIndividual, setUnitIndividual ] = useState(rIObj.ingUnit ? rIObj.ingUnit : '')
   const [ individualErrors, setIndividualErrors ] = useState({})
-  // const [ errorClassName, setErrorClassName ] = useState('')
-  // let errorClassName
 
   useEffect(() => {
     const localValErrors = {}

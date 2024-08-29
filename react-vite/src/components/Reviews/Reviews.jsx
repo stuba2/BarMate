@@ -6,7 +6,6 @@ import EditReview from "../EditReview/EditReview";
 import DeleteReview from "../DeleteReview/DeleteReview";
 import './Reviews.css'
 
-const hourArr = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
 const Reviews = () => {
   const dispatch = useDispatch()
@@ -20,9 +19,6 @@ const Reviews = () => {
   const reviewsArr = Object.values(reviews).reverse()
   const filteredRevs = reviewsArr.filter(rev => rev.recipe_id == recipeId)
 
-
-
-
   useEffect(() => {
     dispatch(reviewActions.getReviewsThunk(+recipeId))
   }, [dispatch])
@@ -30,16 +26,18 @@ const Reviews = () => {
   if (!reviews) {
     return (
       <div>...loading</div>
-    )
-  } else {
-    return (
-      <div className="rev-greater-container">{filteredRevs.map((review) => {
+      )
+    } else {
+      return (
+        <div className="rev-greater-container">{filteredRevs.map((review) => {
         let updatedDateSplit = new Date(review.updated_at).toDateString().split(' ')
         let updatedTimeSplit = new Date(review.updated_at).toTimeString().split(' ')
         let dateMonth = updatedDateSplit[1]
         let dateDate = updatedDateSplit[2]
         let timeTimeSplit = updatedTimeSplit[0].split(':')
         let timeHour = timeTimeSplit[0]
+        const hourArr = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        
         let postedHour
         let meridiem
         if (timeHour < 12) {
